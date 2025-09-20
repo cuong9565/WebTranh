@@ -1,11 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dash board </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - ART SGU</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/tongquan.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
+
 <body>
-    
+  <div class="main-container">
+    <aside class="sidebar" aria-label="Sidebar navigation">
+      <a href="dashboard.html" style="text-decoration: none;">
+        <div class="logo">
+          <div class="logo-1">
+          <span class="text-center">G</span>
+          <div class="oval"></div>
+        </div>
+        <span class="art-sgu">ART SGU</span>
+      </div></a>
+      
+      <nav class="menu" aria-label="Main menu">
+        <span class="menu-2">MENU</span>
+        <div class="menu-buttons">
+            <a href="dashboard.html" class="menu-item dashboard active" aria-label="Tổng quan">
+              <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+              <span>Tổng quan</span>
+            </a>
+            <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+              <span class="icon"><i class="fa-solid fa-box"></i></span>
+              <span>Quản lý sản phẩm</span>
+            </a>
+            <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
+              <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+              <span>Quản lý đơn hàng</span>
+            </a>
+            <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
+              <span class="icon"><i class="fa-solid fa-user"></i></span>
+              <span>Quản lý tài khoản</span>
+            </a>
+            <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
+              <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
+              <span>Quản lý tác giả</span>
+            </a>
+            <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+              <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+              <span>Quản lý danh mục</span>
+            </a>
+            <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
+              <span class="icon"><i class="fa-solid fa-image"></i></span>
+              <span>Quản lý banner</span>
+            </a>
+        </div>
+        <span class="others">OTHERS</span>
+        <div class="menu-buttons">
+          <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span>Trang chủ</span>
+          </a>
+          <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+            <span>Đăng xuất</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="input-search" role="search">
+          <input type="search" placeholder="Search" aria-label="Search" />
+          <div class="icon search-icon"></div>
+        </div>
+        <div class="user-info" id="userInfo">
+          <img src="../assets/img/image.png" alt="Avatar">
+          <div class="name-role">
+            <span class="merchant-name">Xuân Huấn</span>
+            <span>Quản trị viên</span>
+          </div>
+          <div class="chevron-down">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          <div class="option-account-admin">
+            <div id="adminDropdown">
+              <div class="dropdown-header">
+                <img src="../assets/img/image.png" alt="Avatar">
+                <div class="dropdown-user-info">
+                  <span>Xuân Huấn</span>
+                  <span>admin@artvietnam.com</span>
+                  <span>Quản trị viên</span>
+                </div>
+              </div>
+              <div class="dropdown-menu">
+                <a href="#">
+                  <i class="fa-regular fa-user"></i> Hồ sơ cá nhân
+                </a>
+                <a href="#">
+                  <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+                </a>
+                <a href="dang-xuat.html">
+                  <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- nội dung chính  -->
+      <main class="content" role="main" style="overflow-y: auto;">
+        <div class="thanh-bo-loc">
+          <div class="thanh-bo-loc-1">
+            <h1 class="title-page">Dashboard</h1>
+            <p style="font-size: 0.8rem;">Tổng quan hệ thống quản lý bán tranh số 1 SGU</p>
+          </div>
+          <div class="thanh-bo-loc-2">
+            <select>
+              <option value="">30 ngày</option>
+              <option value="">7 ngày</option>
+              <option value="">Hôm nay</option>
+            </select>
+           <button type="button" class="btn btn-outline-success refresh-btn">
+             <i class="fa-solid fa-rotate"></i> Làm mới
+           </button>
+          </div>
+        </div>
+
+        <div class="thongke">
+          <div class="dashboard-cards">
+            <div class="dashboard-card revenue">
+              <div class="card-header">
+                <span class="card-title">Tổng doanh thu</span>
+                <span class="card-icon"><i class="fa-solid fa-dollar-sign"></i></span>
+              </div>
+              <div class="card-value">+317.7M</div>
+              <div class="card-desc">
+                <span class="card-change positive">↗ +15.2%</span>
+                <span class="card-note">so với tháng trước</span>
+              </div>
+            </div>
+            <div class="dashboard-card orders">
+              <div class="card-header">
+                <span class="card-title">Đơn hàng</span>
+                <span class="card-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+              </div>
+              <div class="card-value">+1.409</div>
+              <div class="card-desc">
+                <span class="card-change positive">↗ +8.7%</span>
+                <span class="card-note">so với tháng trước</span>
+              </div>
+            </div>
+            <div class="dashboard-card customers">
+              <div class="card-header">
+                <span class="card-title">Khách hàng mới</span>
+                <span class="card-icon"><i class="fa-solid fa-user"></i></span>
+              </div>
+              <div class="card-value">+50</div>
+              <div class="card-desc">
+                <span class="card-change positive">↗ +12.5%</span>
+                <span class="card-note">so với tháng trước</span>
+              </div>
+            </div>
+            <div class="dashboard-card products">
+              <div class="card-header">
+                <span class="card-title">Sản phẩm</span>
+                <span class="card-icon"><i class="fa-solid fa-box"></i></span>
+              </div>
+              <div class="card-value">99</div>
+              <div class="card-desc">
+                <span class="card-note">Đang hoạt động </span>
+              </div>
+            </div>
+          </div>
+          <div class="bieu-do">
+            <div class="bieu-do-top-sell" style="display: flex; position: relative; gap: 32px;">
+              <!-- Biểu đồ doanh thu các tháng -->
+              <div class="bieu-do-doanh-thu" style="width: 70%;">
+                <h2 style="font-size:1.1rem;margin:10px;">Biểu đồ doanh thu các tháng</h2>
+                <canvas id="revenueChart" height="120" style="margin:30px;"></canvas>
+              </div>
+              <!-- Top 5 sản phẩm bán chạy -->
+              <div class="xephang-most-art" style=" border: solid 2px #eaf3ff;
+                          margin: 32px 0;
+                          box-shadow: 0 2px 12px rgba(81, 76, 76, 0.07);
+                          border-radius: 20px; background:#fff;">
+                <h2 style="font-size:1.1rem;margin:10px;text-align: center;">Top 5 sản phẩm</h2>
+                <ul class="best-sell-list">
+                  <li>
+                    <span class="best-sell-img"><img src="../assets/img/image.png
+                      " alt="Tranh Sơn Dầu "></span>
+                    <span class="best-sell-name">Tranh Sơn Dầu</span>
+                    <span class="best-sell-qty">120</span>
+                  </li>
+                  <li>
+                    <span class="best-sell-img"><img src="https://i.imgur.com/2.jpg" alt="Tranh Phong Cảnh Biển"></span>
+                    <span class="best-sell-name">Tranh Phong Cảnh</span>
+                    <span class="best-sell-qty">98</span>
+                  </li>
+                  <li>
+                    <span class="best-sell-img"><img src="https://i.imgur.com/3.jpg" alt="Tranh Trừu Tượng Sắc Màu"></span>
+                    <span class="best-sell-name">Tranh Trừu Tượng </span>
+                    <span class="best-sell-qty">85</span>
+                  </li>
+                  <li>
+                    <span class="best-sell-img"><img src="https://i.imgur.com/4.jpg" alt="Tranh Cổ Điển Châu Âu"></span>
+                    <span class="best-sell-name">Tranh Cổ Điển</span>
+                    <span class="best-sell-qty">80</span>
+                  </li>
+                  <li>
+                    <span class="best-sell-img"><img src="https://i.imgur.com/5.jpg" alt="Tranh Phật Giáo"></span>
+                    <span class="best-sell-name">Tranh Phật Giáo</span>
+                    <span class="best-sell-qty">75</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="don-hang-top-user" style="display: flex; position: relative; gap: 32px;">
+              <!-- Đơn hàng gần đây -->
+              <div class="don-hang-gan-day" style="border: solid 2px #eaf3ff;">
+                <h2 style="font-size:1.1rem;margin-bottom:10px;">Đơn hàng gần đây</h2>
+                <table class="orders-table" style="width:100%;border-collapse:collapse;">
+                  <thead>
+                    <tr style="background:#f1f2f7;">
+                      <th>Mã đơn</th>
+                      <th style="width: 30%;">Khách hàng</th>
+                      <th style="width: 30%;">Sản phẩm</th>
+                      <th>Giá trị</th>
+                      <th>Ngày</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#DH001</td>
+                      <td>Nguyễn Văn A</td>
+                      <td>Tranh Sơn Dầu Hoa Mẫu Đơn</td>
+                      <td>2.500.000đ</td>
+                      <td>17/09/2025</td>
+                    </tr>
+                    <tr>
+                      <td>#DH002</td>
+                      <td>Trần Thị B</td>
+                      <td>Tranh Phong Cảnh Biển</td>
+                      <td>1.800.000đ</td>
+                      <td>16/09/2025</td>
+                    </tr>
+                    <tr>
+                      <td>#DH003</td>
+                      <td>Lê Văn C</td>
+                      <td>Tranh Trừu Tượng Sắc Màu</td>
+                      <td>2.100.000đ</td>
+                      <td>15/09/2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="top-user">
+                <div class="xephang-users">
+                  <h2 style="font-size:1.1rem;margin-bottom:10px;">Top khách hàng chi tiêu</h2>
+                  <ul class="user-rank-list">
+                    <li>
+                      <span class="user-rank"><i class="fa-solid fa-crown" style="color:#fbbf24;font-size:20px;"></i></span>
+                      <span class="user-name">Nguyễn Văn A</span>
+                      <span class="user-spent">12.500.000đ</span>
+                    </li>
+                    <li>
+                      <span class="user-rank"><i class="fa-solid fa-medal" style="color:#bfc3c9;font-size:18px;"></i></span>
+                      <span class="user-name">Trần Thị B</span>
+                      <span class="user-spent">10.800.000đ</span>
+                    </li>
+                    <li>
+                      <span class="user-rank"><i class="fa-solid fa-medal" style="color:#e67e22;font-size:18px;"></i></span>
+                      <span class="user-name">Lê Văn C</span>
+                      <span class="user-spent">9.900.000đ</span>
+                    </li>
+                    <li>
+                      <span class="user-rank"><i class="fa-solid fa-star" style="color:#8759b2;font-size:17px;"></i></span>
+                      <span class="user-name">Phạm Thị D</span>
+                      <span class="user-spent">8.700.000đ</span>
+                    </li>
+                    <li>
+                      <span class="user-rank"><i class="fa-solid fa-star" style="color:#000000;font-size:17px;"></i></span>
+                      <span class="user-name">Vũ Văn E</span>
+                      <span class="user-spent">7.800.000đ</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Hiệu ứng số liệu nhảy từ 0 đến giá trị hiện tại cho dashboard cards
+    function animateValue(el, start, end, duration, suffix = "") {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        el.textContent = value.toLocaleString() + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = end.toLocaleString() + suffix;
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      // Tổng doanh thu
+      const revenueEl = document.querySelector('.dashboard-card.revenue .card-value');
+      if (revenueEl) animateValue(revenueEl, 0, 89000700, 1500, '');
+      // Đơn hàng
+      const ordersEl = document.querySelector('.dashboard-card.orders .card-value');
+      if (ordersEl) animateValue(ordersEl, 0, 1409, 1500, '');
+      // Khách hàng mới
+      const customersEl = document.querySelector('.dashboard-card.customers .card-value');
+      if (customersEl) animateValue(customersEl, 0, 50, 1500, '');
+      // Sản phẩm
+      const productsEl = document.querySelector('.dashboard-card.products .card-value');
+      if (productsEl) animateValue(productsEl, 0, 99, 1500, '');
+    });
+  </script>
+  <script>
+    // Biểu đồ doanh thu các tháng với hiệu ứng gợn sóng
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    const revenueChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9'],
+        datasets: [{
+          label: 'Doanh thu (triệu VNĐ)',
+          data: [120, 135, 150, 170, 160, 180, 210, 200, 220],
+          borderColor: '#009e60',
+          backgroundColor: 'rgba(0,158,96,0.1)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: '#009e60',
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+        },
+        animation: {
+          duration: 1000,
+          easing: 'easeInOutSine',
+          // Hiệu ứng gợn sóng cho từng điểm
+          animateScale: true,
+          animateRotate: true,
+          delay: function (context) {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default') {
+              delay = context.dataIndex * 120 + context.datasetIndex * 80;
+            }
+            return delay;
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 20 }
+          }
+        }
+      }
+    });
+  </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const userInfo = document.getElementById('userInfo');
+      const dropdown = document.querySelector('.option-account-admin');
+
+      // Toggle dropdown khi click vào user-info
+      userInfo.addEventListener('click', function (e) {
+        e.stopPropagation();
+        userInfo.classList.toggle('active');
+      });
+
+      // Đóng dropdown khi click bất kỳ đâu trên document
+      document.addEventListener('click', function (e) {
+        if (userInfo.classList.contains('active') && !userInfo.contains(e.target)) {
+          userInfo.classList.remove('active');
+        }
+      });
+
+      // Ngăn chặn đóng dropdown khi click vào chính dropdown
+      dropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </body>
+
 </html>

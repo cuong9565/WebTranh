@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - ART SGU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <aside class="sidebar" aria-label="Sidebar navigation">
+            <a href="dashboard.html" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-1">
+                        <span class="text-center">G</span>
+                        <div class="oval"></div>
+                    </div>
+                    <span class="art-sgu">ART SGU</span>
+                </div>
+            </a>
+
+            <nav class="menu" aria-label="Main menu">
+                <span class="menu-2">MENU</span>
+                <div class="menu-buttons">
+                    <a href="dashboard.html" class="menu-item dashboard " aria-label="Tổng quan">
+                        <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Tổng quan</span>
+                    </a>
+                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                        <span class="icon"><i class="fa-solid fa-box"></i></span>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="manager-user.html" class="menu-item review  active" aria-label="Quản lý tài khoản">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
+                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
+                        <span>Quản lý tác giả</span>
+                    </a>
+                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                        <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
+                        <span class="icon"><i class="fa-solid fa-image"></i></span>
+                        <span>Quản lý banner</span>
+                    </a>
+                </div>
+                <span class="others">OTHERS</span>
+                <div class="menu-buttons">
+                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="input-search" role="search">
+                    <input type="search" placeholder="Search" aria-label="Search" />
+                    <div class="icon search-icon"></div>
+                </div>
+                <div class="user-info" id="userInfo">
+                    <img src="../assets/img/image.png" alt="Avatar">
+                    <div class="name-role">
+                        <span class="merchant-name">Xuân Huấn</span>
+                        <span>Quản trị viên</span>
+                    </div>
+                    <div class="chevron-down">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="option-account-admin">
+                        <div id="adminDropdown">
+                            <div class="dropdown-header">
+                                <img src="../assets/img/image.png" alt="Avatar">
+                                <div class="dropdown-user-info">
+                                    <span>Xuân Huấn</span>
+                                    <span>admin@artvietnam.com</span>
+                                    <span>Quản trị viên</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i> Hồ sơ cá nhân
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+                                </a>
+                                <a href="dang-xuat.html">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="content" role="main" style="overflow-y: auto;">
+            </main>
+        </div>
+    </div>
+</body>
+<script src="../assets/js/account-admin.js"></script>
+
+</html>
