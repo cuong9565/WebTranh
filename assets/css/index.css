@@ -12,6 +12,101 @@ body{
 }
 
 /* Cuong */
+/* ----------------- Pop-up ------------------ */
+.pop-up{
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up .login-form-container{
+    background-color: #fff;
+    padding: 20px 40px;
+    border: 2px solid gray;
+    box-shadow: 0 0 2px 2px gray;
+    border-radius: 10px;
+    outline: none;
+}
+
+.pop-up .login-form-container h1{
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding: 10px 40px;
+    color: gray;
+}
+
+.pop-up .login-form-container .item{
+    display: block;
+    margin-top: 20px;
+    /* background-color: #4A9DEC; */
+}
+
+.pop-up .login-form-container label{
+    font-size: 0.8em;
+}
+
+.pop-up .login-form-container input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+.pop-up .login-form-container input[type='checkbox']{
+    width: auto;
+    height: 0.9em;
+    cursor: pointer;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.pop-up .login-form-container a{
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #7F265B;
+}
+
+.pop-up .login-form-container button{
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #7F265B;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.pop-up .login-form-container .center-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pop-up .login-form-container .align-center{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pop-up .signup-form-container{
+    width: 100px;
+    height: 100px;
+    background-color: #00ff00;
+}
+
+
 /* ----------------- Header ------------------ */
 .header{
     background-color: #fff;
@@ -114,11 +209,13 @@ body{
 .header .item-login{
     background-color: #fff;
     border: 2px solid rgb(201, 197, 197);
+    cursor: pointer;
 }
 
 .header .item-signup{
     background-color: #11CFAA;
     border: 2px solid #11CFAA;
+    cursor: pointer;
 }
 
 
