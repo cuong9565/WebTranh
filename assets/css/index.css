@@ -26,7 +26,7 @@ body{
     align-items: center;
 }
 
-.pop-up .login-form-container{
+.pop-up .form-container{
     background-color: #fff;
     padding: 20px 40px;
     border: 2px solid gray;
@@ -35,24 +35,23 @@ body{
     outline: none;
 }
 
-.pop-up .login-form-container h1{
+.pop-up .form-container h1{
     margin-bottom: 30px;
     font-size: 2em;
     padding: 10px 40px;
     color: gray;
 }
 
-.pop-up .login-form-container .item{
+.pop-up .form-container .item{
     display: block;
     margin-top: 20px;
-    /* background-color: #4A9DEC; */
 }
 
-.pop-up .login-form-container label{
+.pop-up .form-container label{
     font-size: 0.8em;
 }
 
-.pop-up .login-form-container input{
+.pop-up .form-container input{
     width: 100%;
     padding: 10px;
     outline: none;
@@ -61,7 +60,7 @@ body{
     margin-top: 3px;
 }
 
-.pop-up .login-form-container input[type='checkbox']{
+.pop-up .form-container input[type='checkbox']{
     width: auto;
     height: 0.9em;
     cursor: pointer;
@@ -69,13 +68,14 @@ body{
     vertical-align: middle;
 }
 
-.pop-up .login-form-container a{
+.pop-up .form-container .purple-link{
     font-size: 0.8em;
     text-decoration: none;
     color: #7F265B;
+    cursor: pointer;
 }
 
-.pop-up .login-form-container button{
+.pop-up .form-container button{
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -88,22 +88,31 @@ body{
     cursor: pointer;
 }
 
-.pop-up .login-form-container .center-item{
+.pop-up .form-container .center-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
 }
 
-.pop-up .login-form-container .align-center{
+.pop-up .form-container .align-center{
     text-align: center;
     margin-top: 10px;
 }
-
+.pop-up .text-require{
+    font-size: 1.2em;
+}
+/* Login */
+.pop-up .login-form-container{
+    display: none;
+}
+/* SignUp */
 .pop-up .signup-form-container{
-    width: 100px;
-    height: 100px;
-    background-color: #00ff00;
+    display: none;
+}
+.pop-up .signup-form-container .red-link{
+    font-size: 1em;
+    color: #ff0000da;
 }
 
 
