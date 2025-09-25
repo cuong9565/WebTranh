@@ -20,30 +20,77 @@ body{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
-
+    /* display: none; */
     display: none;
     justify-content: center;
     align-items: center;
 }
 
-.pop-up .form-container{
+.pop-up .container-close-form{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: top;
+}
+
+.pop-up .close-icon{
+    width: 30px;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.pop-up .close-icon:hover{
+    background-color: rgba(255, 0, 0, 0.674);
+}
+
+.pop-up .small-icon{
+    width: 16px;
+}
+
+
+.pop-up .left-icon{
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+}
+
+.pop-up .right-icon{
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.pop-up .hidden{
+    display: none;
+}
+
+.pop-up .container{
     background-color: #fff;
-    padding: 20px 40px;
     border: 2px solid gray;
     box-shadow: 0 0 2px 2px gray;
     border-radius: 10px;
+    margin: 5px;
+}
+
+.pop-up .form-container{
+    background-color: #fff;
+    padding: 0 40px 20px 40px;
     outline: none;
 }
 
 .pop-up .form-container h1{
     margin-bottom: 30px;
     font-size: 2em;
-    padding: 10px 40px;
+    padding: 0 40px;
     color: gray;
 }
 
 .pop-up .form-container .item{
     display: block;
+    position: relative;
     margin-top: 20px;
 }
 
@@ -53,11 +100,15 @@ body{
 
 .pop-up .form-container input{
     width: 100%;
-    padding: 10px;
+    padding: 10px 40px 10px 40px;
     outline: none;
     border: 1px solid gray;
     border-radius: 10px;
     margin-top: 3px;
+}
+
+.pop-up .form-container input:focus{
+    border: 1px solid #7F265B;
 }
 
 .pop-up .form-container input[type='checkbox']{

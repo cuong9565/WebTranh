@@ -11,94 +11,128 @@
     <!-- This element to cover all page -->
     <div class="pop-up">
         <!-- Login -->
-        <div class="login-form-container form-container">
-            <form>
-                <h1>Đăng nhập tài khoản</h1>
-                
-                <div class="item">
-                    <label for="email-login">Email <span class="text-require">*</span></label>
-                    <input  type="email" 
-                            id="email-login"
-                            required
-                            placeholder="Nhập email của bạn">
+        <div class="login-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login" onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden" id="close-white-login" onclick="ClosePopUp()">
                 </div>
-
-                <div class="item">
-                    <label for="password-login">Mật khẩu <span class="text-require">*</span></label>
-                    <input  type="password" 
-                            id="password-login"
-                            required
-                            placeholder="Nhập mật khẩu của bạn">
-                </div>
-
-                <div class="item center-item">
-                    <span>
-                        <input type="checkbox" id="remember-me-login">
-                        <label for="remember-me-login">Ghi nhớ đăng nhập</label>
-                    </span>
-                    <span>
-                        <a href="#" class="purple-link">Quên mật khẩu</a>
-                    </span>
-                </div>
-                
-                <div class="item">
-                    <button>Đăng nhập</button>
-                </div>
-
-                <div class="item align-center">
-                        <label>Chưa có tài khoản? </label>
-                        <a onclick="ShowSignUpForm()" class="purple-link">Đăng ký</a>
-                </div>
-            </form>
+    
+                <form class="form-container">
+                    <h1>Đăng nhập tài khoản</h1>
+                    
+                    <div class="item">
+                        <label for="email-login">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input  type="email" 
+                                id="email-login"
+                                required
+                                placeholder="Nhập email của bạn">
+                    </div>
+    
+                    <div class="item">
+                        <label for="password-login">Mật khẩu <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon" class="small-icon right-icon closed-password-login" onclick="ShowPass('password-login')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon" class="small-icon right-icon opened-password-login hidden" onclick="HiddePass('password-login')">
+                        <input  type="password" 
+                                id="password-login"
+                                required
+                                placeholder="Nhập mật khẩu của bạn">
+                    </div>
+    
+                    <div class="item center-item">
+                        <span>
+                            <input type="checkbox" id="remember-me-login">
+                            <label for="remember-me-login">Ghi nhớ đăng nhập</label>
+                        </span>
+                        <span>
+                            <a href="#" class="purple-link">Quên mật khẩu</a>
+                        </span>
+                    </div>
+                    
+                    <div class="item">
+                        <button>Đăng nhập</button>
+                    </div>
+    
+                    <div class="item align-center">
+                            <label>Chưa có tài khoản? </label>
+                            <a onclick="ShowSignUpForm()" class="purple-link">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Sign Up -->
-        <div class="signup-form-container form-container">
-            <form>
-                <h1>Đăng ký tài khoản</h1>
-                
-                <div class="item">
-                    <label for="user-signup">Tên tài khoản <span class="text-require">*</span></label>
-                    <input  type="text"
-                            id="user-signup"
-                            required
-                            placeholder="Nhập tên tài khoản của bạn">
+        <div class="signup-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup" onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden" id="close-white-signup" onclick="ClosePopUp()">
                 </div>
 
-                <div class="item">
-                    <label for="email-signup">Email <span class="text-require">*</span></label>
-                    <input  type="email" 
-                            id="email-signup"
-                            required
-                            placeholder="Nhập email của bạn">
-                </div>
-
-                <div class="item">
-                    <label for="new-password-signup">Mật khẩu mới <span class="text-require">*</span></label>
-                    <input  type="password"
-                            id="new-password-signup"
-                            required
-                            placeholder="Nhập mật khẩu mới">
-                </div>
-
-                <div class="item center-item">
-                    <span>
-                        <input  type="checkbox" 
-                                id="legal-term-signup" 
-                                required>
-                        <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất cả các điều khoản</a>. *</label>
-                    </span>
-                </div>
-                
-                <div class="item">
-                    <button>Đăng ký</button>
-                </div>
-
-                <div class="item align-center">
-                        <label>Đã có tài khoản? </label>
-                        <a onclick="ShowLoginForm()" class="purple-link">Đăng nhập</a>
-                </div>
-            </form>
+                <form class="form-container">
+                    <h1>Đăng ký tài khoản</h1>
+                    
+                    <div class="item">
+                        <label for="user-signup">Tên tài khoản <span class="text-require">*</span></label>
+                        <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
+                        <input  type="text"
+                                id="user-signup"
+                                required
+                                placeholder="Nhập tên tài khoản của bạn">
+                    </div>
+    
+                    <div class="item">
+                        <label for="email-signup">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input  type="email" 
+                                id="email-signup"
+                                required
+                                placeholder="Nhập email của bạn">
+                    </div>
+    
+                    <div class="item">
+                        <label for="new-password-signup">Mật khẩu mới <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon" class="small-icon right-icon closed-new-password-signup" onclick="ShowPass('new-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon" class="small-icon right-icon opened-new-password-signup hidden" onclick="HiddePass('new-password-signup')">
+                        <input  type="password"
+                                id="new-password-signup"
+                                required
+                                placeholder="Nhập mật khẩu mới">
+                    </div>
+    
+                    <div class="item">
+                        <label for="confirm-password-signup">Xác nhận mật khẩu <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon" class="small-icon right-icon closed-confirm-password-signup" onclick="ShowPass('confirm-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon" class="small-icon right-icon opened-confirm-password-signup hidden" onclick="HiddePass('confirm-password-signup')">
+                        <input  type="password"
+                                id="confirm-password-signup"
+                                required
+                                placeholder="Nhập lại mật khẩu">
+                    </div>
+    
+                    <div class="item center-item">
+                        <span>
+                            <input  type="checkbox" 
+                                    id="legal-term-signup" 
+                                    required>
+                            <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất cả các điều khoản</a>. *</label>
+                        </span>
+                    </div>
+                    
+                    <div class="item">
+                        <button>Đăng ký</button>
+                    </div>
+    
+                    <div class="item align-center">
+                            <label>Đã có tài khoản? </label>
+                            <a onclick="ShowLoginForm()" class="purple-link">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
