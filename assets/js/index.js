@@ -53,9 +53,9 @@ document.getElementById('close-black-signup').addEventListener('mouseover', (_)=
     document.getElementById('close-white-signup').classList.remove('hidden');
 })
 
-document.getElementById('close-white-signup').addEventListener('mouseout', (_)=>{
-    document.getElementById('close-black-signup').classList.remove('hidden');
-    document.getElementById('close-white-signup').classList.add('hidden');
+document.getElementById('close-white-signup').addEventListener('mouseover', (_)=>{
+    document.getElementById('close-black-signup').classList.add('hidden');
+    document.getElementById('close-white-signup').classList.remove('hidden');
 })
 
 document.getElementById('close-black-login').addEventListener('mouseover', (_)=>{
@@ -63,7 +63,27 @@ document.getElementById('close-black-login').addEventListener('mouseover', (_)=>
     document.getElementById('close-white-login').classList.remove('hidden');
 })
 
+document.getElementById('close-white-login').addEventListener('mouseover', (_)=>{
+    document.getElementById('close-black-login').classList.add('hidden');
+    document.getElementById('close-white-login').classList.remove('hidden');
+})
+
+document.getElementById('close-white-signup').addEventListener('mouseout', (_)=>{
+    document.getElementById('close-black-signup').classList.remove('hidden');
+    document.getElementById('close-white-signup').classList.add('hidden');
+})
+
+document.getElementById('close-black-signup').addEventListener('mouseout', (_)=>{
+    document.getElementById('close-black-signup').classList.remove('hidden');
+    document.getElementById('close-white-signup').classList.add('hidden');
+})
+
 document.getElementById('close-white-login').addEventListener('mouseout', (_)=>{
+    document.getElementById('close-black-login').classList.remove('hidden');
+    document.getElementById('close-white-login').classList.add('hidden');
+})
+
+document.getElementById('close-black-login').addEventListener('mouseout', (_)=>{
     document.getElementById('close-black-login').classList.remove('hidden');
     document.getElementById('close-white-login').classList.add('hidden');
 })
