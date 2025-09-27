@@ -5,6 +5,7 @@
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
+    font-size: 16px;
 }
 
 body{
@@ -180,8 +181,8 @@ body{
 
 /* ----------------- Logo ------------------ */
 .header img{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .header .logo-img{
@@ -229,16 +230,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
-
-.header .item-cart{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 
 .header .item{
     display: inline-block;
@@ -247,7 +240,11 @@ body{
 }
 
 .header .item-cart{
-    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1em;
     border: 2px solid rgb(201, 197, 197);
 
 }
@@ -256,7 +253,6 @@ body{
     display: flex;
     justify-content: center;
     margin-bottom: 3px;
-    /* background-color: #11CFAA; */
 }
 
 .header a{
@@ -278,19 +274,67 @@ body{
     cursor: pointer;
 }
 
+/* ----------------- Nav ------------------ */
+.nav{
+    width: 100%;
+    background-color: #6C5070;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .item{
+    display: flex;
+    align-items: center;
+}
+.nav .item a{
+    color: #fff;
+    background-color: #6C5070;
+    text-decoration: none;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    padding: 20px 20px;
+    display: inline-block;
+    position: relative;
+}
+.nav .item span{
+    color: #fff;
+}
+.nav .item a:hover{
+    background-color: #785b7c;
+}
+.nav .item a:active{
+    background-color: #826586;
+}
+.nav .item a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #df6a6a;
+}
+.nav .item a:hover::before{
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
 
 /* Phuc */
 /* ----------------- Footer ------------------ */
 .footer{
     background-color: #ffffff;
     color: #000000;
-    padding: 40px 0;
+    padding-bottom: 10px;
     text-align: center;
+    font-size: 0.9em;
+    width: 100%;
 }
 
 .footer a{
     margin: 10px 0;
-    font-size: 1.2em;
 }
 /*Kích thước logo Footer*/
 .footer .logo_footer{
@@ -309,6 +353,17 @@ body{
     text-decoration: none;  
 }
 
+.footer .container-center{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.footer .container-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 /*chữ dưới logo*/
 .footer_word {
@@ -316,20 +371,17 @@ body{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin: 10px 0;
 }
 
 /* Kích thước icon mạng xã hội */
 .footer_icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;   
-    object-fit: cover;     
-    cursor: pointer;       
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
     display: inline-block; 
-    margin: 0 10px;        
-    transition: 0.2s;   
-    margin-bottom: 30px;
+    margin: 0 10px;
 }
 
 /* Hiệu ứng hover */
@@ -339,29 +391,16 @@ body{
 }
 /* Đường line */
 .footer_line {
-    width: 90%;
+    width: 95%;
     height: 1px;            
     border: none;           
-    background-color: #000000; 
-    margin: 20px auto 0;  
-    margin-bottom: 30px; 
+    background-color: #000000;
+    margin: 10px 0;
 }
 
 /* chữ bên trái dưới đường line */
-.word_left {
-    text-align: left; 
-    padding-left: 72px;
-}
-
-/*icon dưới đường line*/
-.footer_bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: column;      
-    align-items: flex-end;      
-    justify-content: space-between;
-    padding-right: 90px;        
-    gap: 10px;                  
+.footer .item{
+    margin: 0 60px;
 }
 
 .footer_row {
@@ -371,15 +410,14 @@ body{
 }
 
 .footer_icon_bottom {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
 }
 
 .footer_row p {
-    margin: 0;
+    margin: 3px 0;
     font-size: 0.9em;
     color: #555;
 }
-
 
 
