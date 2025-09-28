@@ -120,3 +120,109 @@ body{
     background-color: #11CFAA;
     border: 2px solid #11CFAA;
 }
+
+
+/* Phuc */
+/* ----------------- Footer ------------------ */
+.footer{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer a{
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+/*Kích thước logo Footer*/
+.footer .logo_footer{
+    width: 50px;
+    height: 50px;
+}
+
+.footer_word a {
+    text-decoration: none;   
+    color: inherit;         
+}
+
+/* hover đổi màu */
+.footer_word a:hover {
+    color: #7c9393;         
+    text-decoration: none;  
+}
+
+
+/*chữ dưới logo*/
+.footer_word {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Kích thước icon mạng xã hội */
+.footer_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;   
+    object-fit: cover;     
+    cursor: pointer;       
+    display: inline-block; 
+    margin: 0 10px;        
+    transition: 0.2s;   
+    margin-bottom: 30px;
+}
+
+/* Hiệu ứng hover */
+.footer_icon:hover {
+    box-shadow: 0 0 5px #5a9e9e; 
+    transform: scale(1.1);        
+}
+/* Đường line */
+.footer_line {
+    width: 90%;
+    height: 1px;            
+    border: none;           
+    background-color: #000000; 
+    margin: 20px auto 0;  
+    margin-bottom: 30px; 
+}
+
+/* chữ bên trái dưới đường line */
+.word_left {
+    text-align: left; 
+    padding-left: 72px;
+}
+
+/*icon dưới đường line*/
+.footer_bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;      
+    align-items: flex-end;      
+    justify-content: space-between;
+    padding-right: 90px;        
+    gap: 10px;                  
+}
+
+.footer_row {
+    display: flex;               
+    align-items: center;
+    gap: 20px;                    
+}
+
+.footer_icon_bottom {
+    width: 20px;
+    height: 20px;
+}
+
+.footer_row p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+
