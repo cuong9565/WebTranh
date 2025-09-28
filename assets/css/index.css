@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body{
     width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Cuong */
@@ -220,7 +221,7 @@ body{
 }
 
 .main{
-    background-color: aqua;
+    background-color: #f5edff;
     height: 100vh;
 }
 
@@ -278,6 +279,10 @@ body{
 .nav{
     width: 100%;
     background-color: #6C5070;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -318,6 +323,72 @@ body{
 }
 .nav .item a:hover::before{
     width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+/* ----------------- Slide ------------------ */
+.slide{
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide .container{
+    position: relative;
+    background-color: #11CFAA;
+    width: 800px;
+    height: 400px;
+}
+.slide #slide-img{
+    width: 800px;
+    height: 400px;
+}
+.slide .icon-arrow{
+    position: absolute;
+    width: 50px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0 10px;
+}
+.slide .icon-arrow:hover{
+    background-color: #df6a6a;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+.slide .left{
+    left: 0;
+}
+.slide .right{
+    right: 0;
+}
+.slide .dot-container{
+    position: absolute;
+    width: fit-content;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding: 0 5px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide .icon-dot{
+    width: 25px;
+    margin: 0;
+    cursor: pointer;
+}
+.slide .icon-dot:hover{
+    transform: scale(1.2);
     transition: all 0.3s ease-in-out;
 }
 

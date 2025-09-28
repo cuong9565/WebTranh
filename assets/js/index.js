@@ -1,7 +1,7 @@
 var popUp = document.getElementsByClassName('pop-up')[0]
 var loginForm = document.getElementsByClassName('login-form-container')[0]
 var signUpForm = document.getElementsByClassName('signup-form-container')[0]
-
+var imgSlide = document.getElementById('slide-img')
 
 // Function mở đăng nhập
 function ShowLoginForm(){
@@ -38,6 +38,33 @@ function HiddePass(id){
     document.getElementsByClassName('opened-' + id)[0].classList.add('hidden')
 }
 
+// Function chuyển trang
+function GoToSlide(index){
+    var oldIndex = indexSlide
+    indexSlide = index
+    imgSlide.src = `./assets/img/slide/${indexSlide}.jpg`
+    document.getElementsByClassName('icon-dot')[oldIndex].src = './assets/img/dot.svg';
+    document.getElementsByClassName('icon-dot')[indexSlide].src = './assets/img/dot1.svg';
+}
+
+function SwitchSlide(cnt){
+    var numSlide = 4
+    GoToSlide((indexSlide + cnt + numSlide) % numSlide)
+    clearInterval(inTerValSlide)
+
+    inTerValSlide = setInterval(()=>{
+        GoToSlide((indexSlide + 1 + numSlide) % numSlide)
+    }, 3000)
+}
+
+function SwitchIndexSlide(index){
+    GoToSlide(index)
+    clearInterval(inTerValSlide)
+    
+    inTerValSlide = setInterval(()=>{
+        GoToSlide((indexSlide + 1 + numSlide) % numSlide)
+    }, 3000)
+}
 
 // # Thêm event cho các component # ----------------------------
 // ## Event click ngoài form
@@ -87,3 +114,9 @@ document.getElementById('close-black-login').addEventListener('mouseout', (_)=>{
     document.getElementById('close-black-login').classList.remove('hidden');
     document.getElementById('close-white-login').classList.add('hidden');
 })
+
+var indexSlide = 0
+var numSlide = 4
+var inTerValSlide = setInterval(() => {
+    GoToSlide((indexSlide + 1 + numSlide) % numSlide)
+}, 3000)
