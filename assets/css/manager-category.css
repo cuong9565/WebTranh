@@ -1,0 +1,134 @@
+/* Button trong modal */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.btn-cancel,
+.btn-confirm {
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cancel {
+    background: #eee;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+.btn-confirm {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.btn-confirm:hover {
+    background: #1b5e20;
+}
+
+/* Mini sản phẩm list khi hover */
+.mini-product-list {
+    position: absolute;
+    bottom: -20%;
+    left: -20%;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    padding: 12px 8px;
+    z-index: 1000;
+    display: none;
+}
+
+.mini-product-list .mini-product-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.mini-product-list .mini-product-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.mini-product-list .mini-product-item span {
+    font-size: 0.98rem;
+    color: #222;
+}
+
+.btn-view {
+    position: relative;
+}
+
+/* Button styles in table */
+.btn-edit,
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background: #f3f7fb;
+}
+
+.btn-view:hover {
+    background: #f9f9f9;
+}
+
+.btn-view-wrap:hover .mini-product-list {
+    display: block;
+}
+
+.modal-category {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-category.active {
+    display: flex;
+}
+
+.modal-content-category {
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    min-width: 350px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content-category .close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
