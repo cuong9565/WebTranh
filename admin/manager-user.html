@@ -7,6 +7,7 @@
     <title>Dashboard - ART SGU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -19,6 +20,7 @@
                         <span class="text-center">G</span>
                         <div class="oval"></div>
                     </div>
+
                     <span class="art-sgu">ART SGU</span>
                 </div>
             </a>
@@ -30,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-art.html " class="menu-item order  " aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -38,7 +40,7 @@
                         <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
                         <span>Quản lý đơn hàng</span>
                     </a>
-                    <a href="manager-user.html" class="menu-item review  active" aria-label="Quản lý tài khoản">
+                    <a href="manager-user.html" class="menu-item review active" aria-label="Quản lý tài khoản">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
                         <span>Quản lý tài khoản</span>
                     </a>
@@ -46,7 +48,7 @@
                         <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
                         <span>Quản lý tác giả</span>
                     </a>
-                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
                     </a>
@@ -111,10 +113,290 @@
                 </div>
             </header>
             <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Quản lý tài khoản người dùng</h1>
+                        <p style="font-size:1rem;">Tất cả tài khoản hoạt động trên website</p>
+                    </div>
+                    <div class="nhap-xuat-add">
+                        <div class="excel">
+                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                                <i class="fa-solid fa-download"></i> Xuất danh sách
+                            </button>
+                        </div>
+                        <button class="button-add-art" id="openModalAddUser">
+                            <i class="fa-solid fa-plus"></i> Thêm tài khoản
+                        </button>
+                    </div>
+                </div>
+                <div class="bo-thong-ke" style="display:flex; gap: 20px;">
+                    <div class="box-thong-ke total-product">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng số tài khoản
+                            </div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">5</div>
+                        </div>
+                        <div
+                            style="background:#eaf3ff;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fa-solid fa-user" style="font-size:20px;color:#5a67ba;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke selling-product"
+                        style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Hoạt động</div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">4</div>
+                        </div>
+                        <div
+                            style="background:#eafff2;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fa-solid fa-user-check" style="font-size:20px;color:#009e60;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke low-stock"
+                        style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Bị khóa
+                            </div>
+                            <div style="font-size:22px;font-weight:700;color:#e74c3c;">1</div>
+                        </div>
+                        <div
+                            style="background:#ffeaea;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fa-solid fa-user-lock" style="font-size:20px;color:#e74c3c;"></i>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="bo-loc-item">
+                    <div class="filter-bar">
+                        <div class="filter-search">
+                            <input type="text" placeholder="Nhập số điện thoại hoặc tên người dùng..." />
+                            
+                        </div>
+                        <div class="filter-buttons">
+                            <select class="filter-status" name="" id="categorySelect">
+                                <option value="0">Trạng thái</option>
+                                <option value="">Hoạt động</option>
+                                <option value="">Đang khóa</option>
+                
+                            </select>
+                            <select class="filter-status" name="" id="categorySelect">
+                                <option value="0">Quyền</option>
+                                <option value="">Admin</option>
+                                <option value="">Khách hàng</option>
+                            </select>
+                        
+                            <button class="filter-btn"><a href="manager-user.html" style="text-decoration: none; color: #333;"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</a></button>
+                            <button class="filter-btn active">Làm mới</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-art">     
+                    <table class="art-table">
+                        <thead>
+                            <th>Mã</th>
+                            <th>Tên người dùng</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Quyền</th>
+                            <th>Trạng thái</th>
+                            <th>Tùy chỉnh</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>U001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>nguyenvana@gmail.com</td>
+                                <td>0901234567</td>
+                                <td>123 Lê Lợi, Q1</td>
+                                <td>Admin</td>
+                                <td><span class="status-selling">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn-edit" id="openModalEditUser"><i
+                                            class="fa-solid fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U002</td>
+                                <td>Trần Thị B</td>
+                                <td>tranthib@gmail.com</td>
+                                <td>0912345678</td>
+                                <td>456 Nguyễn Trãi, Q5</td>
+                                <td>User</td>
+                                <td><span class="status-selling active">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U003</td>
+                                <td>Lê Văn C</td>
+                                <td>levanc@gmail.com</td>
+                                <td>0987654321</td>
+                                <td>789 Cách Mạng, Q3</td>
+                                <td>User</td>
+                                <td><span class="status-selling">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U004</td>
+                                <td>Phạm Thị D</td>
+                                <td>phamthid@gmail.com</td>
+                                <td>0932123456</td>
+                                <td>321 Võ Văn Tần, Q10</td>
+                                <td>Admin</td>
+                                <td><span class="status-selling block">Đang khóa</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                      <!-- Modal thêm tài khoản -->
+                    <div id="modalAddUser" class="modal-add-product">
+                       <div class="modal-content" style="max-width:600px; min-height: auto;">
+                            <div class="modal-header">
+                                <span class="modal-title">Thêm tài khoản</span>
+                                <span class="modal-close" id="closeModalEditUser">&times;</span>
+                            </div>
+                            <form id="formAddUser" style="padding:24px;">
+                                <div style="display:flex;gap:32px;flex-wrap:wrap;">
+                                    <div style="flex:1;min-width:220px;">
+                                        <div class="form-group">
+                                            <label for="addUserName">Tên người dùng</label>
+                                            <input type="text" id="addUserName" name="addUserName" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addUserEmail">Email</label>
+                                            <input type="email" id="addUserEmail" name="addUserEmail" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addUserPhone">Số điện thoại</label>
+                                            <input type="text" id="addUserPhone" name="addUserPhone" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addUserAddress">Địa chỉ</label>
+                                            <input type="text" id="addUserAddress" name="addUserAddress" required />
+                                        </div>
+                                    </div>
+                                    <div style="flex:1;min-width:220px;">
+                                        <div class="form-group">
+                                            <label for="addUserRole">Quyền</label>
+                                            <select id="addUserRole" name="addUserRole" required>
+                                                <option value="Admin">Admin</option>
+                                    
+                                                <option value="Guest">Khách hàng</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" style="position:relative;">
+                                            <label for="addUserPassword">Mật khẩu</label>
+                                            <div style="position:relative;display:flex;align-items:center;">
+                                                <input type="password" id="addUserPassword" name="addUserPassword" required style="flex:1;padding-right:38px;" />
+                                                <span id="toggleAddPassword" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addUserStatus">Trạng thái</label>
+                                            <select id="addUserStatus" name="addUserStatus" required>
+                                                <option value="Hoạt động">Hoạt động</option>
+                                                <option value="Khóa">Khóa</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:24px;">
+                                    <button type="button" id="cancelAddUser" style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
+                                    <button type="button" id ="ButtonAddUser"style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Thêm</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Modal chỉnh sửa tài khoản -->
+                    <div id="modalEditUser" class="modal-add-product">
+                        <div class="modal-content" style="max-width:600px; min-height: auto;">
+                            <div class="modal-header">
+                                <span class="modal-title">Chỉnh sửa tài khoản</span>
+                                <span class="modal-close" id="closeModalEdit">&times;</span>
+                            </div>
+                            <form id="formEditUser" style="padding:24px;">
+                                <div style="display:flex;gap:32px;flex-wrap:wrap;">
+                                    <div style="flex:1;min-width:220px;">
+                                        <div class="form-group">
+                                            <label for="editUserName">Tên người dùng</label>
+                                            <input type="text" id="editUserName" name="editUserName" value="Nguyễn Văn A" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editUserEmail">Email</label>
+                                            <input type="email" id="editUserEmail" name="editUserEmail" value="nguyenvana@gmail.com" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editUserPhone">Số điện thoại</label>
+                                            <input type="text" id="editUserPhone" name="editUserPhone" value="0901234567" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editUserAddress">Địa chỉ</label>
+                                            <input type="text" id="editUserAddress" name="editUserAddress" value="123 Lê Lợi, Q1" />
+                                        </div>
+                                    </div>
+                                    <div style="flex:1;min-width:220px;">
+                                        <div class="form-group">
+                                            <label for="editUserRole">Quyền</label>
+                                            <select id="editUserRole" name="editUserRole">
+                                                <option value="Admin">Admin</option>
+                                                <option value="User">User</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" style="position:relative;">
+                                            <label for="editUserPassword">Mật khẩu</label>
+                                            <div style="position:relative;display:flex;align-items:center;">
+                                                <input type="password" id="editUserPassword" name="editUserPassword" value="12345678" style="flex:1;padding-right:38px;" />
+                                                <span id="togglePassword" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </span>
+                                            </div>
+                                            <button type="button" id="resetPassword" style="background:#eee;border:none;padding:10px;border-radius:5px;cursor:pointer;margin:15px 0px 10px 0px;">Reset mặc định</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editUserStatus">Trạng thái</label>
+                                            <select id="editUserStatus" name="editUserStatus">
+                                                <option value="Hoạt động">Hoạt động</option>
+                                                <option value="Khóa">Khóa</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:24px;">
+                                    <button type="button" id="cancelEditUser" style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
+                                    <button type="button" id ="saveButton" style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Lưu</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="pagination">
+
+                        <ul class="pagination-list">
+                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
+                            </li>
+                            <li class="pagination-item active"><span>1</span></li>
+                            <li class="pagination-item"><span>2</span></li>
+                            <li class="pagination-item"><span>3</span></li>
+                            <li class="pagination-item"><span>...</span></li>
+                            <li class="pagination-item"><span>10</span></li>
+                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
 </body>
+
 <script src="../assets/js/account-admin.js"></script>
+<script src="../assets/js/manager-art.js"></script>
+<script src="../assets/js/manager-user.js"></script>
 
 </html>
