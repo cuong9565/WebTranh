@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- This element to alert -->
+    <div class="container-alert"></div>
     <!-- This element to cover all page -->
     <div class="pop-up">
         <!-- Login -->
@@ -28,7 +30,7 @@
                     <div class="item">
                         <label for="email-login">Email <span class="text-require">*</span></label>
                         <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="email" id="email-login" required placeholder="Nhập email của bạn">
+                        <input type="text" id="email-login" placeholder="Nhập email của bạn">
                     </div>
 
                     <div class="item">
@@ -39,7 +41,7 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-password-login hidden"
                             onclick="HiddePass('password-login')">
-                        <input type="password" id="password-login" required placeholder="Nhập mật khẩu của bạn">
+                        <input type="password" id="password-login" placeholder="Nhập mật khẩu của bạn">
                     </div>
 
                     <div class="item center-item">
@@ -53,7 +55,7 @@
                     </div>
 
                     <div class="item">
-                        <button>Đăng nhập</button>
+                        <button id="btn-login">Đăng nhập</button>
                     </div>
 
                     <div class="item align-center">
@@ -78,15 +80,15 @@
                     <h1>Đăng ký tài khoản</h1>
 
                     <div class="item">
-                        <label for="user-signup">Tên tài khoản <span class="text-require">*</span></label>
+                        <label for="user-signup">Họ và tên <span class="text-require">*</span></label>
                         <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="text" id="user-signup" required placeholder="Nhập tên tài khoản của bạn">
+                        <input type="text" id="user-signup" placeholder="Nhập họ tên của bạn">
                     </div>
 
                     <div class="item">
                         <label for="email-signup">Email <span class="text-require">*</span></label>
                         <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="email" id="email-signup" required placeholder="Nhập email của bạn">
+                        <input type="text" id="email-signup" placeholder="Nhập email của bạn">
                     </div>
 
                     <div class="item">
@@ -98,7 +100,7 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-new-password-signup hidden"
                             onclick="HiddePass('new-password-signup')">
-                        <input type="password" id="new-password-signup" required placeholder="Nhập mật khẩu mới">
+                        <input type="password" id="new-password-signup" placeholder="Nhập mật khẩu mới">
                     </div>
 
                     <div class="item">
@@ -111,12 +113,12 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-confirm-password-signup hidden"
                             onclick="HiddePass('confirm-password-signup')">
-                        <input type="password" id="confirm-password-signup" required placeholder="Nhập lại mật khẩu">
+                        <input type="password" id="confirm-password-signup" placeholder="Nhập lại mật khẩu">
                     </div>
 
                     <div class="item center-item">
                         <span>
-                            <input type="checkbox" id="legal-term-signup" required>
+                            <input type="checkbox" id="legal-term-signup">
                             <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất
                                     cả các điều khoản</a>. *</label>
                         </span>

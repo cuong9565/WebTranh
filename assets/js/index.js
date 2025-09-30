@@ -3,6 +3,8 @@ var loginForm = document.getElementsByClassName('login-form-container')[0]
 var signUpForm = document.getElementsByClassName('signup-form-container')[0]
 var imgSlide = document.getElementById('slide-img')
 
+var idAlert = 0
+
 // Function mở đăng nhập
 function ShowLoginForm(){
     popUp.style.display = 'flex';
@@ -66,6 +68,46 @@ function SwitchIndexSlide(index){
     }, 3000)
 }
 
+function CloseAlert(indexAlert){
+    document.getElementById(`${indexAlert}`).remove()
+}
+
+function AddAlert(text, type){
+    idAlert = idAlert + 1
+
+    const newId = idAlert
+    setTimeout(()=>{
+        CloseAlert(`alert-${newId}`)
+    },3000)
+
+    var newDiv = document.createElement('div')
+    newDiv.className = `alert ${type}`
+    newDiv.id = `alert-${newId}`
+    
+    if(type == 'success'){
+        newDiv.innerHTML = `
+            <div class="item">
+                <img src="./assets/img/success.svg" alt="success" />
+                <p>${text}</p>
+            </div>
+                <span onclick="CloseAlert('alert-${newId}')">&times;</span>
+        `
+    }
+    else if(type == 'fail'){
+        newDiv.innerHTML = `
+            <div class="item">
+                <img src="./assets/img/fail.svg" alt="fail" />
+                <p>${text}</p>
+            </div>
+            <span onclick="CloseAlert('alert-${newId}')">&times;</span>
+        `
+    }
+
+    document.getElementsByClassName('container-alert')[0].append(newDiv)
+    
+
+}
+
 // # Thêm event cho các component # ----------------------------
 // ## Event click ngoài form
 popUp.addEventListener('click', (event)=>{
@@ -113,6 +155,12 @@ document.getElementById('close-white-login').addEventListener('mouseout', (_)=>{
 document.getElementById('close-black-login').addEventListener('mouseout', (_)=>{
     document.getElementById('close-black-login').classList.remove('hidden');
     document.getElementById('close-white-login').classList.add('hidden');
+})
+
+document.getElementById('btn-login').addEventListener('click', (e) => {
+    e.preventDefault()
+    
+    AddAlert('Đăng nhập thành công', 'success')
 })
 
 var indexSlide = 0
