@@ -4,6 +4,8 @@ var signUpForm = document.getElementsByClassName('signup-form-container')[0]
 var imgSlide = document.getElementById('slide-img')
 
 var idAlert = 0
+var indexSlide = 0
+var numSlide = 4
 
 // Function mở đăng nhập
 function ShowLoginForm(){
@@ -69,7 +71,8 @@ function SwitchIndexSlide(index){
 }
 
 function CloseAlert(indexAlert){
-    document.getElementById(`${indexAlert}`).remove()
+    if(document.getElementById(`${indexAlert}`))
+        document.getElementById(`${indexAlert}`).remove()
 }
 
 function AddAlert(text, type){
@@ -157,14 +160,13 @@ document.getElementById('close-black-login').addEventListener('mouseout', (_)=>{
     document.getElementById('close-white-login').classList.add('hidden');
 })
 
-document.getElementById('btn-login').addEventListener('click', (e) => {
+document.getElementById('btn-signup').addEventListener('click', (e) => {
     e.preventDefault()
-    
-    AddAlert('Đăng nhập thành công', 'success')
+    AddAlert('Đăng ký tài khoản thành công', 'success')
+    ShowLoginForm()
 })
 
-var indexSlide = 0
-var numSlide = 4
-var inTerValSlide = setInterval(() => {
-    GoToSlide((indexSlide + 1 + numSlide) % numSlide)
-}, 3000)
+document.getElementById('btn-login').addEventListener('click', (e)=>{
+    e.preventDefault()
+    window.location.href = 'isLogin.html'
+})

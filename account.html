@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/account.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Art Store</title>
 </head>
@@ -125,7 +126,7 @@
                     </div>
 
                     <div class="item">
-                        <button id="btn-signup">Đăng ký</button>
+                        <button>Đăng ký</button>
                     </div>
 
                     <div class="item align-center">
@@ -155,7 +156,7 @@
                     </div>
                 </div>
             </a>
-
+            
             <a href="account.html">
                 <div class="item item-cart">
                     <p class="p-cart"><img src="./assets/img/info.svg" alt="Card-icon"></p>
@@ -165,13 +166,12 @@
                     </div>
                 </div>
             </a>
-
         </div>
     </div>
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#" class="item-a isactive">Tất cả thể loại</a><span>|</span>
+            <a href="#" class="item-a ">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
             <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
@@ -186,44 +186,69 @@
             <a href="#" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
-    <!--------------------- MAIN ----------------------->
-    <div class="main">
-        <!--------------------- SLIDE ----------------------->
-        <div class="slide">
-            <div class="container">
-                <img src="./assets/img/slide/0.jpg" alt="slide" id="slide-img" />
-                <img src="./assets/img/arrow-left.svg" alt="" class="icon-arrow left" onclick="SwitchSlide(-1)"/>
-                <img src="./assets/img/arrow-right.svg" alt="" class="icon-arrow right" onclick="SwitchSlide(1)">
-                <div class="dot-container">
-                    <img    src="./assets/img/dot1.svg" 
-                            alt="dot" 
-                            class="icon-dot"
-                            onclick="SwitchIndexSlide(0)">
-                    <img    src="./assets/img/dot.svg" 
-                            alt="dot" 
-                            class="icon-dot"
-                            onclick="SwitchIndexSlide(1)">
-                    <img    src="./assets/img/dot.svg" 
-                            alt="dot" 
-                            class="icon-dot"
-                            onclick="SwitchIndexSlide(2)">
-                    <img    src="./assets/img/dot.svg" 
-                            alt="dot" 
-                            class="icon-dot"
-                            onclick="SwitchIndexSlide(3)">
-                </div>
+
+    <!--------------------- This Change Infomation ----------------------->
+    <div class="info">
+        <div class="container container-left">
+            <div class="my-between item-account">
+                <img src="./assets/img/account-info.svg" alt="icon-account" class="icon-account">
+                <span class="header-name">Lê Mạnh Cường</span>
+            </div>
+            <hr class="mt-5">
+            <div class="my-left mt-17 item active">
+                <img src="./assets/img/info.svg" alt="info-icon" class="icon-small">
+                <span class="item-text">Thông tin tài khoản</span>
+            </div>
+            <div class="my-left mt-17 item">
+                <img src="./assets/img/order.svg" alt="info-icon" class="icon-small">
+                <span class="item-text">Quản lý đơn hàng</span>
+            </div>
+            <div class="my-left mt-17 item">
+                <img src="./assets/img/password.svg" alt="info-icon" class="icon-small">
+                <span class="item-text">Đổi mật khẩu</span>
+            </div>
+            <div class="my-left mt-17 item">
+                <img src="./assets/img/logout.svg" alt="info-icon" class="icon-small">
+                <span class="item-text">Đăng xuất</span>
             </div>
         </div>
-        <!--------------------- NAV PAGE ----------------------->
-        <div class="nav-page">
-            <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
-            <a href="#" class="item isactive">1</a>
-            <a href="#" class="item">2</a>
-            <a href="#" class="item">3</a>
-            <a href="#" class="item">4</a>
-            <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
+
+        <div class="container container-right">
+            <div class="my-center">
+                <div class="header">Thông tin tài khoản</div>
+            </div>
+            <div class="my-left mt-17">
+                <label class="item-text" for="inp-name">Họ tên</label>
+                <input type="text" placeholder="Nhập tên của bạn" id="inp-name" class="text-box">
+            </div>
+            <div class="my-left mt-17">
+                <label class="item-text">Giới tính</label>
+                <div class="my-left">
+                    <label for="inp-nam" class="mr-5">Nam</label>
+                    <input type="radio" id="inp-nam" name="gender-ifo" checked class="mr-20 rd">
+                    <label for="inp-nu" class="mr-5">Nữ</label>
+                    <input type="radio" id="inp-nu" name="gender-ifo" class="rd">
+                </div>
+            </div>
+            <div class="my-left mt-17">
+                <label class="item-text" for="inp-phone">Số điện thoại</label>
+                <input type="text" placeholder="Nhập số điện thoại của bạn" id="inp-phone" class="text-box">
+            </div>
+            <div class="my-left mt-17">
+                <label class="item-text" for="inp-email">Email</label>
+                <input type="text" id="inp-email" readonly class="text-box" value="cuongmanhle29092005@gmail.com">
+            </div>
+            <div class="my-left mt-17">
+                <label class="item-text" for="inp-birth">Ngày sinh</label>
+                <input type="date" name="" id="inp-birth" class="text-box">
+            </div>
+            <div class="my-center mt-20">
+                <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">Lưu thông tin</button>
+            </div>
         </div>
     </div>
+
+    
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
         <div class="footer_word">
@@ -267,11 +292,6 @@
 
     </div>
     <script src="./assets/js/index.js"></script>
-    <script>
-        var inTerValSlide = setInterval(() => {
-            GoToSlide((indexSlide + 1 + numSlide) % numSlide)
-        }, 3000)
-    </script>
 </body>
 
 </html>

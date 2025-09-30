@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="item">
-                        <button>Đăng ký</button>
+                        <button id="btn-signup">Đăng ký</button>
                     </div>
 
                     <div class="item align-center">
@@ -150,7 +150,9 @@
             <a href="#">
                 <div class="item item-cart">
                     <p class="p-cart"><img src="./assets/img/cart.png" alt="Card-icon"></p>
-                    <p>Giỏ hàng</p>
+                    <div>
+                        <p>Giỏ hàng</p>
+                    </div>
                 </div>
             </a>
 
@@ -267,6 +269,11 @@
 
     </div>
     <script src="./assets/js/index.js"></script>
+    <script>
+        var inTerValSlide = setInterval(() => {
+            GoToSlide((indexSlide + 1 + numSlide) % numSlide)
+        }, 3000)
+    </script>
 </body>
 
 </html>

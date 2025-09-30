@@ -7,6 +7,7 @@
     <title>Dashboard - ART SGU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -46,7 +47,7 @@
                         <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
                         <span>Quản lý tác giả</span>
                     </a>
-                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
                     </a>
@@ -111,10 +112,359 @@
                 </div>
             </header>
             <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Quản lý sản phẩm</h1>
+                        <p style="font-size:1rem;">Tất cả sản phẩm của bạn</p>
+                    </div>
+                    <div class="nhap-xuat-add">
+                        <div class="excel">
+                            <button class="btn-excel-import">
+                                <i class="fa-solid fa-upload"></i> Nhập Excel
+                                <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
+                            </button>
+                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                                <i class="fa-solid fa-download"></i> Xuất Excel
+                            </button>
+                        </div>
+                        <button class="button-add-art" id="openModalAddProduct">
+                            <i class="fa-solid fa-plus"></i> Thêm sản phẩm
+                        </button>
+                        <!-- modal thêm sản phẩm -->
+                        <div id="modalAddProduct" class="modal-add-product">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="modal-title">Thêm Tranh mới</span>
+                                    <span class="modal-close" id="closeModalAddProduct">&times;</span>
+                                </div>
+                                <div class="modal-product-body">
+                                    <div class="modal-product-image">
+                                        <div class="image-preview" id="imagePreview">Chưa tải ảnh lên</div>
+                                        <button type="button" class="btn-upload-image"
+                                            onclick="document.getElementById('productImage').click()">
+                                            <i class="fa-solid fa-upload"></i> Tải hình ảnh
+                                        </button>
+                                        <input type="file" id="productImage" accept="image/*" style="display:none;">
+                                    </div>
+                                    <form class="modal-product-form" id="addProductForm">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="productName">Tên tranh</label>
+                                                <input type="text" id="productName" placeholder="Nhập tên tranh..."
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="category">Danh mục</label>
+                                                <select id="category" required>
+                                                    <option value="">Chọn danh mục tranh</option>
+                                                    <option value="Tranh sơn dầu">Tranh sơn dầu</option>
+                                                    <option value="Tranh phong cảnh">Tranh phong cảnh</option>
+                                                    <option value="Tranh chân dung">Tranh chân dung</option>
+                                                    <option value="Tranh trừu tượng">Tranh trừu tượng</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="author">Tác giả</label>
+                                                <input type="text" id="productPrice" placeholder="Nhập tên họa sĩ"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="productSellPrice">Giá bán</label>
+                                                <input type="number" id="productSellPrice"
+                                                    placeholder="Nhập giá bán (VNĐ)" min="0" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="productSize">Kích thước</label>
+                                                <input type="text" id="productStock"
+                                                    placeholder="Nhập kích thước tranh(dài X rộng)" min="0" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="productStatus">Trạng thái</label>
+                                                <select id="productStatus">
+                                                    <option value="Hoạt động">Hoạt động</option>
+                                                    <option value="Đang khóa">Khóa sản phẩm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group" style="flex:1;">
+                                                <label for="description">Mô tả</label>
+                                                <textarea id="description" rows="2"
+                                                    placeholder="Nhập mô tả tranh..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-actions">
+                                            <button type="button" class="btn-modal-save" id="confirmModalAddProduct">Xác
+                                                nhận</button>
+                                            <button type="button" class="btn-modal-cancel"
+                                                id="cancelModalAddProduct">Hủy</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal sửa sản phẩm  -->
+                        <div id="modalEditProduct" class="modal-add-product">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="modal-title">Sửa sản phẩm</span>
+                                    <span class="modal-close" id="closeModalAddProduct">&times;</span>
+                                </div>
+                                <div class="modal-product-body">
+                                    <div class="modal-product-image">
+                                        <div class="image-preview" id="imagePreview">
+                                            <img src="../assets/img/logo.png" alt="Hình ảnh tranh"
+                                                style="width:180px;height:180px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                                        </div>
+                                    </div>
+                                    <form class="modal-product-form" id="editProductForm">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="editProductName">Tên tranh</label>
+                                                <input type="text" id="editProductName" value="Tranh phong cảnh mùa thu"
+                                                    placeholder="Nhập tên tranh..." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="editCategory">Danh mục</label>
+                                                <select id="editCategory" required>
+                                                    <option value="">Chọn danh mục tranh</option>
+                                                    <option value="Tranh sơn dầu">Tranh sơn dầu</option>
+                                                    <option value="Tranh phong cảnh" selected>Tranh phong cảnh</option>
+                                                    <option value="Tranh chân dung">Tranh chân dung</option>
+                                                    <option value="Tranh trừu tượng">Tranh trừu tượng</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                    <label for="editArtistName">Tên họa sĩ</label>
+                                                    <input type="text" id="editArtistName" value="Nguyễn Văn A"
+                                                        placeholder="Nhập tên họa sĩ..." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="editProductSellPrice">Giá bán</label>
+                                                <input type="number" id="editProductSellPrice" value="800000"
+                                                    placeholder="Nhập giá bán (VNĐ)" min="0" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="editProductSize">Kích thước</label>
+                                                <input type="text" id="editProductSize" value="60x80cm"
+                                                    placeholder="Nhập kích thước tranh(dài X rộng)" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="editProductStatus">Trạng thái</label>
+                                                <select id="editProductStatus">
+                                                    <option value="Hoạt động" selected>Hoạt động</option>
+                                                    <option value="Đang khóa">Khóa sản phẩm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group" style="flex:1;">
+                                                <label for="editDescription">Mô tả</label>
+                                                <textarea id="editDescription" rows="2"
+                                                    placeholder="Nhập mô tả tranh...">Tranh phong cảnh mùa thu với gam màu vàng ấm áp, thích hợp trang trí phòng khách.</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-actions">
+                                            <button type="button" class="btn-modal-save"
+                                                id="confirmModalEditProduct">Xác nhận</button>
+                                            <button type="button" class="btn-modal-cancel"
+                                                id="cancelModalEditProduct">Hủy</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bo-thong-ke" style="display:flex; gap: 20px;">
+                    <div class="box-thong-ke total-product">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng sản phẩm
+                            </div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">5</div>
+                        </div>
+                        <div
+                            style="background:#eaf3ff;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid fa-box" style="font-size:20px;color:#5a67ba;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke selling-product"
+                        style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Hoạt động</div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">4</div>
+                        </div>
+                        <div
+                            style="background:#eafff2;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid fa-box" style="font-size:20px;color:#009e60;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke low-stock"
+                        style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Sắp hết hàng
+                            </div>
+                            <div style="font-size:22px;font-weight:700;color:#e74c3c;">1</div>
+                        </div>
+                        <div
+                            style="background:#ffeaea;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid fa-triangle-exclamation" style="font-size:20px;color:#e74c3c;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke total-stock"
+                        style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
+                        <div style="flex:1;">
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng tồn kho
+                            </div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">850</div>
+                        </div>
+                        <div
+                            style="background:#f3eaff;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid fa-box" style="font-size:20px;color:#8759b2;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bo-loc-item">
+                    <div class="filter-bar">
+                        <div class="filter-search">
+                            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="filter-buttons">
+                            <select class="filter-status" name="" id="categorySelect">
+                                <option value="0">Trạng thái</option>
+                                <option value="">Hoạt động</option>
+                                <option value="">Đang khóa</option>
+                                <option value="">Sắp hết hàng</option>
+                            </select>
+                            <div class="gia-tang-giam" style="display: flex;">
+                                <div class="icon"><i class="fa-solid fa-arrow-up-wide-short fs-5 "></i></div>
+                                <div class="icon"><i class="fa-solid fa-arrow-down-wide-short fs-5 "></i></div>
+                                <span>Giá bán :</span>
+                                <input type="text">_<input type="text">
+                            </div>
+
+                            <button class="filter-btn active">Làm mới</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-art">
+                    <table class="art-table">
+                        <thead>
+                            <th>Mã</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá nhập</th>
+                            <th>Giá bán</th>
+                            <th>Tồn kho</th>
+                            <th>Trạng thái</th>
+                            <th>Tùy chỉnh</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>123</td>
+                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>Tranh phong cảnh</td>
+                                <td>500,000₫</td>
+                                <td>800,000₫</td>
+                                <td>12</td>
+                                <td><span class="status-selling">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn-edit" id="openModalEditProduct"><i
+                                            class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>123</td>
+                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>Tranh phong cảnh</td>
+                                <td>500,000₫</td>
+                                <td>800,000₫</td>
+                                <td>12</td>
+                                <td><span class="status-selling">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>123</td>
+                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>Tranh phong cảnh</td>
+                                <td>500,000₫</td>
+                                <td>800,000₫</td>
+                                <td>12</td>
+                                <td><span class="status-selling warring">Sắp hết</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>123</td>
+                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>Tranh phong cảnh</td>
+                                <td>500,000₫</td>
+                                <td>800,000₫</td>
+                                <td>12</td>
+                                <td><span class="status-selling block">Đang khóa</span></td>
+                                <td>
+                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+
+                        <ul class="pagination-list">
+                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
+                            </li>
+                            <li class="pagination-item active"><span>1</span></li>
+                            <li class="pagination-item"><span>2</span></li>
+                            <li class="pagination-item"><span>3</span></li>
+                            <li class="pagination-item"><span>...</span></li>
+                            <li class="pagination-item"><span>10</span></li>
+                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
             </main>
+        </div>
+        <!-- modal xác nhận xóa sản phẩm -->
+        <div id="modalDeleteProduct" class="modal-add-product">
+            <div class="modal-content" style="max-width:400px;">
+                <div class="modal-header">
+                    <span class="modal-title">Xác nhận xóa sản phẩm</span>
+                    <span class="modal-close" id="closeModalDeleteProduct">&times;</span>
+                </div>
+                <div style="padding:32px 24px 16px 24px;text-align:center;">
+                    <i class="fa-solid fa-triangle-exclamation"
+                        style="font-size:40px;color:#e74c3c;margin-bottom:16px;"></i>
+                    <div style="font-size:17px;font-weight:500;margin-bottom:12px;">Bạn có chắc chắn muốn xóa sản phẩm
+                        này?</div>
+                    <div style="color:#7f8c8d;font-size:14px;margin-bottom:24px;">Thao tác này không thể hoàn tác.</div>
+                    <div style="display:flex;justify-content:center;gap:18px;">
+                        <button type="button" class="btn-modal-save" id="confirmDeleteProduct">Xác nhận</button>
+                        <button type="button" class="btn-modal-cancel" id="cancelDeleteProduct">Hủy</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 <script src="../assets/js/account-admin.js"></script>
+<script src="../assets/js/manager-art.js"></script>
 
 </html>
