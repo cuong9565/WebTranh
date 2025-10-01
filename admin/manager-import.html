@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - ART SGU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/manager-import.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <aside class="sidebar" aria-label="Sidebar navigation">
+            <a href="dashboard.html" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-1">
+                        <span class="text-center">G</span>
+                        <div class="oval"></div>
+                    </div>
+                    <span class="art-sgu">ART SGU</span>
+                </div>
+            </a>
+
+            <nav class="menu" aria-label="Main menu">
+                <span class="menu-2">MENU</span>
+                <div class="menu-buttons">
+                    <a href="dashboard.html" class="menu-item dashboard " aria-label="Tổng quan">
+                        <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Tổng quan</span>
+                    </a>
+                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                        <span class="icon"><i class="fa-solid fa-box"></i></span>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="manager-order.html" class="menu-item manage " aria-label="Quản lý đơn hàng">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="manager-user.html" class="menu-item review " aria-label="Quản lý tài khoản">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
+                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
+                        <span>Quản lý tác giả</span>
+                    </a>
+                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                        <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
+                        <span class="icon"><i class="fa-solid fa-image"></i></span>
+                        <span>Quản lý banner</span>
+                    </a>
+                    <a href="quan-ly-banner.html" class="menu-item review-b active" aria-label="Quản lý banner">
+                        <span class="icon"><i class="fa-solid fa-image"></i></span>
+                        <span>Quản lý nhập hàng</span>
+                    </a>
+                </div>
+                <span class="others">OTHERS</span>
+                <div class="menu-buttons">
+                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="input-search" role="search">
+                    <input type="search" placeholder="Search" aria-label="Search" />
+                    <div class="icon search-icon"></div>
+                </div>
+                <div class="user-info" id="userInfo">
+                    <img src="../assets/img/image.png" alt="Avatar">
+                    <div class="name-role">
+                        <span class="merchant-name">Xuân Huấn</span>
+                        <span>Quản trị viên</span>
+                    </div>
+                    <div class="chevron-down">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="option-account-admin">
+                        <div id="adminDropdown">
+                            <div class="dropdown-header">
+                                <img src="../assets/img/image.png" alt="Avatar">
+                                <div class="dropdown-user-info">
+                                    <span>Xuân Huấn</span>
+                                    <span>admin@artvietnam.com</span>
+                                    <span>Quản trị viên</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i> Hồ sơ cá nhân
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+                                </a>
+                                <a href="dang-xuat.html">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Quản lý phiếu nhập</h1>
+                        <p class="page-description">Quản lý nhập kho thuận tiện </p>
+                    </div>
+                    <div class="nhap-xuat-add">
+                        <div class="excel">
+                            <button class="btn-excel-import">
+                                <i class="fa-solid fa-upload"></i> Nhập Excel
+                                <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
+                            </button>
+                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                                <i class="fa-solid fa-download"></i> Xuất Excel
+                            </button>
+                        </div>
+                        <button class="button-add-art" id="openModalAddProduct">
+                            <i class="fa-solid fa-plus"></i> Thêm phiếu nhập
+                        </button>
+                        <!-- modal thêm sản phẩm -->
+                    </div>
+                </div>
+                <div class="bo-thong-ke">
+                    <div class="box-thong-ke total-import">
+                        <div style="flex:1;">
+                            <div class="stat-title">Tổng phiếu nhập</div>
+                            <div class="stat-value">156</div>
+                            <div style="color:#16a34a;font-size:1rem;margin-top:2px;">+12%</div>
+                        </div>
+                        <div class="icon-bg icon-bg-blue">
+                            <i class="fa-solid fa-file-invoice" style="font-size:20px;color:#5a67ba;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke import-value">
+                        <div style="flex:1;">
+                            <div class="stat-title">Giá trị nhập hàng</div>
+                            <div class="stat-value">485M</div>
+                            <div style="color:#16a34a;font-size:1rem;margin-top:2px;">+8.2%</div>
+                        </div>
+                        <div class="icon-bg icon-bg-green">
+                            <i class="fa-solid fa-dollar-sign" style="font-size:20px;color:#009e60;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke supplier-count">
+                        <div style="flex:1;">
+                            <div class="stat-title">Số nhà cung cấp</div>
+                            <div class="stat-value">24</div>
+                            <div style="color:#16a34a;font-size:1rem;margin-top:2px;">+3</div>
+                        </div>
+                        <div class="icon-bg icon-bg-purple">
+                            <i class="fa-solid fa-building" style="font-size:20px;color:#8759b2;"></i>
+                        </div>
+                    </div>
+                    <div class="box-thong-ke import-product">
+                        <div style="flex:1;">
+                            <div class="stat-title">Sản phẩm nhập về</div>
+                            <div class="stat-value">1,248</div>
+                            <div style="color:#16a34a;font-size:1rem;margin-top:2px;">+156</div>
+                        </div>
+                        <div class="icon-bg icon-bg-orange">
+                            <i class="fa-solid fa-box" style="font-size:20px;color:#ff7f2a;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bo-loc-item">
+                    <div class="filter-bar">
+                        <div class="filter-search">
+                            <input type="text" placeholder="Nhập mã hoặc khoảng tiền ..." />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="filter-buttons">
+                            <select class="filter-status" name="" id="categorySelect">
+                                <option value="0">Đơn giá</option>
+                                <option value="">Trên 100M</option>
+                                <option value="">Trên 30M</option>
+                                <option value="">Dưới 30M</option>
+                            </select>
+                            <input type="date">
+                            <button class="filter-btn active">Làm mới</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-art">
+                    <table class="art-table">
+                        <thead>
+                            <th>Mã phiếu</th>
+                            <th>Nhà cung cấp</th>
+                            <th>Ngày nhập</th>
+                            <th>Số mặt hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PN001</td>
+                                <td>Công ty TNHH Nguyên liệu </td>
+                                <td>2024-01-15</td>
+                                <td>12 sản phẩm</td>
+                                <td>₫15.750.000</td>
+                                <td>
+                                    <span class="status-completed">
+                                        <i class="fa-regular fa-circle-check status-icon"></i> Hoàn thành
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn-view" onclick="openViewModal('PN001')"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="openEditModal('PN001')"><i
+                                            class="fa-regular fa-pen-to-square"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PN002</td>
+                                <td>Nhà cung cấp mỹ phẩm Organic</td>
+                                <td>2024-01-18</td>
+                                <td>8 sản phẩm</td>
+                                <td>₫8.900.000</td>
+                                <td>
+                                    <span class="status-pending">
+                                        <i class="fa-regular fa-clock status-icon"></i> Chờ xử lý
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn-view" onclick="openViewModal('PN002')"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="openEditModal('PN002')"><i
+                                            class="fa-regular fa-pen-to-square"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PN003</td>
+                                <td>Công ty CP Dược phẩm tự nhiên</td>
+                                <td>2024-01-20</td>
+                                <td>15 sản phẩm</td>
+                                <td>₫12.400.000</td>
+                                <td>
+                                    <span class="status-pending">
+                                        <i class="fa-regular fa-clock status-icon"></i> Chờ xử lý
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn-view" onclick="openViewModal('PN003')"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="openEditModal('PN003')"><i
+                                            class="fa-regular fa-pen-to-square"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <ul class="pagination-list">
+                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
+                            </li>
+                            <li class="pagination-item active"><span>1</span></li>
+                            <li class="pagination-item"><span>2</span></li>
+                            <li class="pagination-item"><span>3</span></li>
+                            <li class="pagination-item"><span>...</span></li>
+                            <li class="pagination-item"><span>10</span></li>
+                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal thêm phiếu nhập -->
+                <div id="modalAddImport" class="modal-add-import">
+                    <div class="modal-content-import">
+                        <div class="modal-header-import">
+                            <div class="modal-header-content">
+                                <h2 class="modal-title">Tạo phiếu nhập hàng mới</h2>
+                                <span id="closeModalAddImport" class="close-modal">&times;</span>
+                            </div>
+                            <form id="formAddImport">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Nhà cung cấp</label>
+                                        <select id="importSupplier" required>
+                                            <option value="">Chọn nhà cung cấp</option>
+                                            <option value="Công ty TNHH Nguyên liệu thiên nhiên">Công ty TNHH Nguyên
+                                                liệu thiên nhiên</option>
+                                            <option value="Nhà cung cấp mỹ phẩm Organic">Nhà cung cấp mỹ phẩm
+                                                Organic</option>
+                                            <option value="Công ty CP Dược phẩm tự nhiên">Công ty CP Dược phẩm tự
+                                                nhiên</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Ngày nhập hàng</label>
+                                        <input id="importDate" type="date" required />
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="product-list-title">Danh sách sản phẩm</div>
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>SẢN PHẨM</th>
+                                        <th>SỐ LƯỢNG</th>
+                                        <th>ĐƠN GIÁ</th>
+                                        <th>THÀNH TIỀN</th>
+                                        <th>THAO TÁC</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="importProductRows">
+                                    <!-- Các dòng sản phẩm sẽ được thêm ở đây -->
+                                </tbody>
+                            </table>
+                            <button type="button" id="btnAddProductRow" class="btn-add-product">
+                                <i class="fa-solid fa-plus"></i> Thêm sản phẩm
+                            </button>
+
+                            <div class="total-section">
+                                Tổng cộng: <span id="importTotal" class="total-amount">₫0</span>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" id="cancelAddImport" class="btn-cancel">
+                                    Hủy
+                                </button>
+                                <button type="submit" class="btn-submit">
+                                    Tạo phiếu nhập
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal sửa phiếu nhập -->
+                <div id="modalEditImport" class="modal-edit-import">
+                    <div class="modal-content-import">
+                        <div class="modal-header-import">
+                            <div class="modal-header-content">
+                                <h2 class="modal-title">Sửa phiếu nhập hàng</h2>
+                                <span id="closeModalEditImport" class="close-modal">&times;</span>
+                            </div>
+                            <form id="formEditImport">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Mã phiếu nhập</label>
+                                        <input id="editImportCode" type="text" readonly class="readonly-input" />
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Nhà cung cấp</label>
+                                        <select id="editImportSupplier" required>
+                                            <option value="">Chọn nhà cung cấp</option>
+                                            <option value="Công ty TNHH Nguyên liệu thiên nhiên">Công ty TNHH Nguyên
+                                                liệu thiên nhiên</option>
+                                            <option value="Nhà cung cấp mỹ phẩm Organic">Nhà cung cấp mỹ phẩm
+                                                Organic</option>
+                                            <option value="Công ty CP Dược phẩm tự nhiên">Công ty CP Dược phẩm tự
+                                                nhiên</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Ngày nhập hàng</label>
+                                        <input id="editImportDate" type="date" required />
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="product-list-title">Danh sách sản phẩm</div>
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>SẢN PHẨM</th>
+                                        <th>SỐ LƯỢNG</th>
+                                        <th>ĐƠN GIÁ</th>
+                                        <th>THÀNH TIỀN</th>
+                                        <th>THAO TÁC</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="editProductRows">
+                                    <!-- Các dòng sản phẩm sẽ được thêm ở đây -->
+                                </tbody>
+                            </table>
+                            <button type="button" id="btnAddEditProductRow" class="btn-add-product">
+                                <i class="fa-solid fa-plus"></i> Thêm sản phẩm
+                            </button>
+
+                            <div class="total-section">
+                                Tổng cộng: <span id="editImportTotal" class="total-amount">₫0</span>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" id="cancelEditImport" class="btn-cancel">
+                                    Hủy
+                                </button>
+                                <button type="submit" class="btn-submit">
+                                    Cập nhật phiếu nhập
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal xem chi tiết phiếu nhập -->
+                <div id="modalViewImport" class="modal-edit-import">
+                    <div class="modal-content-import">
+                        <div class="modal-header-import">
+                            <div class="modal-header-content">
+                                <h2 class="modal-title">Chi tiết phiếu nhập hàng</h2>
+                                <span id="closeModalViewImport" class="close-modal">&times;</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label>Mã phiếu nhập</label>
+                                    <input id="viewImportCode" type="text" readonly class="readonly-input" />
+                                </div>
+                                <div class="form-field">
+                                    <label>Nhà cung cấp</label>
+                                    <input id="viewImportSupplier" type="text" readonly class="readonly-input" />
+                                </div>
+                                <div class="form-field">
+                                    <label>Ngày nhập hàng</label>
+                                    <input id="viewImportDate" type="text" readonly class="readonly-input" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="product-list-title">Danh sách sản phẩm</div>
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>SẢN PHẨM</th>
+                                        <th>SỐ LƯỢNG</th>
+                                        <th>ĐƠN GIÁ</th>
+                                        <th>THÀNH TIỀN</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="viewProductRows">
+                                    <!-- Các dòng sản phẩm sẽ được thêm ở đây -->
+                                </tbody>
+                            </table>
+
+                            <div class="total-section">
+                                Tổng cộng: <span id="viewImportTotal" class="total-amount">₫0</span>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" id="closeViewImport" class="btn-cancel">
+                                    Đóng
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/manager-import.js"></script>
+    <script src="../assets/js/account-admin.js"></script>
+</body>
+
+</html>
