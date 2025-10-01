@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Art Store</title>
 </head>
@@ -13,8 +14,7 @@
     <!-- This element to alert -->
     <div class="container-alert"></div>
     <!-- This element to cover all page -->
-    <div class="pop-up">
-    </div>
+    <div class="pop-up"></div>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
@@ -47,11 +47,10 @@
 
         </div>
     </div>
-    
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#" class="item-a isactive">Tất cả thể loại</a><span>|</span>
+            <a href="#" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
             <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
@@ -66,66 +65,62 @@
             <a href="#" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
+    <!--------------------- Cart Page ----------------------->
+    <div class="cart-page my-center">
+        <div class="container">
+            <table class="table">
+                <tr class="box header-box">
+                    <th class="item">Hình ảnh</th>
+                    <th class="item">Tên sản phẩm</th>
+                    <th class="item">Loại sản phẩm</th>
+                    <th class="item">Đơn giá</th>
+                    <th class="item">Số lượng</th>
+                    <th class="item">Số tiền</th>
+                    <th class="item">Thao tác</th>
+                </tr>
+                <tr class="box child-box">
+                    <td class="item">
+                        <img class="w-100" src="./assets/img/truu-tuong/1.jpg" alt="pic1">
+                    </td>
+                    <td class="item">Ồ, nắng!</td>
+                    <td class="item">Tranh trừu tượng</td>
+                    <td class="item">15.000.000đ</td>
+                    <td class="item num-item">
+                        <button class="btn"><img class="w-" src="./assets/img/minus.svg" alt="Giảm"></button>
+                        <input type="text" class="text-box number" value="2">
+                        <button class="btn"><img class="w-" src="./assets/img/plus.svg" alt="Tăng"></button>
+                    </td>
+                    <td class="item">30.000.000đ</td>
+                    <td class="item">
+                        <button class="btn">Xóa</button>
+                    </td>
+                </tr>
+                <tr class="box child-box">
+                    <td class="item">
+                        <img class="w-100" src="./assets/img/son-dau/2.jpg" alt="pic1">
+                    </td>
+                    <td class="item">Phố cổ Hà Nội</td>
+                    <td class="item">Tranh sơn dầu</td>
+                    <td class="item">13.000.000đ</td>
+                    <td class="item num-item">
+                        <button class="btn"><img class="w-" src="./assets/img/minus.svg" alt="Giảm"></button>
+                        <input type="text" class="text-box number" value="1">
+                        <button class="btn"><img class="w-" src="./assets/img/plus.svg" alt="Tăng"></button>
+                    </td>
+                    <td class="item">13.000.000đ</td>
+                    <td class="item">
+                        <button class="btn">Xóa</button>
+                    </td>
+                </tr>
+            </table>
 
-    <!--------------------- MAIN ----------------------->
-    <div class="main">
-        <!--------------------- SLIDE ----------------------->
-        <div class="slide">
-            <div class="container">
-                <img src="./assets/img/slide/0.jpg" alt="slide" id="slide-img" />
-                <img src="./assets/img/arrow-left.svg" alt="" class="icon-arrow left" onclick="SwitchSlide(-1)" />
-                <img src="./assets/img/arrow-right.svg" alt="" class="icon-arrow right" onclick="SwitchSlide(1)">
-                <div class="dot-container">
-                    <img src="./assets/img/dot1.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(0)">
-                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(1)">
-                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(2)">
-                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(3)">
-                </div>
+            <div class="item-total">
+                <span>Thành tiền: </span>
+                <span>43.000.000đ</span>
+                <button class="btn-total">Mua hàng</button>
             </div>
-        </div>
-
-        <!--------------------- Card ----------------------->
-        <div class="bottom">
-            <p class="test-bottom">Tất cả thể loại</p>
-            <div class="gallery">
-                <div class="picture-wrapper">
-                    <img src="./assets/img/picture3.jpg" class="picture">
-                    <h1>TRANH TRỪU TƯỢNG</h1>
-                    <h2>Đêm Pisa</h2>
-                    <h3>1,200,000 VND</h3>
-                </div>
-                <div class="picture-wrapper">
-                    <img src="./assets/img/picture4.jpg" class="picture">
-                    <h1>TRANH PHONG CẢNH</h1>
-                    <h2 class="picture-caption">Phố Ánh Nắng</h2>
-                    <h3>850,000 VND</h3>
-                </div>
-                <div class="picture-wrapper">
-                    <img src="./assets/img/picture6.jpg" class="picture">
-                    <h1>TRANH TĨNH VẬT</h1>
-                    <h2>Cửa Sổ Chanh Biển</h2>
-                    <h3>900,000 VND</h3>
-                </div>
-                <div class="picture-wrapper">
-                    <img src="./assets/img/picture7.jpg" class="picture">
-                    <h1>TRANH KIẾN TRÚC</h1>
-                    <h2>Cửa Sổ Santorini</h2>
-                    <h3>1,100,000 VND</h3>
-                </div>
-            </div>
-        </div>
-
-        <!--------------------- NAV PAGE ----------------------->
-        <div class="nav-page">
-            <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
-            <a href="#" class="item isactive">1</a>
-            <a href="#" class="item">2</a>
-            <a href="#" class="item">3</a>
-            <a href="#" class="item">4</a>
-            <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
         </div>
     </div>
-
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
         <div class="footer_word">
@@ -140,7 +135,7 @@
         <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
-
+        
         <div class="container-center">
             <hr class="footer_line">
         </div>
@@ -166,12 +161,9 @@
             </div>
         </div>
     </div>
-
-        <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/cart.js"></script>
     <script>
-        var inTerValSlide = setInterval(() => {
-            GoToSlide((indexSlide + 1 + numSlide) % numSlide)
-        }, 3000)
+        
     </script>
 </body>
 
