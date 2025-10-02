@@ -50,12 +50,13 @@
 }
 
 .box-thong-ke .stat-value {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     color: #273240;
 }
 
 .box-thong-ke .stat-value.red {
+    
     color: #e74c3c;
 }
 
@@ -129,7 +130,7 @@
 .product-table th {
     background: #f8fafc;
     padding: 12px 8px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -137,6 +138,7 @@
 .product-table td {
     padding: 12px 8px;
     border-bottom: 1px solid #f0f0f0;
+    text-align: center;
 }
 
 .product-table tr:last-child td {

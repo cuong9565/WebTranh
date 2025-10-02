@@ -171,9 +171,8 @@
                                                     required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="productSellPrice">Giá bán</label>
-                                                <input type="number" id="productSellPrice"
-                                                    placeholder="Nhập giá bán (VNĐ)" min="0" required>
+                                                <label for="profitPercent">% Lợi nhuận</label>
+                                                <input type="number" id="profitPercent" placeholder="Nhập % lợi nhuận" min="0" max="100" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -198,8 +197,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-actions">
-                                            <button type="button" class="btn-modal-save" id="confirmModalAddProduct">Xác
-                                                nhận</button>
+                                            <button type="button" class="btn-modal-save" id="confirmModalAddProduct">Thêm</button>
                                             <button type="button" class="btn-modal-cancel"
                                                 id="cancelModalAddProduct">Hủy</button>
                                         </div>
@@ -246,9 +244,8 @@
                                                         placeholder="Nhập tên họa sĩ..." required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="editProductSellPrice">Giá bán</label>
-                                                <input type="number" id="editProductSellPrice" value="800000"
-                                                    placeholder="Nhập giá bán (VNĐ)" min="0" required>
+                                                <label for="editProfitPercent">% Lợi nhuận</label>
+                                                <input type="number" id="editProfitPercent" value="20" placeholder="Nhập % lợi nhuận" min="0" max="100" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -455,8 +452,8 @@
                         này?</div>
                     <div style="color:#7f8c8d;font-size:14px;margin-bottom:24px;">Thao tác này không thể hoàn tác.</div>
                     <div style="display:flex;justify-content:center;gap:18px;">
-                        <button type="button" class="btn-modal-save" id="confirmDeleteProduct">Xác nhận</button>
                         <button type="button" class="btn-modal-cancel" id="cancelDeleteProduct">Hủy</button>
+                        <button type="button" class="btn-modal-save" id="confirmDeleteProduct">Xác nhận</button>
                     </div>
                 </div>
             </div>

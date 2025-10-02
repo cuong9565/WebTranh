@@ -8,6 +8,7 @@ const openModalAddBtn = document.getElementById('openModalAddProduct');
 const modalAdd = document.getElementById('modalAddProduct');
 const closeModalAddBtn = document.getElementById('closeModalAddProduct');
 const cancelModalAddBtn = document.getElementById('cancelModalAddProduct');
+const closeConfirm = document.getElementById('closeModalDeleteProduct');
 const productImageInput = document.getElementById('productImage');
 const imagePreview = document.getElementById('imagePreview');
 const addProductForm = document.getElementById('addProductForm');
@@ -146,6 +147,9 @@ confirmDeleteBtn.addEventListener('click', function () {
     modalDelete.classList.remove('active');
 });
 cancelDeleteBtn.addEventListener('click', function () {
+    modalDelete.classList.remove('active');
+});
+closeConfirm.addEventListener('click', function () {
     modalDelete.classList.remove('active');
 });
 modalDelete.addEventListener('click', function (e) {
