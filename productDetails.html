@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/productDetails.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <title>Chi tiết sản phẩm - Art Store</title>
+</head>
+
+<body>
+    <!-- This element to alert -->
+    <div class="container-alert"></div>
+    <!-- This element to cover all page -->
+    <div class="pop-up">
+        <!-- Login -->
+        <div class="login-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
+                        onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
+                        id="close-white-login" onclick="ClosePopUp()">
+                </div>
+
+                <form class="form-container">
+                    <h1>Đăng nhập tài khoản</h1>
+
+                    <div class="item">
+                        <label for="email-login">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="email-login" placeholder="Nhập email của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="password-login">Mật khẩu <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-password-login" onclick="ShowPass('password-login')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-password-login hidden"
+                            onclick="HiddePass('password-login')">
+                        <input type="password" id="password-login" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+
+                    <div class="item center-item">
+                        <span>
+                            <input type="checkbox" id="remember-me-login">
+                            <label for="remember-me-login">Ghi nhớ đăng nhập</label>
+                        </span>
+                        <span>
+                            <a href="#" class="purple-link">Quên mật khẩu</a>
+                        </span>
+                    </div>
+
+                    <div class="item">
+                        <button id="btn-login">Đăng nhập</button>
+                    </div>
+
+                    <div class="item align-center">
+                        <label>Chưa có tài khoản? </label>
+                        <a onclick="ShowSignUpForm()" class="purple-link">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="signup-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup"
+                        onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
+                        id="close-white-signup" onclick="ClosePopUp()">
+                </div>
+
+                <form class="form-container">
+                    <h1>Đăng ký tài khoản</h1>
+
+                    <div class="item">
+                        <label for="user-signup">Họ và tên <span class="text-require">*</span></label>
+                        <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="user-signup" placeholder="Nhập họ tên của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="email-signup">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="email-signup" placeholder="Nhập email của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="new-password-signup">Mật khẩu mới <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-new-password-signup"
+                            onclick="ShowPass('new-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-new-password-signup hidden"
+                            onclick="HiddePass('new-password-signup')">
+                        <input type="password" id="new-password-signup" placeholder="Nhập mật khẩu mới">
+                    </div>
+
+                    <div class="item">
+                        <label for="confirm-password-signup">Xác nhận mật khẩu <span
+                                class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-confirm-password-signup"
+                            onclick="ShowPass('confirm-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-confirm-password-signup hidden"
+                            onclick="HiddePass('confirm-password-signup')">
+                        <input type="password" id="confirm-password-signup" placeholder="Nhập lại mật khẩu">
+                    </div>
+
+                    <div class="item center-item">
+                        <span>
+                            <input type="checkbox" id="legal-term-signup">
+                            <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất
+                                    cả các điều khoản</a>. *</label>
+                        </span>
+                    </div>
+
+                    <div class="item">
+                        <button id="btn-signup">Đăng ký</button>
+                    </div>
+
+                    <div class="item align-center">
+                        <label>Đã có tài khoản? </label>
+                        <a onclick="ShowLoginForm()" class="purple-link">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------- HEADER ----------------------->
+    <div class="header">
+        <div class="container container-logo">
+            <a href="index.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+        </div>
+        <div class="container container-search">
+            <input type="text" placeholder="Tìm kiếm sản phẩm">
+            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+        </div>
+        <div class="container container-cart">
+            <a href="#">
+                <div class="item item-cart">
+                    <p class="p-cart"><img src="./assets/img/cart.png" alt="Card-icon"></p>
+                    <div>
+                        <p>Giỏ hàng</p>
+                    </div>
+                </div>
+            </a>
+
+            <button class="item item-login" onclick="ShowLoginForm()">
+                <div>
+                    <p>Đăng nhập</p>
+                </div>
+            </button>
+            <button class="item item-signup" onclick="ShowSignUpForm()">
+                <div>
+                    <p>Đăng ký</p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!--------------------- NAV ----------------------->
+    <div class="nav">
+        <div class="item">
+            <a href="index.html" class="item-a">Tất cả thể loại</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh trừu tượng</a>
+        </div>
+    </div>
+
+    <!--------------------- MAIN ----------------------->
+    <div class="product-detail-container">
+        <div class="image-section">
+            <img id="mainImage" class="main-image" src="" alt="Ảnh sản phẩm">
+            <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button>
+
+            <!--==============CHỨC NĂNG ZOOM ẢNH==============-->
+            <!---
+        <div id="zoomModal" class="zoom-modal">
+            <span class="close" onclick="closeZoom()">&times;</span>
+            <img class="zoom-content" id="zoomedImage">
+
+            
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="zoomIn()">➕ Zoom In</button>
+                <button class="zoom-btn" onclick="zoomOut()">➖ Zoom Out</button>
+                <button class="zoom-btn" onclick="resetZoom()">🔄 Reset</button>
+            </div>
+        </div> -->
+        </div>
+
+        <!-- Phần thông tin -->
+        <div class="info-section">
+            <h1 id="productTitle" class="product-title"></h1>
+            <p id="productPrice" class="product-price"></p>
+            <p id="productMaterial" class="product-material"></p>
+            <p id="productSize" class="product-size"></p>
+
+            <div class="action-buttons">
+                <button class="btn btn-cart">THÊM VÀO GIỎ</button>
+                <button class="btn btn-buy">MUA NGAY</button>
+            </div>
+
+            <div class="description" id="productDesc"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Đường line cách footer với mua hàng  -->
+    <div class="line"></div>
+
+    <!--------------------- FOOTER ----------------------->
+    <div class="footer">
+        <div class="footer_word">
+            <a href="index.html">Trang chủ</a> |
+            <a href="#">Dịch vụ</a> |
+            <a href="#">Liên hệ</a> |
+            <a href="#">Điều khoản</a> |
+            <a href="#">Chính sách bảo mật</a>
+        </div>
+
+        <a href="#"><img src="./assets/img/facebook.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
+
+        <div class="container-center">
+            <hr class="footer_line">
+        </div>
+
+        <div class="container-between">
+            <div class="item left">
+                <p class="word_left">© 2025 Art Store. All rights reserved.</p>
+            </div>
+
+            <div class="item right">
+                <div class="footer_row">
+                    <img src="./assets/img/address.png" class="footer_icon_bottom">
+                    <p>Địa chỉ: 123 Đường ABC, Phường XYZ, Quận 1, TP.HCM</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/telephone.png" class="footer_icon_bottom">
+                    <p>Điện thoại: (0123) 456-789</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/mail.png" class="footer_icon_bottom">
+                    <p>Email: theartstore2005@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/products.js"></script>
+    <script src="./assets/js/productDetails.js"></script>
+
+
+
+</body>
+
+</html>
