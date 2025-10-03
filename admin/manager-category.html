@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/manager-category.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -28,7 +31,7 @@
             <nav class="menu" aria-label="Main menu">
                 <span class="menu-2">MENU</span>
                 <div class="menu-buttons">
-                    <a href="dashboard.html" class="menu-item dashboard " aria-label="Tổng quan">
+                    <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
@@ -40,21 +43,22 @@
                         <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
                         <span>Quản lý đơn hàng</span>
                     </a>
-                    <a href="manager-user.html" class="menu-item review " aria-label="Quản lý tài khoản">
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
                         <span>Quản lý tài khoản</span>
                     </a>
-                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
-                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
-                        <span>Quản lý tác giả</span>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
+                    </a>
+
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
                     </a>
                     <a href="manager-category.html" class="menu-item review-7 active" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
-                    </a>
-                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
-                        <span class="icon"><i class="fa-solid fa-image"></i></span>
-                        <span>Quản lý banner</span>
                     </a>
                 </div>
                 <span class="others">OTHERS</span>
@@ -123,7 +127,7 @@
                         </div>
                         <button class="button-add-art" id="openModalAdd">
                             <i class="fa-solid fa-plus"></i> Thêm danh mục
-                        </button>             
+                        </button>
                     </div>
                 </div>
 
@@ -131,7 +135,8 @@
                     <div class="filter-bar">
                         <div class="filter-search">
                             <input type="text" placeholder="Nhập mã hoặc tên danh mục..." />
-                            <a href="manager-category.html" style="text-decoration: none;"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="manager-category.html" style="text-decoration: none;"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
                         <div class="filter-buttons">
 
@@ -159,10 +164,14 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm A</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -176,10 +185,14 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Tranh cầu vòng 7 sắc</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Tranh cầu vòng 7 sắc</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -193,10 +206,14 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm A</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -210,10 +227,14 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm A</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -227,10 +248,14 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm A</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -244,17 +269,21 @@
                                     <div class="btn-view-wrap" style="display:inline-block;position:relative;">
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png" alt=""><span>Sản phẩm D</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm A</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm B</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm C</span></div>
+                                            <div class="mini-product-item"><img src="../assets/img/image.png"
+                                                    alt=""><span>Sản phẩm D</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                     <div class="pagination">
+                    <div class="pagination">
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
@@ -266,7 +295,7 @@
                             <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
                         </ul>
                     </div>
-                  
+
                     <!-- Modal Thêm Danh Mục -->
                     <div id="modalAddCategory" class="modal-category">
                         <div class="modal-content-category">
@@ -318,7 +347,7 @@
                                 </div>
                                 <div class="modal-actions">
                                     <button type="button" id="cancelEditCategory" class="btn-cancel">Hủy</button>
-                                    <button type="submit" class="btn-confirm" >Lưu</button>
+                                    <button type="submit" class="btn-confirm">Lưu</button>
                                 </div>
                             </form>
                         </div>
