@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- This element to alert -->
+    <div class="container-alert"></div>
     <!-- This element to cover all page -->
     <div class="pop-up">
         <!-- Login -->
@@ -28,7 +30,7 @@
                     <div class="item">
                         <label for="email-login">Email <span class="text-require">*</span></label>
                         <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="email" id="email-login" required placeholder="Nhập email của bạn">
+                        <input type="text" id="email-login" placeholder="Nhập email của bạn">
                     </div>
 
                     <div class="item">
@@ -39,7 +41,7 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-password-login hidden"
                             onclick="HiddePass('password-login')">
-                        <input type="password" id="password-login" required placeholder="Nhập mật khẩu của bạn">
+                        <input type="password" id="password-login" placeholder="Nhập mật khẩu của bạn">
                     </div>
 
                     <div class="item center-item">
@@ -53,7 +55,7 @@
                     </div>
 
                     <div class="item">
-                        <button>Đăng nhập</button>
+                        <button id="btn-login">Đăng nhập</button>
                     </div>
 
                     <div class="item align-center">
@@ -78,15 +80,15 @@
                     <h1>Đăng ký tài khoản</h1>
 
                     <div class="item">
-                        <label for="user-signup">Tên tài khoản <span class="text-require">*</span></label>
+                        <label for="user-signup">Họ và tên <span class="text-require">*</span></label>
                         <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="text" id="user-signup" required placeholder="Nhập tên tài khoản của bạn">
+                        <input type="text" id="user-signup" placeholder="Nhập họ tên của bạn">
                     </div>
 
                     <div class="item">
                         <label for="email-signup">Email <span class="text-require">*</span></label>
                         <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="email" id="email-signup" required placeholder="Nhập email của bạn">
+                        <input type="text" id="email-signup" placeholder="Nhập email của bạn">
                     </div>
 
                     <div class="item">
@@ -98,7 +100,7 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-new-password-signup hidden"
                             onclick="HiddePass('new-password-signup')">
-                        <input type="password" id="new-password-signup" required placeholder="Nhập mật khẩu mới">
+                        <input type="password" id="new-password-signup" placeholder="Nhập mật khẩu mới">
                     </div>
 
                     <div class="item">
@@ -111,19 +113,19 @@
                         <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
                             class="small-icon right-icon opened-confirm-password-signup hidden"
                             onclick="HiddePass('confirm-password-signup')">
-                        <input type="password" id="confirm-password-signup" required placeholder="Nhập lại mật khẩu">
+                        <input type="password" id="confirm-password-signup" placeholder="Nhập lại mật khẩu">
                     </div>
 
                     <div class="item center-item">
                         <span>
-                            <input type="checkbox" id="legal-term-signup" required>
+                            <input type="checkbox" id="legal-term-signup">
                             <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất
                                     cả các điều khoản</a>. *</label>
                         </span>
                     </div>
 
                     <div class="item">
-                        <button>Đăng ký</button>
+                        <button id="btn-signup">Đăng ký</button>
                     </div>
 
                     <div class="item align-center">
@@ -148,7 +150,9 @@
             <a href="#">
                 <div class="item item-cart">
                     <p class="p-cart"><img src="./assets/img/cart.png" alt="Card-icon"></p>
-                    <p>Giỏ hàng</p>
+                    <div>
+                        <p>Giỏ hàng</p>
+                    </div>
                 </div>
             </a>
 
@@ -166,31 +170,87 @@
 
         </div>
     </div>
+    
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#">Tất cả thể loại</a><span>|</span>
+            <a href="#" class="item-a isactive">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#">Tranh sơn dầu</a><span>|</span>
+            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#">Tranh hoa</a><span>|</span>
+            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#">Tranh phong cảnh</a><span>|</span>
+            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#">Tranh trừu tượng</a>
+            <a href="#" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
+
     <!--------------------- MAIN ----------------------->
     <div class="main">
+        <!--------------------- SLIDE ----------------------->
+        <div class="slide">
+            <div class="container">
+                <img src="./assets/img/slide/0.jpg" alt="slide" id="slide-img" />
+                <img src="./assets/img/arrow-left.svg" alt="" class="icon-arrow left" onclick="SwitchSlide(-1)" />
+                <img src="./assets/img/arrow-right.svg" alt="" class="icon-arrow right" onclick="SwitchSlide(1)">
+                <div class="dot-container">
+                    <img src="./assets/img/dot1.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(0)">
+                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(1)">
+                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(2)">
+                    <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(3)">
+                </div>
+            </div>
+        </div>
 
+        <!--------------------- Card ----------------------->
+        <div class="bottom">
+            <p class="test-bottom">Tất cả thể loại</p>
+            <div class="gallery">
+                <div class="picture-wrapper">
+                    <img src="./assets/img/picture3.jpg" class="picture">
+                    <h1>TRANH TRỪU TƯỢNG</h1>
+                    <h2>Đêm Pisa</h2>
+                    <h3>1,200,000 VND</h3>
+                </div>
+                <div class="picture-wrapper">
+                    <img src="./assets/img/picture4.jpg" class="picture">
+                    <h1>TRANH PHONG CẢNH</h1>
+                    <h2 class="picture-caption">Phố Ánh Nắng</h2>
+                    <h3>850,000 VND</h3>
+                </div>
+                <div class="picture-wrapper">
+                    <img src="./assets/img/picture6.jpg" class="picture">
+                    <h1>TRANH TĨNH VẬT</h1>
+                    <h2>Cửa Sổ Chanh Biển</h2>
+                    <h3>900,000 VND</h3>
+                </div>
+                <div class="picture-wrapper">
+                    <img src="./assets/img/picture7.jpg" class="picture">
+                    <h1>TRANH KIẾN TRÚC</h1>
+                    <h2>Cửa Sổ Santorini</h2>
+                    <h3>1,100,000 VND</h3>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------- NAV PAGE ----------------------->
+        <div class="nav-page">
+            <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
+            <a href="#" class="item isactive">1</a>
+            <a href="#" class="item">2</a>
+            <a href="#" class="item">3</a>
+            <a href="#" class="item">4</a>
+            <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
+        </div>
     </div>
+
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
-        <!-- <img src="./assets/img/logo.png" alt="logo" class="logo_footer"> -->
         <div class="footer_word">
             <a href="#">Trang chủ</a> |
             <a href="#">Dịch vụ</a> |
@@ -203,7 +263,7 @@
         <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
-        
+
         <div class="container-center">
             <hr class="footer_line">
         </div>
@@ -228,10 +288,14 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+
     <script src="./assets/js/index.js"></script>
+    <script>
+        var inTerValSlide = setInterval(() => {
+            GoToSlide((indexSlide + 1 + numSlide) % numSlide)
+        }, 3000)
+    </script>
 </body>
 
 </html>

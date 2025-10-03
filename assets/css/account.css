@@ -1,0 +1,97 @@
+.info{
+    /* min-height: 60vh; */
+    width: 100%;
+    padding: 25px;
+    background-color: #ececec;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.info .container{
+    background-color: #fff;
+    padding: 5px 25px 20px 25px;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.info .header{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.info .header-name{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.info .item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.info input{
+    text-align: left;
+    display: inline-block;
+}
+
+.info .icon-small{
+    width: 25px;
+    margin-right: 15px;
+}
+
+.info .item{
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.info .active{
+    background-color: #5555554c;
+}
+.info .item:hover{
+    background-color: #5555552b;
+}
+.info .item:active{
+    background-color: rgba(85, 85, 85, 0.13);
+}
+
+.info .container-left{
+    width: 300px;
+}
+
+.info .container-right{
+    width: 500px;
+}
+
+.info .icon-account{
+    width: 50px;
+}
+
+.info .item-account{
+    padding: px;
+}
+
+.info .container-right .item-text{
+    min-width: 100px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.info .btn-blue{
+    color: #fff;
+    background-color: #0088cc;
+}
+
+
+.info .btn-blue:hover{
+    background-color: #0d9be2;
+}
+.info .btn-blue:active{
+    background-color: #12a5ee;
+}
