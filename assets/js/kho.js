@@ -5,7 +5,7 @@ const categories = [
     { id: 3, name: "Tranh chân dung", profitPercent: 40, productCount: 6 },
     { id: 4, name: "Tranh trừu tượng", profitPercent: 45, productCount: 10 },
     { id: 5, name: "Tranh sơn mài", profitPercent: 25, productCount: 4 },
-    { id: 6, name: "Tranh thủy mặc", profitPercent: 20, productCount: 2 }
+    { id: 6, name: "Tranh thủy mặc ", profitPercent: 20, productCount: 2 }
 ];
 
 const products = [

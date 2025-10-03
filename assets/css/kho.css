@@ -208,7 +208,7 @@ tr:hover {
 }
 
 .btn {
-    padding: 6px 12px;
+    padding: 10px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -217,9 +217,9 @@ tr:hover {
 }
 
 .btn-edit {
-    background: #eaf3ff;
-    color: #5a67ba;
-}
+    background: #fff;
+  border: 1px solid #ddd;
+color: #333;}
 
 .btn-edit:hover {
     background: #dbe7ff;
@@ -388,5 +388,6 @@ tr:hover {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 20px;
 }

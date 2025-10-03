@@ -7,8 +7,8 @@
     <title>Dashboard - ART SGU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
-    <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/manager-import.css">
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -28,7 +28,7 @@
             <nav class="menu" aria-label="Main menu">
                 <span class="menu-2">MENU</span>
                 <div class="menu-buttons">
-                    <a href="dashboard.html" class="menu-item dashboard " aria-label="Tổng quan">
+                    <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
@@ -36,29 +36,26 @@
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
-                    <a href="manager-order.html" class="menu-item manage " aria-label="Quản lý đơn hàng">
+                    <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
                         <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
                         <span>Quản lý đơn hàng</span>
                     </a>
-                    <a href="manager-user.html" class="menu-item review " aria-label="Quản lý tài khoản">
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
                         <span>Quản lý tài khoản</span>
                     </a>
-                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
-                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
-                        <span>Quản lý tác giả</span>
+                    <a href="manager-import.html" class="menu-item review-3 active" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
                     </a>
-                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
+                    </a>
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
-                    </a>
-                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
-                        <span class="icon"><i class="fa-solid fa-image"></i></span>
-                        <span>Quản lý banner</span>
-                    </a>
-                    <a href="quan-ly-banner.html" class="menu-item review-b active" aria-label="Quản lý banner">
-                        <span class="icon"><i class="fa-solid fa-image"></i></span>
-                        <span>Quản lý nhập hàng</span>
                     </a>
                 </div>
                 <span class="others">OTHERS</span>
@@ -224,7 +221,8 @@
                                 <td>
                                     <button class="btn-view" onclick="openViewModal('PN001')"><i
                                             class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit" onclick="alert('Phiếu nhập đã hoàn thành không thể sửa !')"><i
+                                    <button class="btn-edit"
+                                        onclick="alert('Phiếu nhập đã hoàn thành không thể sửa !')"><i
                                             class="fa-regular fa-pen-to-square"></i></button>
                                 </td>
                             </tr>

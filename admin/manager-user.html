@@ -32,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order  " aria-label="Quản lý sản phẩm">
+                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -44,17 +44,18 @@
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
                         <span>Quản lý tài khoản</span>
                     </a>
-                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
-                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
-                        <span>Quản lý tác giả</span>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
+                    </a>
+
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
                     </a>
                     <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
-                    </a>
-                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
-                        <span class="icon"><i class="fa-solid fa-image"></i></span>
-                        <span>Quản lý banner</span>
                     </a>
                 </div>
                 <span class="others">OTHERS</span>
@@ -132,13 +133,14 @@
                 <div class="bo-thong-ke" style="display:flex; gap: 20px;">
                     <div class="box-thong-ke total-product">
                         <div style="flex:1;">
-                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng số tài khoản
+                            <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng số tài
+                                khoản
                             </div>
                             <div style="font-size:24px;font-weight:700;color:#273240;">5</div>
                         </div>
                         <div
                             style="background:#eaf3ff;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-                                <i class="fa-solid fa-user" style="font-size:20px;color:#5a67ba;"></i>
+                            <i class="fa-solid fa-user" style="font-size:20px;color:#5a67ba;"></i>
                         </div>
                     </div>
                     <div class="box-thong-ke selling-product"
@@ -149,7 +151,7 @@
                         </div>
                         <div
                             style="background:#eafff2;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-                                <i class="fa-solid fa-user-check" style="font-size:20px;color:#009e60;"></i>
+                            <i class="fa-solid fa-user-check" style="font-size:20px;color:#009e60;"></i>
                         </div>
                     </div>
                     <div class="box-thong-ke low-stock"
@@ -161,36 +163,38 @@
                         </div>
                         <div
                             style="background:#ffeaea;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-                                <i class="fa-solid fa-user-lock" style="font-size:20px;color:#e74c3c;"></i>
+                            <i class="fa-solid fa-user-lock" style="font-size:20px;color:#e74c3c;"></i>
                         </div>
                     </div>
-                  
+
                 </div>
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
                             <input type="text" placeholder="Nhập số điện thoại hoặc tên người dùng..." />
-                            
+
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Trạng thái</option>
                                 <option value="">Hoạt động</option>
                                 <option value="">Đang khóa</option>
-                
+
                             </select>
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Quyền</option>
                                 <option value="">Admin</option>
                                 <option value="">Khách hàng</option>
                             </select>
-                        
-                            <button class="filter-btn"><a href="manager-user.html" style="text-decoration: none; color: #333;"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</a></button>
+
+                            <button class="filter-btn"><a href="manager-user.html"
+                                    style="text-decoration: none; color: #333;"><i
+                                        class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</a></button>
                             <button class="filter-btn active">Làm mới</button>
                         </div>
                     </div>
                 </div>
-                <div class="table-art">     
+                <div class="table-art">
                     <table class="art-table">
                         <thead>
                             <th>Mã</th>
@@ -254,9 +258,9 @@
                             </tr>
                         </tbody>
                     </table>
-                      <!-- Modal thêm tài khoản -->
+                    <!-- Modal thêm tài khoản -->
                     <div id="modalAddUser" class="modal-add-product">
-                       <div class="modal-content" style="max-width:600px; min-height: auto;">
+                        <div class="modal-content" style="max-width:600px; min-height: auto;">
                             <div class="modal-header">
                                 <span class="modal-title">Thêm tài khoản</span>
                                 <span class="modal-close" id="closeModalEditUser">&times;</span>
@@ -286,15 +290,17 @@
                                             <label for="addUserRole">Quyền</label>
                                             <select id="addUserRole" name="addUserRole" required>
                                                 <option value="Admin">Admin</option>
-                                    
+
                                                 <option value="Guest">Khách hàng</option>
                                             </select>
                                         </div>
                                         <div class="form-group" style="position:relative;">
                                             <label for="addUserPassword">Mật khẩu</label>
                                             <div style="position:relative;display:flex;align-items:center;">
-                                                <input type="password" id="addUserPassword" name="addUserPassword" required style="flex:1;padding-right:38px;" />
-                                                <span id="toggleAddPassword" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
+                                                <input type="password" id="addUserPassword" name="addUserPassword"
+                                                    required style="flex:1;padding-right:38px;" />
+                                                <span id="toggleAddPassword"
+                                                    style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </span>
                                             </div>
@@ -309,8 +315,10 @@
                                     </div>
                                 </div>
                                 <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:24px;">
-                                    <button type="button" id="cancelAddUser" style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
-                                    <button type="button" id ="ButtonAddUser"style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Thêm</button>
+                                    <button type="button" id="cancelAddUser"
+                                        style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
+                                    <button type="button" id="ButtonAddUser"
+                                        style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Thêm</button>
                                 </div>
                             </form>
                         </div>
@@ -327,19 +335,23 @@
                                     <div style="flex:1;min-width:220px;">
                                         <div class="form-group">
                                             <label for="editUserName">Tên người dùng</label>
-                                            <input type="text" id="editUserName" name="editUserName" value="Nguyễn Văn A" />
+                                            <input type="text" id="editUserName" name="editUserName"
+                                                value="Nguyễn Văn A" />
                                         </div>
                                         <div class="form-group">
                                             <label for="editUserEmail">Email</label>
-                                            <input type="email" id="editUserEmail" name="editUserEmail" value="nguyenvana@gmail.com" />
+                                            <input type="email" id="editUserEmail" name="editUserEmail"
+                                                value="nguyenvana@gmail.com" />
                                         </div>
                                         <div class="form-group">
                                             <label for="editUserPhone">Số điện thoại</label>
-                                            <input type="text" id="editUserPhone" name="editUserPhone" value="0901234567" />
+                                            <input type="text" id="editUserPhone" name="editUserPhone"
+                                                value="0901234567" />
                                         </div>
                                         <div class="form-group">
                                             <label for="editUserAddress">Địa chỉ</label>
-                                            <input type="text" id="editUserAddress" name="editUserAddress" value="123 Lê Lợi, Q1" />
+                                            <input type="text" id="editUserAddress" name="editUserAddress"
+                                                value="123 Lê Lợi, Q1" />
                                         </div>
                                     </div>
                                     <div style="flex:1;min-width:220px;">
@@ -353,12 +365,16 @@
                                         <div class="form-group" style="position:relative;">
                                             <label for="editUserPassword">Mật khẩu</label>
                                             <div style="position:relative;display:flex;align-items:center;">
-                                                <input type="password" id="editUserPassword" name="editUserPassword" value="12345678" style="flex:1;padding-right:38px;" />
-                                                <span id="togglePassword" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
+                                                <input type="password" id="editUserPassword" name="editUserPassword"
+                                                    value="12345678" style="flex:1;padding-right:38px;" />
+                                                <span id="togglePassword"
+                                                    style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </span>
                                             </div>
-                                            <button type="button" id="resetPassword" style="background:#eee;border:none;padding:10px;border-radius:5px;cursor:pointer;margin:15px 0px 10px 0px;">Reset mặc định</button>
+                                            <button type="button" id="resetPassword"
+                                                style="background:#eee;border:none;padding:10px;border-radius:5px;cursor:pointer;margin:15px 0px 10px 0px;">Reset
+                                                mặc định</button>
                                         </div>
                                         <div class="form-group">
                                             <label for="editUserStatus">Trạng thái</label>
@@ -370,8 +386,10 @@
                                     </div>
                                 </div>
                                 <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:24px;">
-                                    <button type="button" id="cancelEditUser" style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
-                                    <button type="button" id ="saveButton" style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Lưu</button>
+                                    <button type="button" id="cancelEditUser"
+                                        style="background:#eee;padding:8px 18px;border-radius:6px;border:none;">Hủy</button>
+                                    <button type="button" id="saveButton"
+                                        style="background:#2e7d32;color:#fff;padding:8px 18px;border-radius:6px;border:none;">Lưu</button>
                                 </div>
                             </form>
                         </div>

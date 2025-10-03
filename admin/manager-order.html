@@ -7,7 +7,11 @@
     <title>Dashboard - ART SGU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/order.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 </head>
 
 <body>
@@ -34,25 +38,26 @@
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
-                    <a href="manager-order.html" class="menu-item manage  active" aria-label="Quản lý đơn hàng">
+                    <a href="manager-order.html" class="menu-item manage active" aria-label="Quản lý đơn hàng">
                         <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
                         <span>Quản lý đơn hàng</span>
                     </a>
-                    <a href="manager-user.html" class="menu-item review " aria-label="Quản lý tài khoản">
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
                         <span>Quản lý tài khoản</span>
                     </a>
-                    <a href="quan-ly-tac-gia.html" class="menu-item review-3" aria-label="Quản lý tác giả">
-                        <span class="icon"><i class="fa-solid fa-paint-brush"></i></span>
-                        <span>Quản lý tác giả</span>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
                     </a>
-                    <a href="quan-ly-danh-muc.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
+                    </a>
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
-                    </a>
-                    <a href="quan-ly-banner.html" class="menu-item review-b" aria-label="Quản lý banner">
-                        <span class="icon"><i class="fa-solid fa-image"></i></span>
-                        <span>Quản lý banner</span>
                     </a>
                 </div>
                 <span class="others">OTHERS</span>
@@ -111,10 +116,321 @@
                 </div>
             </header>
             <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Quản lý đơn hàng</h1>
+                        <p style="font-size:1rem;">Quản lý và tra cứu đơn hàng</p>
+                    </div>
+                </div>
+                <div class="order-management-container">
+                    <!-- Thống kê -->
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon icon-total">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">156</div>
+                                <div class="stat-label">Tổng đơn hàng</div>
+                                <div class="stat-label">9%</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon icon-pending">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">23</div>
+                                <div class="stat-label">Chờ xử lý</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon icon-delivered">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">125</div>
+                                <div class="stat-label">Đã giao</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon icon-cancelled">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Đã hủy</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bộ lọc -->
+                    <div class="filter-section">
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label>Khoảng thời gian</label>
+                                <div class="date-range">
+                                    <input type="date" id="startDate" value="2024-01-01">
+                                    <span>đến</span>
+                                    <input type="date" id="endDate" value="2024-01-31">
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <label>Tình trạng đơn hàng</label>
+                                <select id="orderStatus">
+                                    <option value="">Tất cả trạng thái</option>
+                                    <option value="new">Mới đặt</option>
+                                    <option value="processing">Đã xử lý</option>
+                                    <option value="delivered">Đã giao</option>
+                                    <option value="cancelled">Đã hủy</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-row">
+                            <button class="btn btn-search">
+                                <i class="fas fa-search"></i> Tìm kiếm
+                            </button>
+                            <button class="btn btn-reset">
+                                <i class="fas fa-redo"></i> Đặt lại
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Danh sách đơn hàng -->
+                    <div class="order-card">
+                        <div class="card-header">
+                            <div class="card-title">Danh sách đơn hàng</div>
+                        </div>
+                        <table id="ordersTable">
+                            <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DH001</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>15/01/2024</td>
+                                    <td>12,500,000 ₫</td>
+                                    <td><span class="status-badge status-delivered">Đã giao</span></td>
+                                    <td>
+                                        <button class="action-btn btn-view" onclick="openOrderDetail('DH001')">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DH002</td>
+                                    <td>Trần Thị B</td>
+                                    <td>16/01/2024</td>
+                                    <td>8,750,000 ₫</td>
+                                    <td><span class="status-badge status-processing">Đã xử lý</span></td>
+                                    <td>
+                                        <button class="action-btn btn-view" onclick="openOrderDetail('DH002')">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                        <button class="action-btn btn-update" onclick="openStatusUpdate('DH002')">
+                                            <i class="fas fa-edit"></i> Cập nhật
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DH003</td>
+                                    <td>Lê Văn C</td>
+                                    <td>17/01/2024</td>
+                                    <td>15,200,000 ₫</td>
+                                    <td><span class="status-badge status-new">Mới đặt</span></td>
+                                    <td>
+                                        <button class="action-btn btn-view" onclick="openOrderDetail('DH003')">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                        <button class="action-btn btn-update" onclick="openStatusUpdate('DH003')">
+                                            <i class="fas fa-edit"></i> Cập nhật
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DH004</td>
+                                    <td>Phạm Thị D</td>
+                                    <td>18/01/2024</td>
+                                    <td>6,800,000 ₫</td>
+                                    <td><span class="status-badge status-cancelled">Đã hủy</span></td>
+                                    <td>
+                                        <button class="action-btn btn-view" onclick="openOrderDetail('DH004')">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DH005</td>
+                                    <td>Hoàng Văn E</td>
+                                    <td>19/01/2024</td>
+                                    <td>22,150,000 ₫</td>
+                                    <td><span class="status-badge status-processing">Đã xử lý</span></td>
+                                    <td>
+                                        <button class="action-btn btn-view" onclick="openOrderDetail('DH005')">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                        <button class="action-btn btn-update" onclick="openStatusUpdate('DH005')">
+                                            <i class="fas fa-edit"></i> Cập nhật
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination">
+                            <ul class="pagination-list">
+                                <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
+                                </li>
+                                <li class="pagination-item active"><span>1</span></li>
+                                <li class="pagination-item"><span>2</span></li>
+                                <li class="pagination-item"><span>3</span></li>
+                                <li class="pagination-item"><span>...</span></li>
+                                <li class="pagination-item"><span>10</span></li>
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
+
+    <!-- Modal chi tiết đơn hàng -->
+    <div class="modal" id="orderDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Chi tiết đơn hàng #<span id="orderId"></span></div>
+                <div class="modal-close" onclick="closeOrderDetail()">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="order-detail-section">
+                    <div class="section-title">Thông tin đơn hàng</div>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Mã đơn hàng</div>
+                            <div class="detail-value" id="detailOrderId">DH001</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Ngày đặt</div>
+                            <div class="detail-value" id="detailOrderDate">15/01/2024</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Trạng thái</div>
+                            <div class="detail-value"><span class="status-badge status-delivered">Đã giao</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tổng tiền</div>
+                            <div class="detail-value" id="detailTotalAmount">12,500,000 ₫</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Phương thức thanh toán</div>
+                            <div class="detail-value" id="detailPaymentMethod">Chuyển khoản</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Ghi chú</div>
+                            <div class="detail-value" id="detailNotes">Giao hàng giờ hành chính</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-detail-section">
+                    <div class="section-title">Thông tin khách hàng</div>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Họ tên</div>
+                            <div class="detail-value" id="detailCustomerName">Nguyễn Văn A</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Số điện thoại</div>
+                            <div class="detail-value" id="detailCustomerPhone">0901234567</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Email</div>
+                            <div class="detail-value" id="detailCustomerEmail">nguyenvana@email.com</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Địa chỉ</div>
+                            <div class="detail-value" id="detailCustomerAddress">123 Đường ABC, Quận 1, TP.HCM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-detail-section">
+                    <div class="section-title">Sản phẩm đã đặt</div>
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tranh phong cảnh mùa thu</td>
+                                <td>8,500,000 ₫</td>
+                                <td>1</td>
+                                <td>8,500,000 ₫</td>
+                            </tr>
+                            <tr>
+                                <td>Tranh sơn dầu hoàng hôn</td>
+                                <td>4,000,000 ₫</td>
+                                <td>1</td>
+                                <td>4,000,000 ₫</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-modal-cancel" onclick="closeOrderDetail()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cập nhật trạng thái -->
+    <div class="modal" id="statusUpdateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Cập nhật trạng thái đơn hàng #<span id="updateOrderId"></span></div>
+                <div class="modal-close" onclick="closeStatusUpdate()">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="status-update-form">
+                    <div class="form-group">
+                        <label for="newStatus">Trạng thái mới</label>
+                        <select id="newStatus">
+                            <option value="new">Mới đặt</option>
+                            <option value="processing">Đã xử lý</option>
+                            <option value="delivered">Đã giao</option>
+                            <option value="cancelled">Đã hủy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="statusNotes">Ghi chú (nếu có)</label>
+                        <textarea id="statusNotes" rows="3" placeholder="Nhập ghi chú về trạng thái đơn hàng..."
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-modal-cancel" onclick="closeStatusUpdate()">Hủy</button>
+                <button class="btn-modal-save" onclick="updateOrderStatus()">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/account-admin.js"></script>
+    <script src="../assets/js/order.js"></script>
+  
 </body>
-<script src="../assets/js/account-admin.js"></script>
 
 </html>

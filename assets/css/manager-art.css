@@ -378,24 +378,7 @@ table {
     justify-content: center;
 }
 
-.btn-edit {
-    border: 1px solid #ddd;
-    background:#fff;
-    color: #333;
-}
 
-.btn-edit:hover {
-    background: #f0f7ff;
-}
-
-.btn-delete {
-    background: #ffeaea;
-    color: #e74c3c;
-}
-
-.btn-delete:hover {
-    background: #ffd6d6;
-}
 
 .gia-tang-giam {
     display: flex;
@@ -722,4 +705,29 @@ table {
     display: flex;
     gap: 15px;
     margin: 15px;
+}
+
+.btn-edit,
+.btn-view,.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background: #f3f7fb;
+}
+
+.btn-view:hover {
+    background: #f9f9f9;
+}
+.btn-delete:hover {
+    background: rgb(243, 230, 230);
 }
