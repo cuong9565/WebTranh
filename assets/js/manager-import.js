@@ -20,11 +20,12 @@ const importData = {
         total: 15750000
     },
     'PN002': {
-        supplier: 'Nhà cung cấp mỹ phẩm Organic',
+        supplier: 'Công ty TNHH Sài Gòn',
         date: '2024-01-18',
         products: [
             { productId: 3, name: "Bảng màu nước", quantity: 8, price: 180000 },
-            { productId: 5, name: "Màu acrylic", quantity: 12, price: 200000 }
+            { productId: 5, name: "Màu acrylic", quantity: 12, price: 200000 }, 
+            { productId: 4, name: "Giấy vẽ chuyên dụng", quantity: 20, price: 120000 }
         ],
         total: 8900000
     },

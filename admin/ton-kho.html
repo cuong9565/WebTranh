@@ -27,44 +27,44 @@
 
             <nav class="menu" aria-label="Main menu">
                 <span class="menu-2">MENU</span>
-                    <div class="menu-buttons">
-          <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
-            <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-            <span>Tổng quan</span>
-          </a>
-          <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
-            <span class="icon"><i class="fa-solid fa-box"></i></span>
-            <span>Quản lý sản phẩm</span>
-          </a>
-          <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
-            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
-            <span>Quản lý đơn hàng</span>
-          </a>
-          <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
-            <span class="icon"><i class="fa-solid fa-user"></i></span>
-            <span>Quản lý tài khoản</span>
-          </a>
-          <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
-            <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-            <span>Quản lý nhập xuất</span>
-          </a>
+                <div class="menu-buttons">
+                    <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
+                        <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Tổng quan</span>
+                    </a>
+                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                        <span class="icon"><i class="fa-solid fa-box"></i></span>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
+                    </a>
 
-          <a href="ton-kho.html" class="menu-item review-b active" aria-label="Quản lý tồn kho">
-            <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
-            <span>Quản lý tồn kho</span>
-          </a>
-          <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
-            <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
-            <span>Quản lý danh mục</span>
-          </a>
-        </div>
+                    <a href="ton-kho.html" class="menu-item review-b active" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
+                    </a>
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                        <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
-                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
                         <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                         <span>Đăng xuất</span>
                     </a>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="nhap-xuat-add">
                         <div class="excel">
-                          
+
                             <button class="btn-excel-export" onclick="alert('Đã in PDF thành công !')">
                                 <i class="fa-solid fa-download"></i> Xuất Báo cáo
                             </button>
@@ -169,7 +169,8 @@
                         </div>
 
                         <div class="search-box">
-                            <input type="text" id="searchProfitInput" placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
+                            <input type="text" id="searchProfitInput"
+                                placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
                             <button id="searchProfitBtn"><i class="fas fa-search"></i> Tìm kiếm</button>
                         </div>
 
@@ -190,18 +191,20 @@
                                     <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
                                 </tbody>
                             </table>
-                              <div class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
-                            </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
-                        </ul>
-                    </div>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <li class="pagination-item active"><span>1</span></li>
+                                    <li class="pagination-item"><span>2</span></li>
+                                    <li class="pagination-item"><span>3</span></li>
+                                    <li class="pagination-item"><span>...</span></li>
+                                    <li class="pagination-item"><span>10</span></li>
+                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="profit-card">
@@ -224,21 +227,23 @@
                                     <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
                                 </tbody>
                             </table>
-                              <div class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
-                            </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
-                        </ul>
-                    </div>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <li class="pagination-item active"><span>1</span></li>
+                                    <li class="pagination-item"><span>2</span></li>
+                                    <li class="pagination-item"><span>3</span></li>
+                                    <li class="pagination-item"><span>...</span></li>
+                                    <li class="pagination-item"><span>10</span></li>
+                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- Nội dung quản lý tồn kho -->
@@ -286,7 +291,8 @@
                                 <option value="product">Theo sản phẩm</option>
                                 <option value="category">Theo danh mục</option>
                             </select>
-                            <input type="text" id="searchInventoryInput" placeholder="Nhập tên sản phẩm hoặc danh mục...">
+                            <input type="text" id="searchInventoryInput"
+                                placeholder="Nhập tên sản phẩm hoặc danh mục...">
                             <button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra cứu</button>
                         </div>
 
@@ -320,20 +326,22 @@
                                 <tbody>
                                     <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
                                 </tbody>
-                                
+
                             </table>
-                              <div class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
-                            </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
-                        </ul>
-                    </div>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <li class="pagination-item active"><span>1</span></li>
+                                    <li class="pagination-item"><span>2</span></li>
+                                    <li class="pagination-item"><span>3</span></li>
+                                    <li class="pagination-item"><span>...</span></li>
+                                    <li class="pagination-item"><span>10</span></li>
+                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="inventory-card">
@@ -356,18 +364,20 @@
                                     <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
                                 </tbody>
                             </table>
-                              <div class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
-                            </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
-                        </ul>
-                    </div>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <li class="pagination-item active"><span>1</span></li>
+                                    <li class="pagination-item"><span>2</span></li>
+                                    <li class="pagination-item"><span>3</span></li>
+                                    <li class="pagination-item"><span>...</span></li>
+                                    <li class="pagination-item"><span>10</span></li>
+                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -395,7 +405,8 @@
                         </div>
                         <div class="modal-actions">
                             <button class="btn btn-cancel" id="cancelEdit">Hủy</button>
-                            <button class="btn btn-save" id="saveProfit" onclick="alert('Lưu thành công !')" >Lưu thay đổi</button>
+                            <button class="btn btn-save" id="saveProfit" onclick="alert('Lưu thành công !')">Lưu thay
+                                đổi</button>
                         </div>
                     </div>
                 </div>
@@ -405,7 +416,8 @@
 
     <script src="../assets/js/account-admin.js"></script>
     <script src="../assets/js/manager-art.js"></script>
-    <script src ="../assets/js/kho.js"></script>
-  
+    <script src="../assets/js/kho.js"></script>
+
 </body>
+
 </html>

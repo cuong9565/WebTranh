@@ -62,7 +62,7 @@
             <span class="icon"><i class="fa-solid fa-house"></i></span>
             <span>Trang chủ</span>
           </a>
-          <a href="logout_admin.html" class="menu-item help" aria-label="Đăng xuất">
+          <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
             <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
             <span>Đăng xuất</span>
           </a>
@@ -72,10 +72,7 @@
 
     <div class="main-content">
       <header class="header">
-        <div class="input-search" role="search">
-          <input type="search" placeholder="Search" aria-label="Search" />
-          <div class="icon search-icon"></div>
-        </div>
+     
         <div class="user-info" id="userInfo">
           <img src="../assets/img/image.png" alt="Avatar">
           <div class="name-role">
@@ -103,7 +100,7 @@
                 <a href="#">
                   <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
                 </a>
-                <a href="dang-xuat.html">
+                <a href="login_adm.html">
                   <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                 </a>
               </div>
@@ -116,7 +113,7 @@
         <div class="thanh-bo-loc">
           <div class="thanh-bo-loc-1">
             <h1 class="title-page">Dashboard</h1>
-            <p style="font-size: 1rem;">Tổng quan hệ thống quản lý bán tranh số 1 SGU</p>
+            <p style="font-size: 1rem;">Tổng quan hệ thống quản lý bán tranh số 1 VN</p>
           </div>
           <div class="thanh-bo-loc-2">
             <select>
@@ -180,7 +177,7 @@
             <div class="bieu-do-top-sell" style="display: flex; position: relative; gap: 32px;">
               <!-- Biểu đồ doanh thu các tháng -->
               <div class="bieu-do-doanh-thu" style="width: 70%;">
-                <h2 style="font-size:1.1rem;margin:10px;">Biểu đồ doanh thu các tháng</h2>
+                <h2 style="font-size:1.1rem;padding:15px 0px 0px 15px;">Biểu đồ doanh thu các tháng</h2>
                 <canvas id="revenueChart" height="120" style="margin:30px;"></canvas>
               </div>
               <!-- Top 5 sản phẩm bán chạy -->
@@ -191,30 +188,30 @@
                 <h2 style="font-size:1.1rem;margin:10px;text-align: center;">Top 5 sản phẩm</h2>
                 <ul class="best-sell-list">
                   <li>
-                    <span class="best-sell-img"><img src="../assets/img/image.png
+                    <span class="best-sell-img"><img src="../assets/img/phong-canh/9.jpg"
                       " alt="Tranh Sơn Dầu "></span>
                     <span class="best-sell-name">Tranh Sơn Dầu</span>
                     <span class="best-sell-qty">120</span>
                   </li>
                   <li>
-                    <span class="best-sell-img"><img src="https://i.imgur.com/2.jpg" alt="Tranh Phong Cảnh Biển"></span>
-                    <span class="best-sell-name">Tranh Phong Cảnh</span>
+                    <span class="best-sell-img"><img src="../assets/img/hoa/4.jpg" alt="Tranh Phong Cảnh Biển"></span>
+                    <span class="best-sell-name">Tranh Hoa Lan </span>
                     <span class="best-sell-qty">98</span>
                   </li>
                   <li>
-                    <span class="best-sell-img"><img src="https://i.imgur.com/3.jpg"
+                    <span class="best-sell-img"><img src="../assets/img/phong-canh/7.jpg"
                         alt="Tranh Trừu Tượng Sắc Màu"></span>
-                    <span class="best-sell-name">Tranh Trừu Tượng </span>
+                    <span class="best-sell-name">Tranh Phong Cảnh </span>
                     <span class="best-sell-qty">85</span>
                   </li>
                   <li>
-                    <span class="best-sell-img"><img src="https://i.imgur.com/4.jpg" alt="Tranh Cổ Điển Châu Âu"></span>
-                    <span class="best-sell-name">Tranh Cổ Điển</span>
+                    <span class="best-sell-img"><img src="../assets/img/son-dau/4.jpg" alt="Tranh Cổ Điển Châu Âu"></span>
+                    <span class="best-sell-name">Tranh Sơn Dầu </span>
                     <span class="best-sell-qty">80</span>
                   </li>
                   <li>
-                    <span class="best-sell-img"><img src="https://i.imgur.com/5.jpg" alt="Tranh Phật Giáo"></span>
-                    <span class="best-sell-name">Tranh Phật Giáo</span>
+                    <span class="best-sell-img"><img src="../assets/img/truu-tuong/8.jpg" alt="Tranh Phật Giáo"></span>
+                    <span class="best-sell-name">Tranh Trừu Tượng</span>
                     <span class="best-sell-qty">75</span>
                   </li>
                 </ul>
@@ -222,11 +219,11 @@
             </div>
             <div class="don-hang-top-user" style="display: flex; position: relative; gap: 32px;">
               <!-- Đơn hàng gần đây -->
-              <div class="don-hang-gan-day" style="border: solid 2px #eaf3ff;">
-                <h2 style="font-size:1.1rem;margin-bottom:10px;">Đơn hàng gần đây</h2>
+              <div class="don-hang-gan-day card-section">
+                <h2 class="section-title-small">Đơn hàng gần đây</h2>
                 <table class="orders-table" style="width:100%;border-collapse:collapse;">
-                  <thead>
-                    <tr style="background:#f1f2f7;">
+                  <thead class="table-header-muted">
+                    <tr>
                       <th>Mã đơn</th>
                       <th style="width: 30%;">Khách hàng</th>
                       <th style="width: 30%;">Sản phẩm</th>
@@ -237,7 +234,7 @@
                   <tbody>
                     <tr>
                       <td>#DH001</td>
-                      <td>Nguyễn Văn A</td>
+                      <td>Lý Văn A</td>
                       <td>Tranh Sơn Dầu Hoa Mẫu Đơn</td>
                       <td>2.500.000đ</td>
                       <td>17/09/2025</td>
@@ -262,12 +259,12 @@
 
               <div class="top-user">
                 <div class="xephang-users">
-                  <h2 style="font-size:1.1rem;margin-bottom:10px;">Top khách hàng chi tiêu</h2>
+                  <h2 style="font-size:1.1rem;margin-bottom:10px;text-align: center;">Top khách hàng chi tiêu</h2>
                   <ul class="user-rank-list">
                     <li>
                       <span class="user-rank"><i class="fa-solid fa-crown"
                           style="color:#fbbf24;font-size:20px;"></i></span>
-                      <span class="user-name">Nguyễn Văn A</span>
+                      <span class="user-name">Trần Văn A</span>
                       <span class="user-spent">12.500.000đ</span>
                     </li>
                     <li>
@@ -327,7 +324,7 @@
     window.addEventListener('DOMContentLoaded', function () {
       // Tổng doanh thu
       const revenueEl = document.querySelector('.dashboard-card.revenue .card-value');
-      if (revenueEl) animateValue(revenueEl, 0, 89000700, 1500, '');
+  if (revenueEl) animateValue(revenueEl, 0, 890, 1500, 'M');
       // Đơn hàng
       const ordersEl = document.querySelector('.dashboard-card.orders .card-value');
       if (ordersEl) animateValue(ordersEl, 0, 1409, 1500, '');
