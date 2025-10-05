@@ -194,36 +194,53 @@ textarea {
     margin-top: 10px;
 }
 
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
 .btn-modal-save {
-    background-color: #2ecc71;
+    background-color: #13893e;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
+    padding: 10px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    border: 1px solid #5a67ba;
 }
 
 .btn-modal-save:hover {
-    background-color: #27ae60;
+    background-color: #16a34a;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(90, 103, 186, 0.3);
 }
 
 .btn-modal-cancel {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
+    background-color: transparent;
+    color: #6c757d;
+    border: 1px solid #ddd;
+    padding: 10px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 100px;
 }
 
 .btn-modal-cancel:hover {
-    background-color: #c0392b;
+    background-color: #f8f9fa;
+    border-color: #6c757d;
+    transform: translateY(-1px);
 }
-
 /* Pagination */
 .pagination {
     display: flex;
@@ -361,24 +378,7 @@ table {
     justify-content: center;
 }
 
-.btn-edit {
-    border: 1px solid #ddd;
-    background:#fff;
-    color: #333;
-}
 
-.btn-edit:hover {
-    background: #f0f7ff;
-}
-
-.btn-delete {
-    background: #ffeaea;
-    color: #e74c3c;
-}
-
-.btn-delete:hover {
-    background: #ffd6d6;
-}
 
 .gia-tang-giam {
     display: flex;
@@ -705,4 +705,29 @@ table {
     display: flex;
     gap: 15px;
     margin: 15px;
+}
+
+.btn-edit,
+.btn-view,.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background: #f3f7fb;
+}
+
+.btn-view:hover {
+    background: #f9f9f9;
+}
+.btn-delete:hover {
+    background: rgb(243, 230, 230);
 }
