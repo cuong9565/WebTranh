@@ -1,5 +1,5 @@
 .order-management-container {
-    padding: 20px;
+    padding: 10px;
 }
 
 .stats-container {
@@ -75,8 +75,8 @@
 .filter-row {
     display: flex;
     gap: 15px;
-    margin-bottom: 15px;
     align-items: flex-end;
+    justify-content: end;
 }
 
 .filter-group {
@@ -219,7 +219,7 @@ tr:hover {
 }
 
 .action-btn {
-    padding: 6px 12px;
+    padding: 8px 11px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -239,8 +239,9 @@ tr:hover {
 }
 
 .btn-update {
-    background: #e8f5e8;
-    color: #2e7d32;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
 }
 
 .btn-update:hover {

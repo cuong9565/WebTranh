@@ -15,11 +15,10 @@
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-            <a href="dashboard.html" style="text-decoration: none;">
+             <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <span class="text-center">G</span>
-                        <div class="oval"></div>
+                        <image src="../assets/img/tải xuống.png" mode="">
                     </div>
                     <span class="art-sgu">ART SGU</span>
                 </div>
@@ -60,11 +59,11 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
-                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
                         <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                         <span>Đăng xuất</span>
                     </a>
@@ -191,7 +190,8 @@
                                 <option value="">Dưới 30M</option>
                             </select>
                             <input type="date">
-                            <button class="filter-btn active">Làm mới</button>
+                            <button class="filter-btn active">
+                                <i class="fa-solid fa-rotate"></i>Làm mới</button>
                         </div>
                     </div>
                 </div>
@@ -209,29 +209,29 @@
                         <tbody>
                             <tr>
                                 <td>PN001</td>
-                                <td>Công ty TNHH Nguyên liệu </td>
+                                <td>Công ty tranh Sài Gòn</td>
                                 <td>2024-01-15</td>
                                 <td>12 sản phẩm</td>
-                                <td>₫15.750.000</td>
+                                <td>15.750.000₫</td>
                                 <td>
                                     <span class="status-completed">
                                         <i class="fa-regular fa-circle-check status-icon"></i> Hoàn thành
                                     </span>
                                 </td>
                                 <td>
-                                    <button class="btn-view" onclick="openViewModal('PN001')"><i
+                                    <button class="btn-view" onclick="openViewModal('PN002')"><i
                                             class="fa-regular fa-eye"></i></button>
                                     <button class="btn-edit"
                                         onclick="alert('Phiếu nhập đã hoàn thành không thể sửa !')"><i
-                                            class="fa-regular fa-pen-to-square"></i></button>
+                                            class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>PN002</td>
-                                <td>Nhà cung cấp mỹ phẩm Organic</td>
+                                <td>Công ty tranh Hà Nội</td>
                                 <td>2024-01-18</td>
                                 <td>8 sản phẩm</td>
-                                <td>₫8.900.000</td>
+                                <td>8.900.000₫</td>
                                 <td>
                                     <span class="status-pending">
                                         <i class="fa-regular fa-clock status-icon"></i> Chờ xử lý
@@ -241,25 +241,43 @@
                                     <button class="btn-view" onclick="openViewModal('PN002')"><i
                                             class="fa-regular fa-eye"></i></button>
                                     <button class="btn-edit" onclick="openEditModal('PN002')"><i
-                                            class="fa-regular fa-pen-to-square"></i></button>
+                                            class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>PN003</td>
-                                <td>Công ty CP Dược phẩm tự nhiên</td>
+                                <td>Công ty TNHH Ảnh Đẹp</td>
                                 <td>2024-01-20</td>
                                 <td>15 sản phẩm</td>
-                                <td>₫12.400.000</td>
+                                <td>12.400.000₫</td>
                                 <td>
                                     <span class="status-pending">
                                         <i class="fa-regular fa-clock status-icon"></i> Chờ xử lý
                                     </span>
                                 </td>
                                 <td>
-                                    <button class="btn-view" onclick="openViewModal('PN003')"><i
+                                    <button class="btn-view" onclick="openViewModal('PN002')"><i
                                             class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit" onclick="openEditModal('PN003')"><i
-                                            class="fa-regular fa-pen-to-square"></i></button>
+                                    <button class="btn-edit" onclick="openEditModal('PN002')"><i
+                                            class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PN004</td>
+                                <td>Công ty Draw Freely</td>
+                                <td>2024-01-22</td>
+                                <td>4 sản phẩm</td>
+                                <td>4.200.000₫</td>
+                                <td>
+                                    <span class="status-pending">
+                                        <i class="fa-regular fa-clock status-icon"></i> Chờ xử lý
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn-view" onclick="openViewModal('PN002')"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="openEditModal('PN002')"><i
+                                            class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -362,12 +380,11 @@
                                         <label>Nhà cung cấp</label>
                                         <select id="editImportSupplier" required>
                                             <option value="">Chọn nhà cung cấp</option>
-                                            <option value="Công ty TNHH Nguyên liệu thiên nhiên">Công ty TNHH Nguyên
-                                                liệu thiên nhiên</option>
-                                            <option value="Nhà cung cấp mỹ phẩm Organic">Nhà cung cấp mỹ phẩm
-                                                Organic</option>
-                                            <option value="Công ty CP Dược phẩm tự nhiên">Công ty CP Dược phẩm tự
-                                                nhiên</option>
+                                            <option value="Công ty TNHH Sài Gòn">Công ty TNHH Sài Gòn</option>
+                                            <option value="Nhà cung cấp mỹ phẩm Organic">Công ty TNHH Hà Nội
+                                            </option>
+                                            <option value="Công ty CP Dược phẩm tự nhiên">Công ty TNHH Draw Freely
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="form-field">
@@ -413,6 +430,8 @@
                         </div>
                     </div>
                 </div>
+
+
 
                 <!-- Modal xem chi tiết phiếu nhập -->
                 <div id="modalViewImport" class="modal-edit-import">

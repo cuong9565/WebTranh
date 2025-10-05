@@ -19,12 +19,12 @@ openModalAddBtn.addEventListener('click', () => {
     modalAdd.classList.add('active');
 });
 confirmModalAdd.addEventListener('click', () => {
-    alert('Đã thêm sản phẩm!');
+    notification.success("Thêm sản phẩm thành công !");
     modalAdd.classList.toggle('active');
 });
 
 confirmModalEdit.addEventListener('click', () => {
-    alert('Sửa sản phẩm thành công!');
+     notification.success("Sửa sản phẩm thành công !");
     modalEdit.classList.toggle('active');
 });
 
@@ -143,7 +143,7 @@ document.querySelectorAll('.btn-delete').forEach(function (btn) {
     });
 });
 confirmDeleteBtn.addEventListener('click', function () {
-    alert('Đã xóa sản phẩm !');
+   notification.info("Xóa sản phẩm thành công !");
     modalDelete.classList.remove('active');
 });
 cancelDeleteBtn.addEventListener('click', function () {

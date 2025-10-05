@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -17,8 +18,7 @@
             <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <span class="text-center">G</span>
-                        <div class="oval"></div>
+                        <image src="../assets/img/tải xuống.png" mode="">
                     </div>
                     <span class="art-sgu">ART SGU</span>
                 </div>
@@ -59,11 +59,11 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
-                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
                         <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                         <span>Đăng xuất</span>
                     </a>
@@ -124,7 +124,8 @@
                                 <i class="fa-solid fa-upload"></i> Nhập Excel
                                 <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
                             </button>
-                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                            <button class="btn-excel-export"
+                                onclick="notification.info('Đã xuất dữ liệu ra file Excel!');">
                                 <i class="fa-solid fa-download"></i> Xuất Excel
                             </button>
                         </div>
@@ -167,9 +168,9 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group">
-                                                <label for="author">Tác giả</label>
-                                                <input type="text" id="productPrice" placeholder="Nhập tên họa sĩ"
-                                                    required>
+                                                <label for="productPrice">Chất liệu</label>
+                                                <input type="text" id="productPrice"
+                                                    placeholder="Nhập chất liệu (ví dụ: Sơn dầu)" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="profitPercent">% Lợi nhuận</label>
@@ -242,9 +243,9 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group">
-                                                <label for="editArtistName">Tên họa sĩ</label>
-                                                <input type="text" id="editArtistName" value="Nguyễn Văn A"
-                                                    placeholder="Nhập tên họa sĩ..." required>
+                                                <label for="editArtistName">Chất liệu</label>
+                                                <input type="text" id="editArtistName" value="Sơn dầu"
+                                                    placeholder="Nhập chất liệu (ví dụ: Sơn dầu)" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="editProfitPercent">% Lợi nhuận</label>
@@ -336,7 +337,7 @@
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
-                            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+                            <input type="text" placeholder="Nhập tên sản phẩm..." />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="filter-buttons">
@@ -353,11 +354,15 @@
                                 <input type="text">_<input type="text">
                             </div>
 
-                            <button class="filter-btn active">Làm mới</button>
+                            <button class="filter-btn active" onclick="notification.info('Làm mới thành công !')">
+                                <i class="fa-solid fa-rotate"></i>Làm mới</button>
                         </div>
                     </div>
                 </div>
                 <div class="table-art">
+                    <div class="card-header">
+                        <div class="card-title">Danh sách sản phẩm</div>
+                    </div>
                     <table class="art-table">
                         <thead>
                             <th>Mã</th>
@@ -379,8 +384,10 @@
                                 <td>12</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit" id="openModalEditProduct"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit" id="openModalEditProduct"><i
+                                            class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -393,8 +400,9 @@
                                 <td>12</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -408,8 +416,9 @@
                                 <td>12</td>
                                 <td><span class="status-selling warring">Sắp hết</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -422,8 +431,9 @@
                                 <td>12</td>
                                 <td><span class="status-selling block">Đang khóa</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -451,13 +461,13 @@
                     <span class="modal-title">Xác nhận xóa sản phẩm</span>
                     <span class="modal-close" id="closeModalDeleteProduct">&times;</span>
                 </div>
-                <div style="padding:32px 24px 16px 24px;text-align:center;">
+                <div style="padding: 24px;text-align:center;">
                     <i class="fa-solid fa-triangle-exclamation"
                         style="font-size:40px;color:#e74c3c;margin-bottom:16px;"></i>
                     <div style="font-size:17px;font-weight:500;margin-bottom:12px;">Bạn có chắc chắn muốn xóa sản phẩm
                         này?</div>
                     <div style="color:#7f8c8d;font-size:14px;margin-bottom:24px;">Thao tác này không thể hoàn tác.</div>
-                    <div style="display:flex;justify-content:center;gap:18px;">
+                    <div style="display:flex;justify-content:center;gap:18px;padding: 12px;">
                         <button type="button" class="btn-modal-cancel" id="cancelDeleteProduct">Hủy</button>
                         <button type="button" class="btn-modal-save" id="confirmDeleteProduct">Xác nhận</button>
                     </div>
@@ -469,5 +479,6 @@
 
 <script src="../assets/js/account-admin.js"></script>
 <script src="../assets/js/manager-art.js"></script>
+<script src="../assets/js/Notification.js"></script>
 
 </html>
