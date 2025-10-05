@@ -569,6 +569,18 @@ body {
     box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 } */
 
+/* Link wrap quanh wrapper để clickable */
+.picture-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+.picture-link:hover .picture-wrapper {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
 
 /* Chữ bên dưới tranh */
 h1 {
