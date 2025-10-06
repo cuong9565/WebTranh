@@ -14,13 +14,11 @@
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-            <a href="dashboard.html" style="text-decoration: none;">
+         <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <span class="text-center">G</span>
-                        <div class="oval"></div>
+                        <image src="../assets/img/tải xuống.png" mode="">
                     </div>
-
                     <span class="art-sgu">ART SGU</span>
                 </div>
             </a>
@@ -60,11 +58,11 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="trang-chu.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
-                    <a href="dang-xuat.html" class="menu-item help" aria-label="Đăng xuất">
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
                         <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                         <span>Đăng xuất</span>
                     </a>
@@ -136,7 +134,7 @@
                             <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Tổng số tài
                                 khoản
                             </div>
-                            <div style="font-size:24px;font-weight:700;color:#273240;">5</div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">5</div>
                         </div>
                         <div
                             style="background:#eaf3ff;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -147,7 +145,7 @@
                         style="background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:13px;padding:15px 13px;display:flex;align-items:center;gap:12px;min-width:154px;">
                         <div style="flex:1;">
                             <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Hoạt động</div>
-                            <div style="font-size:24px;font-weight:700;color:#273240;">4</div>
+                            <div style="font-size:22px;font-weight:700;color:#273240;">4</div>
                         </div>
                         <div
                             style="background:#eafff2;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -159,7 +157,7 @@
                         <div style="flex:1;">
                             <div style="color:#273240;font-size:1rem;font-weight:500;margin-bottom:6px;">Bị khóa
                             </div>
-                            <div style="font-size:24px;font-weight:700;color:#e74c3c;">1</div>
+                            <div style="font-size:22px;font-weight:700;color:#e74c3c;">1</div>
                         </div>
                         <div
                             style="background:#ffeaea;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -171,8 +169,8 @@
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
-                            <input type="text" placeholder="Nhập số điện thoại hoặc tên người dùng..." />
-
+                            <input type="text" placeholder="Nhập số điện thoại..." />
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
@@ -186,11 +184,7 @@
                                 <option value="">Admin</option>
                                 <option value="">Khách hàng</option>
                             </select>
-
-                            <button class="filter-btn"><a href="manager-user.html"
-                                    style="text-decoration: none; color: #333;"><i
-                                        class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</a></button>
-                            <button class="filter-btn active">Làm mới</button>
+                            <button class="filter-btn active"><i class="fa-solid fa-rotate"></i> Làm mới</button>
                         </div>
                     </div>
                 </div>
@@ -216,8 +210,7 @@
                                 <td>Admin</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-edit" id="openModalEditUser"><i
-                                            class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-edit" id="openModalEditUser"><i class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -229,7 +222,7 @@
                                 <td>User</td>
                                 <td><span class="status-selling active">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -241,7 +234,7 @@
                                 <td>User</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -253,7 +246,7 @@
                                 <td>Admin</td>
                                 <td><span class="status-selling block">Đang khóa</span></td>
                                 <td>
-                                    <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
                         </tbody>

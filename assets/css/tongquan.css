@@ -16,8 +16,12 @@
 
 * {
   box-sizing: border-box;
+
 }
 
+a{
+  text-decoration: none;
+}
 body,
 html {
   margin: 0;
@@ -260,8 +264,9 @@ html {
 }
 
 .orders-table th {
-  font-weight: 550;
-  border-bottom: 2px solid #eaf3ff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid #333f;
 }
 
 .orders-table tr {
@@ -287,7 +292,7 @@ html {
 .best-sell-img {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
   display: flex;
@@ -300,7 +305,6 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
   display: block;
 }
 
@@ -400,6 +404,26 @@ html {
   font-size: 15px;
   font-weight: 500;
   transition: background 0.2s;
+
+}
+
+/* Small reusable utilities for dashboard */
+.card-section {
+  border: 2px solid #eaf3ff;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.07);
+  padding: 18px 20px 12px 20px;
+}
+
+.section-title-small {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #1f384c;
+}
+
+.table-header-muted tr {
+
 }
 
 .user-rank-list li:last-child {
@@ -604,20 +628,34 @@ html {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 35px;
   flex-shrink: 0;
+
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content:center;
+  gap: 12px;
+  position: relative;
 }
 
-.logo-1 {
+.logo::before{
+  content: "";
+  width: 200px;
+  background-color: #8b7c8e;
+  height: 1.5px;
+  position: absolute;
+  bottom: -20%;
+  
+}
+
+.logo-1 img {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .text-center {
@@ -645,7 +683,8 @@ html {
 .art-sgu {
   font-weight: 700;
   font-size: 11px;
-  color: #5a67ba;
+  color:#FF3366;
+
   letter-spacing: 0.5px;
 }
 
@@ -692,7 +731,7 @@ html {
 
 .menu-item:hover,
 .menu-item.active {
-  background-color: #5969cf;
+  background-color: #785b7c;
   color: white;
 }
 
@@ -718,7 +757,7 @@ html {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-end;
   align-items: center;
   padding: 12px 45px;
   border-bottom: 1px solid #e0e0e0;
