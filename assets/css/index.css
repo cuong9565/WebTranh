@@ -153,6 +153,7 @@ section.active{
     font-size: 2em;
     padding: 0 40px;
     color: gray;
+    text-align: center;
 }
 
 .pop-up .form-container .item {
@@ -253,6 +254,7 @@ section.active{
 .header img {
     width: 20px;
     height: 20px;
+    vertical-align: middle;
 }
 
 .header .logo-img {
@@ -299,8 +301,9 @@ section.active{
 
 .header .item {
     display: inline-block;
-    padding: 10px 10px;
+    padding: 0 10px;
     border-radius: 5px;
+    height: 45px;
 }
 
 .header .item-cart {
@@ -309,7 +312,18 @@ section.active{
     align-items: center;
     gap: 10px;
     border: 2px solid rgb(201, 197, 197);
-    font-size: 1em;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.header .item-cart:hover{
+    background-color: #dad6d6;
+    border: 2px solid #dad6d6;
+}
+
+.header .item-cart:active{
+    background-color: #cdcbcb;
+    border: 2px solid #cdcbcb;
 }
 
 .header .p-cart {
@@ -326,7 +340,7 @@ section.active{
 }
 
 .header .item p{
-    font-size: 0.8rem;
+    font-size: 0.8em;
 }
 
 .header .item-login{
@@ -335,11 +349,34 @@ section.active{
     cursor: pointer;
 }
 
+.header .item-login:hover{
+    background-color: #dad6d6;
+    border: 2px solid #dad6d6;
+}
+
+.header .item-login:active{
+    background-color: #cdcbcb;
+    border: 2px solid #cdcbcb;
+}
+
 .header .item-signup {
-    background-color: #11CFAA;
-    border: 2px solid #11CFAA;
+    color: #fff;
+    background-color: #0dbe9b;
+    border: 2px solid #0dbe9b;
     cursor: pointer;
 }
+
+.header .item-signup:hover{
+    background-color: #20d6b1;
+    border: 2px solid #20d6b1;
+}
+
+.header .item-signup:active{
+    background-color: #37e5c2;
+    border: 2px solid #37e5c2;
+}
+
+
 
 /* ----------------- Nav ------------------ */
 .nav {
@@ -405,6 +442,37 @@ section.active{
     height: 5px;
     background-color: #df6a6a;
 }
+/* ----------------- Nav Link ------------------ */
+.nav-link{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #eeeeee;
+}
+
+.nav-link img{
+    width: 0.9em;
+}
+
+.nav-link a{
+    color: #000000bb; 
+    text-decoration: none;   
+    font-size: 0.9em;
+    /* #e6e6e6 */
+}
+
+.nav-link .item{
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.nav-link .item.item:hover{
+    background-color: #e6e6e6;
+}
+
 /* ----------------- Slide ------------------ */
 .slide{
     background-color: transparent;

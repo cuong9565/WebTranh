@@ -49,17 +49,22 @@ const products = {
 const productTypes = {
     'new' :{
         name: 'Sản phẩm mới',
-        products: {
-            0:{
-            },
-        },
+        products: [
+            ['sondau',    [9, 10]],
+            ['hoa',       [9, 10]],
+            ['phongcanh', [9, 10]],
+            ['truutuong', [9, 10]],
+        ],
     },
     'all' :{
         id: 0,
         name: 'Tất cả thể loại',
-        products: {
-
-        }
+        products: [
+            ['sondau',    [1, 2]],
+            ['hoa',       [1, 2]],
+            ['phongcanh', [1, 2]],
+            ['truutuong', [1, 2]],
+        ],
     },
     'sondau': {
         id: 1,

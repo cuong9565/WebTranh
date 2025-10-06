@@ -1,77 +1,22 @@
-// Lấy id từ URL và hiển thị chi tiết sản phẩm
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const url = window.location.href.split('?')
+ShowProductDetail(url[1].split('=')[1], url[2].split('=')[1])
 
-if (products[id]) {
-    const p = products[id];
-    document.getElementById("mainImage").src = p.mainImage;
-    document.getElementById("productTitle").textContent = p.title;
-    document.getElementById("productPrice").textContent = p.price;
-    document.getElementById("productMaterial").textContent = p.material;
-    document.getElementById("productSize").textContent = p.size;
-    document.getElementById("productDesc").innerHTML = p.desc;
-} else {
-    document.querySelector(".product-detail-container").innerHTML = "<p>Sản phẩm không tồn tại!</p>";
-}
-
-
-/*  // ========================================Chức năng phóng to ảnh==================================
-
-function openZoom() {
-    const modal = document.getElementById("zoomModal");
-    const zoomedImage = document.getElementById("zoomedImage");
-    const mainImage = document.getElementById("mainImage");
-
-    zoomedImage.src = mainImage.src; // lấy ảnh chính
-    modal.style.display = "flex"; // hiện modal
-}
-
-function closeZoom() {
-    document.getElementById("zoomModal").style.display = "none";
-}
-
-let zoomLevel = 1;
-
-function openZoom() {
-    const modal = document.getElementById("zoomModal");
-    const zoomedImage = document.getElementById("zoomedImage");
-    const mainImage = document.getElementById("mainImage");
-
-    zoomedImage.src = mainImage.src;
-    zoomLevel = 1; // reset khi mở
-    zoomedImage.style.transform = "scale(1)";
-    modal.style.display = "flex";
-}
-
-function closeZoom() {
-    document.getElementById("zoomModal").style.display = "none";
-}
-
-function zoomIn() {
-    zoomLevel += 0.2;
-    document.getElementById("zoomedImage").style.transform = `scale(${zoomLevel})`;
-}
-
-function zoomOut() {
-    if (zoomLevel > 0.4) { // giới hạn nhỏ nhất
-        zoomLevel -= 0.2;
-        document.getElementById("zoomedImage").style.transform = `scale(${zoomLevel})`;
+// Hiển thị thông tin chi tiết sản phẩm
+function ShowProductDetail(category, id){
+    const p = productTypes[category].products[id]
+    if(p){
+        document.getElementById("mainImage").src = p.mainImage;
+        document.getElementById("productTitle").textContent = p.title;
+        document.getElementById("productPrice").textContent = p.price;
+        document.getElementById("productMaterial").textContent = 'Chất liệu: ' + p.material;
+        document.getElementById("productSize").textContent = 'Kích thước: ' + p.size;
+        document.getElementById("productDesc").innerHTML = 'Mô tả</br>' + p.desc;
+    }else{
+        document.querySelector(".product-detail-container").innerHTML = "<p>Sản phẩm không tồn tại!</p>";
     }
 }
 
-function resetZoom() {
-    zoomLevel = 1;
-    document.getElementById("zoomedImage").style.transform = "scale(1)";
+// Phóng to ảnh
+function openZoom(){
+
 }
-
-
-// Đóng modal khi click ra ngoài ảnh
-window.onclick = function(event) {
-    const modal = document.getElementById("zoomModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
-    */
-
-
