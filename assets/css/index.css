@@ -13,6 +13,13 @@ body {
     overflow-x: hidden;
 }
 
+section{
+    display: none;
+}
+section.active{
+    display: block;
+}
+
 /* Cuong */
 /* ----------------- Alert ------------------ */
 .container-alert{
@@ -376,7 +383,7 @@ body {
 .nav .item-a::before{
     position: absolute;
     content: "";
-    top: 0;
+    bottom: 0;
     left: 0;
     height: 5px;
     width: 0;
@@ -392,7 +399,7 @@ body {
 .nav .isactive::before{
     position: absolute;
     content: "";
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 5px;
@@ -472,7 +479,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    padding: 10px;
+    padding: 0 10px 100px 10px;
 }
 .nav-page img{
     width: 25px;
@@ -509,10 +516,9 @@ body {
 
 /* Best-sellers */
 .bottom {
-    background: rgb(255, 255, 255);
-    padding: 10px;
+    background: #fff;
+    padding: 25px;
     width: 100%;
-
 }
 
 /* Chữ bên trong thẻ best-sellers */
@@ -524,9 +530,9 @@ body {
     color: rgba(1, 1, 1, 0.8);
     letter-spacing: 2px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }
-
 
 /* Container picture */
 .gallery {
@@ -540,26 +546,27 @@ body {
 
 /* Ảnh */
 .picture {
-    max-width: 380px;
-    max-height: 380px;
-    object-fit: contain;
+    width: 260px;
+    height: auto;
+    object-fit: fill;
     border-radius: 8px;
-    display: block;
 }
 
 /* Khung từng tranh */
 .picture-wrapper {
+    position: relative;
     background: #b6aaaa;
-    padding: 10px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-
 }
 
 .picture-wrapper:hover {
-    transform: scale(0.95);
+    /* transform: scale(0.95); */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -585,27 +592,21 @@ body {
 /* Chữ bên dưới tranh */
 h1 {
     font-family: 'Lato', 'Playfair Display', serif;
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 300;
-    font-style: italic;
     color: rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
     margin: 7px 0;
 }
 
 h2 {
-    font-size: 18px;
-    font-style: italic;
+    font-size: 1.1em;
     color: rgba(0, 0, 0, 0.674);
-    letter-spacing: 1px;
     margin: 5px 0;
 }
 
 h3 {
-    font-size: 18px;
-    font-style: italic;
+    font-size: 1.1em;
     color: rgba(255, 0, 0, 0.674);
-    letter-spacing: 1px;
 }
 
 

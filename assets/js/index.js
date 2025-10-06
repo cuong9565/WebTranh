@@ -107,8 +107,60 @@ function AddAlert(text, type){
     }
 
     document.getElementsByClassName('container-alert')[0].append(newDiv)
-    
+}
 
+function ShowCategory(category){
+    var items = document.getElementsByClassName('item-a')
+    for(let i=0; i<items.length; i++){
+        items[0].classList.remove('isactive')
+    }
+    items[productTypes[category].id].classList.add('isactive')
+
+    const nameCategory = productTypes[category].name
+    let html = 
+    `
+        <p class="test-bottom" id="test-bottom">${nameCategory}</p>
+        <div class="gallery">
+    `
+
+    if(category=='new'){
+        for(let i=0; i<8; i++){
+            html +=
+            `
+                <a href="productDetails.html?id=1" class="picture-link">
+                    <div class="picture-wrapper">
+                        <img src="./assets/img/picture3.jpg" class="picture">
+                        <h1>TRANH TRỪU TƯỢNG</h1>
+                        <h2>Đêm Pisa</h2>
+                        <h3>1,200,000 VND</h3>
+                    </div>
+                </a>
+            `
+        }
+    }
+    else{
+        let productlist = productTypes[category].products
+        for(let i=1; i<=8; i++){
+            html +=
+            `
+                <a href="productDetails.html?id=1" class="picture-link">
+                    <div class="picture-wrapper">
+                        <img src="${productlist[i].mainImage}" class="picture">
+                        <h1>${nameCategory}</h1>
+                        <h2>${productlist[i].title}</h2>
+                        <h3>${productlist[i].price}</h3>
+                    </div>
+                </a>
+            `
+        }
+    }
+    html +=
+    `
+        </div>
+    `
+    document.getElementById('card-list').innerHTML = html
+
+    document.getElementById('card-list').scrollIntoView(true);
 }
 
 // # Thêm event cho các component # ----------------------------

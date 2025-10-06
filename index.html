@@ -140,7 +140,7 @@
     <!--------------------- HEADER ----------------------->
     <div class="header">
         <div class="container container-logo">
-            <a href="#"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+            <a href="index.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
         </div>
         <div class="container container-search">
             <input type="text" placeholder="Tìm kiếm sản phẩm">
@@ -173,19 +173,19 @@
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#" class="item-a isactive">Tất cả thể loại</a><span>|</span>
+            <a href="?all" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="?hoa" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh trừu tượng</a>
+            <a href="?truutuong" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
 
@@ -207,46 +207,7 @@
         </div>
 
         <!--------------------- Card ----------------------->
-        <div class="bottom">
-            <p class="test-bottom">Tất cả thể loại</p>
-            <div class="gallery">
-                <a href="productDetails.html?id=1" class="picture-link">
-                    <div class="picture-wrapper">
-                        <img src="./assets/img/picture3.jpg" class="picture">
-                        <h1>TRANH TRỪU TƯỢNG</h1>
-                        <h2>Đêm Pisa</h2>
-                        <h3>1,200,000 VND</h3>
-                    </div>
-                </a>
-
-                <a href="productDetails.html?id=2" class="picture-link">
-                    <div class="picture-wrapper">
-                        <img src="./assets/img/picture4.jpg" class="picture">
-                        <h1>TRANH PHONG CẢNH</h1>
-                        <h2 class="picture-caption">Phố Ánh Nắng</h2>
-                        <h3>850,000 VND</h3>
-                    </div>
-                </a>
-
-                <a href="productDetails.html?id=3" class="picture-link">
-                    <div class="picture-wrapper">
-                        <img src="./assets/img/picture6.jpg" class="picture">
-                        <h1>TRANH TĨNH VẬT</h1>
-                        <h2>Cửa Sổ Chanh Biển</h2>
-                        <h3>900,000 VND</h3>
-                    </div>
-                </a>
-
-                <a href="productDetails.html?id=4" class="picture-link">
-                    <div class="picture-wrapper">
-                        <img src="./assets/img/picture7.jpg" class="picture">
-                        <h1>TRANH KIẾN TRÚC</h1>
-                        <h2>Cửa Sổ Santorini</h2>
-                        <h3>1,100,000 VND</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <div class="bottom" id="card-list"></div>
 
         <!--------------------- NAV PAGE ----------------------->
         <div class="nav-page">
@@ -300,11 +261,17 @@
         </div>
     </div>
 
-        <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/products.js"></script>
     <script>
         var inTerValSlide = setInterval(() => {
             GoToSlide((indexSlide + 1 + numSlide) % numSlide)
         }, 3000)
+
+        
+        url = window.location.href.split("?")
+        if(url[1] === undefined) ShowCategory('new')
+        else ShowCategory(url[1])
     </script>
 </body>
 
