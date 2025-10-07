@@ -405,6 +405,47 @@ section.active{
     height: 5px;
     background-color: #df6a6a;
 }
+
+/* ----------------- Search nang cao ------------------ */
+.nav .search-advance{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.nav .item-a:hover .search-advance{
+    display: block;
+}
+.nav .search-advance .container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+.nav .search-advance .item{
+    width: 23%;
+}
+.nav .search-advance .item h3{
+    font-size: 1.2em;
+    color: #000;
+    margin-bottom: 10px;
+}
+.nav .search-advance .item a{
+    display: block;
+    text-decoration: none;
+    color: #555;
+    margin: 5px 0;
+}
+.nav .search-advance .item a:hover{
+    color: #df6a6a;
+    transition: all 0.3s ease-in-out;
+}
 /* ----------------- Slide ------------------ */
 .slide{
     background-color: transparent;
