@@ -47,7 +47,7 @@ cancelAddCategory.addEventListener('click', function() {
 
 btnConfirm.forEach(btn => {
     btn.addEventListener('click', function(e) {
-        alert("Lưu thành công !");
+       notification.success("Lưu danh mục thành công !")
     });
 });
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-import.css">
     <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -73,10 +74,7 @@
 
         <div class="main-content">
             <header class="header">
-                <div class="input-search" role="search">
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <div class="icon search-icon"></div>
-                </div>
+                
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
                     <div class="name-role">
@@ -104,7 +102,7 @@
                                 <a href="#">
                                     <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
                                 </a>
-                                <a href="dang-xuat.html">
+                                <a href="login_adm.html">
                                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                                 </a>
                             </div>
@@ -124,7 +122,7 @@
                                 <i class="fa-solid fa-upload"></i> Nhập Excel
                                 <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
                             </button>
-                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                            <button class="btn-excel-export" onclick="notification.success('Đã xuất file Excel thành công !')">
                                 <i class="fa-solid fa-download"></i> Xuất Excel
                             </button>
                         </div>
@@ -222,7 +220,7 @@
                                     <button class="btn-view" onclick="openViewModal('PN002')"><i
                                             class="fa-regular fa-eye"></i></button>
                                     <button class="btn-edit"
-                                        onclick="alert('Phiếu nhập đã hoàn thành không thể sửa !')"><i
+                                        onclick="notification.info('Phiếu nhập đã hoàn thành không thể sửa!')"><i
                                             class="fas fa-edit"></i></button>
                                 </td>
                             </tr>
@@ -490,6 +488,7 @@
     </div>
     <script src="../assets/js/manager-import.js"></script>
     <script src="../assets/js/account-admin.js"></script>
+    <script src="../assets/js/Notification.js"></script>
 </body>
 
 </html>
