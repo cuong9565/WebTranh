@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/general.css">
-    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/css/xacnhandathang.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Art Store</title>
 </head>
 
 <body>
     <!-- This element to alert -->
-    <div class="container-alert"></div>
+    <div class="container-alert">
+    </div>
     <!-- This element to cover all page -->
-    <div class="pop-up"></div>
+    <div class="pop-up">
+    </div>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
@@ -65,62 +67,41 @@
             <a href="#" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
-    <!--------------------- Cart Page ----------------------->
-    <div class="cart-page my-center">
+    <!--------------------- Đặt hàng ----------------------->
+    <div class="order-info my-center">
         <div class="container">
             <div class="header">
-                Giỏ hàng
+                Thanh toán
             </div>
-            <table class="table">
-                <tr class="box header-box">
-                    <th class="item">Hình ảnh</th>
-                    <th class="item">Tên sản phẩm</th>
-                    <th class="item">Loại sản phẩm</th>
-                    <th class="item">Đơn giá</th>
-                    <th class="item">Số lượng</th>
-                    <th class="item">Số tiền</th>
-                    <th class="item">Thao tác</th>
-                </tr>
-                <tr class="box child-box">
-                    <td class="item">
-                        <img class="w-100" src="./assets/img/truu-tuong/1.jpg" alt="pic1">
-                    </td>
-                    <td class="item">Ồ, nắng!</td>
-                    <td class="item">Tranh trừu tượng</td>
-                    <td class="item">15.000.000đ</td>
-                    <td class="item num-item">
-                        <button class="btn" onclick="minus('pd1')"><img class="w-" src="./assets/img/minus.svg" alt="Giảm"></button>
-                        <input type="text" class="text-box number" value="2" id="pd1">
-                        <button class="btn" onclick="plus('pd1')"><img class="w-" src="./assets/img/plus.svg" alt="Tăng"></button>
-                    </td>
-                    <td class="item">30.000.000đ</td>
-                    <td class="item">
-                        <button class="btn">Xóa</button>
-                    </td>
-                </tr>
-                <tr class="box child-box">
-                    <td class="item">
-                        <img class="w-100" src="./assets/img/son-dau/2.jpg" alt="pic1">
-                    </td>
-                    <td class="item">Phố cổ Hà Nội</td>
-                    <td class="item">Tranh sơn dầu</td>
-                    <td class="item">13.000.000đ</td>
-                    <td class="item num-item">
-                        <button class="btn" onclick="minus('pd2')"><img class="w-" src="./assets/img/minus.svg" alt="Giảm"></button>
-                        <input type="text" class="text-box number" value="1" id="pd2">
-                        <button class="btn" onclick="plus('pd2')"><img class="w-" src="./assets/img/plus.svg" alt="Tăng"></button>
-                    </td>
-                    <td class="item">13.000.000đ</td>
-                    <td class="item">
-                        <button class="btn">Xóa</button>
-                    </td>
-                </tr>
-            </table>
+            <div class="content">
+                <fieldset>
+                    <legend>Thông tin đặt hàng</legend>
 
-            <div class="item-total">
-                <span>Thành tiền: </span>
-                <span>43.000.000đ</span>
-                <button class="btn-total" onclick="window.location.href = 'thongtindathang.html'">Thanh toán</button>
+                    <div class="row">
+                        <label>Họ và tên: </label>
+                        <p>Lê Mạnh Cường</p>
+                    </div>
+                    <div class="row">
+                        <label>Số điện thoại: </label>
+                        <p>0397969307</p>
+                    </div>
+                    <div class="row">
+                        <label>Địa chỉ nhận hàng: </label>
+                        <p>283/21C, ấp 2, huyện Hóc Môn, tp Hồ Chí Minh</p>
+                    </div>
+                    <div class="row">
+                        <label>Phương thức thanh toán: </label>
+                        <p>Thanh toán khi giao hàng</p>
+                    </div>
+                    <div class="row">
+                        <label>Tổng tiền: </label>
+                        <p>43.000.000đ</p>
+                    </div>
+                </fieldset>
+                
+                <div class="row my-center">
+                    <button class="btn-total">Thanh toán</button>
+                </div>
             </div>
         </div>
     </div>
@@ -164,7 +145,7 @@
             </div>
         </div>
     </div>
-    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/xacnhandathang.js"></script>
     <script>
         
     </script>

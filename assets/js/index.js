@@ -129,31 +129,43 @@ function ShowCategory(category){
             pds[j][1].forEach(i => {
                 html +=
                 `
-                    <a href="productDetails.html?category=${pds[j][0]}?id=${i}" class="picture-link">
-                        <div class="picture-wrapper">
+                    <div class="picture-link">
+                        <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${pds[j][0]}?id=${i}')">
                             <img src="${productlist[i].mainImage}" class="picture">
-                            <h1>${nameCategory}</h1>
-                            <h2>${productlist[i].title}</h2>
-                            <h3>${productlist[i].price}</h3>
+                            <div class="content-wrapper">
+                                <h1>${nameCategory}</h1>
+                                <h2>${productlist[i].title}</h2>
+                                <h3>${productlist[i].price}</h3>
+                                <div class="item">
+                                    <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                    <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 `
             });
         }
     }
     else{
         let productlist = productTypes[category].products
-        for(let i=1; i<=8; i++){
+        for(let i=0; i<8; i++){
             html +=
             `
-                <a href="productDetails.html?category=${category}?id=${i}" class="picture-link">
-                    <div class="picture-wrapper">
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}?id=${i}')">
                         <img src="${productlist[i].mainImage}" class="picture">
-                        <h1>${nameCategory}</h1>
-                        <h2>${productlist[i].title}</h2>
-                        <h3>${productlist[i].price}</h3>
+                        <div class="content-wrapper">
+                            <h1>${nameCategory}</h1>
+                            <h2>${productlist[i].title}</h2>
+                            <h3>${productlist[i].price}</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             `
         }
     }
@@ -166,10 +178,17 @@ function ShowCategory(category){
 }
 
 // Yêu cầu đăng nhập trước khi mua hàng
-function CartRequireLogin(){
+function CartRequireLogin(event){
+    event.stopPropagation()
     AddAlert('Vui lòng đăng nhập tài khoản', 'fail')
     ShowLoginForm()
 }
+
+// Hàm chuyển trang
+function MoveDetail(url){
+    window.location.href = url;
+}
+
 
 // # Thêm event cho các component # ----------------------------
 // ## Event click ngoài form
