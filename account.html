@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/account.css">
+
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Art Store</title>
 </head>
@@ -156,7 +157,7 @@
                     </div>
                 </div>
             </a>
-            
+
             <a href="account.html">
                 <div class="item item-cart">
                     <p class="p-cart"><img src="./assets/img/info.svg" alt="Card-icon"></p>
@@ -199,21 +200,27 @@
                 <img src="./assets/img/info.svg" alt="info-icon" class="icon-small">
                 <span class="item-text">Thông tin tài khoản</span>
             </div>
-            <div class="my-left mt-17 item">
-                <img src="./assets/img/order.svg" alt="info-icon" class="icon-small">
+
+
+            <a href="#" id="btn-orders" class="my-left mt-17 item">
+                <img src="./assets/img/order.svg" alt="order-icon" class="icon-small">
                 <span class="item-text">Quản lý đơn hàng</span>
-            </div>
-            <div class="my-left mt-17 item">
+            </a>
+
+            <div class="my-left mt-17 item" id="btn-change-password">
                 <img src="./assets/img/password.svg" alt="info-icon" class="icon-small">
                 <span class="item-text">Đổi mật khẩu</span>
             </div>
-            <div class="my-left mt-17 item">
+
+
+            <a href="index.html" class="my-left mt-17 item">
                 <img src="./assets/img/logout.svg" alt="info-icon" class="icon-small">
                 <span class="item-text">Đăng xuất</span>
-            </div>
+            </a>
+
         </div>
 
-        <div class="container container-right">
+        <div class="container container-right" id="content">
             <div class="my-center">
                 <div class="header">Thông tin tài khoản</div>
             </div>
@@ -240,15 +247,18 @@
             </div>
             <div class="my-left mt-17">
                 <label class="item-text" for="inp-birth">Ngày sinh</label>
-                <input type="date" name="" id="inp-birth" class="text-box">
+                <input type="date" id="inp-birth" class="text-box">
             </div>
             <div class="my-center mt-20">
-                <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">Lưu thông tin</button>
+                <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">
+                    Lưu thông tin
+                </button>
             </div>
         </div>
+
     </div>
 
-    
+
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
         <div class="footer_word">
@@ -263,7 +273,7 @@
         <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
-        
+
         <div class="container-center">
             <hr class="footer_line">
         </div>
@@ -292,6 +302,7 @@
 
     </div>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/infoCustomer.js"></script>
 </body>
 
 </html>
