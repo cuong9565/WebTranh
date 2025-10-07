@@ -15,8 +15,11 @@
 
     * {
       box-sizing: border-box;
+    
     }
-
+    a{
+      text-decoration: none;
+    }
     body,
     html {
       margin: 0;
@@ -169,7 +172,7 @@
 
     .header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 12px 45px;
       border-bottom: 1px solid #e0e0e0;

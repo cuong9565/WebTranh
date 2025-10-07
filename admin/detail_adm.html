@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - ART SGU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/notification.css" />
+    <link rel="stylesheet" href="../assets/css/product_detail_adm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <aside class="sidebar" aria-label="Sidebar navigation">
+            <a href="dashboard.html" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-1">
+                        <image src="../assets/img/tải xuống.png" mode="">
+                    </div>
+                    <span class="art-sgu">ART SGU</span>
+                </div>
+            </a>
+            <nav class="menu" aria-label="Main menu">
+                <span class="menu-2">MENU</span>
+                <div class="menu-buttons">
+                    <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
+                        <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Tổng quan</span>
+                    </a>
+                    <a href="manager-art.html " class="menu-item order active" aria-label="Quản lý sản phẩm">
+                        <span class="icon"><i class="fa-solid fa-box"></i></span>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập xuất</span>
+                    </a>
+
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
+                    </a>
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                        <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                </div>
+                <span class="others">OTHERS</span>
+                <div class="menu-buttons">
+                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
+                        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="user-info" id="userInfo">
+                    <img src="../assets/img/image.png" alt="Avatar">
+                    <div class="name-role">
+                        <span class="merchant-name">Xuân Huấn</span>
+                        <span>Quản trị viên</span>
+                    </div>
+                    <div class="chevron-down">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="option-account-admin">
+                        <div id="adminDropdown">
+                            <div class="dropdown-header">
+                                <img src="../assets/img/image.png" alt="Avatar">
+                                <div class="dropdown-user-info">
+                                    <span>Xuân Huấn</span>
+                                    <span>admin@artvietnam.com</span>
+                                    <span>Quản trị viên</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i> Hồ sơ cá nhân
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+                                </a>
+                                <a href="login_adm.html">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- nội dung chính  -->
+            <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Chi tiết sản phẩm</h1>
+                         <p style="font-size:1rem;">#Chiếc thuyền ngoài xa </p>
+                    </div>
+                
+                </div>
+
+                <div class="product-detail-container">
+                    <div> <div class="image-section">
+                        <img id="mainImage" class="main-image" src="../assets/img/phong-canh/7.jpg" alt="Ảnh sản phẩm">
+                        <!-- <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button> -->
+                    </div></div>
+                    <!-- Phần thông tin -->
+                    <div class="info-section">
+                        <div style="display: flex; align-items: center;">
+                            <label for="">Tên sản phẩm :</label>
+                            <p class="thongtin">Chiếc thuyền ngoài xa</p>        
+                        </div>                      
+                        <div style="display: flex; align-items: center;">
+                            <label for="">Danh mục :</label>
+                            <p class="thongtin">Tranh Phong cảnh</p>        
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">   <label for="">Giá bán :</label>
+                            <p id="productPrice" class="product-price">15.000.000 VND</p>
+                        </div>
+                        <div style="display: flex; align-items: center;">   <label for="">Giá nhập :</label>
+                            <p id="productPrice" class="product-price-import"> 10.000.000 VND</p>
+                        </div>
+                        <div style="display: flex; align-items: center;"><label for="">Tỉ lệ lợi nhuận :</label>
+                            <p id="productPrice" class="product-price-profit"> 50%</p>
+                        </div>
+                        <div style="display: flex; align-items: center;"> <label for="">Chất liệu :</label>
+                            <p class="thongtin">Sơn dầu</p>        
+                        </div>
+                         <div style="display: flex; align-items: center;">
+                            <label for="">Kích thước :</label>
+                            <p class="thongtin">50cm x 62cm</p>        
+                        </div>     
+                         <div style="display: flex; align-items: center;">
+                            <label for="">Đã bán :</label>
+                            <p class="thongtin">12 sản phẩm </p>        
+                        </div>     
+                         <div style="display: flex; align-items: center;">
+                            <label for="">Tồn kho :</label>
+                            <p class="thongtin">82 sản phẩm</p>        
+                        </div>     
+                         <div style="display: flex; align-items: center;">
+                            <label for="">Mô tả :</label>
+                            <p class="thongtin"> Bức tranh chiếc thuyền đánh cá </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/account-admin.js"></script>
+    <script src="../assets/js/Notification.js"></script>
+</body>
+
+</html>
