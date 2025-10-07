@@ -153,6 +153,7 @@ section.active{
     font-size: 2em;
     padding: 0 40px;
     color: gray;
+    text-align: center;
 }
 
 .pop-up .form-container .item {
@@ -253,6 +254,7 @@ section.active{
 .header img {
     width: 20px;
     height: 20px;
+    vertical-align: middle;
 }
 
 .header .logo-img {
@@ -299,8 +301,9 @@ section.active{
 
 .header .item {
     display: inline-block;
-    padding: 10px 10px;
+    padding: 0 10px;
     border-radius: 5px;
+    height: 45px;
 }
 
 .header .item-cart {
@@ -309,7 +312,18 @@ section.active{
     align-items: center;
     gap: 10px;
     border: 2px solid rgb(201, 197, 197);
-    font-size: 1em;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.header .item-cart:hover{
+    background-color: #dad6d6;
+    border: 2px solid #dad6d6;
+}
+
+.header .item-cart:active{
+    background-color: #cdcbcb;
+    border: 2px solid #cdcbcb;
 }
 
 .header .p-cart {
@@ -326,7 +340,7 @@ section.active{
 }
 
 .header .item p{
-    font-size: 0.8rem;
+    font-size: 0.8em;
 }
 
 .header .item-login{
@@ -335,11 +349,34 @@ section.active{
     cursor: pointer;
 }
 
+.header .item-login:hover{
+    background-color: #dad6d6;
+    border: 2px solid #dad6d6;
+}
+
+.header .item-login:active{
+    background-color: #cdcbcb;
+    border: 2px solid #cdcbcb;
+}
+
 .header .item-signup {
-    background-color: #11CFAA;
-    border: 2px solid #11CFAA;
+    color: #fff;
+    background-color: #0dbe9b;
+    border: 2px solid #0dbe9b;
     cursor: pointer;
 }
+
+.header .item-signup:hover{
+    background-color: #20d6b1;
+    border: 2px solid #20d6b1;
+}
+
+.header .item-signup:active{
+    background-color: #37e5c2;
+    border: 2px solid #37e5c2;
+}
+
+
 
 /* ----------------- Nav ------------------ */
 .nav {
@@ -405,47 +442,37 @@ section.active{
     height: 5px;
     background-color: #df6a6a;
 }
-
-/* ----------------- Search nang cao ------------------ */
-.nav .search-advance{
-    position: absolute;
-    top: 100%;
-    left: 0;
+/* ----------------- Nav Link ------------------ */
+.nav-link{
     width: 100%;
-    background-color: #fff;
-    padding: 20px 0;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.nav .item-a:hover .search-advance{
-    display: block;
-}
-.nav .search-advance .container{
-    width: 80%;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #eeeeee;
 }
-.nav .search-advance .item{
-    width: 23%;
+
+.nav-link img{
+    width: 0.9em;
 }
-.nav .search-advance .item h3{
-    font-size: 1.2em;
-    color: #000;
-    margin-bottom: 10px;
+
+.nav-link a{
+    color: #000000bb; 
+    text-decoration: none;   
+    font-size: 0.9em;
+    /* #e6e6e6 */
 }
-.nav .search-advance .item a{
-    display: block;
-    text-decoration: none;
-    color: #555;
-    margin: 5px 0;
+
+.nav-link .item{
+    padding: 5px;
+    border-radius: 3px;
 }
-.nav .search-advance .item a:hover{
-    color: #df6a6a;
-    transition: all 0.3s ease-in-out;
+
+.nav-link .item.item:hover{
+    background-color: #e6e6e6;
 }
+
 /* ----------------- Slide ------------------ */
 .slide{
     background-color: transparent;
@@ -520,7 +547,6 @@ section.active{
     justify-content: center;
     align-items: center;
     gap: 5px;
-    padding: 0 10px 100px 10px;
 }
 .nav-page img{
     width: 25px;
@@ -551,13 +577,14 @@ section.active{
 
 /* ----------------- Main ------------------ */
 .main {
-    background-color: rgb(255, 255, 255);
+    background-color: #ececec;
     height: auto;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 /* Best-sellers */
 .bottom {
-    background: #fff;
     padding: 25px;
     width: 100%;
 }
@@ -571,7 +598,6 @@ section.active{
     color: rgba(1, 1, 1, 0.8);
     letter-spacing: 2px;
     text-align: center;
-    margin-top: 50px;
     margin-bottom: 35px;
 }
 
@@ -585,23 +611,65 @@ section.active{
     overflow: hidden;
 }
 
+.bottom .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 1.5rem;
+}
+
+.bottom a{
+    text-decoration: none;
+    display: block;
+}
+
+.bottom button{
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 0;
+    font-size: 0.9em;
+    width: 105px;
+    cursor: pointer;
+}
+
+.bottom button:nth-child(1){
+    background-color: #f57c00;
+}
+.bottom button:nth-child(1):hover{
+    background-color: #ff962d;
+}
+.bottom button:nth-child(1):active{
+    background-color: #ffa143;
+}
+.bottom button:nth-child(2){
+    background-color: #e53935;
+}
+.bottom button:nth-child(2):hover{
+    background-color: #ee5653;
+}
+.bottom button:nth-child(2):active{
+    background-color: #ed706e;
+}
+
+
 /* Ảnh */
 .picture {
-    width: 260px;
+    width: 270px;
     height: auto;
     object-fit: fill;
-    border-radius: 8px;
 }
 
 /* Khung từng tranh */
 .picture-wrapper {
+    width: 270px;
     position: relative;
-    background: #b6aaaa;
-    padding: 15px;
+    background: #fff;
     margin-top: 5px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -611,11 +679,11 @@ section.active{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.content-wrapper{
+    padding: 15px;
+}
+
 /* hover nghiêng 3D
-.picture-wrapper:hover {
-    transform: perspective(600px) rotateY(10deg);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-} */
 
 /* Link wrap quanh wrapper để clickable */
 .picture-link {
@@ -624,7 +692,7 @@ section.active{
     display: block; 
 }
 
-.picture-link:hover .picture-wrapper {
+.picture-wrapper:hover {
     transform: translateY(-5px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
@@ -638,13 +706,11 @@ h1 {
     color: rgba(0, 0, 0, 0.7);
     margin: 7px 0;
 }
-
 h2 {
     font-size: 1.1em;
     color: rgba(0, 0, 0, 0.674);
     margin: 5px 0;
 }
-
 h3 {
     font-size: 1.1em;
     color: rgba(255, 0, 0, 0.674);

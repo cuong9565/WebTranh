@@ -46,36 +46,43 @@ const products = {
     }
 };
 
-const productTypes = {
+const productTypes = 
+{
     'new' :{
         name: 'Sản phẩm mới',
-        products: {
-            0:{
-            },
-        },
+        products: [
+            ['sondau',    [8, 9]],
+            ['hoa',       [8, 9]],
+            ['phongcanh', [8, 9]],
+            ['truutuong', [8, 9]],
+        ],
     },
     'all' :{
         id: 0,
         name: 'Tất cả thể loại',
-        products: {
-
-        }
+        products: [
+            ['sondau',    [0, 1]],
+            ['hoa',       [0, 1]],
+            ['phongcanh', [0, 1]],
+            ['truutuong', [0, 1]],
+        ],
     },
     'sondau': {
         id: 1,
         name: "Tranh sơn dầu",
-        products: {
-            1: {
-                title: 'Hoài Niệm',
-                price: '7,000,000 VNĐ',
-                material: 'Sơn dầu',
-                size: '39cm x 48cm',
-                desc: `-Chất liệu: Sơn dầu</br>
-                        -Năm sáng tác: 2010</br>
-                        -Giá bao gồm khung`,
-                mainImage: './assets/img/son-dau/1.jpg',
+        products: 
+        [
+            {
+                    title: 'Hoài Niệm',
+                    price: '7,000,000 VNĐ',
+                    material: 'Sơn dầu',
+                    size: '39cm x 48cm',
+                    desc: `-Chất liệu: Sơn dầu</br>
+                            -Năm sáng tác: 2010</br>
+                            -Giá bao gồm khung`,
+                    mainImage: './assets/img/son-dau/1.jpg',
             },
-            2: {
+            {
                 title: 'Phố Cổ Hà Nội',
                 price: '20,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -83,7 +90,7 @@ const productTypes = {
                 desc: `Giá bán bao gồm cả khung gỗ tự nhiên</br>Chất liệu: Sơn Dầu</br>Kích thước: 50cm x 62cm</br>Sáng tác: 2005`,
                 mainImage: './assets/img/son-dau/2.jpg',
             },
-            3: {
+            {
                 title: 'Thưởng Quỳnh',
                 price: '14,000,000 VNĐ',
                 material: 'acrylic',
@@ -91,7 +98,7 @@ const productTypes = {
                 desc: `Chất liệu: acrylic</br>Kích thước: 60cm x 70cm`,
                 mainImage: './assets/img/son-dau/3.jpg',
             },
-            4: {
+            {
                 title: 'Thu Biếc',
                 price: '6,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -99,7 +106,7 @@ const productTypes = {
                 desc: `Chất liệu: Sơn dầu</br>Kích thước: 80cm x 120cm`,
                 mainImage: './assets/img/son-dau/4.jpg',
             },
-            5: {
+            {
                 title: 'Đêm Kinh Thành',
                 price: '6,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -107,7 +114,7 @@ const productTypes = {
                 desc: `Đêm Kinh Thành`,
                 mainImage: './assets/img/son-dau/5.jpg',
             },
-            6: {
+            {
                 title: 'Thu Biếc',
                 price: '4,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -115,7 +122,7 @@ const productTypes = {
                 desc: `Thu Biếc`,
                 mainImage: './assets/img/son-dau/6.jpg',
             },
-            7: {
+            {
                 title: 'Mùa Vàng',
                 price: '8,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -123,7 +130,7 @@ const productTypes = {
                 desc: `Mùa Vàng`,
                 mainImage: './assets/img/son-dau/7.jpg',
             },
-            8:{
+            {
                 title: 'Nắng vàng Tây bắc',
                 price: '15,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -131,7 +138,7 @@ const productTypes = {
                 desc: `Cảnh đẹp thiên nhiên và con người Tây bắc dung dị trong sinh hoạt mùa màng dưới ánh nắng vàng lung linh</br>Sáng tác: 2025`,
                 mainImage: './assets/img/son-dau/8.jpg',
             },
-            9:{
+            {
                 title: 'Nắng vàng Tây bắc',
                 price: '25,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -139,7 +146,7 @@ const productTypes = {
                 desc: `Tranh phong canh ban truu the hien mua vang Tay bac</br>Sáng tác: 2025`,
                 mainImage: './assets/img/son-dau/9.jpg',
             },
-            10:{
+            {
                 title: 'Mùa hoa gạo',
                 price: '9,900,000 VNĐ',
                 material: 'Acrylic',
@@ -147,14 +154,15 @@ const productTypes = {
                 desc: `Mùa hoa gạo`,
                 mainImage: './assets/img/son-dau/10.jpg',
             }
-        }
+        ]
     },
 
     'hoa': {
         id: 2,
         name: "Tranh hoa",
-        products: {
-            1: {
+        products: 
+        [
+            {
                 title: 'Sắc hoa Trên Phố',
                 price: '10,000,000 VNĐ',
                 material: 'Acrylic',
@@ -162,7 +170,7 @@ const productTypes = {
                 desc: `Tp: Sắc hoa trên phố</br>Cl Acrylic</br>Kt 80x100cm</br>Tg Lê Quang Sáng</br>Năm sáng tác 2025`,
                 mainImage: './assets/img/hoa/1.jpg',
             },
-            2: {
+            {
                 title: 'Bản Giao Hưởng Của Sắc hoa',
                 price: '3,500,000 VNĐ',
                 material: 'Acrylic',
@@ -170,7 +178,7 @@ const productTypes = {
                 desc: `Tranh sáng tác, độc bản và có giấy tác quyền của họa sĩ`,
                 mainImage: './assets/img/hoa/2.jpg',
             },
-            3: {
+            {
                 title: 'Bình hoa 7',
                 price: '3,200,000 VNĐ',
                 material: 'Acrylic',
@@ -178,7 +186,7 @@ const productTypes = {
                 desc: `Bộ tranh tĩnh vật “Hơi thở gốm xưa” là sự hòa quyện giữa ký ức làng gốm và vẻ đẹp giản dị của đời sống thường ngày.</br>Sáng tác: 2025`,
                 mainImage: './assets/img/hoa/3.jpg',
             },
-            4: {
+            {
                 title: 'Bình hoa 6',
                 price: '3,200,000 VNĐ',
                 material: 'Acrylic',
@@ -186,7 +194,7 @@ const productTypes = {
                 desc: `Bộ tranh tĩnh vật “Hơi thở gốm xưa” là sự hòa quyện giữa ký ức làng gốm và vẻ đẹp giản dị của đời sống thường ngày.</br>Sáng tác: 2025`,
                 mainImage: './assets/img/hoa/4.jpg',
             },
-            5: {
+            {
                 title: 'Bạch Mai 2',
                 price: '16,000,000 VNĐ',
                 material: 'Acrylic',
@@ -194,7 +202,7 @@ const productTypes = {
                 desc: `Sáng tác: 2025`,
                 mainImage: './assets/img/hoa/5.jpg',
             },
-            6: {
+            {
                 title: 'Hoa Nắng',
                 price: '3,500,000 VNĐ',
                 material: 'acrylic',
@@ -202,7 +210,7 @@ const productTypes = {
                 desc: `Tranh sáng tác, độc bản và có giấy tác quyền của họa sĩ`,
                 mainImage: './assets/img/hoa/6.jpg',
             },
-            7: {
+            {
                 title: 'Peony',
                 price: '3,000,000 VNĐ',
                 material: 'Acrylic',
@@ -210,7 +218,7 @@ const productTypes = {
                 desc: `Tranh chưa khung`,
                 mainImage: './assets/img/hoa/7.jpg',
             },
-            8:{
+            {
                 title: 'Phượng Vỹ',
                 price: '3,000,000 VNĐ',
                 material: 'Acrylic',
@@ -218,7 +226,7 @@ const productTypes = {
                 desc: `Tranh chưa khung`,
                 mainImage: './assets/img/hoa/8.jpg',
             },
-            9:{
+            {
                 title: 'Áng Mây Sẽ Nở hoa',
                 price: '3,000,000 VNĐ',
                 material: 'Acrylic',
@@ -226,7 +234,7 @@ const productTypes = {
                 desc: `Tranh chưa khung`,
                 mainImage: './assets/img/hoa/9.jpg',
             },
-            10:{
+            {
                 title: 'Hương đêm (11)',
                 price: '14,000,000 VNĐ',
                 material: 'Acrylic',
@@ -234,14 +242,15 @@ const productTypes = {
                 desc: `Hương đêm`,
                 mainImage: './assets/img/hoa/10.jpg',
             }
-        }
+        ]
     },
 
     'phongcanh' :{
         id: 3,
         name: "Phong cảnh",
-        products: {
-            1: {
+        products: 
+        [
+            {
                 title: 'Thiên Nhiên',
                 price: '6,000,000 VNĐ',
                 material: 'Acrylic',
@@ -251,7 +260,7 @@ const productTypes = {
                         </br>– Giá bán đã bao gồm khung `,
                 mainImage: './assets/img/phong-canh/1.jpg',
             },
-            2: {
+            {
                 title: 'Thung Lũng hoa',
                 price: '4,500,000 VNĐ',
                 material: 'Chất liệu khác',
@@ -261,7 +270,7 @@ const productTypes = {
                         </br>– Giá bán đã bao gồm khung `,
                 mainImage: './assets/img/phong-canh/2.jpg',
             },
-            3: {
+            {
                 title: 'Biển',
                 price: '5,500,000 VNĐ',
                 material: 'Chất liệu khác',
@@ -271,7 +280,7 @@ const productTypes = {
                         </br>– Giá bán đã bao gồm khung gỗ tự nhiên `,
                 mainImage: './assets/img/phong-canh/3.jpg',
             },
-            4: {
+            {
                 title: 'Thiên Nhiên Hùng Vĩ',
                 price: '6,00,000 VNĐ',
                 material: 'Chất liệu khác',
@@ -279,7 +288,7 @@ const productTypes = {
                 desc: `Trời vào thu, con đường như sự gọi mời con người bước vào những tháng ngày tươi đẹp rực rỡ và thơ mộng`,
                 mainImage: './assets/img/phong-canh/4.jpg',
             },
-            5: {
+            {
                 title: 'Con Đường Mùa thu',
                 price: '22,000,000 VNĐ',
                 material: 'Acrylic/ Canvas',
@@ -287,7 +296,7 @@ const productTypes = {
                 desc: `Trời vào thu, con đường như sự gọi mời con người bước vào những tháng ngày tươi đẹp rực rỡ và thơ mộng`,
                 mainImage: './assets/img/phong-canh/5.jpg',
             },
-            6: {
+            {
                 title: 'Luân Canh',
                 price: '75,000,000 VNĐ',
                 material: 'Sơn dầu',
@@ -295,7 +304,7 @@ const productTypes = {
                 desc: `Thể hiện sư hùng vĩ của vùng núi Tây bắc cùng với hình ảnh quen thuộc trong lao động  sản xuất của đồng bào trên những tầng ruộng bậc thang. Sự trãi dài liên tục của quá trình luân canh khi nước đổ – cày bừa – thu hoạch.`,
                 mainImage: './assets/img/phong-canh/6.jpg',
             },
-            7: {
+            {
                 title: 'Một Sớm Mùa Đông',
                 price: '10,000,000 VNĐ',
                 material: 'Acrylic',
@@ -303,7 +312,7 @@ const productTypes = {
                 desc: `Một Sớm Mùa Đông`,
                 mainImage: './assets/img/phong-canh/7.jpg',
             },
-            8:{
+            {
                 title: 'Buông Lưới Trên Sông',
                 price: '10,000,000 VNĐ',
                 material: 'Acrylic',
@@ -311,7 +320,7 @@ const productTypes = {
                 desc: `Cảnh buông lưới trên sông (mưu sinh)`,
                 mainImage: './assets/img/phong-canh/8.jpg',
             },
-            9:{
+            {
                 title: 'Mùa lúa chín (2)',
                 price: '12,000,000 VNĐ',
                 material: 'Acrylic',
@@ -319,7 +328,7 @@ const productTypes = {
                 desc: ``,
                 mainImage: './assets/img/phong-canh/9.jpg',
             },
-            10:{
+            {
                 title: 'Gọi Xuân về (3)',
                 price: '12,000,000 VNĐ',
                 material: 'Acrylic',
@@ -327,14 +336,15 @@ const productTypes = {
                 desc: `Gọi Xuân về`,
                 mainImage: './assets/img/phong-canh/10.jpg',
             }
-        }
+        ]
     },
-
+    
     'truutuong': {
         id: 4,
         name: "Tranh trừu tượng",
-        products: {
-            1: {
+        products: 
+        [
+            {
                 title: 'Ồ, Nắng!',
                 price: '15,000,000 VNĐ',
                 material: 'Acrylic/Canvas',
@@ -342,7 +352,7 @@ const productTypes = {
                 desc: `Nắng reo vỡ trong bình minh.`,
                 mainImage: './assets/img/truu-tuong/1.jpg',
             },
-            2: {
+            {
                 title: 'Người Gái Thiên Nhiên',
                 price: '6,000,000 VNĐ',
                 material: 'Acrylic on canvas',
@@ -350,7 +360,7 @@ const productTypes = {
                 desc: `Đời sống xã hội hiện đại đôi lúc buộc con người ta phải tự đeo mặt nạ để hoặc là phòng vệ chính đáng, hoặc là ngụy trang cho những tâm cơ nào đó. Thành ra trở về với thiên nhiên, không phải là tự hoang thú mình, mà để sống thật hơn với bản ngã người. Tranh mang phong cách dã thú biểu hiện trừu tượng.`,
                 mainImage: './assets/img/truu-tuong/2.jpg',
             },
-            3: {
+            {
                 title: 'Cuối thu',
                 price: '16,000,000 VNĐ',
                 material: 'Sơn dầu trên toan',
@@ -358,7 +368,7 @@ const productTypes = {
                 desc: `Sáng tác: 2025`,
                 mainImage: './assets/img/truu-tuong/3.jpg',
             },
-            4: {
+            {
                 title: 'Chớm Xuân',
                 price: '16,00,000 VNĐ',
                 material: 'Sơn dầu trên toan',
@@ -366,7 +376,7 @@ const productTypes = {
                 desc: `Sáng tác: 2025`,
                 mainImage: './assets/img/truu-tuong/4.jpg',
             },
-            5: {
+            {
                 title: 'Phố',
                 price: '18,000,000 VNĐ',
                 material: 'Sơn dầu trên toan',
@@ -374,7 +384,7 @@ const productTypes = {
                 desc: `Trừu tượng</br>Sáng tác: 2025`,
                 mainImage: './assets/img/truu-tuong/5.jpg',
             },
-            6: {
+            {
                 title: 'Quả Vườn Khế',
                 price: '10,000,000 VNĐ',
                 material: 'Acrylic on canvas',
@@ -382,7 +392,7 @@ const productTypes = {
                 desc: `Quả vườn khế – vườn ký ức tuổi thơ`,
                 mainImage: './assets/img/truu-tuong/6.jpg',
             },
-            7: {
+            {
                 title: 'Oi Mùa Nắng Cũ',
                 price: '5,000,000 VNĐ',
                 material: 'Acrylic on canvas',
@@ -390,7 +400,7 @@ const productTypes = {
                 desc: `Nắng cũ, cũng có thể là nơi chốn cũ, luôn gợi thức về những kỷ niệm.</br>Sáng tác: 2025`,
                 mainImage: './assets/img/truu-tuong/7.jpg',
             },
-            8:{
+            {
                 title: 'Tịnh Độ Tại Nhân Gian',
                 price: '3,000,000 VNĐ',
                 material: 'Chất liệu khác',
@@ -398,7 +408,7 @@ const productTypes = {
                 desc: `Hành giả nương sắc tướng thế tục để hoằng pháp, hành thiền nhưng không dính mắc bởi cảnh giới của thế gian.`,
                 mainImage: './assets/img/truu-tuong/8.jpg',
             },
-            9:{
+            {
                 title: 'Mùa hoa Bỏ Lại',
                 price: '10,000,000 VNĐ',
                 material: 'Acrylic/ Canvas',
@@ -406,7 +416,7 @@ const productTypes = {
                 desc: `Sau những hoang tàn vẫn còn đó những hy vọng, những đẹp đẽ tiếp nối – nở hoa`,
                 mainImage: './assets/img/truu-tuong/9.jpg',
             },
-            10:{
+            {
                 title: 'Ngày Tháng Cũ',
                 price: '12,000,000 VNĐ',
                 material: 'Acrylic',
@@ -414,6 +424,7 @@ const productTypes = {
                 desc: `Là ký ức về khung cảnh thân thuộc của tôi`,
                 mainImage: './assets/img/truu-tuong/10.jpg',
             }
-        }
+        ]
     }
+
 }

@@ -150,14 +150,14 @@
         <div class="container container-cart">
             <a href="#">
                 <div class="item item-cart">
-                    <p class="p-cart"><img src="./assets/img/cart.png" alt="Card-icon"></p>
+                    <p class="p-cart"><img src="./assets/img/cart.svg" alt="Card-icon"></p>
                     <div>
                         <p>Giỏ hàng</p>
                     </div>
                 </div>
             </a>
 
-            <button class="item item-login" onclick="ShowLoginForm()">
+            <button class="item item-login" onclick=ShowLoginForm()>
                 <div>
                     <p>Đăng nhập</p>
                 </div>
@@ -167,69 +167,59 @@
                     <p>Đăng ký</p>
                 </div>
             </button>
+
         </div>
     </div>
 
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="index.html" class="item-a">Tất cả thể loại</a><span>|</span>
+            <a href="index.html?all" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="index.html?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="index.html?hoa" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="index.html?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh trừu tượng</a>
+            <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
+
+    
+    <!--------------------- NAV LINK ----------------------->
+    <div class="nav-link">
+        <a href="index.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
+        <span> / </span>
+        <a href="index.html" class="item">Home</a>
+    </div>
+
 
     <!--------------------- MAIN ----------------------->
     <div class="product-detail-container">
         <div class="image-section">
             <img id="mainImage" class="main-image" src="" alt="Ảnh sản phẩm">
             <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button>
-
-            <!--==============CHỨC NĂNG ZOOM ẢNH==============-->
-            <!---
-        <div id="zoomModal" class="zoom-modal">
-            <span class="close" onclick="closeZoom()">&times;</span>
-            <img class="zoom-content" id="zoomedImage">
-
-            
-            <div class="zoom-controls">
-                <button class="zoom-btn" onclick="zoomIn()">➕ Zoom In</button>
-                <button class="zoom-btn" onclick="zoomOut()">➖ Zoom Out</button>
-                <button class="zoom-btn" onclick="resetZoom()">🔄 Reset</button>
-            </div>
-        </div> -->
         </div>
-
         <!-- Phần thông tin -->
         <div class="info-section">
             <h1 id="productTitle" class="product-title"></h1>
             <p id="productPrice" class="product-price"></p>
             <p id="productMaterial" class="product-material"></p>
             <p id="productSize" class="product-size"></p>
-
+            
             <div class="action-buttons">
-                <button class="btn btn-cart">THÊM VÀO GIỎ</button>
-                <button class="btn btn-buy">MUA NGAY</button>
+                <button class="btn btn-cart" onclick="CartRequireLogin(event)">THÊM VÀO GIỎ</button>
+                <button class="btn btn-buy" onclick="CartRequireLogin(event)">MUA NGAY</button>
             </div>
-
+            
             <div class="description" id="productDesc"></div>
         </div>
     </div>
-
-
-
-    <!-- Đường line cách footer với mua hàng  -->
-    <div class="line"></div>
 
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
@@ -275,6 +265,8 @@
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/products.js"></script>
     <script src="./assets/js/productDetails.js"></script>
+    <script>
+    </script>
 
 
 

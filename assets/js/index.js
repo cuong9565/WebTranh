@@ -111,10 +111,8 @@ function AddAlert(text, type){
 
 function ShowCategory(category){
     var items = document.getElementsByClassName('item-a')
-    for(let i=0; i<items.length; i++){
-        items[0].classList.remove('isactive')
-    }
-    items[productTypes[category].id].classList.add('isactive')
+    for(let i=0; i<items.length; i++) items[0].classList.remove('isactive')
+    if(category != 'new') items[productTypes[category].id].classList.add('isactive')
 
     const nameCategory = productTypes[category].name
     let html = 
@@ -123,34 +121,51 @@ function ShowCategory(category){
         <div class="gallery">
     `
 
-    if(category=='new'){
-        for(let i=0; i<8; i++){
-            html +=
-            `
-                <a href="productDetails.html?id=1" class="picture-link">
-                    <div class="picture-wrapper">
-                        <img src="./assets/img/picture3.jpg" class="picture">
-                        <h1>TRANH TRỪU TƯỢNG</h1>
-                        <h2>Đêm Pisa</h2>
-                        <h3>1,200,000 VND</h3>
+    if(category=='new' || category=='all'){
+        let pds = productTypes[category].products
+        for(let j=0; j<pds.length; j++){
+            let nameCategory = productTypes[pds[j][0]].name
+            let productlist = productTypes[pds[j][0]].products
+            pds[j][1].forEach(i => {
+                html +=
+                `
+                    <div class="picture-link">
+                        <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${pds[j][0]}?id=${i}')">
+                            <img src="${productlist[i].mainImage}" class="picture">
+                            <div class="content-wrapper">
+                                <h1>${nameCategory}</h1>
+                                <h2>${productlist[i].title}</h2>
+                                <h3>${productlist[i].price}</h3>
+                                <div class="item">
+                                    <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                    <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            `
+                `
+            });
         }
     }
     else{
         let productlist = productTypes[category].products
-        for(let i=1; i<=8; i++){
+        for(let i=0; i<8; i++){
             html +=
             `
-                <a href="productDetails.html?id=1" class="picture-link">
-                    <div class="picture-wrapper">
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}?id=${i}')">
                         <img src="${productlist[i].mainImage}" class="picture">
-                        <h1>${nameCategory}</h1>
-                        <h2>${productlist[i].title}</h2>
-                        <h3>${productlist[i].price}</h3>
+                        <div class="content-wrapper">
+                            <h1>${nameCategory}</h1>
+                            <h2>${productlist[i].title}</h2>
+                            <h3>${productlist[i].price}</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             `
         }
     }
@@ -159,9 +174,21 @@ function ShowCategory(category){
         </div>
     `
     document.getElementById('card-list').innerHTML = html
-
     document.getElementById('card-list').scrollIntoView(true);
 }
+
+// Yêu cầu đăng nhập trước khi mua hàng
+function CartRequireLogin(event){
+    event.stopPropagation()
+    AddAlert('Vui lòng đăng nhập tài khoản', 'fail')
+    ShowLoginForm()
+}
+
+// Hàm chuyển trang
+function MoveDetail(url){
+    window.location.href = url;
+}
+
 
 // # Thêm event cho các component # ----------------------------
 // ## Event click ngoài form
