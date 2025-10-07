@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/thongtindathang.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <title>Art Store</title>
+</head>
+
+<body>
+    <!-- This element to alert -->
+    <div class="container-alert">
+    </div>
+    <!-- This element to cover all page -->
+    <div class="pop-up">
+        <div class="login-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
+                        onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
+                        id="close-white-login" onclick="ClosePopUp()">
+                </div>
+
+                <form class="form-container">
+                    <h1>Thêm địa chỉ mới</h1>
+
+                    <div class="add-address-container">
+                        <div class="row">
+                            <label for="address-tinh-tp">Tỉnh, Thành phố</label>
+                            <select id="address-tinh-tp">
+                                <option value="0" selected>Chọn Tỉnh, Thành phố</option>
+                                <option value="1">Thành phố Hồ Chí Minh</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="address-quan-huyen">Quận, huyện</label>
+                            <select id="address-tinh-tp">
+                                <option value="0" selected>Chọn quận, huyện</option>
+                                <option value="1">Thành phố Hồ Chí Minh</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="address-home">Số nhà, tên đường</label>
+                            <input type="text" placeholder="Nhập số nhà, tên đường" id="address-home">
+                        </div>
+                        <div class="row my-center">
+                            <button class="btn-address btn">Thêm</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--------------------- HEADER ----------------------->
+    <div class="header">
+        <div class="container container-logo">
+            <a href="#"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+        </div>
+        <div class="container container-search">
+            <input type="text" placeholder="Tìm kiếm sản phẩm">
+            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+        </div>
+        <div class="container container-cart">
+            <a href="cart.html">
+                <div class="item item-cart">
+                    <p class="p-cart"><img src="./assets/img/cart.svg" alt="Card-icon"></p>
+                    <div>
+                        <p>Giỏ hàng</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="account.html">
+                <div class="item item-cart">
+                    <p class="p-cart"><img src="./assets/img/info.svg" alt="Card-icon"></p>
+                    <div>
+                        <p>Xin chào</p>
+                        <p>Lê Mạnh Cường</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!--------------------- NAV ----------------------->
+    <div class="nav">
+        <div class="item">
+            <a href="#" class="item-a">Tất cả thể loại</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="#" class="item-a">Tranh trừu tượng</a>
+        </div>
+    </div>
+    <!--------------------- Đặt hàng ----------------------->
+    <div class="order-info my-center">
+        <div class="container">
+            <div class="header">
+                Thông tin đặt hàng
+            </div>
+            <div class="content">
+                <fieldset>
+                    <legend>Thông tin khách hàng</legend>
+
+                    <div class="row">
+                        <label for="name-info">Họ và tên</label>
+                        <input type="text" id="name-info" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="row">
+                        <label for="phone-info">Số điện thoại</label>
+                        <input type="text" id="phone-info" placeholder="Số điện thoại">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Địa chỉ</legend>
+                    <div class="row">
+                        <label for="address-tinh-tp">Địa chỉ</label>
+                        <select id="address-tinh-tp">
+                            <option value="0" selected>Chọn địa chỉ</option>
+                            <option value="1">283/21C</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-address" onclick="AddAddress()">Thêm địa chỉ mới</button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Phương thức thanh toán</legend>
+                    <div class="row pay-form">
+                        <div class="row">
+                            <input type="radio" id="money" name="pay-solution" checked>
+                            <label for="money" >Thanh toán khi giao hàng</label>
+                        </div>
+                        <div class="row">
+                            <input type="radio" id="pay-online" name="pay-solution">
+                            <label for="pay-online">Thanh toán online</label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="item-total">
+                    <span>Thành tiền: </span>
+                    <span>43.000.000đ</span>
+                    <button class="btn-total" onclick="window.location.href = 'xacnhandathang.html'">Thanh toán</button>
+                </div>
+            </div>
+            <div class="footer">
+                
+            </div>
+        </div>
+    </div>
+    <!--------------------- FOOTER ----------------------->
+    <div class="footer">
+        <div class="footer_word">
+            <a href="#">Trang chủ</a> |
+            <a href="#">Dịch vụ</a> |
+            <a href="#">Liên hệ</a> |
+            <a href="#">Điều khoản</a> |
+            <a href="#">Chính sách bảo mật</a>
+        </div>
+
+        <a href="#"><img src="./assets/img/facebook.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
+        
+        <div class="container-center">
+            <hr class="footer_line">
+        </div>
+
+        <div class="container-between">
+            <div class="item left">
+                <p class="word_left">© 2025 Art Store. All rights reserved.</p>
+            </div>
+
+            <div class="item right">
+                <div class="footer_row">
+                    <img src="./assets/img/address.png" class="footer_icon_bottom">
+                    <p>Địa chỉ: 123 Đường ABC, Phường XYZ, Quận 1, TP.HCM</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/telephone.png" class="footer_icon_bottom">
+                    <p>Điện thoại: (0123) 456-789</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/mail.png" class="footer_icon_bottom">
+                    <p>Email: theartstore2005@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/thongtindathang.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>

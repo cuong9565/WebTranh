@@ -72,6 +72,7 @@ body {
 }
 
 /* ----------------- Pop-up ------------------ */
+/* ----------------- Pop-up ------------------ */
 .pop-up {
     position: fixed;
     z-index: 3;
@@ -83,6 +84,71 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.pop-up .container-close-form {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: top;
+}
+
+.pop-up .close-icon {
+    width: 30px;
+    cursor: pointer;
+    padding: 7px;
+    border-top-right-radius: 8px;
+}
+
+.pop-up .close-icon:hover {
+    background-color: rgba(255, 0, 0, 0.674);
+}
+
+.pop-up .small-icon {
+    width: 16px;
+}
+
+
+.pop-up .left-icon {
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+}
+
+.pop-up .right-icon {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.pop-up .hidden {
+    display: none;
+}
+
+.pop-up .container {
+    background-color: #fff;
+    border: 2px solid gray;
+    box-shadow: 0 0 2px 2px gray;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.pop-up .form-container {
+    background-color: #fff;
+    padding: 0 40px 20px 40px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.pop-up .form-container h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding: 0 40px;
+    color: gray;
+    text-align: center;
+}   
 
 /* ----------------- Header ------------------ */
 .header {
@@ -240,22 +306,30 @@ body {
     background-color: #df6a6a;
 }
 
-/* ---------------------------- Cart ---------------------------- */
-.cart-page{
+/* ---------------------------- order-info ---------------------------- */
+.add-address-container .row{
+    margin-bottom: 20px;
+}
+
+.add-address-container input, .add-address-container select{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.order-info{
     min-height: 50vh; /*Delete*/
     width: 100%;
     background-color: #ececec;
 }
 
-
-.cart-page .container{
+.order-info .container{
     background-color: #fff;
     padding: 10px 20px;
     margin: 20px;
+    width: 50vw;
 }
 
-
-.cart-page .header{
+.order-info .header{
     background-color: #ffeded;
     color: #e50019;
     display: flex;
@@ -263,29 +337,59 @@ body {
     align-items: center;
     padding: 20px;
     font-size: 1.5em;
-    margin-bottom: 10px;
 }
 
-.cart-page .btn{
-    padding: 5px 10px;
-    border: 1px solid #555;
-    border-radius: 1px;
-    background-color: transparent;
-    font-size: 1em;
+.order-info fieldset{
+    padding: 10px 20px 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #e50019;
 }
 
-.cart-page .number{
-    min-width: 50px;
-    width: 50px;
-    /* height: 30px; */
-    border: 1px solid #555;
-    border-radius: 1px;
-    padding: 5px 2px;
+.order-info legend{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e50019;
     text-align: center;
-    font-size: 1em;
+    padding: 5px
 }
 
-.cart-page .item-total{
+.order-info label{
+    width: 40%;
+    font-size: 1em;
+    font-weight: 600;
+    display: inline-block;
+    text-align: right;
+}
+
+.order-info p{
+    display: inline-block;
+    width: 59%;
+}
+
+.order-info .item{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.order-info .row{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.order-info .radio-form{
+    gap: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.order-info .pay-form{
+    display: block;
+}
+
+
+.order-info .item-total{
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -294,7 +398,7 @@ body {
     margin-top: 20px;
 }
 
-.cart-page .btn-total{
+.order-info .btn-total{
     cursor: pointer;
     padding: 10px 15px;
     background-color: #df6a6a;
@@ -304,13 +408,27 @@ body {
     margin-right: 10px;
 }
 
-.cart-page .btn-total:hover{
+.order-info .btn-total:hover{
     background-color: #e97777;
 }
 
-.cart-page .btn-total:active{
+.order-info .btn-total:active{
     background-color: #f88c8c;
 }
+
+.btn-address{
+    background-color: #df6a6a;
+    color: #fff;
+}
+
+.btn-address:hover{
+    background-color: #e97777;
+}
+
+.btn-address:active{
+    background-color: #f88c8c;
+}
+
 
 /* Phuc */
 /* ----------------- Footer ------------------ */
