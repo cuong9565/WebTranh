@@ -15,11 +15,14 @@
 
     * {
       box-sizing: border-box;
-    
+
     }
-    a{
+
+    a {
       text-decoration: none;
+      color: #f1f2f7;
     }
+
     body,
     html {
       margin: 0;
@@ -172,7 +175,7 @@
 
     .header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       padding: 12px 45px;
       border-bottom: 1px solid #e0e0e0;
@@ -391,4 +394,21 @@
       border-radius: 12px;
       margin: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    p.wellcome {
+      width: 40ch;
+      margin-left: 300px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: Arial, Helvetica, sans-serif;
+      text-wrap: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30) infinite alternate-reverse;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0ch;
+      }
     }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
@@ -30,7 +31,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-user.html " class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -58,7 +59,7 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
@@ -72,7 +73,8 @@
 
         <div class="main-content">
             <header class="header">
-               
+                <div class="message" style="position: relative;"> <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
+        </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
                     <div class="name-role">
@@ -116,7 +118,7 @@
                     </div>
                     <div class="nhap-xuat-add">
                         <div class="excel">
-                            <button class="btn-excel-export" onclick="alert('Xuất file excel thành công !')">
+                            <button class="btn-excel-export" onclick="notification.success('Xuất danh sách thành công !');">
                                 <i class="fa-solid fa-download"></i> Xuất danh sách
                             </button>
                         </div>
@@ -166,8 +168,8 @@
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
-                            <input type="text" placeholder="Nhập số điện thoại..." />
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Nhập số điện thoại..." /><a href="manager-user.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
@@ -181,7 +183,7 @@
                                 <option value="">Admin</option>
                                 <option value="">Khách hàng</option>
                             </select>
-                            <button class="filter-btn active"><i class="fa-solid fa-rotate"></i> Làm mới</button>
+                            <button class="filter-btn active" onclick="notification.info('Đã tải lại trang thành công')"><i class="fa-solid fa-rotate"></i> Làm mới</button>
                         </div>
                     </div>
                 </div>
@@ -385,16 +387,27 @@
                         </div>
                     </div>
                     <div class="pagination">
-
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            <a href="manager-user.html">
+                                <li class="pagination-item active"><span>1</span></li>
+                            </a>
+                            <a href="manager-user.html">
+                                <li class="pagination-item"><span>2</span></li>
+                            </a>
+                            <a href="manager-user.html">
+                                <li class="pagination-item"><span>3</span></li>
+                            </a>
+                            <a href="manager-user.html">
+                                <li class="pagination-item"><span>...</span></li>
+                            </a>
+                            <a href="manager-user.html">
+                                <li class="pagination-item"><span>10</span></li>
+                            </a>
+                            <a href="manager-user.html">
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -403,6 +416,7 @@
     </div>
 </body>
 
+<script src="../assets/js/Notification.js"></script>
 <script src="../assets/js/account-admin.js"></script>
 <script src="../assets/js/manager-art.js"></script>
 <script src="../assets/js/manager-user.js"></script>

@@ -16,7 +16,7 @@
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-             <a href="dashboard.html" style="text-decoration: none;">
+            <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
                         <image src="../assets/img/tải xuống.png" mode="">
@@ -32,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-import.html " class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -60,7 +60,7 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
@@ -74,7 +74,9 @@
 
         <div class="main-content">
             <header class="header">
-                
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
+                </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
                     <div class="name-role">
@@ -122,7 +124,8 @@
                                 <i class="fa-solid fa-upload"></i> Nhập Excel
                                 <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
                             </button>
-                            <button class="btn-excel-export" onclick="notification.success('Đã xuất file Excel thành công !')">
+                            <button class="btn-excel-export"
+                                onclick="notification.success('Đã xuất file Excel thành công !')">
                                 <i class="fa-solid fa-download"></i> Xuất Excel
                             </button>
                         </div>
@@ -178,7 +181,9 @@
                     <div class="filter-bar">
                         <div class="filter-search">
                             <input type="text" placeholder="Nhập mã hoặc khoảng tiền ..." />
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <a href="">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
@@ -188,7 +193,7 @@
                                 <option value="">Dưới 30M</option>
                             </select>
                             <input type="date">
-                            <button class="filter-btn active">
+                            <button class="filter-btn active" onclick="notification.info('Đã làm mới trang !')">
                                 <i class="fa-solid fa-rotate"></i>Làm mới</button>
                         </div>
                     </div>
@@ -284,12 +289,24 @@
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            <a href="manager-import.html">
+                                <li class="pagination-item active"><span>1</span></li>
+                            </a>
+                            <a href="manager-import.html">
+                                <li class="pagination-item"><span>2</span></li>
+                            </a>
+                            <a href="manager-import.html">
+                                <li class="pagination-item"><span>3</span></li>
+                            </a>
+                            <a href="manager-import.html">
+                                <li class="pagination-item"><span>...</span></li>
+                            </a>
+                            <a href="manager-import.html">
+                                <li class="pagination-item"><span>10</span></li>
+                            </a>
+                            <a href="manager-import.html">
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </a>
                         </ul>
                     </div>
                 </div>
