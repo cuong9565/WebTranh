@@ -15,12 +15,12 @@
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-         <a href="dashboard.html" style="text-decoration: none;">
+            <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
 
@@ -73,8 +73,9 @@
 
         <div class="main-content">
             <header class="header">
-                <div class="message" style="position: relative;"> <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
-        </div>
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
+                </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
                     <div class="name-role">
@@ -118,7 +119,8 @@
                     </div>
                     <div class="nhap-xuat-add">
                         <div class="excel">
-                            <button class="btn-excel-export" onclick="notification.success('Xuất danh sách thành công !');">
+                            <button class="btn-excel-export"
+                                onclick="notification.success('Xuất danh sách thành công !');">
                                 <i class="fa-solid fa-download"></i> Xuất danh sách
                             </button>
                         </div>
@@ -168,8 +170,9 @@
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
-                            <input type="text" placeholder="Nhập số điện thoại..." /><a href="manager-user.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            
+                            <input type="text" placeholder="Nhập số điện thoại..." /><a href="manager-user.html"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a>
+
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
@@ -183,7 +186,9 @@
                                 <option value="">Admin</option>
                                 <option value="">Khách hàng</option>
                             </select>
-                            <button class="filter-btn active" onclick="notification.info('Đã tải lại trang thành công')"><i class="fa-solid fa-rotate"></i> Làm mới</button>
+                            <button class="filter-btn active"
+                                onclick="notification.info('Đã tải lại trang thành công')"><i
+                                    class="fa-solid fa-rotate"></i> Làm mới</button>
                         </div>
                     </div>
                 </div>
@@ -360,13 +365,18 @@
                                                 <input type="password" id="editUserPassword" name="editUserPassword"
                                                     value="12345678" style="flex:1;padding-right:38px;" />
                                                 <span id="togglePassword"
-                                                    style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
+                                                    style="position:absolute;right:35px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#888;">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </span>
+                                                <span id=""
+                                                    onclick="confirm('Bạn có chắc chắn muốn reset mật khẩu mặt định là 123456')"
+                                                    style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#6c5c5c;">
+                                                    <i class="fa-solid fa-rotate"></i>
+                                                </span>
                                             </div>
-                                            <button type="button" id="resetPassword"
+                                            <!-- <button type="button" id="resetPassword"
                                                 style="background:#eee;border:none;padding:10px;border-radius:5px;cursor:pointer;margin:15px 0px 10px 0px;">Reset
-                                                mặc định</button>
+                                                mặc định</button> -->
                                         </div>
                                         <div class="form-group">
                                             <label for="editUserStatus">Trạng thái</label>
