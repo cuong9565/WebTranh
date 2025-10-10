@@ -19,9 +19,9 @@
             <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
 
@@ -74,7 +74,7 @@
 
         <div class="main-content">
             <header class="header">
-                  <div class="message" style="position: relative;">
+                <div class="message" style="position: relative;">
                     <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
                 </div>
                 <div class="user-info" id="userInfo">
@@ -316,22 +316,10 @@
                             </select>
                             <input type="text" id="searchInventoryInput"
                                 placeholder="Nhập tên sản phẩm hoặc danh mục...">
-                                <a href=""><button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra cứu</button></a>                     
+                            <a href=""><button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra
+                                    cứu</button></a>
                         </div>
-
-                        <!-- Tìm kiếm theo thời gian -->
-                        <div class="search-box">
-                            <div class="date-range">
-                                <span>Từ:</span>
-                                <input type="date" id="startDate">
-                                <span>Đến:</span>
-                                <input type="date" id="endDate">
-                            </div>
-                            <input type="text" id="searchProductInput" placeholder="Nhập mã hoặc tên sản phẩm...">
-                            <a href="">  <button id="searchTimeRangeBtn"><i class="fas fa-chart-line"></i> Tra cứu N-X-T</button></a>
-                          
-                        </div>
-
+                     
                         <div class="inventory-card">
                             <div class="card-header">
                                 <div class="card-title" id="3">Tồn kho hiện tại</div>
@@ -379,7 +367,19 @@
                                 </ul>
                             </div>
                         </div>
+                           <!-- Tìm kiếm theo thời gian -->
+                        <div class="search-box">
+                            <div class="date-range">
+                                <span>Từ:</span>
+                                <input type="date" id="startDate">
+                                <span>Đến:</span>
+                                <input type="date" id="endDate">
+                            </div>
+                            <input type="text" id="searchProductInput" placeholder="Nhập mã hoặc tên sản phẩm...">
+                            <a href=""> <button id="searchTimeRangeBtn"><i class="fas fa-chart-line"></i> Tra cứu
+                                    N-X-T</button></a>
 
+                        </div>
                         <div class="inventory-card">
                             <div class="card-header">
                                 <div class="card-title" id="4">Nhập - Xuất - Tồn theo thời gian</div>
@@ -400,7 +400,7 @@
                                     <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
                                 </tbody>
                             </table>
-                             <div class="pagination">
+                            <div class="pagination">
                                 <ul class="pagination-list">
                                     <li class="pagination-item disabled"><span><i
                                                 class="fa-solid fa-angle-left"></i></span>
@@ -453,7 +453,7 @@
                         </div>
                         <div class="modal-actions">
                             <button class="btn btn-cancel" id="cancelEdit">Hủy</button>
-                            <button class="btn btn-save" id="saveProfit" onclick="alert('Lưu thành công !')">Lưu thay
+                            <button class="btn btn-save" id="saveProfit" onclick="notification.success('Lưu thành công !')">Lưu thay
                                 đổi</button>
                         </div>
                     </div>

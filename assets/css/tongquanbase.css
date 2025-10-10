@@ -105,7 +105,7 @@
     .art-sgu {
       font-weight: 700;
       font-size: 16px;
-      color: #5a67ba;
+      color:#FF3366;
       letter-spacing: 0.5px;
     }
 
@@ -396,7 +396,7 @@
     }
 
     p.wellcome {
-      width: 40ch;
+      width: 0ch;
       margin-left: 300px;
       font-size: 1rem;
       font-weight: 700;
@@ -408,6 +408,6 @@
 
     @keyframes typing {
       from {
-        width: 0ch;
+        width: 40ch;
       }
     }
