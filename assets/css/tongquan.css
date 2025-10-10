@@ -1106,7 +1106,7 @@ html {
     }
 
  p.wellcome {
-  width: 40ch;
+  width: 0ch;
  margin-left: 300px;
   font-size:1rem;
   font-weight: 700;
@@ -1117,7 +1117,7 @@ html {
  }
  @keyframes typing {
   from{
-    width: 0ch;
+    width: 40ch;
   }
  }
 
