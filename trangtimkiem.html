@@ -1,17 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/trangtimkiem.css">
+    <!-- <link rel="stylesheet" href="./index.html"> -->
+    <!-- <link rel="stylesheet" href="./assets/css/trangtimkiem.css"> -->
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Art Store</title>
 </head>
 
 <body>
+    <!-- This element to alert -->
+    <div class="container-alert"></div>
+    <!-- This element to cover all page -->
+    <div class="pop-up">
+        <!-- Login -->
+        <div class="login-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
+                        onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
+                        id="close-white-login" onclick="ClosePopUp()">
+                </div>
+
+                <form class="form-container">
+                    <h1>Đăng nhập tài khoản</h1>
+
+                    <div class="item">
+                        <label for="email-login">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="email-login" placeholder="Nhập email của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="password-login">Mật khẩu <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-password-login" onclick="ShowPass('password-login')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-password-login hidden"
+                            onclick="HiddePass('password-login')">
+                        <input type="password" id="password-login" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+
+                    <div class="item center-item">
+                        <span>
+                            <input type="checkbox" id="remember-me-login">
+                            <label for="remember-me-login">Ghi nhớ đăng nhập</label>
+                        </span>
+                        <span>
+                            <a href="#" class="purple-link">Quên mật khẩu</a>
+                        </span>
+                    </div>
+
+                    <div class="item">
+                        <button id="btn-login">Đăng nhập</button>
+                    </div>
+
+                    <div class="item align-center">
+                        <label>Chưa có tài khoản? </label>
+                        <a onclick="ShowSignUpForm()" class="purple-link">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="signup-form-container">
+            <div class="container">
+                <div class="container-close-form">
+                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup"
+                        onclick="ClosePopUp()">
+                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
+                        id="close-white-signup" onclick="ClosePopUp()">
+                </div>
+
+                <form class="form-container">
+                    <h1>Đăng ký tài khoản</h1>
+
+                    <div class="item">
+                        <label for="user-signup">Họ và tên <span class="text-require">*</span></label>
+                        <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="user-signup" placeholder="Nhập họ tên của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="email-signup">Email <span class="text-require">*</span></label>
+                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
+                        <input type="text" id="email-signup" placeholder="Nhập email của bạn">
+                    </div>
+
+                    <div class="item">
+                        <label for="new-password-signup">Mật khẩu mới <span class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-new-password-signup"
+                            onclick="ShowPass('new-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-new-password-signup hidden"
+                            onclick="HiddePass('new-password-signup')">
+                        <input type="password" id="new-password-signup" placeholder="Nhập mật khẩu mới">
+                    </div>
+
+                    <div class="item">
+                        <label for="confirm-password-signup">Xác nhận mật khẩu <span
+                                class="text-require">*</span></label>
+                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
+                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
+                            class="small-icon right-icon closed-confirm-password-signup"
+                            onclick="ShowPass('confirm-password-signup')">
+                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
+                            class="small-icon right-icon opened-confirm-password-signup hidden"
+                            onclick="HiddePass('confirm-password-signup')">
+                        <input type="password" id="confirm-password-signup" placeholder="Nhập lại mật khẩu">
+                    </div>
+
+                    <div class="item center-item">
+                        <span>
+                            <input type="checkbox" id="legal-term-signup">
+                            <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất
+                                    cả các điều khoản</a>. *</label>
+                        </span>
+                    </div>
+
+                    <div class="item">
+                        <button id="btn-signup">Đăng ký</button>
+                    </div>
+
+                    <div class="item align-center">
+                        <label>Đã có tài khoản? </label>
+                        <a onclick="ShowLoginForm()" class="purple-link">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!--------------------- HEADER ----------------------->
     <div class="header">
         <div class="container container-logo">
@@ -19,7 +146,8 @@
         </div>
         <div class="container container-search">
             <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+            <a href="./trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon"
+                    class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <button onclick="CartRequireLogin(event)" class="item item-cart">
@@ -46,186 +174,162 @@
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="index.html?all" class="item-a">Tất cả thể loại</a><span>|</span>
+            <a href="allCategory.html" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?hoa" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
+            <a href="sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
 
+    <!--------------------- MAIN ----------------------->
+    <div class="main">
+        <div class="nav-link">
+            <a href="index.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
+            <span> / </span>
+            <a href="index.html" class="item">Trang chủ</a>
+            <span> / </span>
+            <a class="item notactived">Tìm kiếm</a>
+        </div>
 
 
-
-
-    <!------------------------- Kết quả tìm kiếm -------------------------->
-    <div class="search_main">
-        <p>Kết quả tìm kiếm Tranh Sơn Dầu</p>
-
-        <div class="gallery">
-
-            <!-- Sản phẩm 1 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=1')">
-                    <img src="./assets/img/son-dau/1.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Hoài Niệm</h2>
-                        <h3>7,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+        <!--------------------- Card ----------------------->
+        <div class="bottom" id="card-list">
+            <p class="test-bottom" id="test-bottom">Kết quả tìm kiếm "Tranh sơn dầu"</p>
+            <div class="gallery">
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/1.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Hoài Niệm</h2>
+                            <h3>7,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-            <!-- Sản phẩm 2 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=2')">
-                    <img src="./assets/img/son-dau/2.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Phố Cổ Hà Nội</h2>
-                        <h3>20,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/2.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Phố Cổ Hà Nội</h2>
+                            <h3>20,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-            <!-- Sản phẩm 3 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=3')">
-                    <img src="./assets/img/son-dau/3.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Thưởng Quỳnh</h2>
-                        <h3>14,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/3.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Thưởng Quỳnh</h2>
+                            <h3>14,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-
-            <!-- Sản phẩm 4 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
-                    <img src="./assets/img/son-dau/4.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Mắt Biếc</h2>
-                        <h3>6,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/4.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Thu Biếc</h2>
+                            <h3>6,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-
-            <!-- Sản phẩm 5 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
-                    <img src="./assets/img/son-dau/5.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Đêm Kinh Thành</h2>
-                        <h3>6,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/5.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Đêm Kinh Thành</h2>
+                            <h3>6,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-
-            <!-- Sản phẩm 6 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
-                    <img src="./assets/img/son-dau/6.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Thu Biếc</h2>
-                        <h3>4,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/6.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Thu Biếc</h2>
+                            <h3>4,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-
-            <!-- Sản phẩm 7 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
-                    <img src="./assets/img/son-dau/7.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Mùa Vàng</h2>
-                        <h3>8,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/7.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Mùa Vàng</h2>
+                            <h3>8,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
-
-            <!-- Sản phẩm 8 -->
-            <a href="#" class="picture-link">
-                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
-                    <img src="./assets/img/son-dau/8.jpg" class="picture">
-                    <div class="content-wrapper">
-                        <h1>Tranh sơn dầu</h1>
-                        <h2>Nắng vàng Tây bắc</h2>
-                        <h3>15,000,000 VNĐ</h3>
-                        <div class="item">
-                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/8.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Nắng vàng Tây bắc</h2>
+                            <h3>15,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
+        </div>
 
+        <!--------------------- NAV PAGE ----------------------->
+        <div class="nav-page">
+            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
+            <a href="./navPage.html" class="item isactive">1</a>
+            <a href="./navPage.html" class="item">2</a>
+            <a href="./navPage.html" class="item">3</a>
+            <a href="./navPage.html" class="item">4</a>
+            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
         </div>
     </div>
-
-
-
-
-
-    <!--------------------- NAV PAGE ----------------------->
-    <div class="nav-page">
-        <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
-        <a href="#" class="item isactive">1</a>
-        <a href="#" class="item">2</a>
-        <a href="#" class="item">3</a>
-        <a href="#" class="item">4</a>
-        <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
-    </div>
-    </div>
-
-
-
-
 
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
@@ -268,7 +372,6 @@
         </div>
     </div>
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/products.js" defer></script>
-    <script src="./assets/js/trangtimkiem.js"></script>
+    <script></script>
 
 </body>
