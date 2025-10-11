@@ -1,46 +1,9 @@
-var popUp = document.getElementsByClassName('pop-up')[0]
-var loginForm = document.getElementsByClassName('login-form-container')[0]
-var signUpForm = document.getElementsByClassName('signup-form-container')[0]
 var imgSlide = document.getElementById('slide-img')
 
 var idAlert = 0
 var indexSlide = 0
 var numSlide = 4
 
-// Function mở đăng nhập
-function ShowLoginForm(){
-    popUp.style.display = 'flex';
-    loginForm.style.display = 'block';
-    signUpForm.style.display = 'none';
-    document.getElementById('email-login').focus()
-}
-
-// Function mở đăng ký
-function ShowSignUpForm(){    
-    popUp.style.display = 'flex';
-    loginForm.style.display = 'none';
-    signUpForm.style.display = 'block';
-    document.getElementById('user-signup').focus()
-}
-
-// Function đóng popup
-function ClosePopUp(){
-    popUp.style.display = 'none';
-}
-
-// Function hiện mật khẩu
-function ShowPass(id){
-    document.getElementById(id).type = 'text';
-    document.getElementsByClassName('closed-' + id)[0].classList.add('hidden')
-    document.getElementsByClassName('opened-' + id)[0].classList.remove('hidden')
-}
-
-// Function ẩn mật khẩu
-function HiddePass(id){
-    document.getElementById(id).type = 'password';
-    document.getElementsByClassName('closed-' + id)[0].classList.remove('hidden')
-    document.getElementsByClassName('opened-' + id)[0].classList.add('hidden')
-}
 
 // Function chuyển trang
 function GoToSlide(index){
@@ -137,8 +100,8 @@ function ShowCategory(category){
                                 <h2>${productlist[i].title}</h2>
                                 <h3>${productlist[i].price}</h3>
                                 <div class="item">
-                                    <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                                    <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                                    <button onclick="addToCart(event)">Thêm vào giỏ</button>
+                                    <button onclick="muaNgay(event)">Mua ngay</button>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +123,8 @@ function ShowCategory(category){
                             <h2>${productlist[i].title}</h2>
                             <h3>${productlist[i].price}</h3>
                             <div class="item">
-                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
-                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                                <button onclick="addToCart(event)">Thêm vào giỏ</button>
+                                <button onclick="muaNgay(event)">Mua ngay</button>
                             </div>
                         </div>
                     </div>
@@ -179,9 +142,6 @@ function ShowCategory(category){
 
 // Yêu cầu đăng nhập trước khi mua hàng
 function CartRequireLogin(event){
-    event.stopPropagation()
-    AddAlert('Vui lòng đăng nhập tài khoản', 'fail')
-    ShowLoginForm()
 }
 
 // Hàm chuyển trang
@@ -189,63 +149,12 @@ function MoveDetail(url){
     window.location.href = url;
 }
 
+function addToCart(event){
+    event.stopPropagation()
+    AddAlert('Thêm sản phẩm thành công', 'success')
+}
 
-// # Thêm event cho các component # ----------------------------
-// ## Event click ngoài form
-popUp.addEventListener('click', (event)=>{
-    if(!loginForm.contains(event.target) && !signUpForm.contains(event.target)){
-        ClosePopUp()
-    }
-})
-
-// ## Event hover close img
-document.getElementById('close-black-signup').addEventListener('mouseover', (_)=>{
-    document.getElementById('close-black-signup').classList.add('hidden');
-    document.getElementById('close-white-signup').classList.remove('hidden');
-})
-
-document.getElementById('close-white-signup').addEventListener('mouseover', (_)=>{
-    document.getElementById('close-black-signup').classList.add('hidden');
-    document.getElementById('close-white-signup').classList.remove('hidden');
-})
-
-document.getElementById('close-black-login').addEventListener('mouseover', (_)=>{
-    document.getElementById('close-black-login').classList.add('hidden');
-    document.getElementById('close-white-login').classList.remove('hidden');
-})
-
-document.getElementById('close-white-login').addEventListener('mouseover', (_)=>{
-    document.getElementById('close-black-login').classList.add('hidden');
-    document.getElementById('close-white-login').classList.remove('hidden');
-})
-
-document.getElementById('close-white-signup').addEventListener('mouseout', (_)=>{
-    document.getElementById('close-black-signup').classList.remove('hidden');
-    document.getElementById('close-white-signup').classList.add('hidden');
-})
-
-document.getElementById('close-black-signup').addEventListener('mouseout', (_)=>{
-    document.getElementById('close-black-signup').classList.remove('hidden');
-    document.getElementById('close-white-signup').classList.add('hidden');
-})
-
-document.getElementById('close-white-login').addEventListener('mouseout', (_)=>{
-    document.getElementById('close-black-login').classList.remove('hidden');
-    document.getElementById('close-white-login').classList.add('hidden');
-})
-
-document.getElementById('close-black-login').addEventListener('mouseout', (_)=>{
-    document.getElementById('close-black-login').classList.remove('hidden');
-    document.getElementById('close-white-login').classList.add('hidden');
-})
-
-document.getElementById('btn-signup').addEventListener('click', (e) => {
-    e.preventDefault()
-    AddAlert('Đăng ký tài khoản thành công', 'success')
-    ShowLoginForm()
-})
-
-document.getElementById('btn-login').addEventListener('click', (e)=>{
-    e.preventDefault()
-    window.location.href = 'isLogin.html'
-})
+function muaNgay(event){
+    event.stopPropagation()
+    window.location.href = 'cart.html'
+}
