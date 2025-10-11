@@ -144,7 +144,7 @@
         </div>
         <div class="container container-search">
             <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+            <a href="./trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <button onclick="CartRequireLogin(event)" class="item item-cart">
@@ -212,7 +212,7 @@
                 <input type="number" id="max-price" placeholder="Đến (₫)" min="0">
             </div>
             <div class="filter-item">
-                <button type="button" id="btn-search">Kết quả</button>
+                <button type="button" id="btn-search" onclick="window.location.href = './trangtimkiem.html'">Tìm kiếm</button>
             </div>
         </div>
 
@@ -356,12 +356,12 @@
 
         <!--------------------- NAV PAGE ----------------------->
         <div class="nav-page">
-            <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
-            <a href="#" class="item isactive">1</a>
-            <a href="#" class="item">2</a>
-            <a href="#" class="item">3</a>
-            <a href="#" class="item">4</a>
-            <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
+            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
+            <a href="./navPage.html" class="item isactive">1</a>
+            <a href="./navPage.html" class="item">2</a>
+            <a href="./navPage.html" class="item">3</a>
+            <a href="./navPage.html" class="item">4</a>
+            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
         </div>
     </div>
 
@@ -426,8 +426,6 @@
                 x.classList.remove('selected')
             })
         })
-
-
     </script>
 </body>
 
