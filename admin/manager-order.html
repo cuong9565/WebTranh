@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/order.css">
-
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
 </head>
@@ -20,12 +20,11 @@
             <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
-
             <nav class="menu" aria-label="Main menu">
                 <span class="menu-2">MENU</span>
                 <div class="menu-buttons">
@@ -33,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-art.html" class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -61,7 +60,7 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
@@ -75,9 +74,8 @@
 
         <div class="main-content">
             <header class="header">
-                <div class="input-search" role="search">
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <div class="icon search-icon"></div>
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
                 </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
@@ -106,7 +104,7 @@
                                 <a href="#">
                                     <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
                                 </a>
-                                <a href="dang-xuat.html">
+                                <a href="login_adm.html">
                                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                                 </a>
                             </div>
@@ -203,10 +201,11 @@
                                 <option value="cancelled">Đã hủy</option>
                             </select>
                         </div>
-                        <button class="btn btn-search">
-                            <i class="fas fa-search"></i> Tìm kiếm
+                        <button class="btn btn-search"><a href="manager-order.html"> <i class="fas fa-search"></i> Tìm
+                                kiếm</a>
+
                         </button>
-                        <button class="btn btn-reset">
+                        <button class="btn btn-reset" onclick="notification.info('Đã reset form tìm kiếm !')">
                             <i class="fas fa-redo"></i> Đặt lại
                         </button>
                     </div>
@@ -304,12 +303,24 @@
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            <a href="manager-order.html">
+                                <li class="pagination-item active"><span>1</span></li>
+                            </a>
+                            <a href="manager-order.html">
+                                <li class="pagination-item"><span>2</span></li>
+                            </a>
+                            <a href="manager-order.html">
+                                <li class="pagination-item"><span>3</span></li>
+                            </a>
+                            <a href="manager-order.html">
+                                <li class="pagination-item"><span>...</span></li>
+                            </a>
+                            <a href="manager-order.html">
+                                <li class="pagination-item"><span>10</span></li>
+                            </a>
+                            <a href="manager-order.html">
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -446,6 +457,7 @@
 
     <script src="../assets/js/account-admin.js"></script>
     <script src="../assets/js/order.js"></script>
+    <script src="../assets/js/Notification.js"></script>
 
 </body>
 

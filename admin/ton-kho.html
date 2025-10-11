@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/kho.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-          <a href="dashboard.html" style="text-decoration: none;">
+            <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
 
@@ -31,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-art.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="#categoryTable " class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -59,7 +60,7 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
@@ -73,9 +74,8 @@
 
         <div class="main-content">
             <header class="header">
-                <div class="input-search" role="search">
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <div class="icon search-icon"></div>
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
                 </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
@@ -104,7 +104,7 @@
                                 <a href="#">
                                     <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
                                 </a>
-                                <a href="dang-xuat.html">
+                                <a href="login_adm.html">
                                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                                 </a>
                             </div>
@@ -121,7 +121,7 @@
                     <div class="nhap-xuat-add">
                         <div class="excel">
 
-                            <button class="btn-excel-export" onclick="alert('Đã in PDF thành công !')">
+                            <button class="btn-excel-export" onclick="notification.info('Đã in PDF báo cáo!')">
                                 <i class="fa-solid fa-download"></i> Xuất Báo cáo
                             </button>
                         </div>
@@ -170,12 +170,12 @@
                         <div class="search-box">
                             <input type="text" id="searchProfitInput"
                                 placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
-                            <button id="searchProfitBtn"><i class="fas fa-search"></i> Tìm kiếm</button>
+                            <button id="searchProfitBtn"> <a href="">Tìm kiếm <i class="fas fa-search"></i></a></button>
                         </div>
 
                         <div class="profit-card">
                             <div class="card-header">
-                                <div class="card-title">Tỷ lệ lợi nhuận theo danh mục</div>
+                                <div class="card-title" id="1">Tỷ lệ lợi nhuận theo danh mục</div>
                             </div>
                             <table id="categoryTable">
                                 <thead>
@@ -195,20 +195,32 @@
                                     <li class="pagination-item disabled"><span><i
                                                 class="fa-solid fa-angle-left"></i></span>
                                     </li>
-                                    <li class="pagination-item active"><span>1</span></li>
-                                    <li class="pagination-item"><span>2</span></li>
-                                    <li class="pagination-item"><span>3</span></li>
-                                    <li class="pagination-item"><span>...</span></li>
-                                    <li class="pagination-item"><span>10</span></li>
-                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                    </li>
+                                    <a href="#1">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="#1">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="#1">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="#1">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="#1">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="#1">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="profit-card">
                             <div class="card-header">
-                                <div class="card-title">Tỷ lệ lợi nhuận theo sản phẩm</div>
+                                <div class="card-title" id="2">Tỷ lệ lợi nhuận theo sản phẩm</div>
                             </div>
                             <table id="productTable">
                                 <thead>
@@ -231,13 +243,25 @@
                                     <li class="pagination-item disabled"><span><i
                                                 class="fa-solid fa-angle-left"></i></span>
                                     </li>
-                                    <li class="pagination-item active"><span>1</span></li>
-                                    <li class="pagination-item"><span>2</span></li>
-                                    <li class="pagination-item"><span>3</span></li>
-                                    <li class="pagination-item"><span>...</span></li>
-                                    <li class="pagination-item"><span>10</span></li>
-                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                    </li>
+                                    <a href="#2">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="#2">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="#2">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="#2">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="#2">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="#2">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
@@ -292,24 +316,13 @@
                             </select>
                             <input type="text" id="searchInventoryInput"
                                 placeholder="Nhập tên sản phẩm hoặc danh mục...">
-                            <button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra cứu</button>
+                            <a href=""><button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra
+                                    cứu</button></a>
                         </div>
-
-                        <!-- Tìm kiếm theo thời gian -->
-                        <div class="search-box">
-                            <div class="date-range">
-                                <span>Từ:</span>
-                                <input type="date" id="startDate">
-                                <span>Đến:</span>
-                                <input type="date" id="endDate">
-                            </div>
-                            <input type="text" id="searchProductInput" placeholder="Nhập mã hoặc tên sản phẩm...">
-                            <button id="searchTimeRangeBtn"><i class="fas fa-chart-line"></i> Tra cứu N-X-T</button>
-                        </div>
-
+                     
                         <div class="inventory-card">
                             <div class="card-header">
-                                <div class="card-title">Tồn kho hiện tại</div>
+                                <div class="card-title" id="3">Tồn kho hiện tại</div>
                             </div>
                             <table id="currentInventoryTable">
                                 <thead>
@@ -332,20 +345,44 @@
                                     <li class="pagination-item disabled"><span><i
                                                 class="fa-solid fa-angle-left"></i></span>
                                     </li>
-                                    <li class="pagination-item active"><span>1</span></li>
-                                    <li class="pagination-item"><span>2</span></li>
-                                    <li class="pagination-item"><span>3</span></li>
-                                    <li class="pagination-item"><span>...</span></li>
-                                    <li class="pagination-item"><span>10</span></li>
-                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                    </li>
+                                    <a href="#3">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="#3">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="#3">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="#3">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="#3">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="#3">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
+                           <!-- Tìm kiếm theo thời gian -->
+                        <div class="search-box">
+                            <div class="date-range">
+                                <span>Từ:</span>
+                                <input type="date" id="startDate">
+                                <span>Đến:</span>
+                                <input type="date" id="endDate">
+                            </div>
+                            <input type="text" id="searchProductInput" placeholder="Nhập mã hoặc tên sản phẩm...">
+                            <a href=""> <button id="searchTimeRangeBtn"><i class="fas fa-chart-line"></i> Tra cứu
+                                    N-X-T</button></a>
 
+                        </div>
                         <div class="inventory-card">
                             <div class="card-header">
-                                <div class="card-title">Nhập - Xuất - Tồn theo thời gian</div>
+                                <div class="card-title" id="4">Nhập - Xuất - Tồn theo thời gian</div>
                             </div>
                             <table id="inventoryHistoryTable">
                                 <thead>
@@ -368,13 +405,25 @@
                                     <li class="pagination-item disabled"><span><i
                                                 class="fa-solid fa-angle-left"></i></span>
                                     </li>
-                                    <li class="pagination-item active"><span>1</span></li>
-                                    <li class="pagination-item"><span>2</span></li>
-                                    <li class="pagination-item"><span>3</span></li>
-                                    <li class="pagination-item"><span>...</span></li>
-                                    <li class="pagination-item"><span>10</span></li>
-                                    <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                    </li>
+                                    <a href="#4">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="#4">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="#4">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="#4">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="#4">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="#4">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
@@ -404,7 +453,7 @@
                         </div>
                         <div class="modal-actions">
                             <button class="btn btn-cancel" id="cancelEdit">Hủy</button>
-                            <button class="btn btn-save" id="saveProfit" onclick="alert('Lưu thành công !')">Lưu thay
+                            <button class="btn btn-save" id="saveProfit" onclick="notification.success('Lưu thành công !')">Lưu thay
                                 đổi</button>
                         </div>
                     </div>
@@ -416,6 +465,7 @@
     <script src="../assets/js/account-admin.js"></script>
     <script src="../assets/js/manager-art.js"></script>
     <script src="../assets/js/kho.js"></script>
+    <script src="../assets/js/Notification.js"></script>
 
 </body>
 

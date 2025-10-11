@@ -9,21 +9,25 @@
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/manager-category.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <style>
-        
+        a {
+            text-decoration: none;
+            color: #333;
+        }
     </style>
 </head>
 
 <body>
     <div class="main-container">
         <aside class="sidebar" aria-label="Sidebar navigation">
-             <a href="dashboard.html" style="text-decoration: none;">
+            <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
 
@@ -61,24 +65,23 @@
                     </a>
                 </div>
                 <span class="others">OTHERS</span>
-                 <div class="menu-buttons">
-          <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
-            <span class="icon"><i class="fa-solid fa-house"></i></span>
-            <span>Trang chủ</span>
-          </a>
-          <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
-            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-            <span>Đăng xuất</span>
-          </a>
-        </div>
+                <div class="menu-buttons">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
+                        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
             </nav>
         </aside>
 
         <div class="main-content">
             <header class="header">
-                <div class="input-search" role="search">
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <div class="icon search-icon"></div>
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
                 </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
@@ -129,7 +132,6 @@
                         </button>
                     </div>
                 </div>
-
                 <div class="bo-loc-item">
                     <div class="filter-bar">
                         <div class="filter-search">
@@ -139,7 +141,8 @@
                         </div>
                         <div class="filter-buttons">
 
-                            <button class="filter-btn active">Làm mới</button>
+                            <button class="filter-btn active" onclick="notification.success('Làm mới thành công !');"><i
+                                    class="fa-solid fa-rotate"></i>Làm mới</button>
                         </div>
                     </div>
                 </div>
@@ -164,13 +167,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -185,13 +196,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Tranh cầu vòng 7 sắc</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -206,13 +225,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -227,13 +254,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -248,13 +283,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -269,13 +312,21 @@
                                         <button class="btn-view"><i class="fa-solid fa-eye"></i> Xem sản phẩm</button>
                                         <div class="mini-product-list">
                                             <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm A</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm B</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm C</span></div>
-                                            <div class="mini-product-item"><img src="../assets/img/image.png"
-                                                    alt=""><span>Sản phẩm D</span></div>
+                                                    alt="Tranh cầu vòng 7 sắc"><a href="../admin/detail_adm.html">Chân
+                                                    dung sơn dầu</span></a>
+                                            </div>
+                                            <div class="mini-product-item"><img src="../assets/img/truu-tuong/3.jpg"
+                                                    alt="Sản phẩm B"><a href="../admin/detail_adm.html">Phong cảnh mùa
+                                                    thu
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/son-dau/3.jpg"
+                                                    alt="Sản phẩm C"><a href="../admin/detail_adm.html">Bình hoa nguyệt
+                                                    lan
+                                                </a></div>
+                                            <div class="mini-product-item"><img src="../assets/img/phong-canh/4.jpg"
+                                                    alt="Sản phẩm D"><a href="../admin/detail_adm.html">Gió mùa xuân hoa
+                                                    nở
+                                                </a></div>
                                         </div>
                                     </div>
                                 </td>
@@ -286,12 +337,24 @@
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            <a href="manager-category.html">
+                                <li class="pagination-item active"><span>1</span></li>
+                            </a>
+                            <a href="manager-category.html">
+                                <li class="pagination-item"><span>2</span></li>
+                            </a>
+                            <a href="manager-category.html">
+                                <li class="pagination-item"><span>3</span></li>
+                            </a>
+                            <a href="manager-category.html">
+                                <li class="pagination-item"><span>...</span></li>
+                            </a>
+                            <a href="manager-category.html">
+                                <li class="pagination-item"><span>10</span></li>
+                            </a>
+                            <a href="manager-category.html">
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </a>
                         </ul>
                     </div>
 
@@ -357,5 +420,6 @@
 </body>
 <script src="../assets/js/account-admin.js"></script>
 <script src="../assets/js/manager-category.js"></script>
+<script src="../assets/js/Notification.js"></script>
 
 </html>

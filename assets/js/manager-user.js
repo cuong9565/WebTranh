@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('saveButton').addEventListener('click', (e) => {
         document.getElementById('modalEditUser').classList.remove('active');
-        alert('Cập nhật thành công !');
+        notification.success('Cập nhật tài khoản thành công !');
     })
     // Đóng modal khi click ra ngoài
     window.addEventListener('click', function (e) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('ButtonAddUser').addEventListener('click', (e) => {
         ModalAdd.classList.remove('active');
-        alert('Thêm thành công !');
+         notification.success('Thêm tài khoản thành công !');
     })
     // Đóng modal khi click ra ngoài
     window.addEventListener('click', function (e) {

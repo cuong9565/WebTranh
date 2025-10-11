@@ -18,9 +18,9 @@
             <a href="dashboard.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-1">
-                        <image src="../assets/img/tải xuống.png" mode="">
+                        <image src="../assets/img/logo.png" mode="">
                     </div>
-                    <span class="art-sgu">ART SGU</span>
+                    <span class="art-sgu">THE ART STORE</span>
                 </div>
             </a>
 
@@ -59,7 +59,7 @@
                 </div>
                 <span class="others">OTHERS</span>
                 <div class="menu-buttons">
-                    <a href="../index.html" class="menu-item accounts" aria-label="Trang chủ">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
                         <span class="icon"><i class="fa-solid fa-house"></i></span>
                         <span>Trang chủ</span>
                     </a>
@@ -73,9 +73,8 @@
 
         <div class="main-content">
             <header class="header">
-                <div class="input-search" role="search">
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <div class="icon search-icon"></div>
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
                 </div>
                 <div class="user-info" id="userInfo">
                     <img src="../assets/img/image.png" alt="Avatar">
@@ -104,7 +103,7 @@
                                 <a href="#">
                                     <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
                                 </a>
-                                <a href="dang-xuat.html">
+                                <a href="login_adm.html">
                                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                                 </a>
                             </div>
@@ -338,14 +337,16 @@
                     <div class="filter-bar">
                         <div class="filter-search">
                             <input type="text" placeholder="Nhập tên sản phẩm..." />
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <a href="manager-art.html">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
                         </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Trạng thái</option>
                                 <option value="">Hoạt động</option>
                                 <option value="">Đang khóa</option>
-                                <option value="">Sắp hết hàng</option>
+                          
                             </select>
                             <div class="gia-tang-giam" style="display: flex;">
                                 <div class="icon"><i class="fa-solid fa-arrow-up-wide-short fs-5 "></i></div>
@@ -376,63 +377,63 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>123</td>
-                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>SP111</td>
+                                <td><img src="../assets/img/hoa/6.jpg" alt="Hình ảnh" class="art-img"></td>
                                 <td>Tranh phong cảnh</td>
                                 <td>500,000₫</td>
                                 <td>800,000₫</td>
                                 <td>12</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i
-                                            class="fa-regular fa-eye"></i></button>
+                                    <a href="detail_adm.html" class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></a>
                                     <button class="btn-edit" id="openModalEditProduct"><i
                                             class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td>123</td>
-                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>SP112</td>
+                                <td><img src="../assets/img/truu-tuong/4.jpg" alt="Hình ảnh" class="art-img"></td>
                                 <td>Tranh phong cảnh</td>
                                 <td>500,000₫</td>
-                                <td>800,000₫</td>
-                                <td>12</td>
+                                <td>900,000₫</td>
+                                <td>32</td>
                                 <td><span class="status-selling">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i
-                                            class="fa-regular fa-eye"></i></button>
+                                    <a href="detail_adm.html" class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></a>
                                     <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td>123</td>
-                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>SP123</td>
+                                <td><img src="../assets/img/slide/3.jpg" alt="Hình ảnh" class="art-img"></td>
                                 <td>Tranh phong cảnh</td>
-                                <td>500,000₫</td>
-                                <td>800,000₫</td>
+                                <td>100,000₫</td>
+                                <td>600,000₫</td>
                                 <td>12</td>
-                                <td><span class="status-selling warring">Sắp hết</span></td>
+                                <td><span class="status-selling active">Hoạt động</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i
-                                            class="fa-regular fa-eye"></i></button>
+                                    <a href="detail_adm.html" class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></a>
                                     <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td>123</td>
-                                <td><img src="../assets/img/logo.png" alt="Hình ảnh" class="art-img"></td>
+                                <td>SP124</td>
+                                <td><img src="../assets/img/phong-canh/3.jpg" alt="Hình ảnh" class="art-img"></td>
                                 <td>Tranh phong cảnh</td>
                                 <td>500,000₫</td>
                                 <td>800,000₫</td>
                                 <td>12</td>
                                 <td><span class="status-selling block">Đang khóa</span></td>
                                 <td>
-                                    <button class="btn-view" title="Xem chi tiết"><i
-                                            class="fa-regular fa-eye"></i></button>
+                                    <a href="detail_adm.html" class="btn-view" title="Xem chi tiết"><i
+                                            class="fa-regular fa-eye"></i></a>
                                     <button class="btn-edit"><i class="fas fa-edit"></i></button>
                                     <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
                                 </td>
@@ -443,12 +444,24 @@
                         <ul class="pagination-list">
                             <li class="pagination-item disabled"><span><i class="fa-solid fa-angle-left"></i></span>
                             </li>
-                            <li class="pagination-item active"><span>1</span></li>
-                            <li class="pagination-item"><span>2</span></li>
-                            <li class="pagination-item"><span>3</span></li>
-                            <li class="pagination-item"><span>...</span></li>
-                            <li class="pagination-item"><span>10</span></li>
-                            <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            <a href="manager-art.html">
+                                <li class="pagination-item active"><span>1</span></li>
+                            </a>
+                            <a href="manager-art.html">
+                                <li class="pagination-item"><span>2</span></li>
+                            </a>
+                            <a href="manager-art.html">
+                                <li class="pagination-item"><span>3</span></li>
+                            </a>
+                            <a href="manager-art.html">
+                                <li class="pagination-item"><span>...</span></li>
+                            </a>
+                            <a href="manager-art.html">
+                                <li class="pagination-item"><span>10</span></li>
+                            </a>
+                            <a href="manager-art.html">
+                                <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span></li>
+                            </a>
                         </ul>
                     </div>
                 </div>

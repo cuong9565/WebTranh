@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (formAdd) {
         formAdd.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Thêm phiếu nhập thành công!');
+           notification.success("Thêm phiếu nhập thành công !")
             modal.style.display = 'none';
             resetForm();
         });
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (formEdit) {
         formEdit.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Cập nhật phiếu nhập thành công!');
+           notification.success("Cập nhật phiếu thành công !")
             document.getElementById('modalEditImport').style.display = 'none';
             resetEditForm();
         });
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         fileInput.addEventListener('change', function (e) {
             if (e.target.files.length > 0) {
-                alert('Nhập file Excel thành công!');
+          notification.success("Nhập file Excel thành công !")
             }
         });
     }
