@@ -186,16 +186,16 @@
             <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
+
+
+    <!----------------------------------- Sidebar tìm kiếm nâng cao + Slide ------------------------->
     <div class="main-container">
-        <!----------------------------------- Sidebar tìm kiếm nâng cao ------------------------->
         <div class="sidebar">
             <h2>Tìm kiếm nâng cao</h2>
-
             <div class="filter-item">
                 <label for="search-input">Tìm kiếm</label>
                 <input type="text" id="search-input" placeholder="Tên sản phẩm...">
             </div>
-
             <div class="container">
                 <label>Thể loại</label>
                 <div class="filter-item-category">
@@ -206,19 +206,16 @@
                     <button class="btn-select-all" id="btn-select-all">Bỏ chọn tất cả</button>
                 </div>
             </div>
-
             <div class="filter-item">
                 <label>Giá</label>
                 <input type="number" id="min-price" placeholder="Từ (₫)" min="0">
                 <input type="number" id="max-price" placeholder="Đến (₫)" min="0">
             </div>
-
             <div class="filter-item">
                 <button type="button" id="btn-search">Kết quả</button>
             </div>
         </div>
 
-        <!-- Nội dung chính: slide + card -->
         <div class="main-content">
             <div class="slide">
                 <div class="container">
@@ -239,7 +236,123 @@
     <!--------------------- MAIN ----------------------->
     <div class="main">
         <!--------------------- Card ----------------------->
-        <div class="bottom" id="card-list"></div>
+        <div class="bottom" id="card-list">
+            <p class="test-bottom" id="test-bottom">Sản phẩm mới</p>
+            <div class="gallery">
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/9.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Nắng vàng Tây bắc</h2>
+                            <h3>25,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/son-dau/10.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh sơn dầu</h1>
+                            <h2>Mùa hoa gạo</h2>
+                            <h3>9,900,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/hoa/9.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh hoa</h1>
+                            <h2>Áng Mây Sẽ Nở hoa</h2>
+                            <h3>3,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/hoa/10.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh hoa</h1>
+                            <h2>Hương đêm (11)</h2>
+                            <h3>14,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/phong-canh/9.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh phong cảnh</h1>
+                            <h2>Mùa lúa chín (2)</h2>
+                            <h3>12,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/phong-canh/10.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh phong cảnh</h1>
+                            <h2>Gọi Xuân về (3)</h2>
+                            <h3>12,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/truu-tuong/9.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh trừu tượng</h1>
+                            <h2>Mùa hoa Bỏ Lại</h2>
+                            <h3>10,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture-link">
+                    <div class="picture-wrapper" onclick="window.location.href = './productDetails.html'">
+                        <img src="./assets/img/truu-tuong/10.jpg" class="picture">
+                        <div class="content-wrapper">
+                            <h1>Tranh trừu tượng</h1>
+                            <h2>Ngày Tháng Cũ</h2>
+                            <h3>12,000,000 VNĐ</h3>
+                            <div class="item">
+                                <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                                <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--------------------- NAV PAGE ----------------------->
         <div class="nav-page">
@@ -300,21 +413,22 @@
             GoToSlide((indexSlide + 1 + numSlide) % numSlide)
         }, 3000)
 
-
         url = window.location.href.split("?")
-        if (url[1] === undefined) ShowCategory('new')
+        if (url[1] === undefined) {
+
+        }
         else ShowCategory(url[1])
 
         // Select mutible
         document.querySelectorAll('.category-item').forEach(x => {
-            x.addEventListener('click', (e) =>{
-                if(x.classList.contains('selected')) x.classList.remove('selected')
+            x.addEventListener('click', (e) => {
+                if (x.classList.contains('selected')) x.classList.remove('selected')
                 else x.classList.add('selected')
             })
         })
 
         // Btn bo chon
-        document.getElementById('btn-select-all').addEventListener('click', (e)=>{
+        document.getElementById('btn-select-all').addEventListener('click', (e) => {
             document.querySelectorAll('.category-item').forEach(x => {
                 x.classList.remove('selected')
             })

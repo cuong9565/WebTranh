@@ -247,7 +247,7 @@ const productTypes =
 
     'phongcanh' :{
         id: 3,
-        name: "Phong cảnh",
+        name: "Tranh phong cảnh",
         products: 
         [
             {

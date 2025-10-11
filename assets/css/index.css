@@ -469,7 +469,7 @@ section.active {
     align-items: center;
     gap: 10px;
     padding: 15px 20px;
-    background-color: #eeeeee;
+    background-color: transparent;
 }
 
 .nav-link img {
@@ -480,7 +480,6 @@ section.active {
     color: #000000bb;
     text-decoration: none;
     font-size: 0.9em;
-    /* #e6e6e6 */
 }
 
 .nav-link .item {
@@ -488,8 +487,15 @@ section.active {
     border-radius: 3px;
 }
 
-.nav-link .item.item:hover {
+.nav-link .item:hover {
     background-color: #e6e6e6;
+}
+
+.nav-link .item.notactived{
+    color: #000;
+}
+.nav-link .item.notactived:hover{
+    background-color: transparent;
 }
 
 
@@ -747,13 +753,12 @@ section.active {
 
 /* ----------------- Main ------------------ */
 .main {
-    background-color: #ececec;
+    background-color: #f5f5f5;
     height: auto;
     padding-bottom: 20px;
     margin-bottom: 30px;
 }
 
-/* Best-sellers */
 .bottom {
     padding: 25px;
     width: 100%;

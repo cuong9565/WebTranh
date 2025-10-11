@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/productDetails.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
-    <title>Chi tiết sản phẩm - Art Store</title>
+    <title>Chi tiết sản phẩm</title>
 </head>
 
 <body>
@@ -148,14 +148,12 @@
             <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
-            <a href="#">
-                <div class="item item-cart">
-                    <p class="p-cart"><img src="./assets/img/cart.svg" alt="Card-icon"></p>
-                    <div>
-                        <p>Giỏ hàng</p>
-                    </div>
+            <button onclick="CartRequireLogin(event)" class="item item-cart">
+                <p class="p-cart"><img src="./assets/img/cart.svg" alt="Card-icon"></p>
+                <div>
+                    <p>Giỏ hàng</p>
                 </div>
-            </a>
+            </button>
 
             <button class="item item-login" onclick=ShowLoginForm()>
                 <div>
@@ -190,41 +188,48 @@
         </div>
     </div>
 
-    
     <!--------------------- NAV LINK ----------------------->
-    <div class="nav-link">
-        <a href="index.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
-        <span> / </span>
-        <a href="index.html" class="item">Home</a>
-    </div>
-
-
+    
     <!--------------------- MAIN ----------------------->
-    <div class="product-detail-container">
-        <div class="image-section">
-            <img id="mainImage" class="main-image" src="" alt="Ảnh sản phẩm">
-            <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button>
+    <div class="main">
+        <div class="nav-link">
+            <a href="index.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
+            <span> / </span>
+            <a href="index.html" class="item">Trang chủ</a>
+            <span> / </span>
+            <a href="index.html" class="item">Tranh sơn dầu</a>
+            <span> / </span>
+            <a class="item notactived">Tranh hoài niệm</a>
         </div>
-        <!-- Phần thông tin -->
-        <div class="info-section">
-            <h1 id="productTitle" class="product-title"></h1>
-            <p id="productPrice" class="product-price"></p>
-            <p id="productMaterial" class="product-material"></p>
-            <p id="productSize" class="product-size"></p>
-            
-            <div class="action-buttons">
-                <button class="btn btn-cart" onclick="CartRequireLogin(event)">THÊM VÀO GIỎ</button>
-                <button class="btn btn-buy" onclick="CartRequireLogin(event)">MUA NGAY</button>
+        
+        <div class="bottom" id="card-list">
+            <div class="product-detail-container">
+                <div class="image-section">
+                    <img id="mainImage" class="main-image" src="./assets/img/son-dau/1.jpg" alt="Ảnh sản phẩm">
+                    <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button>
+                </div>
+                <!-- Phần thông tin -->
+                <div class="info-section">
+                    <h1 id="productTitle" class="product-title">Hoài Niệm</h1>
+                    <p id="productPrice" class="product-price">7,000,000 VNĐ</p>
+                    <p id="productMaterial" class="product-material">Chất liệu: Sơn dầu</p>
+                    <p id="productSize" class="product-size">Kích thước: 39cm x 48cm</p>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-cart" onclick="CartRequireLogin(event)">THÊM VÀO GIỎ</button>
+                        <button class="btn btn-buy" onclick="CartRequireLogin(event)">MUA NGAY</button>
+                    </div>
+
+                    <div class="description" id="productDesc"><b>Mô tả sản phẩm:</b></br>- Chất liệu: Sơn dầu</br>- Năm sáng tác: 2010</br>- Giá bao gồm khung</div>
+                </div>
             </div>
-            
-            <div class="description" id="productDesc"></div>
         </div>
     </div>
 
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
         <div class="footer_word">
-            <a href="index.html">Trang chủ</a> |
+            <a href="#">Trang chủ</a> |
             <a href="#">Dịch vụ</a> |
             <a href="#">Liên hệ</a> |
             <a href="#">Điều khoản</a> |
@@ -263,8 +268,6 @@
     </div>
 
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/products.js"></script>
-    <script src="./assets/js/productDetails.js"></script>
     <script>
     </script>
 
