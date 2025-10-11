@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/trangtimkiem.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <title>Art Store</title>
+</head>
+
+<body>
+    <!--------------------- HEADER ----------------------->
+    <div class="header">
+        <div class="container container-logo">
+            <a href="index.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+        </div>
+        <div class="container container-search">
+            <input type="text" placeholder="Tìm kiếm sản phẩm">
+            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+        </div>
+        <div class="container container-cart">
+            <button onclick="CartRequireLogin(event)" class="item item-cart">
+                <p class="p-cart"><img src="./assets/img/cart.svg" alt="Card-icon"></p>
+                <div>
+                    <p>Giỏ hàng</p>
+                </div>
+            </button>
+
+            <button class="item item-login" onclick=ShowLoginForm()>
+                <div>
+                    <p>Đăng nhập</p>
+                </div>
+            </button>
+            <button class="item item-signup" onclick="ShowSignUpForm()">
+                <div>
+                    <p>Đăng ký</p>
+                </div>
+            </button>
+
+        </div>
+    </div>
+
+    <!--------------------- NAV ----------------------->
+    <div class="nav">
+        <div class="item">
+            <a href="index.html?all" class="item-a">Tất cả thể loại</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="index.html?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="index.html?hoa" class="item-a">Tranh hoa</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="index.html?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
+        </div>
+        <div class="item">
+            <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
+        </div>
+    </div>
+
+
+
+
+
+    <!------------------------- Kết quả tìm kiếm -------------------------->
+    <div class="search_main">
+        <p>Kết quả tìm kiếm Tranh Sơn Dầu</p>
+
+        <div class="gallery">
+
+            <!-- Sản phẩm 1 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=1')">
+                    <img src="./assets/img/son-dau/1.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Hoài Niệm</h2>
+                        <h3>7,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sản phẩm 2 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=2')">
+                    <img src="./assets/img/son-dau/2.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Phố Cổ Hà Nội</h2>
+                        <h3>20,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sản phẩm 3 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=3')">
+                    <img src="./assets/img/son-dau/3.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Thưởng Quỳnh</h2>
+                        <h3>14,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Sản phẩm 4 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
+                    <img src="./assets/img/son-dau/4.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Mắt Biếc</h2>
+                        <h3>6,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Sản phẩm 5 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
+                    <img src="./assets/img/son-dau/5.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Đêm Kinh Thành</h2>
+                        <h3>6,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Sản phẩm 6 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
+                    <img src="./assets/img/son-dau/6.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Thu Biếc</h2>
+                        <h3>4,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Sản phẩm 7 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
+                    <img src="./assets/img/son-dau/7.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Mùa Vàng</h2>
+                        <h3>8,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Sản phẩm 8 -->
+            <a href="#" class="picture-link">
+                <div class="picture-wrapper" onclick="MoveDetail('productDetails.html?category=${category}&id=4')">
+                    <img src="./assets/img/son-dau/8.jpg" class="picture">
+                    <div class="content-wrapper">
+                        <h1>Tranh sơn dầu</h1>
+                        <h2>Nắng vàng Tây bắc</h2>
+                        <h3>15,000,000 VNĐ</h3>
+                        <div class="item">
+                            <button onclick="CartRequireLogin(event)">Thêm vào giỏ</button>
+                            <button onclick="CartRequireLogin(event)">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--------------------- NAV PAGE ----------------------->
+    <div class="nav-page">
+        <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
+        <a href="#" class="item isactive">1</a>
+        <a href="#" class="item">2</a>
+        <a href="#" class="item">3</a>
+        <a href="#" class="item">4</a>
+        <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
+    </div>
+    </div>
+
+
+
+
+
+    <!--------------------- FOOTER ----------------------->
+    <div class="footer">
+        <div class="footer_word">
+            <a href="#">Trang chủ</a> |
+            <a href="#">Dịch vụ</a> |
+            <a href="#">Liên hệ</a> |
+            <a href="#">Điều khoản</a> |
+            <a href="#">Chính sách bảo mật</a>
+        </div>
+
+        <a href="#"><img src="./assets/img/facebook.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
+        <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
+
+        <div class="container-center">
+            <hr class="footer_line">
+        </div>
+
+        <div class="container-between">
+            <div class="item left">
+                <p class="word_left">© 2025 Art Store. All rights reserved.</p>
+            </div>
+
+            <div class="item right">
+                <div class="footer_row">
+                    <img src="./assets/img/address.png" class="footer_icon_bottom">
+                    <p>Địa chỉ: 123 Đường ABC, Phường XYZ, Quận 1, TP.HCM</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/telephone.png" class="footer_icon_bottom">
+                    <p>Điện thoại: (0123) 456-789</p>
+                </div>
+                <div class="footer_row">
+                    <img src="./assets/img/mail.png" class="footer_icon_bottom">
+                    <p>Email: theartstore2005@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/products.js" defer></script>
+    <script src="./assets/js/trangtimkiem.js"></script>
+
+</body>
