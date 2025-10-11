@@ -171,19 +171,19 @@
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="index.html?all" class="item-a">Tất cả thể loại</a><span>|</span>
+            <a href="allCategory.html" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?hoa" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
+            <a href="sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
 
@@ -407,17 +407,10 @@
     </div>
 
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/products.js"></script>
     <script>
         var inTerValSlide = setInterval(() => {
             GoToSlide((indexSlide + 1 + numSlide) % numSlide)
         }, 3000)
-
-        url = window.location.href.split("?")
-        if (url[1] === undefined) {
-
-        }
-        else ShowCategory(url[1])
 
         // Select mutible
         document.querySelectorAll('.category-item').forEach(x => {
