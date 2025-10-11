@@ -186,27 +186,61 @@
             <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
+    <div class="main-container">
+        <!----------------------------------- Sidebar tìm kiếm nâng cao ------------------------->
+        <div class="sidebar">
+            <h2>Tìm kiếm nâng cao</h2>
 
-    <!--------------------- SLIDE ----------------------->
-    <div class="slide" id="posHead">
-        <div class="container">
-            <img src="./assets/img/slide/0.jpg" alt="slide" id="slide-img" />
-            <img src="./assets/img/arrow-left.svg" alt="" class="icon-arrow left" onclick="SwitchSlide(-1)" />
-            <img src="./assets/img/arrow-right.svg" alt="" class="icon-arrow right" onclick="SwitchSlide(1)">
-            <div class="dot-container">
-                <img src="./assets/img/dot1.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(0)">
-                <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(1)">
-                <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(2)">
-                <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(3)">
+            <div class="filter-item">
+                <label for="search-input">Tìm kiếm</label>
+                <input type="text" id="search-input" placeholder="Tên sản phẩm...">
+            </div>
+
+            <div class="container">
+                <label>Thể loại</label>
+                <div class="filter-item-category">
+                    <button class="category-item" data-value="sondau">Tranh sơn dầu</button>
+                    <button class="category-item" data-value="hoa">Tranh hoa</button>
+                    <button class="category-item" data-value="phongcanh">Tranh phong cảnh</button>
+                    <button class="category-item" data-value="truutuong">Tranh trừu tượng</button>
+                    <button class="btn-select-all" id="btn-select-all">Bỏ chọn tất cả</button>
+                </div>
+            </div>
+
+            <div class="filter-item">
+                <label>Giá</label>
+                <input type="number" id="min-price" placeholder="Từ (₫)" min="0">
+                <input type="number" id="max-price" placeholder="Đến (₫)" min="0">
+            </div>
+
+            <div class="filter-item">
+                <button type="button" id="btn-search">Kết quả</button>
+            </div>
+        </div>
+
+        <!-- Nội dung chính: slide + card -->
+        <div class="main-content">
+            <div class="slide">
+                <div class="container">
+                    <img src="./assets/img/slide/0.jpg" alt="slide" id="slide-img" />
+                    <img src="./assets/img/arrow-left.svg" alt="" class="icon-arrow left" onclick="SwitchSlide(-1)" />
+                    <img src="./assets/img/arrow-right.svg" alt="" class="icon-arrow right" onclick="SwitchSlide(1)">
+                    <div class="dot-container">
+                        <img src="./assets/img/dot1.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(0)">
+                        <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(1)">
+                        <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(2)">
+                        <img src="./assets/img/dot.svg" alt="dot" class="icon-dot" onclick="SwitchIndexSlide(3)">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!--------------------- MAIN ----------------------->
     <div class="main">
-
         <!--------------------- Card ----------------------->
-        <div class="bottom" id="card-list"></div> 
+        <div class="bottom" id="card-list"></div>
+
         <!--------------------- NAV PAGE ----------------------->
         <div class="nav-page">
             <a href="#" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
@@ -216,7 +250,6 @@
             <a href="#" class="item">4</a>
             <a href="#" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
         </div>
-
     </div>
 
     <!--------------------- FOOTER ----------------------->
@@ -267,10 +300,27 @@
             GoToSlide((indexSlide + 1 + numSlide) % numSlide)
         }, 3000)
 
-        
+
         url = window.location.href.split("?")
-        if(url[1] === undefined) ShowCategory('new')
+        if (url[1] === undefined) ShowCategory('new')
         else ShowCategory(url[1])
+
+        // Select mutible
+        document.querySelectorAll('.category-item').forEach(x => {
+            x.addEventListener('click', (e) =>{
+                if(x.classList.contains('selected')) x.classList.remove('selected')
+                else x.classList.add('selected')
+            })
+        })
+
+        // Btn bo chon
+        document.getElementById('btn-select-all').addEventListener('click', (e)=>{
+            document.querySelectorAll('.category-item').forEach(x => {
+                x.classList.remove('selected')
+            })
+        })
+
+
     </script>
 </body>
 
