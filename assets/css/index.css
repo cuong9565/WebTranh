@@ -89,17 +89,38 @@ section.active {
     }
 }
 
-/* ----------------- Pop-up ------------------ */
-.pop-up {
+/* input[name='ckb-popup']{
+    display: none;
+} */
+
+input[name='ckb-popup']:checked ~ .overlay{
+    display: flex;
+}
+
+input[name='ckb-popup']:checked ~ .pop-up{
+    display: flex;
+}
+
+.overlay{
     position: fixed;
-    z-index: 3;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 3;
+}
+
+/* ----------------- Pop-up ------------------ */
+.pop-up {
+    position: fixed;
+    z-index: 10;
     transition: all 0.3s ease-in-out;
     display: none;
     justify-content: center;
     align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pop-up .container-close-form {
@@ -110,14 +131,16 @@ section.active {
 }
 
 .pop-up .close-icon {
-    width: 30px;
+    font-size: 20px;
     cursor: pointer;
     padding: 7px;
     border-top-right-radius: 8px;
+    color: #6b6b6b;
 }
 
 .pop-up .close-icon:hover {
     background-color: rgba(255, 0, 0, 0.674);
+    color: #fff;
 }
 
 .pop-up .small-icon {
@@ -237,11 +260,13 @@ section.active {
 /* Login */
 .pop-up .login-form-container {
     display: none;
+    z-index: 5;
 }
 
 /* SignUp */
 .pop-up .signup-form-container {
     display: none;
+    z-index: 5;
 }
 
 .pop-up .signup-form-container .red-link {
@@ -720,15 +745,16 @@ section.active {
     gap: 5px;
 }
 
-.nav-page img {
-    width: 25px;
+.nav-page i {
+    font-size: 22px;
+    text-align: center;
 }
 
 .nav-page .item {
     border: 2px solid #000;
     border-radius: 100%;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -744,11 +770,13 @@ section.active {
 .nav-page .item:hover {
     border: 2px solid #df6a6a;
     background-color: #df6a6a;
+    color: #fff;
 }
 
 .nav-page .isactive {
     border: 2px solid #df6a6a;
     background-color: #df6a6a;
+    color: #fff;
 }
 
 /* ----------------- Main ------------------ */

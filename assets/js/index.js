@@ -1,4 +1,3 @@
-var popUp = document.getElementsByClassName('pop-up')[0]
 var loginForm = document.getElementsByClassName('login-form-container')[0]
 var signUpForm = document.getElementsByClassName('signup-form-container')[0]
 var imgSlide = document.getElementById('slide-img')
@@ -9,7 +8,7 @@ var numSlide = 4
 
 // Function mở đăng nhập
 function ShowLoginForm() {
-    popUp.style.display = 'flex';
+    document.getElementById('ckb-popup').checked = true;
     loginForm.style.display = 'block';
     signUpForm.style.display = 'none';
     document.getElementById('email-login').focus()
@@ -17,15 +16,10 @@ function ShowLoginForm() {
 
 // Function mở đăng ký
 function ShowSignUpForm() {
-    popUp.style.display = 'flex';
+    document.getElementById('ckb-popup').checked = true;
     loginForm.style.display = 'none';
     signUpForm.style.display = 'block';
     document.getElementById('user-signup').focus()
-}
-
-// Function đóng popup
-function ClosePopUp() {
-    popUp.style.display = 'none';
 }
 
 // Function hiện mật khẩu
@@ -70,11 +64,13 @@ function SwitchIndexSlide(index) {
     }, 3000)
 }
 
+// function tắt thông báo
 function CloseAlert(indexAlert) {
     if (document.getElementById(`${indexAlert}`))
         document.getElementById(`${indexAlert}`).remove()
 }
 
+// function thêm thông báo
 function AddAlert(text, type) {
     idAlert = idAlert + 1
 
@@ -120,64 +116,3 @@ function CartRequireLogin(event) {
 function MoveDetail(url) {
     window.location.href = url;
 }
-
-
-// # Thêm event cho các component # ----------------------------
-// ## Event click ngoài form
-popUp.addEventListener('click', (event) => {
-    if (!loginForm.contains(event.target) && !signUpForm.contains(event.target)) {
-        ClosePopUp()
-    }
-})
-
-// ## Event hover close img
-document.getElementById('close-black-signup').addEventListener('mouseover', (_) => {
-    document.getElementById('close-black-signup').classList.add('hidden');
-    document.getElementById('close-white-signup').classList.remove('hidden');
-})
-
-document.getElementById('close-white-signup').addEventListener('mouseover', (_) => {
-    document.getElementById('close-black-signup').classList.add('hidden');
-    document.getElementById('close-white-signup').classList.remove('hidden');
-})
-
-document.getElementById('close-black-login').addEventListener('mouseover', (_) => {
-    document.getElementById('close-black-login').classList.add('hidden');
-    document.getElementById('close-white-login').classList.remove('hidden');
-})
-
-document.getElementById('close-white-login').addEventListener('mouseover', (_) => {
-    document.getElementById('close-black-login').classList.add('hidden');
-    document.getElementById('close-white-login').classList.remove('hidden');
-})
-
-document.getElementById('close-white-signup').addEventListener('mouseout', (_) => {
-    document.getElementById('close-black-signup').classList.remove('hidden');
-    document.getElementById('close-white-signup').classList.add('hidden');
-})
-
-document.getElementById('close-black-signup').addEventListener('mouseout', (_) => {
-    document.getElementById('close-black-signup').classList.remove('hidden');
-    document.getElementById('close-white-signup').classList.add('hidden');
-})
-
-document.getElementById('close-white-login').addEventListener('mouseout', (_) => {
-    document.getElementById('close-black-login').classList.remove('hidden');
-    document.getElementById('close-white-login').classList.add('hidden');
-})
-
-document.getElementById('close-black-login').addEventListener('mouseout', (_) => {
-    document.getElementById('close-black-login').classList.remove('hidden');
-    document.getElementById('close-white-login').classList.add('hidden');
-})
-
-document.getElementById('btn-signup').addEventListener('click', (e) => {
-    e.preventDefault()
-    AddAlert('Đăng ký tài khoản thành công', 'success')
-    ShowLoginForm()
-})
-
-document.getElementById('btn-login').addEventListener('click', (e) => {
-    e.preventDefault()
-    window.location.href = 'isLogin.html'
-})

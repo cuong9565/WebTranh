@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <title>Art Store</title>
 </head>
 
 <body>
     <!-- This element to alert -->
     <div class="container-alert"></div>
+    <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
+    <label for="ckb-popup" class="overlay"></label>
     <!-- This element to cover all page -->
-    <div class="pop-up">
+    <label class="pop-up">
         <!-- Login -->
         <div class="login-form-container">
             <div class="container">
                 <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-login" onclick="ClosePopUp()">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
                 </div>
 
                 <form class="form-container">
@@ -70,10 +70,7 @@
         <div class="signup-form-container">
             <div class="container">
                 <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-signup" onclick="ClosePopUp()">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
                 </div>
 
                 <form class="form-container">
@@ -135,7 +132,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </label>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
@@ -143,9 +140,8 @@
             <a href="index.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
         </div>
         <div class="container container-search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="./trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon"
-                    class="icon-search"></a>
+            <input type="text" placeholder="Tìm kiếm sản phẩm" id="inp-search" name="inp-search">
+            <a href="./trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <button onclick="CartRequireLogin(event)" class="item item-cart">
@@ -320,12 +316,12 @@
 
         <!--------------------- NAV PAGE ----------------------->
         <div class="nav-page">
-            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-left-black.svg" alt="arrow-left" /></a>
+            <a href="./navPage.html" class="item"><i class="bi bi-arrow-left"></i></a>
             <a href="./navPage.html" class="item isactive">1</a>
             <a href="./navPage.html" class="item">2</a>
             <a href="./navPage.html" class="item">3</a>
             <a href="./navPage.html" class="item">4</a>
-            <a href="./navPage.html" class="item"><img src="./assets/img/arrow-right-black.svg" alt="arrow-right" /></a>
+            <a href="./navPage.html" class="item"><i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
 
@@ -370,6 +366,20 @@
         </div>
     </div>
     <script src="./assets/js/index.js"></script>
-    <script></script>
+    <script>
+        // # Event Đăng ký tài khoản # ----------------------------
+        document.getElementById('btn-signup').addEventListener('click', (e) => {
+            e.preventDefault()
+            AddAlert('Đăng ký tài khoản thành công', 'success')
+            ShowLoginForm()
+        })
+
+        // # Event Đăng nhập tài khoản # ----------------------------
+        document.getElementById('btn-login').addEventListener('click', (e) => {
+            e.preventDefault()
+            document.getElementById('ckb-popup').checked = false;
+            window.location.href = 'isLogin.html'
+        })
+    </script>
 
 </body>
