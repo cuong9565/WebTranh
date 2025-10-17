@@ -32,7 +32,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-import.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-art.html" class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -179,12 +179,7 @@
                 </div>
                 <div class="bo-loc-item">
                     <div class="filter-bar">
-                        <div class="filter-search">
-                            <input type="text" placeholder="Nhập mã hoặc khoảng tiền ..." />
-                            <a href="">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                        </div>
+                        
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Đơn giá</option>
@@ -193,6 +188,12 @@
                                 <option value="">Dưới 30M</option>
                             </select>
                             <input type="date">
+                            <div class="filter-search" style="width: 500px;">
+                            <input type="text" placeholder="Nhập mã hoặc khoảng tiền ..." />
+                            <a href="">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
+                        </div>
                             <button class="filter-btn active" onclick="notification.info('Đã làm mới trang !')">
                                 <i class="fa-solid fa-rotate"></i>Làm mới</button>
                         </div>
@@ -361,7 +362,7 @@
                             </button>
 
                             <div class="total-section">
-                                Tổng cộng: <span id="importTotal" class="total-amount">₫0</span>
+                                Tổng cộng: <span id="importTotal" class="total-amount">0₫</span>
                             </div>
 
                             <div class="modal-actions">

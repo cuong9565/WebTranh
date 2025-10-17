@@ -949,6 +949,715 @@ h3 {
     color: rgba(255, 0, 0, 0.674);
 }
 
+/* ---------------------------- Cart ---------------------------- */
+.bottom-cart-page{
+    padding: 25px;
+    width: 100%;
+}
+.cart-page{
+    min-height: 50vh; /*Delete*/
+    width: 100%;
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+}
+
+
+.cart-page .container{
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+
+.cart-page .header{
+    background-color: #ffeded;
+    color: #e50019;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.cart-page .btn{
+    padding: 5px 10px;
+    border: 1px solid #555;
+    border-radius: 1px;
+    background-color: transparent;
+    font-size: 1em;
+}
+
+.cart-page .number{
+    min-width: 50px;
+    width: 50px;
+    /* height: 30px; */
+    border: 1px solid #555;
+    border-radius: 1px;
+    padding: 5px 2px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.cart-page .item-total{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cart-page .btn-total{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #df6a6a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cart-page .btn-total:hover{
+    background-color: #e97777;
+}
+
+.cart-page .btn-total:active{
+    background-color: #f88c8c;
+}
+
+/* ---------------------------- order-info ---------------------------- */
+.bottom-order-info{
+    padding: 25px;
+    width: 100%;
+}
+.add-address-container .row{
+    margin-bottom: 20px;
+}
+
+.add-address-container input, .add-address-container select{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.order-info{
+    min-height: 50vh; /*Delete*/
+    width: 100%;
+    background-color: #ececec;
+}
+
+.order-info .container{
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 20px;
+    width: 40vw;
+}
+
+.order-info .header{
+    background-color: #ffeded;
+    color: #e50019;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.order-info fieldset{
+    padding: 10px 20px 10px 20px;
+    margin-top: 20px;
+    border: 1px solid #e50019;
+}
+
+.order-info legend{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e50019;
+    text-align: center;
+    padding: 5px
+}
+
+.order-info input, .order-info select{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.order-info input[type='radio']{
+    width: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.order-info .item{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.order-info .row{
+    margin-bottom: 20px;
+}
+
+.order-info .radio-form{
+    gap: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.order-info .pay-form{
+    display: block;
+}
+
+
+.order-info .item-total{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.order-info .btn-total{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #df6a6a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.order-info .btn-total:hover{
+    background-color: #e97777;
+}
+
+.order-info .btn-total:active{
+    background-color: #f88c8c;
+}
+
+.btn-address{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #df6a6a;
+    color: #fff;
+    width: 50%;
+    padding: 7px 0;
+}
+
+.btn-address:hover{
+    background-color: #e97777;
+}
+
+.btn-address:active{
+    background-color: #f88c8c;
+}
+
+.pop-up .form-order-container {
+    background-color: #fff;
+    padding: 0 40px 20px 40px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.pop-up .form-order-container h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding: 0 40px;
+    color: gray;
+    text-align: center;
+}
+
+
+/* ---------------------------- confirm-order ---------------------------- */
+.confirm-order{
+    min-height: 50vh; /*Delete*/
+    width: 100%;
+    background-color: #ececec;
+}
+
+.confirm-order .container{
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 20px;
+    width: 50vw;
+}
+
+.confirm-order .header{
+    background-color: #ffeded;
+    color: #e50019;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.confirm-order fieldset{
+    padding: 10px 20px 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #e50019;
+}
+
+.confirm-order legend{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e50019;
+    text-align: center;
+    padding: 5px
+}
+
+.confirm-order label{
+    width: 40%;
+    font-size: 1em;
+    font-weight: 600;
+    display: inline-block;
+    text-align: right;
+}
+
+.confirm-order p{
+    display: inline-block;
+    width: 59%;
+}
+
+.confirm-order .item{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.confirm-order .row{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.confirm-order .radio-form{
+    gap: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.confirm-order .pay-form{
+    display: block;
+}
+
+
+.confirm-order .item-total{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirm-order .btn-total{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #df6a6a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* ----------------- Account ------------------ */
+.account{
+    padding: 0 25px 25px 25px;
+    width: 100%;
+}
+
+.account .info {
+    width: 100%;
+    padding: 25px;
+    background-color: #ececec;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.account .info .container {
+    background-color: #fff;
+    padding: 5px 25px 20px 25px;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.account .info .header {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.account .info .header-name {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.account .info .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.account .info input {
+    text-align: left;
+    display: inline-block;
+}
+
+.account .info .icon-small {
+    width: 25px;
+    margin-right: 15px;
+}
+
+
+.account .info .active {
+    background-color: #5555554c;
+}
+
+.account .info .item:hover {
+    background-color: #5555552b;
+}
+
+.account .info .item:active {
+    background-color: rgba(85, 85, 85, 0.13);
+}
+
+.account .info .container-left {
+    width: 300px;
+
+}
+
+.account .info .container-right {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.account .info .icon-account {
+    width: 50px;
+}
+
+.account .info .item-account {
+    padding: px;
+}
+
+.account .info .container-right .item-text {
+    min-width: 150px;
+    text-align: left;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.account .info .btn-blue {
+    color: #fff;
+    background-color: #0088cc;
+}
+
+.account .info .btn-blue:hover {
+    background-color: #0d9be2;
+}
+
+.account .info .btn-blue:active {
+    background-color: #12a5ee;
+}
+
+
+
+/*=======order management=======*/
+.account .info {
+    display: flex;
+    min-height: 70vh;
+}
+
+.account .container-left {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+.account .container-right {
+    flex: 1;
+    padding: 30px;
+    background: #f9f9fb;
+}
+
+.account .container-right h2 {
+    color: #2b3a67;
+    margin-bottom: 20px;
+}
+
+.account table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.account th,
+.account td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.account th {
+    background: #2b3a67;
+    color: #fff;
+}
+
+.account tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.account tr:hover {
+    background: #eef3ff;
+}
+
+.account .status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.account .status.delivering {
+    background: #ffb100;
+}
+
+.account .status.completed {
+    background: #00b050;
+}
+
+.account .status.cancelled {
+    background: #e74c3c;
+}
+
+.account .view-detail {
+    color: #2b3a67;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.account .view-detail:hover {
+    text-decoration: underline;
+}
+
+/*=======change password=======*/
+/* Khung giữa chứa toàn bộ form đổi mật khẩu */
+.account .my-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Tiêu đề */
+.account .header {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Mỗi hàng label + input */
+.account .my-form {
+    display: flex;
+    justify-content: center;
+    /* can giữa cả hàng */
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-top: 17px;
+}
+
+/* Label */
+.account .label-Pass {
+    min-width: 160px;
+    /* Độ rộng cố định để các label thẳng hàng */
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Ô nhập mật khẩu */
+.account .text-box {
+    width: 260px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.account .text-box:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Nút "Đổi mật khẩu" */
+.account .btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.account .btn-blue {
+    background-color: #007bff;
+    color: white;
+}
+
+.account .btn-blue:hover {
+    background-color: #0056b3;
+}
+
+/* Khoảng cách trên */
+.account .mt-17 {
+    margin-top: 17px;
+}
+
+.account .mt-20 {
+    margin-top: 20px;
+}
+
+/*===Xem thong tin chi tiet don hang===*/
+.account .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.account .modal-content.large {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 1400px;
+    height: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.account .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.account .modal-body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.account .modal-left img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    object-fit: contain;
+    /* Hiển thị nguyên ảnh, không bị cắt */
+    background-color: #f8f8f8;
+    /* giúp dễ nhìn nếu ảnh nhỏ hơn khung */
+    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+
+.account .modal-right {
+    flex: 1;
+}
+
+.account .modal-right h2 {
+    margin-top: 0;
+    color: #2a4d8f;
+}
+
+.account .modal-right p {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.account .modal-right ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.account .modal-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.account .btn-toggle-img {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.account .btn-toggle-img:hover {
+    background: #0056b3;
+}
+
+.account .container-radio{
+    min-width: 300px;
+}
 
 /* Phuc */
 /* ----------------- Footer ------------------ */
@@ -1051,7 +1760,7 @@ h3 {
 
 
 /* General */
-.text-box {
+.text-box{
     padding: 7px 15px;
     border: 1px solid #555;
     border-radius: 5px;
@@ -1091,25 +1800,21 @@ h3 {
     align-items: center;
 }
 
-.mt-5 {
-    margin-top: 5px;
+/* Margin */
+.mt-5{ margin-top: 5px; }
+.mt-17{ margin-top: 17px; }
+.mt-20{ margin-top: 20px; }
+
+.my-block{
+    display: block;
 }
 
-.mt-17 {
-    margin-top: 17px;
-}
+.mr-5{ margin-right: 5px; }
+.mr-20{ margin-right: 20px; }
 
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mr-5 {
-    margin-right: 5px;
-}
-
-.mr-20 {
-    margin-right: 20px;
-}
+/* Width */
+.w-100{ width: 100px; }
+.w-{ width: 11px; }
 
 .top-0{
     top: 0;
@@ -1121,4 +1826,19 @@ h3 {
 
 .absolute{
     position: absolute;
+}
+
+/* Table */
+.table{
+    text-align: center;
+    vertical-align: middle;
+}
+.table th, .table td{
+    padding: 10px 15px;
+}
+.table th{
+    font-size: 1.1em;
+}
+.table td{
+    font-size: 0.9em; 
 }

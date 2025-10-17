@@ -27,8 +27,8 @@ function updateOrderStatus() {
     const orderId = document.getElementById('updateOrderId').textContent;
     const newStatus = document.getElementById('newStatus').value;
     const notes = document.getElementById('statusNotes').value;
+    notification.success('Đã cập nhật trạng thái đơn hàng!');
 
-    alert(`Đã cập nhật trạng thái đơn hàng ${orderId} thành công!`);
     closeStatusUpdate();
 }
 
