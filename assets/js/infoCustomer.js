@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content");
     const btnOrders = document.getElementById("btn-orders");
     const btnChangePassword = document.getElementById("btn-change-password");
-    const infoMenu = document.querySelector('.item.active');
 
-    // Khi bấm “Quản lý đơn hàng”
+    // === Khi bấm “Quản lý đơn hàng” ===
     btnOrders.addEventListener("click", function (e) {
         e.preventDefault();
 
         document.querySelectorAll(".container-left .item").forEach(item => item.classList.remove("active"));
         btnOrders.classList.add("active");
 
+        // Render bảng + modal
         content.innerHTML = `
   `;
 
@@ -83,29 +83,45 @@ document.addEventListener("DOMContentLoaded", function () {
             const status = row.children[2].innerText;
             const total = row.children[3].innerText;
 
-            // Gán dữ liệu vào modal
-            document.getElementById("detail-id").innerText = id;
-            document.getElementById("detail-date").innerText = date;
-            document.getElementById("detail-status").innerText = status;
-            document.getElementById("detail-address").innerText = "123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh";
-            document.getElementById("detail-total").innerText = total;
-            document.getElementById("detail-products").innerHTML = `
-            <li>Sản phẩm 1 - 2 x 150.000₫</li>
-            <li>Sản phẩm 2 - 1 x 250.000₫</li>
-        `;
+                document.getElementById("detail-id").innerText = id;
+                document.getElementById("detail-date").innerText = date;
+                document.getElementById("detail-status").innerText = status;
+                document.getElementById("detail-address").innerText = "123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh";
+                document.getElementById("detail-total").innerText = total;
+                document.getElementById("detail-type").innerText = "Tranh Sơn Dầu";
+                document.getElementById("detail-quantity").innerText = "3 sản phẩm";
 
-            // Hiển thị modal
-            const modal = document.getElementById("orderDetailModal");
-            modal.style.display = "flex";
+
+                const products = [
+                    { name: "Đêm Pari", qty: 1, price: "10.000.000₫", img: "./assets/img/picture3.jpg" },
+                    { name: "Thu Vàng", qty: 1, price: "8.000.000₫", img: "./assets/img/picture4.jpg" },
+                    { name: "Phố Lồng Đèn", qty: 1, price: "9.000.000₫", img: "./assets/img/picture5.jpg" }
+                ];
+
+                const productList = document.getElementById("detail-products");
+                productList.innerHTML = products.map(p => `
+          <div class="product-item">
+            <img src="${p.img}" alt="${p.name}">
+            <div class="product-info">
+              <span><strong>${p.name}</strong></span>
+              <span>${p.qty} x ${p.price}</span>
+            </div>
+          </div>
+        `).join("");
+
+                const modal = document.getElementById("orderDetailModal");
+                modal.classList.remove("hidden");
+                modal.style.display = "flex";
+            });
         });
-    });
 
-    // Đóng modal khi nhấn nút X hoặc click ra ngoài
-    document.addEventListener("click", function (e) {
-        const modal = document.getElementById("orderDetailModal");
-        if (e.target.classList.contains("close-btn") || e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
+        // Đóng modal
+        document.addEventListener("click", function (e) {
+            const modal = document.getElementById("orderDetailModal");
+            if (modal && (e.target.classList.contains("close-btn") || e.target === modal)) {
+                modal.classList.add("hidden");
+                modal.style.display = "none";
+            }
+        });
+    }
 });
