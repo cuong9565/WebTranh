@@ -240,6 +240,38 @@ body {
     background-color: #df6a6a;
 }
 
+
+/* ----------------- Nav Link ------------------ */
+.nav-link{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #eeeeee;
+}
+
+.nav-link img{
+    width: 0.9em;
+}
+
+.nav-link a{
+    color: #000000bb; 
+    text-decoration: none;   
+    font-size: 0.9em;
+    /* #e6e6e6 */
+}
+
+.nav-link .item{
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.nav-link .item.item:hover{
+    background-color: #e6e6e6;
+}
+
 /* ---------------------------- Cart ---------------------------- */
 .cart-page{
     min-height: 50vh; /*Delete*/
