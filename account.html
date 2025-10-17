@@ -5,148 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/account.css">
-
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <title>Art Store</title>
 </head>
 
 <body>
     <!-- This element to alert -->
     <div class="container-alert"></div>
-    <!-- This element to cover all page -->
-    <div class="pop-up">
-        <!-- Login -->
-        <div class="login-form-container">
-            <div class="container">
-                <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-login" onclick="ClosePopUp()">
-                </div>
-
-                <form class="form-container">
-                    <h1>Đăng nhập tài khoản</h1>
-
-                    <div class="item">
-                        <label for="email-login">Email <span class="text-require">*</span></label>
-                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="text" id="email-login" placeholder="Nhập email của bạn">
-                    </div>
-
-                    <div class="item">
-                        <label for="password-login">Mật khẩu <span class="text-require">*</span></label>
-                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
-                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
-                            class="small-icon right-icon closed-password-login" onclick="ShowPass('password-login')">
-                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
-                            class="small-icon right-icon opened-password-login hidden"
-                            onclick="HiddePass('password-login')">
-                        <input type="password" id="password-login" placeholder="Nhập mật khẩu của bạn">
-                    </div>
-
-                    <div class="item center-item">
-                        <span>
-                            <input type="checkbox" id="remember-me-login">
-                            <label for="remember-me-login">Ghi nhớ đăng nhập</label>
-                        </span>
-                        <span>
-                            <a href="#" class="purple-link">Quên mật khẩu</a>
-                        </span>
-                    </div>
-
-                    <div class="item">
-                        <button id="btn-login">Đăng nhập</button>
-                    </div>
-
-                    <div class="item align-center">
-                        <label>Chưa có tài khoản? </label>
-                        <a onclick="ShowSignUpForm()" class="purple-link">Đăng ký</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Sign Up -->
-        <div class="signup-form-container">
-            <div class="container">
-                <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-signup" onclick="ClosePopUp()">
-                </div>
-
-                <form class="form-container">
-                    <h1>Đăng ký tài khoản</h1>
-
-                    <div class="item">
-                        <label for="user-signup">Họ và tên <span class="text-require">*</span></label>
-                        <img src="./assets/img/user.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="text" id="user-signup" placeholder="Nhập họ tên của bạn">
-                    </div>
-
-                    <div class="item">
-                        <label for="email-signup">Email <span class="text-require">*</span></label>
-                        <img src="./assets/img/email.svg" alt="email-icon" class="small-icon left-icon">
-                        <input type="text" id="email-signup" placeholder="Nhập email của bạn">
-                    </div>
-
-                    <div class="item">
-                        <label for="new-password-signup">Mật khẩu mới <span class="text-require">*</span></label>
-                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
-                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
-                            class="small-icon right-icon closed-new-password-signup"
-                            onclick="ShowPass('new-password-signup')">
-                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
-                            class="small-icon right-icon opened-new-password-signup hidden"
-                            onclick="HiddePass('new-password-signup')">
-                        <input type="password" id="new-password-signup" placeholder="Nhập mật khẩu mới">
-                    </div>
-
-                    <div class="item">
-                        <label for="confirm-password-signup">Xác nhận mật khẩu <span
-                                class="text-require">*</span></label>
-                        <img src="./assets/img/lock.svg" alt="email-icon" class="small-icon left-icon">
-                        <img src="./assets/img/eye-closed.svg" alt="eye-closed-icon"
-                            class="small-icon right-icon closed-confirm-password-signup"
-                            onclick="ShowPass('confirm-password-signup')">
-                        <img src="./assets/img/eye-open.svg" alt="eye-opened-icon"
-                            class="small-icon right-icon opened-confirm-password-signup hidden"
-                            onclick="HiddePass('confirm-password-signup')">
-                        <input type="password" id="confirm-password-signup" placeholder="Nhập lại mật khẩu">
-                    </div>
-
-                    <div class="item center-item">
-                        <span>
-                            <input type="checkbox" id="legal-term-signup">
-                            <label for="legal-term-signup">Tôi đồng ý với <a href="#" class="purple-link red-link">tất
-                                    cả các điều khoản</a>. *</label>
-                        </span>
-                    </div>
-
-                    <div class="item">
-                        <button>Đăng ký</button>
-                    </div>
-
-                    <div class="item align-center">
-                        <label>Đã có tài khoản? </label>
-                        <a onclick="ShowLoginForm()" class="purple-link">Đăng nhập</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
+    <label for="ckb-popup" class="overlay"></label>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
         <div class="container container-logo">
-            <a href="#"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+            <a href="isLogin.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
         </div>
         <div class="container container-search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+            <input type="text" placeholder="Tìm kiếm sản phẩm" id="inp-search" name="inp-search">
+            <a href="./isLogin_trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <a href="cart.html">
@@ -169,95 +46,106 @@
             </a>
         </div>
     </div>
+
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#" class="item-a ">Tất cả thể loại</a><span>|</span>
+            <a href="isLogin_allCategory.html" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh trừu tượng</a>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
 
-    <!--------------------- This Change Infomation ----------------------->
-    <div class="info">
-        <div class="container container-left">
-            <div class="my-between item-account">
-                <img src="./assets/img/account-info.svg" alt="icon-account" class="icon-account">
-                <span class="header-name">Lê Mạnh Cường</span>
-            </div>
-            <hr class="mt-5">
-            <div class="my-left mt-17 item active">
-                <img src="./assets/img/info.svg" alt="info-icon" class="icon-small">
-                <span class="item-text">Thông tin tài khoản</span>
-            </div>
-
-
-            <a href="#" id="btn-orders" class="my-left mt-17 item">
-                <img src="./assets/img/order.svg" alt="order-icon" class="icon-small">
-                <span class="item-text">Quản lý đơn hàng</span>
-            </a>
-
-            <div class="my-left mt-17 item" id="btn-change-password">
-                <img src="./assets/img/password.svg" alt="info-icon" class="icon-small">
-                <span class="item-text">Đổi mật khẩu</span>
-            </div>
-
-
-            <a href="index.html" class="my-left mt-17 item">
-                <img src="./assets/img/logout.svg" alt="info-icon" class="icon-small">
-                <span class="item-text">Đăng xuất</span>
-            </a>
-
+    <!--------------------- NAV - LINK ----------------------->
+    <div class="main">
+        <div class="nav-link">
+            <a href="isLogin.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
+            <span> / </span>
+            <a href="isLogin.html" class="item">Trang chủ</a>
+            <span> / </span>
+            <a class="item notactived">Thông tin tài khoản</a>
         </div>
 
-        <div class="container container-right" id="content">
-            <div class="my-center">
-                <div class="header">Thông tin tài khoản</div>
-            </div>
-            <div class="my-left mt-17">
-                <label class="item-text" for="inp-name">Họ tên</label>
-                <input type="text" placeholder="Nhập tên của bạn" id="inp-name" class="text-box">
-            </div>
-            <div class="my-left mt-17">
-                <label class="item-text">Giới tính</label>
-                <div class="my-left">
-                    <label for="inp-nam" class="mr-5">Nam</label>
-                    <input type="radio" id="inp-nam" name="gender-ifo" checked class="mr-20 rd">
-                    <label for="inp-nu" class="mr-5">Nữ</label>
-                    <input type="radio" id="inp-nu" name="gender-ifo" class="rd">
+        <div class="account">
+            <!--------------------- This Change Infomation ----------------------->
+            <div class="info">
+                <div class="container container-left">
+                    <div class="my-between item-account">
+                        <img src="./assets/img/account-info.svg" alt="icon-account" class="icon-account">
+                        <span class="header-name">Lê Mạnh Cường</span>
+                    </div>
+                    <hr class="mt-5">
+                    <a href="account.html" class="my-left mt-17 item active">
+                        <img src="./assets/img/info.svg" alt="info-icon" class="icon-small">
+                        <span class="item-text">Thông tin tài khoản</span>
+                    </a>
+        
+                    <a href="accountManageOrder.html" id="btn-orders" class="my-left mt-17 item" >
+                        <img src="./assets/img/order.svg" alt="order-icon" class="icon-small">
+                        <span class="item-text">Quản lý đơn hàng</span>
+                    </a>
+        
+                    <a href="accountChangePassword.html" class="my-left mt-17 item" id="btn-change-password">
+                        <img src="./assets/img/password.svg" alt="info-icon" class="icon-small">
+                        <span class="item-text">Đổi mật khẩu</span>
+                    </a>
+        
+        
+                    <a href="index.html" class="my-left mt-17 item">
+                        <img src="./assets/img/logout.svg" alt="info-icon" class="icon-small">
+                        <span class="item-text">Đăng xuất</span>
+                    </a>
+        
+                </div>
+        
+                <div class="container container-right" id="content">
+                    <div class="my-center">
+                        <div class="header">Thông tin tài khoản</div>
+                    </div>
+                    <div class="my-left mt-17">
+                        <label class="item-text" for="inp-name">Họ tên: </label>
+                        <input type="text" placeholder="Nhập tên của bạn" id="inp-name" class="text-box">
+                    </div>
+                    <div class="my-left mt-17">
+                        <label class="item-text">Giới tính: </label>
+                        <div class="container-radio">
+                            <label for="inp-nam" class="mr-5">Nam</label>
+                            <input type="radio" id="inp-nam" name="gender-ifo" checked class="mr-20 rd">
+                            <label for="inp-nu" class="mr-5">Nữ</label>
+                            <input type="radio" id="inp-nu" name="gender-ifo" class="rd">
+                        </div>
+                    </div>
+                    <div class="my-left mt-17">
+                        <label class="item-text" for="inp-phone">Số điện thoại: </label>
+                        <input type="text" placeholder="Nhập số điện thoại của bạn" id="inp-phone" class="text-box">
+                    </div>
+                    <div class="my-left mt-17">
+                        <label class="item-text" for="inp-email">Email: </label>
+                        <input type="text" id="inp-email" readonly class="text-box" value="cuongmanhle29092005@gmail.com">
+                    </div>
+                    <div class="my-left mt-17">
+                        <label class="item-text" for="inp-birth">Ngày sinh: </label>
+                        <input type="date" id="inp-birth" class="text-box">
+                    </div>
+                    <div class="my-center mt-20">
+                        <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">
+                            Lưu thông tin
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="my-left mt-17">
-                <label class="item-text" for="inp-phone">Số điện thoại</label>
-                <input type="text" placeholder="Nhập số điện thoại của bạn" id="inp-phone" class="text-box">
-            </div>
-            <div class="my-left mt-17">
-                <label class="item-text" for="inp-email">Email</label>
-                <input type="text" id="inp-email" readonly class="text-box" value="cuongmanhle29092005@gmail.com">
-            </div>
-            <div class="my-left mt-17">
-                <label class="item-text" for="inp-birth">Ngày sinh</label>
-                <input type="date" id="inp-birth" class="text-box">
-            </div>
-            <div class="my-center mt-20">
-                <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">
-                    Lưu thông tin
-                </button>
-            </div>
         </div>
-
     </div>
-
 
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
@@ -299,10 +187,8 @@
             </div>
         </div>
 
-
     </div>
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/infoCustomer.js"></script>
 </body>
 
 </html>

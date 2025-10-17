@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/productDetails.css">
+    <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
-    <title>Art Store</title>
+    <title>Chi tiết sản phẩm</title>
 </head>
 
 <body>
@@ -14,6 +16,19 @@
     <div class="container-alert"></div>
     <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
     <label for="ckb-popup" class="overlay"></label>
+    <!-- This element to cover all page -->
+    <label class="pop-up">
+        <!-- Login -->
+        <div class="login-form-container"></div>
+        <!-- Sign Up -->
+        <div class="signup-form-container"></div>
+
+        <!-- Ảnh zoom -->
+        <div class="info-product-container">
+            <i class="bi bi-x-lg close-icon-product-info" onclick="document.getElementById('ckb-popup').checked = false"></i>
+            <img class="img-zoom" src="./assets/img/son-dau/1.jpg" alt="Ảnh sản phẩm">
+        </div>
+    </label>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
@@ -22,8 +37,7 @@
         </div>
         <div class="container container-search">
             <input type="text" placeholder="Tìm kiếm sản phẩm" id="inp-search" name="inp-search">
-            <a href="./isLogin_trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon"
-                    class="icon-search"></a>
+            <a href="./isLogin_trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <a href="cart.html">
@@ -65,56 +79,38 @@
             <a href="isLogin_sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
-
+    
+    <!--------------------- MAIN ----------------------->
     <div class="main">
         <div class="nav-link">
             <a href="isLogin.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
             <span> / </span>
             <a href="isLogin.html" class="item">Trang chủ</a>
             <span> / </span>
-            <a href="cart.html" class="item">Giỏ hàng</a>
+            <a href="isLogin_sondauCategory.html" class="item">Tranh sơn dầu</a>
             <span> / </span>
-            <a href="thongtindathang.html" class="item">Thông tin đặt hàng</a>
-            <span> / </span>
-            <a class="item notactived">Thanh toán</a>
+            <a class="item notactived">Tranh hoài niệm</a>
         </div>
+        
+        <div class="bottom" id="card-list">
+            <div class="product-detail-container">
+                <div class="image-section">
+                    <img id="mainImage" class="main-image" src="./assets/img/son-dau/1.jpg" alt="Ảnh sản phẩm">
+                    <button class="btn-zoom" onclick="openZoom()">🔍 Phóng to</button>
+                </div>
+                <!-- Phần thông tin -->
+                <div class="info-section">
+                    <h1 id="productTitle" class="product-title">Hoài Niệm</h1>
+                    <p id="productPrice" class="product-price">7,000,000 VNĐ</p>
+                    <p id="productMaterial" class="product-material">Chất liệu: Sơn dầu</p>
+                    <p id="productSize" class="product-size">Kích thước: 39cm x 48cm</p>
 
-        <div class="bottom-order-info-confirm">
-            <div class="confirm-order my-center">
-                <div class="container">
-                    <div class="header">
-                        Thanh toán
+                    <div class="action-buttons">
+                        <button class="btn btn-cart" onclick="addToCart(event)">THÊM VÀO GIỎ</button>
+                        <button class="btn btn-buy" onclick="muaNgay(event)">MUA NGAY</button>
                     </div>
-                    <div class="content">
-                        <fieldset>
-                            <legend>Thông tin đặt hàng</legend>
 
-                            <div class="row">
-                                <label>Họ và tên: </label>
-                                <p>Lê Mạnh Cường</p>
-                            </div>
-                            <div class="row">
-                                <label>Số điện thoại: </label>
-                                <p>0397969307</p>
-                            </div>
-                            <div class="row">
-                                <label>Địa chỉ nhận hàng: </label>
-                                <p>283/21C, ấp 2, huyện Hóc Môn, tp Hồ Chí Minh</p>
-                            </div>
-                            <div class="row">
-                                <label>Phương thức thanh toán: </label>
-                                <p>Thanh toán khi giao hàng</p>
-                            </div>
-                            <div class="row">
-                                <label>Tổng tiền: </label>
-                                <p>43.000.000đ</p>
-                            </div>
-                        </fieldset>
-
-                        <div class="row my-center">
-                            <button class="btn-total" onclick="window.location.href = 'accountManageOrder.html'">Thanh toán</button>
-                        </div>
-                    </div>
+                    <div class="description" id="productDesc"><b>Mô tả sản phẩm:</b></br>- Chất liệu: Sơn dầu</br>- Năm sáng tác: 2010</br>- Giá bao gồm khung</div>
                 </div>
             </div>
         </div>
@@ -160,10 +156,10 @@
             </div>
         </div>
     </div>
-    <script src="./assets/js/index.js"></script>
+
+    <script src="./assets/js/productDetail.js"></script>
     <script>
-
     </script>
-</body>
 
+</body>
 </html>

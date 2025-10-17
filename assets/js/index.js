@@ -122,3 +122,52 @@ function openZoom(){
     document.getElementById('ckb-popup').checked = true;
     document.getElementsByClassName('info-product-container')[0].style;
 }
+
+// Đã đăng nhập -------------------------------------------
+// Hàm thêm vào giỏ hàng
+function addToCart(event){
+    event.stopPropagation()
+    AddAlert('Thêm sản phẩm thành công', 'success')
+}
+
+// Hàm mua ngay sản phẩm
+function muaNgay(event){
+    event.stopPropagation()
+    window.location.href = 'cart.html'
+}
+
+// Giảm sản phẩm
+function minus(id){
+    element = document.getElementById(`${id}`)
+    var x = max(1, parseInt(element.value) - 1)
+    element.value = x
+}
+
+// Tăng sản phẩm
+function plus(id){
+    element = document.getElementById(`${id}`)
+    var x = parseInt(element.value) + 1
+    element.value = x
+}
+
+function max(x, y){
+    if(x >= y) return x
+    return y
+}
+
+// Function mở pop-up thêm địa chỉ
+function AddAddress(){
+    document.getElementById('ckb-popup').checked = true;
+    loginForm.style.display = 'block';
+}
+
+// Function thêm địa chỉ
+function ThemDiaChi(){
+    AddAlert('Thêm địa chỉ thành công', 'success')
+    document.getElementById('ckb-popup').checked = false;
+}
+
+function ViewDetail(){
+    document.getElementById('ckb-popup').checked = true;
+    loginForm.style.display = 'block';
+}

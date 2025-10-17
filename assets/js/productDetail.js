@@ -1,11 +1,8 @@
 var loginForm = document.getElementsByClassName('login-form-container')[0]
 var signUpForm = document.getElementsByClassName('signup-form-container')[0]
-var imgSlide = document.getElementById('slide-img')
 var infoProduct = document.getElementsByClassName('info-product-container')[0]
 
 var idAlert = 0
-var indexSlide = 0
-var numSlide = 4
 
 // Function mở đăng nhập
 function ShowLoginForm() {
@@ -97,4 +94,17 @@ function CartRequireLogin(event) {
 // Hàm chuyển trang
 function MoveDetail(url) {
     window.location.href = url;
+}
+
+// Đã đăng nhập -------------------------------------------
+// Hàm thêm vào giỏ hàng
+function addToCart(event){
+    event.stopPropagation()
+    AddAlert('Thêm sản phẩm thành công', 'success')
+}
+
+// Hàm mua ngay sản phẩm
+function muaNgay(event){
+    event.stopPropagation()
+    window.location.href = 'cart.html'
 }

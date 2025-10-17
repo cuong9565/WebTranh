@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/general.css">
-    <link rel="stylesheet" href="./assets/css/thongtindathang.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <title>Art Store</title>
 </head>
 
 <body>
     <!-- This element to alert -->
-    <div class="container-alert">
-    </div>
+    <div class="container-alert"></div>
+    <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
+    <label for="ckb-popup" class="overlay"></label>
+
+
     <!-- This element to cover all page -->
     <div class="pop-up">
         <div class="login-form-container">
             <div class="container">
                 <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-login" onclick="ClosePopUp()">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
                 </div>
 
-                <form class="form-container">
+                <form class="form-order-container">
                     <h1>Thêm địa chỉ mới</h1>
 
                     <div class="add-address-container">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="row">
                             <label for="address-quan-huyen">Quận, huyện</label>
-                            <select id="address-tinh-tp">
+                            <select id="address-quan-huyen">
                                 <option value="0" selected>Chọn quận, huyện</option>
                                 <option value="1">Thành phố Hồ Chí Minh</option>
                             </select>
@@ -48,7 +48,7 @@
                             <input type="text" placeholder="Nhập số nhà, tên đường" id="address-home">
                         </div>
                         <div class="row my-center">
-                            <button class="btn-address btn">Thêm</button>
+                            <button type="button" class="btn-address" onclick="ThemDiaChi()">Thêm</button>
                         </div>
                     </div>
 
@@ -62,11 +62,12 @@
     <!--------------------- HEADER ----------------------->
     <div class="header">
         <div class="container container-logo">
-            <a href="#"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
+            <a href="isLogin.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
         </div>
         <div class="container container-search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+            <input type="text" placeholder="Tìm kiếm sản phẩm" id="inp-search" name="inp-search">
+            <a href="./isLogin_trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon"
+                    class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <a href="cart.html">
@@ -87,86 +88,104 @@
                     </div>
                 </div>
             </a>
-
         </div>
     </div>
+
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="#" class="item-a">Tất cả thể loại</a><span>|</span>
+            <a href="isLogin_allCategory.html" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="#" class="item-a">Tranh trừu tượng</a>
+            <a href="isLogin_sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
-    <!--------------------- Đặt hàng ----------------------->
-    <div class="order-info my-center">
-        <div class="container">
-            <div class="header">
-                Thông tin đặt hàng
-            </div>
-            <div class="content">
-                <fieldset>
-                    <legend>Thông tin khách hàng</legend>
 
-                    <div class="row">
-                        <label for="name-info">Họ và tên</label>
-                        <input type="text" id="name-info" placeholder="Nhập họ và tên">
-                    </div>
-                    <div class="row">
-                        <label for="phone-info">Số điện thoại</label>
-                        <input type="text" id="phone-info" placeholder="Số điện thoại">
-                    </div>
-                </fieldset>
+    <!--------------------- NAV - LINK ----------------------->
+    <div class="main">
+        <div class="nav-link">
+            <a href="isLogin.html" class="item"><img src="./assets/img/home.svg" alt="home"></a>
+            <span> / </span>
+            <a href="isLogin.html" class="item">Trang chủ</a>
+            <span> / </span>
+            <a href="cart.html" class="item">Giỏ hàng</a>
+            <span> / </span>
+            <a class="item notactived">Thông tin đặt hàng</a>
+        </div>
 
-                <fieldset>
-                    <legend>Địa chỉ</legend>
-                    <div class="row">
-                        <label for="address-tinh-tp">Địa chỉ</label>
-                        <select id="address-tinh-tp">
-                            <option value="0" selected>Chọn địa chỉ</option>
-                            <option value="1">283/21C</option>
-                        </select>
+        <div class="bottom-order-info">
+            <div class="order-info my-center">
+                <div class="container">
+                    <div class="header">
+                        Thông tin đặt hàng
                     </div>
-                    <div class="row">
-                        <button class="btn btn-address" onclick="AddAddress()">Thêm địa chỉ mới</button>
-                    </div>
-                </fieldset>
+                    <div class="content">
+                        <fieldset>
+                            <legend>Thông tin khách hàng</legend>
 
-                <fieldset>
-                    <legend>Phương thức thanh toán</legend>
-                    <div class="row pay-form">
-                        <div class="row">
-                            <input type="radio" id="money" name="pay-solution" checked>
-                            <label for="money" >Thanh toán khi giao hàng</label>
+                            <div class="row">
+                                <label for="name-info">Họ và tên</label>
+                                <input type="text" id="name-info" placeholder="Nhập họ và tên">
+                            </div>
+                            <div class="row">
+                                <label for="phone-info">Số điện thoại</label>
+                                <input type="text" id="phone-info" placeholder="Số điện thoại">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Địa chỉ</legend>
+                            <div class="row">
+                                <label for="address-dia-chi">Địa chỉ</label>
+                                <select id="address-dia-chi">
+                                    <option value="0" selected>Chọn địa chỉ</option>
+                                    <option value="1">283/21C</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-address" onclick="AddAddress()">Thêm địa chỉ mới</button>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Phương thức thanh toán</legend>
+                            <div class="row pay-form">
+                                <div class="row">
+                                    <input type="radio" id="money" name="pay-solution" checked>
+                                    <label for="money">Thanh toán khi giao hàng</label>
+                                </div>
+                                <div class="row">
+                                    <input type="radio" id="pay-online" name="pay-solution">
+                                    <label for="pay-online">Thanh toán online</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="item-total">
+                            <span>Thành tiền: </span>
+                            <span>43.000.000đ</span>
+                            <button class="btn-total" onclick="window.location.href = 'xacnhandathang.html'">Thanh
+                                toán</button>
                         </div>
-                        <div class="row">
-                            <input type="radio" id="pay-online" name="pay-solution">
-                            <label for="pay-online">Thanh toán online</label>
-                        </div>
                     </div>
-                </fieldset>
-                
-                <div class="item-total">
-                    <span>Thành tiền: </span>
-                    <span>43.000.000đ</span>
-                    <button class="btn-total" onclick="window.location.href = 'xacnhandathang.html'">Thanh toán</button>
+                    <div class="footer">
+
+                    </div>
                 </div>
             </div>
-            <div class="footer">
-                
-            </div>
+
         </div>
     </div>
+
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
         <div class="footer_word">
@@ -181,7 +200,7 @@
         <a href="#"><img src="./assets/img/mess.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/zalo.png" class="footer_icon"></a>
         <a href="#"><img src="./assets/img/contact.png" class="footer_icon"></a>
-        
+
         <div class="container-center">
             <hr class="footer_line">
         </div>
@@ -207,9 +226,9 @@
             </div>
         </div>
     </div>
-    <script src="./assets/js/thongtindathang.js"></script>
+    <script src="./assets/js/index.js"></script>
     <script>
-        
+
     </script>
 </body>
 
