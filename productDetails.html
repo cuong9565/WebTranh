@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/productDetails.css">
+    <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <title>Chi tiết sản phẩm</title>
 </head>
@@ -13,16 +14,15 @@
 <body>
     <!-- This element to alert -->
     <div class="container-alert"></div>
+    <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
+    <label for="ckb-popup" class="overlay"></label>
     <!-- This element to cover all page -->
-    <div class="pop-up">
+    <label class="pop-up">
         <!-- Login -->
         <div class="login-form-container">
             <div class="container">
                 <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-login"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-login" onclick="ClosePopUp()">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
                 </div>
 
                 <form class="form-container">
@@ -71,10 +71,7 @@
         <div class="signup-form-container">
             <div class="container">
                 <div class="container-close-form">
-                    <img src="./assets/img/close-black.svg" alt="close-icon" class="close-icon" id="close-black-signup"
-                        onclick="ClosePopUp()">
-                    <img src="./assets/img/close-white.svg" alt="close-icon" class="close-icon hidden"
-                        id="close-white-signup" onclick="ClosePopUp()">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
                 </div>
 
                 <form class="form-container">
@@ -136,7 +133,13 @@
                 </form>
             </div>
         </div>
-    </div>
+
+        <!-- Ảnh zoom -->
+        <div class="info-product-container">
+            <i class="bi bi-x-lg close-icon-product-info" onclick="document.getElementById('ckb-popup').checked = false"></i>
+            <img class="img-zoom" src="./assets/img/son-dau/1.jpg" alt="Ảnh sản phẩm">
+        </div>
+    </label>
 
     <!--------------------- HEADER ----------------------->
     <div class="header">
@@ -144,8 +147,8 @@
             <a href="index.html"><img src="./assets/img/logo.png" alt="logo" class="logo-img"></a>
         </div>
         <div class="container container-search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm">
-            <a href="#"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
+            <input type="text" placeholder="Tìm kiếm sản phẩm" id="inp-search" name="inp-search">
+            <a href="./trangtimkiem.html"><img src="./assets/img/search-icon.png" alt="search-icon" class="icon-search"></a>
         </div>
         <div class="container container-cart">
             <button onclick="CartRequireLogin(event)" class="item item-cart">
@@ -172,23 +175,21 @@
     <!--------------------- NAV ----------------------->
     <div class="nav">
         <div class="item">
-            <a href="index.html?all" class="item-a">Tất cả thể loại</a><span>|</span>
+            <a href="allCategory.html" class="item-a">Tất cả thể loại</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?sondau" class="item-a">Tranh sơn dầu</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh sơn dầu</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?hoa" class="item-a">Tranh hoa</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh hoa</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?phongcanh" class="item-a">Tranh phong cảnh</a><span>|</span>
+            <a href="sondauCategory.html" class="item-a">Tranh phong cảnh</a><span>|</span>
         </div>
         <div class="item">
-            <a href="index.html?truutuong" class="item-a">Tranh trừu tượng</a>
+            <a href="sondauCategory.html" class="item-a">Tranh trừu tượng</a>
         </div>
     </div>
-
-    <!--------------------- NAV LINK ----------------------->
     
     <!--------------------- MAIN ----------------------->
     <div class="main">
@@ -267,8 +268,21 @@
         </div>
     </div>
 
-    <script src="./assets/js/index.js"></script>
-    <script>
+    <script src="./assets/js/productDetail.js"></script>
+    <script>        
+        // # Event Đăng ký tài khoản # ----------------------------
+        document.getElementById('btn-signup').addEventListener('click', (e) => {
+            e.preventDefault()
+            AddAlert('Đăng ký tài khoản thành công', 'success')
+            ShowLoginForm()
+        })
+
+        // # Event Đăng nhập tài khoản # ----------------------------
+        document.getElementById('btn-login').addEventListener('click', (e) => {
+            e.preventDefault()
+            document.getElementById('ckb-popup').checked = false;
+            window.location.href = 'isLogin.html'
+        })
     </script>
 
 

@@ -138,7 +138,19 @@ input[name='ckb-popup']:checked ~ .pop-up{
     color: #6b6b6b;
 }
 
-.pop-up .close-icon:hover {
+
+.pop-up .close-icon-product-info {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 7px;
+    color: #6b6b6b;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.pop-up .close-icon:hover, 
+.pop-up .close-icon-product-info:hover{
     background-color: rgba(255, 0, 0, 0.674);
     color: #fff;
 }
@@ -272,6 +284,17 @@ input[name='ckb-popup']:checked ~ .pop-up{
 .pop-up .signup-form-container .red-link {
     font-size: 1em;
     color: #ff0000da;
+}
+
+.pop-up .info-product-container{
+    display: none;
+    padding: 40px;
+    background: #e8e8e8;
+}
+
+.pop-up .img-zoom{
+    max-width: 50vw;
+    max-height: 80vh;
 }
 
 
@@ -1086,4 +1109,16 @@ h3 {
 
 .mr-20 {
     margin-right: 20px;
+}
+
+.top-0{
+    top: 0;
+} 
+
+.right-0{
+    right: 0;
+} 
+
+.absolute{
+    position: absolute;
 }

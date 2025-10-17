@@ -1,6 +1,7 @@
 var loginForm = document.getElementsByClassName('login-form-container')[0]
 var signUpForm = document.getElementsByClassName('signup-form-container')[0]
 var imgSlide = document.getElementById('slide-img')
+var infoProduct = document.getElementsByClassName('info-product-container')[0]
 
 var idAlert = 0
 var indexSlide = 0
@@ -11,6 +12,7 @@ function ShowLoginForm() {
     document.getElementById('ckb-popup').checked = true;
     loginForm.style.display = 'block';
     signUpForm.style.display = 'none';
+    infoProduct.style.display = 'none';
     document.getElementById('email-login').focus()
 }
 
@@ -19,9 +21,17 @@ function ShowSignUpForm() {
     document.getElementById('ckb-popup').checked = true;
     loginForm.style.display = 'none';
     signUpForm.style.display = 'block';
+    infoProduct.style.display = 'none';
     document.getElementById('user-signup').focus()
 }
 
+// Hàm zoom ảnh
+function openZoom(){
+    document.getElementById('ckb-popup').checked = true;
+    loginForm.style.display = 'none';
+    signUpForm.style.display = 'none';
+    infoProduct.style.display = 'block';
+}
 // Function hiện mật khẩu
 function ShowPass(id) {
     document.getElementById(id).type = 'text';
@@ -34,34 +44,6 @@ function HiddePass(id) {
     document.getElementById(id).type = 'password';
     document.getElementsByClassName('closed-' + id)[0].classList.remove('hidden')
     document.getElementsByClassName('opened-' + id)[0].classList.add('hidden')
-}
-
-// Function chuyển trang
-function GoToSlide(index) {
-    var oldIndex = indexSlide
-    indexSlide = index
-    imgSlide.src = `./assets/img/slide/${indexSlide}.jpg`
-    document.getElementsByClassName('icon-dot')[oldIndex].src = './assets/img/dot.svg';
-    document.getElementsByClassName('icon-dot')[indexSlide].src = './assets/img/dot1.svg';
-}
-
-function SwitchSlide(cnt) {
-    var numSlide = 4
-    GoToSlide((indexSlide + cnt + numSlide) % numSlide)
-    clearInterval(inTerValSlide)
-
-    inTerValSlide = setInterval(() => {
-        GoToSlide((indexSlide + 1 + numSlide) % numSlide)
-    }, 3000)
-}
-
-function SwitchIndexSlide(index) {
-    GoToSlide(index)
-    clearInterval(inTerValSlide)
-
-    inTerValSlide = setInterval(() => {
-        GoToSlide((indexSlide + 1 + numSlide) % numSlide)
-    }, 3000)
 }
 
 // function tắt thông báo
@@ -115,10 +97,4 @@ function CartRequireLogin(event) {
 // Hàm chuyển trang
 function MoveDetail(url) {
     window.location.href = url;
-}
-
-// Hàm zoom ảnh
-function openZoom(){
-    document.getElementById('ckb-popup').checked = true;
-    document.getElementsByClassName('info-product-container')[0].style;
 }
