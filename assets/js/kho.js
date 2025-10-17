@@ -210,39 +210,39 @@ function calculatePrice(cost, profitPercent) {
 }
 
 // Lưu thay đổi tỷ lệ lợi nhuận
-// function saveProfitChange() {
-//     const modal = document.getElementById("editProfitModal");
-//     const id = parseInt(modal.dataset.editId);
-//     const type = modal.dataset.editType;
-//     const profitPercent = parseFloat(document.getElementById("profitPercent").value);
+function saveProfitChange() {
+    const modal = document.getElementById("editProfitModal");
+    const id = parseInt(modal.dataset.editId);
+    const type = modal.dataset.editType;
+    const profitPercent = parseFloat(document.getElementById("profitPercent").value);
 
-//     if (type === "category") {
-//         // Cập nhật danh mục
-//         const category = categories.find(c => c.id === id);
-//         category.profitPercent = profitPercent;
+    if (type === "category") {
+        // Cập nhật danh mục
+        const category = categories.find(c => c.id === id);
+        category.profitPercent = profitPercent;
 
-//         // Cập nhật tất cả sản phẩm trong danh mục
-//         products.forEach(product => {
-//             if (product.category === category.name) {
-//                 product.profitPercent = profitPercent;
-//                 product.price = calculatePrice(product.cost, profitPercent);
-//             }
-//         });
-//     } else {
-//         // Cập nhật sản phẩm
-//         const product = products.find(p => p.id === id);
-//         product.profitPercent = profitPercent;
-//         product.price = calculatePrice(product.cost, profitPercent);
-//     }
+        // Cập nhật tất cả sản phẩm trong danh mục
+        products.forEach(product => {
+            if (product.category === category.name) {
+                product.profitPercent = profitPercent;
+                product.price = calculatePrice(product.cost, profitPercent);
+            }
+        });
+    } else {
+        // Cập nhật sản phẩm
+        const product = products.find(p => p.id === id);
+        product.profitPercent = profitPercent;
+        product.price = calculatePrice(product.cost, profitPercent);
+    }
 
-//     // Cập nhật giao diện
-//     renderCategories();
-//     renderProducts();
+    // Cập nhật giao diện
+    renderCategories();
+    renderProducts();
 
-//     // Đóng modal
-//     modal.style.display = "none";
-//     alert("Đã cập nhật tỷ lệ lợi nhuận thành công!");
-// }
+    // Đóng modal
+    modal.style.display = "none";
+    notification.success('Lưu thành công !');
+}
 
 // Chuyển đổi tab
 function switchTab(tabId) {

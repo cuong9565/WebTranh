@@ -174,7 +174,7 @@ function addProductRow() {
             </td>
             <td class="row-total">₫0</td>
             <td>
-                <button type="button" class="delete-btn" onclick="deleteProductRow(this)">
+                <button type="button" class="delete-btn" >
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </td>
@@ -334,13 +334,13 @@ function openViewModal(importCode) {
             row.innerHTML = `
                     <td>${product.name}</td>
                     <td class="center-align">${product.quantity}</td>
-                    <td class="center-align">₫${product.price.toLocaleString('vi-VN')}</td>
-                    <td class="center-align">₫${productTotal.toLocaleString('vi-VN')}</td>
+                    <td class="center-align">${product.price.toLocaleString('vi-VN')}₫</td>
+                    <td class="center-align">${productTotal.toLocaleString('vi-VN')}₫</td>
                 `;
             tbody.appendChild(row);
         });
 
-        document.getElementById('viewImportTotal').textContent = `₫${data.total.toLocaleString('vi-VN')}`;
+        document.getElementById('viewImportTotal').textContent = `${data.total.toLocaleString('vi-VN')}₫`;
         modal.style.display = 'flex';
     }
 }
@@ -376,9 +376,9 @@ function openEditModal(importCode) {
                     <td>
                         <input type="number" class="price-input" name="products[${rowIndex}][price]" min="0" value="${product.price}" required>
                     </td>
-                    <td class="row-total">₫${productTotal.toLocaleString('vi-VN')}</td>
+                    <td class="row-total">${productTotal.toLocaleString('vi-VN')}₫</td>
                     <td>
-                        <button type="button" class="delete-btn" onclick="deleteEditProductRow(this)">
+                        <button type="button" class="delete-btn">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
@@ -386,15 +386,15 @@ function openEditModal(importCode) {
             tbody.appendChild(row);
 
             // Thêm sự kiện tính toán cho các input
-            const quantityInput = row.querySelector('.quantity-input');
-            const priceInput = row.querySelector('.price-input');
+            // const quantityInput = row.querySelector('.quantity-input');
+            // const priceInput = row.querySelector('.price-input');
 
-            [quantityInput, priceInput].forEach(input => {
-                input.addEventListener('input', calculateEditRowTotal);
-            });
+            // [quantityInput, priceInput].forEach(input => {
+            //     input.addEventListener('input', calculateEditRowTotal);
+            // });
         });
 
-        document.getElementById('editImportTotal').textContent = `₫${data.total.toLocaleString('vi-VN')}`;
+        document.getElementById('editImportTotal').textContent = `${data.total.toLocaleString('vi-VN')}₫`;
         modal.style.display = 'flex';
     }
 }

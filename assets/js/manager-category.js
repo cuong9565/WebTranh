@@ -47,6 +47,7 @@ cancelAddCategory.addEventListener('click', function() {
 
 btnConfirm.forEach(btn => {
     btn.addEventListener('click', function(e) {
+     ModalAdd.classList.remove('active');
        notification.success("Lưu danh mục thành công !")
     });
 });

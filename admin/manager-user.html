@@ -31,7 +31,7 @@
                         <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                         <span>Tổng quan</span>
                     </a>
-                    <a href="manager-user.html " class="menu-item order" aria-label="Quản lý sản phẩm">
+                    <a href="manager-art.html" class="menu-item order" aria-label="Quản lý sản phẩm">
                         <span class="icon"><i class="fa-solid fa-box"></i></span>
                         <span>Quản lý sản phẩm</span>
                     </a>
@@ -169,11 +169,7 @@
                 </div>
                 <div class="bo-loc-item">
                     <div class="filter-bar">
-                        <div class="filter-search">
-                            <input type="text" placeholder="Nhập số điện thoại..." /><a href="manager-user.html"><i
-                                    class="fa-solid fa-magnifying-glass"></i></a>
 
-                        </div>
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Trạng thái</option>
@@ -186,6 +182,11 @@
                                 <option value="">Admin</option>
                                 <option value="">Khách hàng</option>
                             </select>
+                            <div class="filter-search" style="width: 550px;">
+                                <input type="text" placeholder="Nhập số điện thoại..." /><a href="manager-user.html"><i
+                                        class="fa-solid fa-magnifying-glass"></i></a>
+
+                            </div>
                             <button class="filter-btn active"
                                 onclick="notification.info('Đã tải lại trang thành công')"><i
                                     class="fa-solid fa-rotate"></i> Làm mới</button>
@@ -369,7 +370,7 @@
                                                     <i class="fa-regular fa-eye"></i>
                                                 </span>
                                                 <span id=""
-                                                    onclick="confirm('Bạn có chắc chắn muốn reset mật khẩu mặt định là 123456')"
+                                                    onclick='confirm("Bạn có chắc chắn muốn reset mật khẩu mặt định là \"123456\"")'
                                                     style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem;color:#6c5c5c;">
                                                     <i class="fa-solid fa-rotate"></i>
                                                 </span>
