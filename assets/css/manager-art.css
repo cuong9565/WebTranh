@@ -427,6 +427,7 @@ table {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 18px;
     background: #fff;
     border-radius: 18px;
@@ -441,7 +442,7 @@ table {
     background: #f5f5f7;
     border-radius: 10px;
     padding: 0 16px;
-    min-width: 300px;
+    min-width: 350px;
     height: 35px;
     flex: 1;
 }
@@ -464,7 +465,7 @@ table {
 .filter-buttons {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .filter-btn {

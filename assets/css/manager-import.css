@@ -222,6 +222,8 @@
 }
 
 .total-section {
+    display: flex;
+    justify-content: end;
     margin: 24px 0;
     font-size: 1.15rem;
     font-weight: 600;

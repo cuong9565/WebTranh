@@ -4,13 +4,92 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard - ART SGU</title>
+    <title>Quản lý tồn kho</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
     <link rel="stylesheet" href="../assets/css/kho.css">
     <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        /* Stock status styles */
+        .stock-good {
+            color: #155724;
+            background-color: #d4edda;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .stock-medium {
+            color: #856404;
+            background-color: #fff3cd;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .stock-low {
+            color: #721c24;
+            background-color: #f8d7da;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Alert box styles */
+        .alert-box {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+
+        .alert-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Date picker styles */
+        .date-picker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .date-picker label {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .date-picker input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn-check {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-check:hover {
+            background-color: #0069d9;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,13 +125,17 @@
                     </a>
                     <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
                         <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-                        <span>Quản lý nhập xuất</span>
+                        <span>Quản lý nhập</span>
                     </a>
-
+                    <a href="profit.html" class="menu-item review-b " aria-label="Lợi nhuận">
+                        <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+                        <span>Tỷ lệ lợi nhuận</span>
+                    </a>
                     <a href="ton-kho.html" class="menu-item review-b active" aria-label="Quản lý tồn kho">
                         <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
                         <span>Quản lý tồn kho</span>
                     </a>
+
                     <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
                         <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
                         <span>Quản lý danh mục</span>
@@ -128,149 +211,7 @@
                     </div>
                 </div>
 
-                <!-- Thanh chuyển đổi nội dung -->
-                <div class="tab-navigation">
-                    <div class="tab-item active" data-tab="profit-management">Tỷ lệ lợi nhuận</div>
-                    <div class="tab-item" data-tab="inventory-management">Quản lý tồn kho</div>
-                </div>
-
-                <!-- Nội dung quản lý tỷ lệ lợi nhuận -->
-                <div class="tab-content active" id="profit-management">
-                    <div class="profit-management-container">
-                        <div class="stats-container">
-                            <div class="stat-card">
-                                <div class="stat-icon icon-profit">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <div class="stat-value">32.5%</div>
-                                    <div class="stat-label">Tỷ lệ lợi nhuận trung bình</div>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon icon-category">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <div class="stat-value">6</div>
-                                    <div class="stat-label">Danh mục sản phẩm</div>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon icon-product">
-                                    <i class="fas fa-box"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <div class="stat-value">42</div>
-                                    <div class="stat-label">Sản phẩm</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="search-box">
-                            <input type="text" id="searchProfitInput"
-                                placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
-                            <button id="searchProfitBtn"> <a href="">Tìm kiếm <i class="fas fa-search"></i></a></button>
-                        </div>
-
-                        <div class="profit-card">
-                            <div class="card-header">
-                                <div class="card-title" id="1">Tỷ lệ lợi nhuận theo danh mục</div>
-                            </div>
-                            <table id="categoryTable">
-                                <thead>
-                                    <tr>
-                                        <th>Danh mục</th>
-                                        <th>Số sản phẩm</th>
-                                        <th>Lợi nhuận (%)</th>
-                                        <th>Hành động</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
-                                </tbody>
-                            </table>
-                            <div class="pagination">
-                                <ul class="pagination-list">
-                                    <li class="pagination-item disabled"><span><i
-                                                class="fa-solid fa-angle-left"></i></span>
-                                    </li>
-                                    <a href="#1">
-                                        <li class="pagination-item active"><span>1</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>2</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>3</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>...</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>10</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                        </li>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="profit-card">
-                            <div class="card-header">
-                                <div class="card-title" id="2">Tỷ lệ lợi nhuận theo sản phẩm</div>
-                            </div>
-                            <table id="productTable">
-                                <thead>
-                                    <tr>
-                                        <th>Mã SP</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Danh mục</th>
-                                        <th>Giá vốn</th>
-                                        <th>Tỷ lệ lợi nhuận (%)</th>
-                                        <th>Giá bán</th>
-                                        <th>Hành động</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
-                                </tbody>
-                            </table>
-                            <div class="pagination">
-                                <ul class="pagination-list">
-                                    <li class="pagination-item disabled"><span><i
-                                                class="fa-solid fa-angle-left"></i></span>
-                                    </li>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item active"><span>1</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><spanton-kho.html</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>3</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>...</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>10</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                        </li>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Nội dung quản lý tồn kho -->
-                <div class="tab-content" id="inventory-management">
+                <div class="tab-content active">
                     <div class="inventory-management-container">
                         <div class="stats-container">
                             <div class="stat-card">
@@ -278,7 +219,7 @@
                                     <i class="fas fa-warehouse"></i>
                                 </div>
                                 <div class="stat-info">
-                                    <div class="stat-value">850</div>
+                                    <div class="stat-value">86</div>
                                     <div class="stat-label">Tổng tồn kho</div>
                                 </div>
                             </div>
@@ -287,7 +228,7 @@
                                     <i class="fas fa-box"></i>
                                 </div>
                                 <div class="stat-info">
-                                    <div class="stat-value">42</div>
+                                    <div class="stat-value">8</div>
                                     <div class="stat-label">Sản phẩm</div>
                                 </div>
                             </div>
@@ -296,7 +237,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </div>
                                 <div class="stat-info">
-                                    <div class="stat-value">5</div>
+                                    <div class="stat-value">2</div>
                                     <div class="stat-label">Sản phẩm sắp hết</div>
                                 </div>
                             </div>
@@ -305,7 +246,7 @@
                         <!-- Cảnh báo sắp hết hàng -->
                         <div class="alert-box alert-warning">
                             <i class="fas fa-exclamation-triangle alert-icon"></i>
-                            <div>Có <strong>5 sản phẩm</strong> sắp hết hàng cần được bổ sung.</div>
+                            <div>Có <strong>2 sản phẩm</strong> sắp hết hàng cần được bổ sung.</div>
                         </div>
 
                         <!-- Tìm kiếm tồn kho hiện tại -->
@@ -314,17 +255,25 @@
                                 <option value="product">Theo sản phẩm</option>
                                 <option value="category">Theo danh mục</option>
                             </select>
+                            <div>
+                                <label for="checkDate">Chọn ngày:</label>
+                                <input type="date" id="checkDate" value="2024-01-25">
+
+                            </div>
                             <input type="text" id="searchInventoryInput"
                                 placeholder="Nhập tên sản phẩm hoặc danh mục...">
-                            <a href=""><button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra
+                            <a href="ton-kho.html"><button id="searchInventoryBtn"><i class="fas fa-search"></i> Tra
                                     cứu</button></a>
+
                         </div>
-                     
+
+                        <!-- Kiểm tra tồn kho tại thời điểm -->
                         <div class="inventory-card">
                             <div class="card-header">
-                                <div class="card-title" id="3">Tồn kho hiện tại</div>
+                                <div class="card-title">Kiểm tra tồn kho tại thời điểm</div>
                             </div>
-                            <table id="currentInventoryTable">
+
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>Mã SP</th>
@@ -332,59 +281,75 @@
                                         <th>Danh mục</th>
                                         <th>Tồn kho</th>
                                         <th>Trạng thái</th>
-                                        <th>Cảnh báo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                                    <tr>
+                                        <td>SP001</td>
+                                        <td>Tranh phong cảnh mùa thu</td>
+                                        <td>Tranh phong cảnh</td>
+                                        <td class="stock-good">12</td>
+                                        <td>Đủ hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP002</td>
+                                        <td>Tranh sơn dầu chân dung</td>
+                                        <td>Tranh chân dung</td>
+                                        <td class="stock-low">3</td>
+                                        <td>Sắp hết</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP003</td>
+                                        <td>Tranh trừu tượng đa sắc</td>
+                                        <td>Tranh trừu tượng</td>
+                                        <td class="stock-good">22</td>
+                                        <td>Đủ hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP004</td>
+                                        <td>Tranh sơn mài cổ điển</td>
+                                        <td>Tranh sơn mài</td>
+                                        <td class="stock-good">10</td>
+                                        <td>Đủ hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP005</td>
+                                        <td>Tranh thủy mặc non nước</td>
+                                        <td>Tranh thủy mặc</td>
+                                        <td class="stock-low">3</td>
+                                        <td>Sắp hết</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP006</td>
+                                        <td>Tranh sơn dầu hoàng hôn</td>
+                                        <td>Tranh sơn dầu</td>
+                                        <td class="stock-good">12</td>
+                                        <td>Đủ hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP007</td>
+                                        <td>Tranh chân dung gia đình</td>
+                                        <td>Tranh chân dung</td>
+                                        <td class="stock-medium">6</td>
+                                        <td>Cần theo dõi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP008</td>
+                                        <td>Tranh phong cảnh biển</td>
+                                        <td>Tranh phong cảnh</td>
+                                        <td class="stock-good">18</td>
+                                        <td>Đủ hàng</td>
+                                    </tr>
                                 </tbody>
-
                             </table>
-                            <div class="pagination">
-                                <ul class="pagination-list">
-                                    <li class="pagination-item disabled"><span><i
-                                                class="fa-solid fa-angle-left"></i></span>
-                                    </li>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item active"><span>1</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>2</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>3</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>...</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>10</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                        </li>
-                                    </a>
-                                </ul>
-                            </div>
                         </div>
-                           <!-- Tìm kiếm theo thời gian -->
-                        <div class="search-box">
-                            <div class="date-range">
-                                <span>Từ:</span>
-                                <input type="date" id="startDate">
-                                <span>Đến:</span>
-                                <input type="date" id="endDate">
-                            </div>
-                            <input type="text" id="searchProductInput" placeholder="Nhập mã hoặc tên sản phẩm...">
-                            <a href=""> <button id="searchTimeRangeBtn"><i class="fas fa-chart-line"></i> Tra cứu
-                                    N-X-T</button></a>
 
-                        </div>
+                        <!-- Lịch sử nhập xuất -->
                         <div class="inventory-card">
                             <div class="card-header">
-                                <div class="card-title" id="4">Nhập - Xuất - Tồn theo thời gian</div>
+                                <div class="card-title">Lịch sử nhập xuất gần đây</div>
                             </div>
-                            <table id="inventoryHistoryTable">
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>Mã SP</th>
@@ -397,64 +362,71 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                                    <tr>
+                                        <td>SP001</td>
+                                        <td>Tranh phong cảnh mùa thu</td>
+                                        <td>2024-01-15</td>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td>15</td>
+                                        <td>Nhập hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP001</td>
+                                        <td>Tranh phong cảnh mùa thu</td>
+                                        <td>2024-01-18</td>
+                                        <td>0</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                        <td>Xuất bán</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP002</td>
+                                        <td>Tranh sơn dầu chân dung</td>
+                                        <td>2024-01-20</td>
+                                        <td>5</td>
+                                        <td>0</td>
+                                        <td>8</td>
+                                        <td>Nhập hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP002</td>
+                                        <td>Tranh sơn dầu chân dung</td>
+                                        <td>2024-01-22</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>Xuất bán</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP003</td>
+                                        <td>Tranh trừu tượng đa sắc</td>
+                                        <td>2024-01-25</td>
+                                        <td>15</td>
+                                        <td>0</td>
+                                        <td>22</td>
+                                        <td>Nhập hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP004</td>
+                                        <td>Tranh sơn mài cổ điển</td>
+                                        <td>2024-01-26</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                        <td>8</td>
+                                        <td>Xuất bán</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP005</td>
+                                        <td>Tranh thủy mặc non nước</td>
+                                        <td>2024-01-27</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>Xuất bán</td>
+                                    </tr>
                                 </tbody>
                             </table>
-                            <div class="pagination">
-                                <ul class="pagination-list">
-                                    <li class="pagination-item disabled"><span><i
-                                                class="fa-solid fa-angle-left"></i></span>
-                                    </li>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item active"><span>1</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>2</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>3</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>...</span></li>
-                                    </a>
-                                    <a href="ton-kho.html">
-                                        <li class="pagination-item"><span>10</span></li>
-                                    </a>
-                                    <a href="#4">
-                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
-                                        </li>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal chỉnh sửa tỷ lệ lợi nhuận -->
-                <div class="modal" id="editProfitModal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title" id="modalTitle">Chỉnh sửa tỷ lệ lợi nhuận</div>
-                            <div class="modal-close" id="closeModal">&times;</div>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label id="itemLabel">Tên danh mục/sản phẩm</label>
-                                <input type="text" id="itemName" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="profitPercent">Tỷ lệ lợi nhuận (%)</label>
-                                <input type="number" id="profitPercent" min="0" max="100" step="0.1">
-                            </div>
-                            <div class="form-group">
-                                <label for="newPrice">Giá bán mới</label>
-                                <input type="text" id="newPrice" readonly>
-                            </div>
-                        </div>
-                        <div class="modal-actions">
-                            <button class="btn btn-cancel" id="cancelEdit">Hủy</button>
-                            <button class="btn btn-save" id="saveProfit">Lưu thay
-                                đổi</button>
                         </div>
                     </div>
                 </div>
@@ -463,10 +435,9 @@
     </div>
 
     <script src="../assets/js/account-admin.js"></script>
-    <script src="../assets/js/manager-art.js"></script>
-    <script src="../assets/js/kho.js"></script>
     <script src="../assets/js/Notification.js"></script>
-
 </body>
+
+
 
 </html>

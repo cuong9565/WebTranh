@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard - ART SGU</title>
+    <title>Quản lý đặt hàng</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
     <link rel="stylesheet" href="../assets/css/manager-art.css">
@@ -12,6 +12,54 @@
     <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
+    <style>
+        .status-update-popup {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            z-index: 1000;
+            display: none;
+            width: 200px;
+        }
+
+        .status-update-popup .form-group {
+            margin-bottom: 15px;
+        }
+
+        .status-update-popup select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .status-update-popup .popup-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .status-update-popup .btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .status-update-popup .btn-cancel {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .status-update-popup .btn-save {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,9 +94,12 @@
                     </a>
                     <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
                         <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-                        <span>Quản lý nhập xuất</span>
+                        <span>Quản lý nhập</span>
                     </a>
-
+                        <a href="profit.html" class="menu-item review-b " aria-label="Lợi nhuận">
+                        <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+                        <span>Tỷ lệ lợi nhuận</span>
+                    </a>
                     <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
                         <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
                         <span>Quản lý tồn kho</span>
@@ -229,6 +280,21 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>DH003</td>
+                                <td>Lê Văn C</td>
+                                <td>17/01/2024</td>
+                                <td>15,200,000 ₫</td>
+                                <td><span class="status-badge status-new">Mới đặt</span></td>
+                                <td>
+                                    <button class="action-btn btn-view" onclick="openOrderDetail('DH003')">
+                                        <i class="fas fa-eye"></i> Xem
+                                    </button>
+                                    <button class="action-btn btn-update" onclick="openStatusPopup('DH003', this)">
+                                        <i class="fas fa-edit"></i> Cập nhật
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>DH001</td>
                                 <td>Nguyễn Văn A</td>
                                 <td>15/01/2024</td>
@@ -250,22 +316,23 @@
                                     <button class="action-btn btn-view" onclick="openOrderDetail('DH002')">
                                         <i class="fas fa-eye"></i> Xem
                                     </button>
-                                    <button class="action-btn btn-update" onclick="openStatusUpdate('DH002')">
+                                    <button class="action-btn btn-update" onclick="openStatusPopup('DH002', this)">
                                         <i class="fas fa-edit"></i> Cập nhật
                                     </button>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td>DH003</td>
-                                <td>Lê Văn C</td>
-                                <td>17/01/2024</td>
-                                <td>15,200,000 ₫</td>
-                                <td><span class="status-badge status-new">Mới đặt</span></td>
+                                <td>DH005</td>
+                                <td>Hoàng Văn E</td>
+                                <td>19/01/2024</td>
+                                <td>22,150,000 ₫</td>
+                                <td><span class="status-badge status-processing">Đã xử lý</span></td>
                                 <td>
-                                    <button class="action-btn btn-view" onclick="openOrderDetail('DH003')">
+                                    <button class="action-btn btn-view" onclick="openOrderDetail('DH005')">
                                         <i class="fas fa-eye"></i> Xem
                                     </button>
-                                    <button class="action-btn btn-update" onclick="openStatusUpdate('DH003')">
+                                    <button class="action-btn btn-update" onclick="openStatusPopup('DH005', this)">
                                         <i class="fas fa-edit"></i> Cập nhật
                                     </button>
                                 </td>
@@ -282,21 +349,7 @@
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>DH005</td>
-                                <td>Hoàng Văn E</td>
-                                <td>19/01/2024</td>
-                                <td>22,150,000 ₫</td>
-                                <td><span class="status-badge status-processing">Đã xử lý</span></td>
-                                <td>
-                                    <button class="action-btn btn-view" onclick="openOrderDetail('DH005')">
-                                        <i class="fas fa-eye"></i> Xem
-                                    </button>
-                                    <button class="action-btn btn-update" onclick="openStatusUpdate('DH005')">
-                                        <i class="fas fa-edit"></i> Cập nhật
-                                    </button>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                     <div class="pagination">
@@ -384,7 +437,7 @@
                         </div>
                         <div class="detail-item">
                             <div class="detail-label">Địa chỉ</div>
-                            <div class="detail-value" id="detailCustomerAddress">123 Đường ABC, Quận 1, TP.HCM</div>
+                            <div class="detail-value" id="detailCustomerAddress">860/57 Huỳnh Tấn Phát, Khu phố 3, Phường Tân Mỹ, TP Hồ Chí Minh</div>
                         </div>
                     </div>
                 </div>
@@ -394,6 +447,7 @@
                     <table class="product-table">
                         <thead>
                             <tr>
+                                <th>Hình ảnh</th>
                                 <th>Sản phẩm</th>
                                 <th>Đơn giá</th>
                                 <th>Số lượng</th>
@@ -402,12 +456,14 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td><img src="../assets/img/hoa/1.jpg" alt="Tranh phong cảnh mùa thu" style="width: 50px; height: auto;"></td>
                                 <td>Tranh phong cảnh mùa thu</td>
                                 <td>8,500,000 ₫</td>
                                 <td>1</td>
                                 <td>8,500,000 ₫</td>
                             </tr>
                             <tr>
+                                <td><img src="../assets/img/hoa/2.jpg" alt="Tranh sơn dầu hoàng hôn" style="width: 50px; height: auto;"></td>
                                 <td>Tranh sơn dầu hoàng hôn</td>
                                 <td>4,000,000 ₫</td>
                                 <td>1</td>
@@ -423,35 +479,20 @@
         </div>
     </div>
 
-    <!-- Modal cập nhật trạng thái -->
-    <div class="modal" id="statusUpdateModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">Cập nhật trạng thái đơn hàng #<span id="updateOrderId"></span></div>
-                <div class="modal-close" onclick="closeStatusUpdate()">&times;</div>
-            </div>
-            <div class="modal-body">
-                <div class="status-update-form">
-                    <div class="form-group">
-                        <label for="newStatus">Trạng thái mới</label>
-                        <select id="newStatus">
-                            <option value="new">Mới đặt</option>
-                            <option value="processing">Đã xử lý</option>
-                            <option value="delivered">Đã giao</option>
-                            <option value="cancelled">Đã hủy</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="statusNotes">Ghi chú (nếu có)</label>
-                        <textarea id="statusNotes" rows="3" placeholder="Nhập ghi chú về trạng thái đơn hàng..."
-                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-actions">
-                <button class="btn-modal-cancel" onclick="closeStatusUpdate()">Hủy</button>
-                <button class="btn-modal-save" onclick="updateOrderStatus()">Cập nhật</button>
-            </div>
+    <!-- Popup cập nhật trạng thái -->
+    <div class="status-update-popup" id="statusUpdatePopup">
+        <div class="form-group">
+            <label for="popupNewStatus">Trạng thái mới</label>
+            <select id="popupNewStatus">
+                <option value="new">Mới đặt</option>
+                <option value="processing">Đã xử lý</option>
+                <option value="delivered">Đã giao</option>
+                <option value="cancelled">Đã hủy</option>
+            </select>
+        </div>
+        <div class="popup-actions">
+            <button class="btn btn-cancel" onclick="closeStatusPopup()">Hủy</button>
+            <button class="btn btn-save" onclick="saveStatusUpdate()">Lưu</button>
         </div>
     </div>
 

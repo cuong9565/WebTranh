@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tỷ lệ lợi nhuận</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="../assets/css/tongquanbase.css" />
+    <link rel="stylesheet" href="../assets/css/manager-art.css">
+    <link rel="stylesheet" href="../assets/css/kho.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <aside class="sidebar" aria-label="Sidebar navigation">
+            <a href="dashboard.html" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-1">
+                        <image src="../assets/img/logo.png" mode="">
+                    </div>
+                    <span class="art-sgu">THE ART STORE</span>
+                </div>
+            </a>
+
+            <nav class="menu" aria-label="Main menu">
+                <span class="menu-2">MENU</span>
+                <div class="menu-buttons">
+                    <a href="dashboard.html" class="menu-item dashboard" aria-label="Tổng quan">
+                        <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Tổng quan</span>
+                    </a>
+                    <a href="manager-art.html" class="menu-item order" aria-label="Quản lý sản phẩm">
+                        <span class="icon"><i class="fa-solid fa-box"></i></span>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="manager-order.html" class="menu-item manage" aria-label="Quản lý đơn hàng">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="manager-user.html" class="menu-item review" aria-label="Quản lý tài khoản">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span>Quản lý nhập</span>
+                    </a>
+                       <a href="profit.html" class="menu-item review-b active" aria-label="Lợi nhuận">
+                        <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+                        <span>Tỷ lệ lợi nhuận</span>
+                    </a>
+                    <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <span>Quản lý tồn kho</span>
+                    </a>
+                    <a href="manager-category.html" class="menu-item review-7" aria-label="Quản lý danh mục">
+                        <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <span>Quản lý danh mục</span>
+                    </a>
+
+
+                </div>
+                <span class="others">OTHERS</span>
+                <div class="menu-buttons">
+                    <a href="../isLogin.html" class="menu-item accounts" aria-label="Trang chủ">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="login_adm.html" class="menu-item help" aria-label="Đăng xuất">
+                        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="message" style="position: relative;">
+                    <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
+                </div>
+                <div class="user-info" id="userInfo">
+                    <img src="../assets/img/image.png" alt="Avatar">
+                    <div class="name-role">
+                        <span class="merchant-name">Xuân Huấn</span>
+                        <span>Quản trị viên</span>
+                    </div>
+                    <div class="chevron-down">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="option-account-admin">
+                        <div id="adminDropdown">
+                            <div class="dropdown-header">
+                                <img src="../assets/img/image.png" alt="Avatar">
+                                <div class="dropdown-user-info">
+                                    <span>Xuân Huấn</span>
+                                    <span>admin@artvietnam.com</span>
+                                    <span>Quản trị viên</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i> Hồ sơ cá nhân
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+                                </a>
+                                <a href="login_adm.html">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="content" role="main" style="overflow-y: auto;">
+                <div class="thanh-bo-loc">
+                    <div class="thanh-bo-loc-1">
+                        <h1 class="title-page">Quản lý kho hàng</h1>
+                        <p style="font-size:1rem;">Quản lý tồn kho và tỷ lệ lợi nhuận sản phẩm</p>
+                    </div>
+                    <div class="nhap-xuat-add">
+                        <div class="excel">
+
+                            <button class="btn-excel-export" onclick="notification.info('Đã in PDF báo cáo!')">
+                                <i class="fa-solid fa-download"></i> Xuất Báo cáo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nội dung quản lý tỷ lệ lợi nhuận -->
+                <div class="tab-content active" id="profit-management">
+                    <div class="profit-management-container">
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-icon icon-profit">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">32.5%</div>
+                                    <div class="stat-label">Tỷ lệ lợi nhuận trung bình</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon icon-category">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">6</div>
+                                    <div class="stat-label">Danh mục sản phẩm</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon icon-product">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">42</div>
+                                    <div class="stat-label">Sản phẩm</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search-box">
+                            <input type="text" id="searchProfitInput"
+                                placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
+                            <button id="searchProfitBtn"> <a href="">Tìm kiếm <i class="fas fa-search"></i></a></button>
+                        </div>
+
+                        <div class="profit-card">
+                            <div class="card-header">
+                                <div class="card-title" id="1">Tỷ lệ lợi nhuận theo danh mục</div>
+                            </div>
+                            <table id="categoryTable">
+                                <thead>
+                                    <tr>
+                                        <th>Danh mục</th>
+                                        <th>Số sản phẩm</th>
+                                        <th>Lợi nhuận (%)</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <a href="profit.html">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="profit-card">
+                            <div class="card-header">
+                                <div class="card-title" id="2">Tỷ lệ lợi nhuận theo sản phẩm</div>
+                            </div>
+                            <table id="productTable">
+                                <thead>
+                                    <tr>
+                                        <th>Mã SP</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Danh mục</th>
+                                        <th>Giá vốn</th>
+                                        <th>Tỷ lệ lợi nhuận (%)</th>
+                                        <th>Giá bán</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item disabled"><span><i
+                                                class="fa-solid fa-angle-left"></i></span>
+                                    </li>
+                                    <a href="profit.html">
+                                        <li class="pagination-item active"><span>1</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>2</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>3</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>...</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span>10</span></li>
+                                    </a>
+                                    <a href="profit.html">
+                                        <li class="pagination-item"><span><i class="fa-solid fa-angle-right"></i></span>
+                                        </li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal chỉnh sửa tỷ lệ lợi nhuận -->
+                <div class="modal" id="editProfitModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title" id="modalTitle">Chỉnh sửa tỷ lệ lợi nhuận</div>
+                            <div class="modal-close" id="closeModal">&times;</div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label id="itemLabel">Tên danh mục/sản phẩm</label>
+                                <input type="text" id="itemName" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="profitPercent">Tỷ lệ lợi nhuận (%)</label>
+                                <input type="number" id="profitPercent" min="0" max="100" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPrice">Giá bán mới</label>
+                                <input type="text" id="newPrice" readonly>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn btn-cancel" id="cancelEdit">Hủy</button>
+                            <button class="btn btn-save" id="saveProfit">Lưu thay đổi</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../assets/js/account-admin.js"></script>
+    <script src="../assets/js/manager-art.js"></script>
+    <script src="../assets/js/Notification.js"></script>
+    <script src="../assets/js/profit.js"></script>
+    <script>
+        // Khởi tạo sự kiện
+        document.addEventListener("DOMContentLoaded", function () {
+            // Kiểm tra xem có đang ở trang profit không
+            const isProfitPage = window.location.pathname.includes('profit.html') ||
+                document.querySelector('.profit-management-container');
+
+            if (isProfitPage) {
+                renderCategories();
+                renderProducts();
+
+                // Sự kiện mở modal chỉnh sửa - Sửa lại để bắt sự kiện chính xác
+                document.addEventListener("click", function (e) {
+                    if (e.target.closest(".btn-edit")) {
+                        const button = e.target.closest(".btn-edit");
+                        const id = parseInt(button.dataset.id);
+                        const type = button.dataset.type;
+                        console.log("Edit button clicked:", id, type); // Debug
+                        openEditModal(id, type);
+                    }
+                });
+
+                // Sự kiện đóng modal
+                const closeModal = document.getElementById("closeModal");
+                const cancelEdit = document.getElementById("cancelEdit");
+                const modal = document.getElementById("editProfitModal");
+
+                if (closeModal) {
+                    closeModal.addEventListener("click", function () {
+                        modal.style.display = "none";
+                    });
+                }
+
+                if (cancelEdit) {
+                    cancelEdit.addEventListener("click", function () {
+                        modal.style.display = "none";
+                    });
+                }
+
+                // // Sự kiện lưu thay đổi
+                // const saveProfit = document.getElementById("saveProfit");
+                // if (saveProfit) {
+                    saveProfit.addEventListener("click", saveProfitChange);
+                // }
+
+                // Đóng modal khi click bên ngoài
+                window.addEventListener("click", function (e) {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            } else {
+                // Code cho các trang khác (tồn kho)
+                renderCurrentInventory();
+                renderInventoryHistory();
+
+                // Sự kiện chuyển đổi tab (chỉ cho trang tồn kho)
+                document.querySelectorAll('.tab-item').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const tabId = this.getAttribute('data-tab');
+                        switchTab(tabId);
+                    });
+                });
+            }
+        });
+
+        // Thêm hàm switchTab nếu chưa có
+        function switchTab(tabId) {
+            // Ẩn tất cả các tab content
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Xóa active của tất cả tab items
+            document.querySelectorAll('.tab-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Hiển thị tab được chọn
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Active tab item
+            const activeTabItem = document.querySelector(`[data-tab="${tabId}"]`);
+            if (activeTabItem) {
+                activeTabItem.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

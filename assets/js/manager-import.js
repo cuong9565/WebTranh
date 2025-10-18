@@ -161,20 +161,20 @@ function addProductRow() {
     const row = document.createElement('tr');
     row.innerHTML = `
             <td>
-                <select class="product-select" name="products[${rowIndex}][product]" required>
-                    <option value="">Chọn sản phẩm</option>
-                    ${sampleProducts.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}
-                </select>
+                <input type="text" class="form-control product-search" placeholder="Nhập sản phẩm..." list="productList${rowIndex}" required>
+                <datalist id="productList${rowIndex}">
+                    ${sampleProducts.map(p => `<option value="${p.name}" data-id="${p.id}">${p.name}</option>`).join('')}
+                </datalist>
             </td>
             <td>
-                <input type="number" class="quantity-input" name="products[${rowIndex}][quantity]" min="1" value="1" required>
+                <input type="number" class="form-control quantity-input" name="products[${rowIndex}][quantity]" min="1" value="1" required>
             </td>
             <td>
-                <input type="number" class="price-input" name="products[${rowIndex}][price]" min="0" value="0" required>
+                <input type="number" class="form-control price-input" name="products[${rowIndex}][price]" min="0" value="0" required>
             </td>
             <td class="row-total">₫0</td>
             <td>
-                <button type="button" class="delete-btn" >
+                <button type="button" class="btn btn-danger delete-btn">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </td>
@@ -227,9 +227,7 @@ function addEditProductRow() {
     const quantityInput = row.querySelector('.quantity-input');
     const priceInput = row.querySelector('.price-input');
 
-    [quantityInput, priceInput].forEach(input => {
-        input.addEventListener('input', calculateEditRowTotal);
-    });
+   
 
     // Tính toán tổng tiền
     calculateEditTotal();
@@ -251,53 +249,32 @@ function deleteEditProductRow(button) {
 
 // Hàm tính tổng tiền cho một dòng trong modal thêm
 function calculateRowTotal() {
-    const row = this.closest('tr');
-    const quantity = parseInt(row.querySelector('.quantity-input').value) || 0;
-    const price = parseInt(row.querySelector('.price-input').value) || 0;
-    const total = quantity * price;
-
-    row.querySelector('.row-total').textContent = `₫${total.toLocaleString('vi-VN')}`;
-    calculateTotal();
+    console.warn('calculateRowTotal is disabled.');
 }
 
-// Hàm tính tổng tiền cho một dòng trong modal sửa
+//Hàm tính tổng tiền cho một dòng trong modal sửa
 function calculateEditRowTotal() {
-    const row = this.closest('tr');
-    const quantity = parseInt(row.querySelector('.quantity-input').value) || 0;
-    const price = parseInt(row.querySelector('.price-input').value) || 0;
-    const total = quantity * price;
-
-    row.querySelector('.row-total').textContent = `₫${total.toLocaleString('vi-VN')}`;
-    calculateEditTotal();
+    console.warn('calculateEditRowTotal is disabled.');
 }
 
-// Hàm tính tổng tiền cho modal thêm
+//Hàm tính tổng tiền cho modal thêm
 function calculateTotal() {
-    const rows = document.querySelectorAll('#importProductRows tr');
-    let total = 0;
-
-    rows.forEach(row => {
-        const quantity = parseInt(row.querySelector('.quantity-input').value) || 0;
-        const price = parseInt(row.querySelector('.price-input').value) || 0;
-        total += quantity * price;
-    });
-
-    document.getElementById('importTotal').textContent = `₫${total.toLocaleString('vi-VN')}`;
+    console.warn('calculateTotal is disabled.');
 }
 
 // Hàm tính tổng tiền cho modal sửa
-function calculateEditTotal() {
-    const rows = document.querySelectorAll('#editProductRows tr');
-    let total = 0;
+// function calculateEditTotal() {
+//     const rows = document.querySelectorAll('#editProductRows tr');
+//     let total = 0;
 
-    rows.forEach(row => {
-        const quantity = parseInt(row.querySelector('.quantity-input').value) || 0;
-        const price = parseInt(row.querySelector('.price-input').value) || 0;
-        total += quantity * price;
-    });
+//     rows.forEach(row => {
+//         const quantity = parseInt(row.querySelector('.quantity-input').value) || 0;
+//         const price = parseInt(row.querySelector('.price-input').value) || 0;
+//         total += quantity * price;
+//     });
 
-    document.getElementById('editImportTotal').textContent = `₫${total.toLocaleString('vi-VN')}`;
-}
+//     document.getElementById('editImportTotal').textContent = `₫${total.toLocaleString('vi-VN')}`;
+// }
 
 // Hàm reset form thêm
 function resetForm() {
@@ -332,11 +309,12 @@ function openViewModal(importCode) {
             const row = document.createElement('tr');
             const productTotal = product.quantity * product.price;
             row.innerHTML = `
-                    <td>${product.name}</td>
-                    <td class="center-align">${product.quantity}</td>
-                    <td class="center-align">${product.price.toLocaleString('vi-VN')}₫</td>
-                    <td class="center-align">${productTotal.toLocaleString('vi-VN')}₫</td>
-                `;
+                <td>${product.name}</td>
+    
+                <td class="center-align">${product.quantity}</td>
+                <td class="center-align">${product.price.toLocaleString('vi-VN')}₫</td>
+                <td class="center-align">${productTotal.toLocaleString('vi-VN')}₫</td>
+            `;
             tbody.appendChild(row);
         });
 
@@ -364,34 +342,34 @@ function openEditModal(importCode) {
             const row = document.createElement('tr');
             const productTotal = product.quantity * product.price;
             row.innerHTML = `
-                    <td>
-                        <select class="product-select" name="products[${rowIndex}][product]" required>
-                            <option value="">Chọn sản phẩm</option>
-                            ${sampleProducts.map(p => `<option value="${p.id}" ${p.id === product.productId ? 'selected' : ''}>${p.name}</option>`).join('')}
-                        </select>
-                    </td>
-                    <td>
-                        <input type="number" class="quantity-input" name="products[${rowIndex}][quantity]" min="1" value="${product.quantity}" required>
-                    </td>
-                    <td>
-                        <input type="number" class="price-input" name="products[${rowIndex}][price]" min="0" value="${product.price}" required>
-                    </td>
-                    <td class="row-total">${productTotal.toLocaleString('vi-VN')}₫</td>
-                    <td>
-                        <button type="button" class="delete-btn">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
-                `;
+                <td>
+                    <input type="text" class="form-control product-search" placeholder="Nhập sản phẩm..." list="editProductList${rowIndex}" value="${product.name}" required>
+                    <datalist id="editProductList${rowIndex}">
+                        ${sampleProducts.map(p => `<option value="${p.name}" data-id="${p.id}">${p.name}</option>`).join('')}
+                    </datalist>
+                </td>
+                <td>
+                    <input type="number" class="quantity-input" name="products[${rowIndex}][quantity]" min="1" value="${product.quantity}" required>
+                </td>
+                <td>
+                    <input type="number" class="price-input" name="products[${rowIndex}][price]" min="0" value="${product.price}" required>
+                </td>
+                <td class="row-total">${productTotal.toLocaleString('vi-VN')}₫</td>
+                <td>
+                    <button type="button" class="delete-btn" onclick="deleteEditProductRow(this)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            `;
             tbody.appendChild(row);
 
-            // Thêm sự kiện tính toán cho các input
-            // const quantityInput = row.querySelector('.quantity-input');
-            // const priceInput = row.querySelector('.price-input');
+            // Add event listeners for quantity and price inputs
+            const quantityInput = row.querySelector('.quantity-input');
+            const priceInput = row.querySelector('.price-input');
 
-            // [quantityInput, priceInput].forEach(input => {
-            //     input.addEventListener('input', calculateEditRowTotal);
-            // });
+            [quantityInput, priceInput].forEach(input => {
+                input.addEventListener('input', calculateEditRowTotal);
+            });
         });
 
         document.getElementById('editImportTotal').textContent = `${data.total.toLocaleString('vi-VN')}₫`;
