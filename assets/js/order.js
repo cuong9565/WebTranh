@@ -1,4 +1,3 @@
-
 // Hàm mở modal chi tiết đơn hàng
 function openOrderDetail(orderId) {
     document.getElementById('orderId').textContent = orderId;
@@ -11,25 +10,29 @@ function closeOrderDetail() {
     document.getElementById('orderDetailModal').style.display = 'none';
 }
 
-// Hàm mở modal cập nhật trạng thái
-function openStatusUpdate(orderId) {
-    document.getElementById('updateOrderId').textContent = orderId;
-    document.getElementById('statusUpdateModal').style.display = 'flex';
+// Hàm mở popup cập nhật trạng thái
+function openStatusPopup(orderId, button) {
+    const popup = document.getElementById('statusUpdatePopup');
+    const rect = button.getBoundingClientRect();
+    popup.style.top = `${rect.bottom + window.scrollY}px`;
+    popup.style.left = `${rect.left + window.scrollX}px`;
+    popup.style.display = 'block';
+    popup.dataset.orderId = orderId;
 }
 
-// Hàm đóng modal cập nhật trạng thái
-function closeStatusUpdate() {
-    document.getElementById('statusUpdateModal').style.display = 'none';
+// Hàm đóng popup cập nhật trạng thái
+function closeStatusPopup() {
+    const popup = document.getElementById('statusUpdatePopup');
+    popup.style.display = 'none';
 }
 
-// Hàm cập nhật trạng thái đơn hàng
-function updateOrderStatus() {
-    const orderId = document.getElementById('updateOrderId').textContent;
-    const newStatus = document.getElementById('newStatus').value;
-    const notes = document.getElementById('statusNotes').value;
-    notification.success('Đã cập nhật trạng thái đơn hàng!');
-
-    closeStatusUpdate();
+// Hàm lưu trạng thái cập nhật
+function saveStatusUpdate() {
+    const popup = document.getElementById('statusUpdatePopup');
+    const orderId = popup.dataset.orderId;
+    const newStatus = document.getElementById('popupNewStatus').value;
+    closeStatusPopup();
+    notification.success(`Trạng thái đơn hàng #${orderId} đã được cập nhật!`);
 }
 
 // Đóng modal khi click bên ngoài

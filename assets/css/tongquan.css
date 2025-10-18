@@ -386,6 +386,7 @@ html {
   border: solid 2px #eaf3ff;
   box-shadow: 0 2px 12px rgba(162, 89, 230, 0.07);
   padding: 10px 15px;
+  flex: 1;
 
 }
 
@@ -398,10 +399,10 @@ html {
 .user-rank-list li {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
   padding: 10px 0;
   border-bottom: 1px solid #e3c7ff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   transition: background 0.2s;
 
@@ -414,6 +415,7 @@ html {
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(59, 130, 246, 0.07);
   padding: 18px 20px 12px 20px;
+  width: 70%;
 }
 
 .section-title-small {
@@ -422,9 +424,6 @@ html {
   color: #1f384c;
 }
 
-.table-header-muted tr {
-
-}
 
 .user-rank-list li:last-child {
   border-bottom: none;
@@ -445,11 +444,11 @@ html {
 
 .user-name {
   flex: 1;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .user-spent {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* Dashboard Cards Section */
@@ -492,9 +491,9 @@ html {
 }
 
 .dashboard-card {
-  flex: 1 1 210px;
+  flex: 1 ;
   min-width: 190px;
-  max-width: 220px;
+  max-width: 25%;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);

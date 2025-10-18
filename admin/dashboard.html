@@ -44,9 +44,12 @@
           </a>
           <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
             <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-            <span>Quản lý nhập xuất</span>
+            <span>Quản lý nhập</span>
           </a>
-
+          <a href="profit.html" class="menu-item review-b " aria-label="Lợi nhuận">
+            <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+            <span>Tỷ lệ lợi nhuận</span>
+          </a>
           <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
             <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
             <span>Quản lý tồn kho</span>
@@ -72,7 +75,8 @@
 
     <div class="main-content">
       <header class="header">
-        <div class="message" style="position: relative;"> <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
+        <div class="message" style="position: relative;">
+          <p class="wellcome">Chào mừng đến với hệ thống quản lý:3</p>
         </div>
         <div class="user-info" id="userInfo">
           <img src="../assets/img/image.png" alt="Avatar">
@@ -122,7 +126,8 @@
               <option value="">7 ngày</option>
               <option value="">Hôm nay</option>
             </select>
-            <button type="button" class="btn btn-outline-success refresh-btn" onclick="notification.info('Làm mới thành công !')">
+            <button type="button" class="btn btn-outline-success refresh-btn"
+              onclick="notification.info('Làm mới thành công !')">
               <i class="fa-solid fa-rotate"></i> Làm mới
             </button>
           </div>
@@ -175,7 +180,7 @@
             </div>
           </div>
           <div class="bieu-do">
-            <div class="bieu-do-top-sell" style="display: flex; position: relative; gap: 32px;">
+            <div class="bieu-do-top-sell" style="display: flex; position: relative; gap: 44px;">
               <!-- Biểu đồ doanh thu các tháng -->
               <div class="bieu-do-doanh-thu" style="width: 70%;">
                 <h2 style="font-size:1.1rem;padding:15px 0px 0px 15px;">Biểu đồ doanh thu các tháng</h2>
@@ -189,9 +194,8 @@
                 <h2 style="font-size:1.1rem;margin:10px;text-align: center;">Top 5 sản phẩm</h2>
                 <ul class="best-sell-list">
                   <li>
-                    <span class="best-sell-img"><img src="../assets/img/phong-canh/9.jpg"
-                      " alt="Tranh Sơn Dầu "></span>
-                    <span class="best-sell-name">Tranh Sơn Dầu</span>
+                    <span class="best-sell-img"><img src="../assets/img/phong-canh/9.jpg" " alt=" Tranh Sơn Dầu "></span>
+                    <span class=" best-sell-name">Tranh Sơn Dầu</span>
                     <span class="best-sell-qty">120</span>
                   </li>
                   <li>
@@ -206,7 +210,8 @@
                     <span class="best-sell-qty">85</span>
                   </li>
                   <li>
-                    <span class="best-sell-img"><img src="../assets/img/son-dau/4.jpg" alt="Tranh Cổ Điển Châu Âu"></span>
+                    <span class="best-sell-img"><img src="../assets/img/son-dau/4.jpg"
+                        alt="Tranh Cổ Điển Châu Âu"></span>
                     <span class="best-sell-name">Tranh Sơn Dầu </span>
                     <span class="best-sell-qty">80</span>
                   </li>
@@ -226,8 +231,8 @@
                   <thead class="table-header-muted">
                     <tr>
                       <th>Mã đơn</th>
-                      <th style="width: 20%;">Khách hàng</th>
-                      <th style="width: 30%;">Sản phẩm</th>
+                      <th style="width: 30%;">Khách hàng</th>
+                      <th style="width: 50%;">Sản phẩm</th>
                       <th>Giá trị</th>
                       <th>Ngày</th>
                     </tr>
@@ -254,6 +259,14 @@
                       <td>2.100.000đ</td>
                       <td>15/09/2025</td>
                     </tr>
+                    <tr>
+                      <td>#DH003</td>
+                      <td>Lê Văn D</td>
+                      <td>Tranh Trừu Tượng Sắc Màu</td>
+                      <td>2.100.000đ</td>
+                      <td>15/09/2025</td>
+                    </tr>
+
                   </tbody>
                 </table>
               </div>
@@ -265,7 +278,7 @@
                     <li>
                       <span class="user-rank"><i class="fa-solid fa-crown"
                           style="color:#fbbf24;font-size:20px;"></i></span>
-                      <span class="user-name">Lý Văn A</span>
+                      <span class="user-name">Lý Văn Tài</span>
                       <span class="user-spent">12.500.000đ</span>
                     </li>
                     <li>
@@ -325,7 +338,7 @@
     window.addEventListener('DOMContentLoaded', function () {
       // Tổng doanh thu
       const revenueEl = document.querySelector('.dashboard-card.revenue .card-value');
-  if (revenueEl) animateValue(revenueEl, 0, 890, 1500, 'M');
+      if (revenueEl) animateValue(revenueEl, 0, 890, 1500, 'M');
       // Đơn hàng
       const ordersEl = document.querySelector('.dashboard-card.orders .card-value');
       if (ordersEl) animateValue(ordersEl, 0, 1409, 1500, '');

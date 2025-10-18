@@ -45,9 +45,12 @@
                     </a>
                     <a href="manager-import.html" class="menu-item review-3" aria-label="Quản lý nhập xuất">
                         <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-                        <span>Quản lý nhập xuất</span>
+                        <span>Quản lý nhập</span>
                     </a>
-
+                        <a href="profit.html" class="menu-item review-b " aria-label="Lợi nhuận">
+                        <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+                        <span>Tỷ lệ lợi nhuận</span>
+                    </a>
                     <a href="ton-kho.html" class="menu-item review-b" aria-label="Quản lý tồn kho">
                         <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
                         <span>Quản lý tồn kho</span>
@@ -335,26 +338,30 @@
                 </div>
                 <div class="bo-loc-item">
                     <div class="filter-bar">
-
                         <div class="filter-buttons">
                             <select class="filter-status" name="" id="categorySelect">
                                 <option value="0">Trạng thái</option>
                                 <option value="">Hoạt động</option>
                                 <option value="">Đang khóa</option>
-
                             </select>
+                            <select class="filter-status" name="" id="categorySelect">
+                                <option value="0">Danh mục</option>
+                                <option value="">Tranh phong cảnh</option>
+                                <option value="">Tranh sơn dầu</option>
+                                <option value="">Tranh hoa</option>
+                                <option value="">Tranh trừu tượng</option>
+                            </select>
+                            <div class="filter-search">
+                                <input type="text" placeholder="Nhập tên sản phẩm..." />
+                                <a href="manager-art.html">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                            </div>
                             <div class="gia-tang-giam" style="display: flex;">
+                                <span>Sắp xếp giá :</span>
                                 <div class="icon"><i class="fa-solid fa-arrow-up-wide-short fs-5 "></i></div>
                                 <div class="icon"><i class="fa-solid fa-arrow-down-wide-short fs-5 "></i></div>
-                                <span>Giá bán :</span>
-                                <input type="text">_<input type="text">
                             </div>
-                             <div class="filter-search">
-                            <input type="text" placeholder="Nhập tên sản phẩm..." />
-                            <a href="manager-art.html">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                        </div>
                             
                         </div>
                         <button class="filter-btn active" onclick="notification.info('Làm mới thành công !')">
