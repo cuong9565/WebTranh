@@ -70,11 +70,11 @@
         <div class="sidebar">
             <h2>Tìm kiếm nâng cao</h2>
             <div class="filter-item">
-                <label for="search-input">Tìm kiếm</label>
+                <label for="search-input" class="font-weight-600">Tìm kiếm</label>
                 <input type="text" id="search-input" placeholder="Tên sản phẩm...">
             </div>
             <div class="container">
-                <label>Thể loại</label>
+                <label class="font-weight-600">Thể loại</label>
                 <div class="filter-item-category">
                     <button class="category-item" data-value="sondau">Tranh sơn dầu</button>
                     <button class="category-item" data-value="hoa">Tranh hoa</button>
@@ -84,12 +84,18 @@
                 </div>
             </div>
             <div class="filter-item">
-                <label>Giá</label>
-                <input type="number" id="min-price" placeholder="Từ (₫)" min="0">
-                <input type="number" id="max-price" placeholder="Đến (₫)" min="0">
+                <label class="font-weight-600">Giá (VNĐ)</label>
+                <div class="my-center ml-10">
+                    <label for="min-price" class="mr-15">Từ: </label>
+                    <input type="text" id="min-price" placeholder="Nhập giá trị (đ)" oninput="formatNumber(this)">
+                </div>
+                <div class="my-center ml-10">
+                    <label for="max-price" class="mr-5">Đến: </label>
+                    <input type="text" id="max-price" placeholder="Nhập giá trị (đ)" oninput="formatNumber(this)">
+                </div>
             </div>
             <div class="filter-item">
-                <button type="button" id="btn-search" onclick="window.location.href = './isLogin_trangtimkiem.html'">Tìm kiếm</button>
+                <button type="button" id="btn-search" onclick="window.location.href = './trangtimkiem.html'">Tìm kiếm</button>
             </div>
         </div>
 

@@ -171,3 +171,14 @@ function ViewDetail(){
     document.getElementById('ckb-popup').checked = true;
     loginForm.style.display = 'block';
 }
+
+function formatNumber(input) {
+    let value = input.value.replaceAll('.', '');
+
+    if (isNaN(value)) {
+        input.value = input.value.slice(0, -1);
+        return;
+    }
+
+    input.value = Number(value).toLocaleString('vi-VN');
+}

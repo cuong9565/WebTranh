@@ -887,22 +887,26 @@ input[name='ckb-popup']:checked ~ .pop-up{
 
 /* Ảnh */
 .picture {
-    width: 270px;
     height: auto;
     object-fit: fill;
+    margin: 10px;
 }
 
 /* Khung từng tranh */
 .picture-wrapper {
     width: 270px;
+    height: 100%;
     position: relative;
     background: #fff;
     margin-top: 5px;
-    margin-bottom: 20px;
     border-radius: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .picture-wrapper:hover {
@@ -920,7 +924,8 @@ input[name='ckb-popup']:checked ~ .pop-up{
 .picture-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .picture-wrapper:hover {
@@ -1808,9 +1813,13 @@ h3 {
 .my-block{
     display: block;
 }
-
+.my-flex{display: flex;}
 .mr-5{ margin-right: 5px; }
+.mr-15{ margin-right: 15px; }
 .mr-20{ margin-right: 20px; }
+.ml-10{margin-left: 10px;}
+.font-weight-600{font-weight: 600;}
+
 
 /* Width */
 .w-100{ width: 100px; }
@@ -1842,3 +1851,4 @@ h3 {
 .table td{
     font-size: 0.9em; 
 }
+.w-80p{ width: 80%; }
