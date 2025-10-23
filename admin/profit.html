@@ -48,7 +48,7 @@
                         <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
                         <span>Quản lý nhập</span>
                     </a>
-                       <a href="profit.html" class="menu-item review-b active" aria-label="Lợi nhuận">
+                    <a href="profit.html" class="menu-item review-b active" aria-label="Lợi nhuận">
                         <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
                         <span>Tỷ lệ lợi nhuận</span>
                     </a>
@@ -166,12 +166,7 @@
                             </div>
                         </div>
 
-                        <div class="search-box">
-                            <input type="text" id="searchProfitInput"
-                                placeholder="Tìm kiếm theo tên sản phẩm hoặc danh mục...">
-                            <button id="searchProfitBtn"> <a href="">Tìm kiếm <i class="fas fa-search"></i></a></button>
-                        </div>
-
+                    
                         <div class="profit-card">
                             <div class="card-header">
                                 <div class="card-title" id="1">Tỷ lệ lợi nhuận theo danh mục</div>
@@ -215,6 +210,11 @@
                                     </a>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="search-box">
+                            <input type="text" id="searchProfitInput"
+                                placeholder="Tìm kiếm theo tên sản phẩm...">
+                            <button id="searchProfitBtn"> <a href="">Tìm kiếm <i class="fas fa-search"></i></a></button>
                         </div>
 
                         <div class="profit-card">
@@ -345,7 +345,7 @@
                 // // Sự kiện lưu thay đổi
                 // const saveProfit = document.getElementById("saveProfit");
                 // if (saveProfit) {
-                    saveProfit.addEventListener("click", saveProfitChange);
+                saveProfit.addEventListener("click", saveProfitChange);
                 // }
 
                 // Đóng modal khi click bên ngoài
