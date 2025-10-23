@@ -1,282 +1,282 @@
 .info {
-    /* min-height: 60vh; */
-    width: 100%;
-    padding: 25px;
-    background-color: #ececec;
+  /* min-height: 60vh; */
+  width: 100%;
+  padding: 25px;
+  background-color: #ececec;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
 
 }
 
 .info .container {
-    background-color: #fff;
-    padding: 5px 25px 20px 25px;
-    height: 100%;
-    border-radius: 5px;
+  background-color: #fff;
+  padding: 5px 25px 20px 25px;
+  height: 100%;
+  border-radius: 5px;
 
 }
 
 .info .header {
-    font-size: 1.5em;
-    font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .info .header-name {
-    font-size: 1.2em;
-    font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .info .item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 15px;
-    background-color: transparent;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    color: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
 
 }
 
 .info input {
-    text-align: left;
-    display: inline-block;
+  text-align: left;
+  display: inline-block;
 }
 
 .info .icon-small {
-    width: 25px;
-    margin-right: 15px;
+  width: 25px;
+  margin-right: 15px;
 }
 
 
 .info .active {
-    background-color: #5555554c;
+  background-color: #5555554c;
 }
 
 .info .item:hover {
-    background-color: #5555552b;
+  background-color: #5555552b;
 }
 
 .info .item:active {
-    background-color: rgba(85, 85, 85, 0.13);
+  background-color: rgba(85, 85, 85, 0.13);
 }
 
 .info .container-left {
-    width: 300px;
+  width: 300px;
 
 }
 
 .info .container-right {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 
 }
 
 .info .icon-account {
-    width: 50px;
+  width: 50px;
 }
 
 .info .item-account {
-    padding: px;
+  padding: px;
 }
 
 .info .container-right .item-text {
-    min-width: 100px;
-    text-align: left;
-    margin-right: 15px;
+  min-width: 100px;
+  text-align: left;
+  margin-right: 15px;
 }
 
 
 .info .btn-blue {
-    color: #fff;
-    background-color: #0088cc;
+  color: #fff;
+  background-color: #0088cc;
 }
 
 
 .info .btn-blue:hover {
-    background-color: #0d9be2;
+  background-color: #0d9be2;
 }
 
 .info .btn-blue:active {
-    background-color: #12a5ee;
+  background-color: #12a5ee;
 }
 
 
 
 /*=======order management=======*/
 .info {
-    display: flex;
-    min-height: 70vh;
+  display: flex;
+  min-height: 70vh;
 }
 
 .container-left {
-    width: 250px;
-    background: #fff;
-    border-right: 1px solid #ddd;
-    padding: 20px;
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
 }
 
 .container-right {
-    flex: 1;
-    padding: 30px;
-    background: #f9f9fb;
+  flex: 1;
+  padding: 30px;
+  background: #f9f9fb;
 }
 
 .container-right h2 {
-    color: #2b3a67;
-    margin-bottom: 20px;
+  color: #2b3a67;
+  margin-bottom: 20px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 th,
 td {
-    padding: 12px 15px;
-    text-align: left;
+  padding: 12px 15px;
+  text-align: left;
 }
 
 th {
-    background: #2b3a67;
-    color: #fff;
+  background: #2b3a67;
+  color: #fff;
 }
 
 tr:nth-child(even) {
-    background: #f8f8f8;
+  background: #f8f8f8;
 }
 
 tr:hover {
-    background: #eef3ff;
+  background: #eef3ff;
 }
 
 .status {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: #fff;
-    font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
 }
 
 .status.delivering {
-    background: #ffb100;
+  background: #ffb100;
 }
 
 .status.completed {
-    background: #00b050;
+  background: #00b050;
 }
 
 .status.cancelled {
-    background: #e74c3c;
+  background: #e74c3c;
 }
 
 .view-detail {
-    color: #2b3a67;
-    font-weight: 500;
-    text-decoration: none;
+  color: #2b3a67;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .view-detail:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /*=======change password=======*/
 /* Khung giữa chứa toàn bộ form đổi mật khẩu */
 .my-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Tiêu đề */
 .header {
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
 /* Mỗi hàng label + input */
 .my-form {
-    display: flex;
-    justify-content: center;
-    /* can giữa cả hàng */
-    align-items: center;
-    width: 100%;
-    gap: 15px;
-    margin-top: 17px;
+  display: flex;
+  justify-content: center;
+  /* can giữa cả hàng */
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  margin-top: 17px;
 }
 
 /* Label */
 .label-Pass {
-    min-width: 160px;
-    /* Độ rộng cố định để các label thẳng hàng */
-    text-align: left;
-    font-size: 15px;
-    font-weight: 500;
-    color: #444;
+  min-width: 160px;
+  /* Độ rộng cố định để các label thẳng hàng */
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
 }
 
 /* Ô nhập mật khẩu */
 .text-box {
-    width: 260px;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-    transition: 0.2s ease;
+  width: 260px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
 }
 
 .text-box:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
 }
 
 /* Nút "Đổi mật khẩu" */
 .btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.2s ease;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .btn-blue {
-    background-color: #007bff;
-    color: white;
+  background-color: #007bff;
+  color: white;
 }
 
 .btn-blue:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Khoảng cách trên */
 .mt-17 {
-    margin-top: 17px;
+  margin-top: 17px;
 }
 
 .mt-20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /*===Xem thong tin chi tiet don hang===*/
@@ -402,7 +402,7 @@ tr:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .image-modal-content {
@@ -431,8 +431,13 @@ tr:hover {
 
 
 @keyframes zoomIn {
-  from {transform: scale(0.7);}
-  to {transform: scale(1);}
+  from {
+    transform: scale(0.7);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeIn {
@@ -440,8 +445,69 @@ tr:hover {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/*---Nút chọn, sửa, xóa */
+
+.edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 30px;
+  gap: 30px;
+  margin-right: 20px;
+  margin-left: 100px;
+  background-color: #4CAF50;
+
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Nút Xóa */
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 30px;
+  gap: 30px;
+  margin-right: 20px;
+  background-color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+/* Nút Chọn */
+.select-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 30px;
+  margin-right: 20px;
+  background-color: #008CBA;
+}
+
+.select-btn:hover {
+  background-color: #007bb5;
+}
+
+
+.divider {
+  border-bottom: 1px solid #ba2d2d;
+  width: 85%;
+  height: 1px;
+  margin: 20px 20px;
+}
+
+
