@@ -200,28 +200,28 @@ function addEditProductRow() {
     const rowIndex = editProductRowCount++;
 
     const row = document.createElement('tr');
-    row.innerHTML = `
+row.innerHTML = `
             <td>
-                <select class="product-select" name="products[${rowIndex}][product]" required>
-                    <option value="">Chọn sản phẩm</option>
-                    ${sampleProducts.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}
-                </select>
+                <input type="text" class="form-control product-search" placeholder="Nhập sản phẩm..." list="productList${rowIndex}" required>
+                <datalist id="productList${rowIndex}">
+                    ${sampleProducts.map(p => `<option value="${p.name}" data-id="${p.id}">${p.name}</option>`).join('')}
+                </datalist>
             </td>
             <td>
-                <input type="number" class="quantity-input" name="products[${rowIndex}][quantity]" min="1" value="1" required>
+                <input type="number" class="form-control quantity-input" name="products[${rowIndex}][quantity]" min="1" value="1" required>
             </td>
             <td>
-                <input type="number" class="price-input" name="products[${rowIndex}][price]" min="0" value="0" required>
+                <input type="number" class="form-control price-input" name="products[${rowIndex}][price]" min="0" value="0" required>
             </td>
             <td class="row-total">₫0</td>
             <td>
-                <button type="button" class="delete-btn" onclick="deleteEditProductRow(this)">
+                <button type="button" class="btn btn-danger delete-btn">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </td>
         `;
-
     tbody.appendChild(row);
+
 
     // Thêm sự kiện tính toán cho các input
     const quantityInput = row.querySelector('.quantity-input');
