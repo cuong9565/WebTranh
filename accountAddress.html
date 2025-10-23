@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <link rel="stylesheet" href="./bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/account.css" />
     <title>Art Store</title>
 </head>
 
@@ -91,7 +92,7 @@
                         <span class="item-text">Thông tin tài khoản</span>
                     </a>
 
-                    <a href="accountAddress.html" id="btn-address" class="my-left mt-17 item">
+                    <a href="accountAddress.html" id="btn-address" class="my-left mt-17 item active">
                         <img src="./bootstrap-icons-1.13.1/geo-alt.svg" class="icon-small">
                         <span class="item-text">Địa chỉ</span>
                     </a>
@@ -101,11 +102,10 @@
                         <span class="item-text">Quản lý đơn hàng</span>
                     </a>
 
-                    <a href="accountChangePassword.html" class="my-left mt-17 item active" id="btn-change-password">
+                    <a href="accountChangePassword.html" class="my-left mt-17 item" id="btn-change-password">
                         <img src="./assets/img/password.svg" alt="info-icon" class="icon-small">
                         <span class="item-text">Đổi mật khẩu</span>
                     </a>
-
 
                     <a href="index.html" class="my-left mt-17 item">
                         <img src="./assets/img/logout.svg" alt="info-icon" class="icon-small">
@@ -116,39 +116,144 @@
 
                 <div class="container container-right" id="content">
                     <div class="my-center">
-                        <div class="header">Đổi mật khẩu</div>
+                        <div class="header">Danh sách địa chỉ</div>
                     </div>
-                    
+
                     <div class="my-left mt-17">
-                        <label class="item-text" for="curr-pass">Mật khẩu hiện tại: </label>
-                        <input type="password" id="curr-pass" class="text-box" placeholder="Nhập mật khẩu hiện tại">
+                        <label class="item-text">Địa chỉ mặc định: </label>
+                        <input type="text" value="123B Ba Đình F9 Q8" id="default-address" class="text-box" readonly>
                     </div>
+
+                    <hr class="divider ">
+
+                    <!-- Địa chỉ 1 -->
                     <div class="my-left mt-17">
-                        <label class="item-text" for="new-pass">Mật khẩu mới: </label>
-                        <input type="password" id="new-pass" class="text-box" placeholder="Nhập mật khẩu mới">
+                        <label class="item-text">Địa chỉ 1: </label>
+                        <input type="text" value="123B Ba Đình F9 Q8" id="inp-address1" class="text-box" readonly>
+                        <div class="btn-group my-center">
+                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                            </button>
+                            <td>
+                                <button class="btn delete-btn" onclick="openOrderDetail()">
+                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
+                                </button>
+                            </td>
+                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Địa chỉ 2 -->
                     <div class="my-left mt-17">
-                        <label class="item-text" for="confirm-pass">Xác nhận mật khẩu: </label>
-                        <input type="password" id="confirm-pass" class="text-box" placeholder="Nhập lại mật khẩu">
+                        <label class="item-text">Địa chỉ 2: </label>
+                        <input type="text" value="456C Trần Hưng Đạo F10 Q5" id="inp-address2" class="text-box"
+                            readonly>
+                        <div class="btn-group my-center">
+                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                            </button>
+                            <td>
+                                <button class="btn delete-btn" onclick="openOrderDetail()">
+                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
+                                </button>
+                            </td>
+                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Địa chỉ 3 -->
+                    <div class="my-left mt-17">
+                        <label class="item-text">Địa chỉ 3: </label>
+                        <input type="text" value="789D Lê Lai F11 Q1" id="inp-address3" class="text-box" readonly>
+                        <div class="btn-group my-center">
+                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                            </button>
+                            <td>
+                                <button class="btn delete-btn" onclick="openOrderDetail()">
+                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
+                                </button>
+                            </td>
+                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="my-center mt-20">
                         <button class="btn btn-blue" onclick="AddAlert('Lưu thông tin thành công', 'success')">
                             Lưu thông tin
                         </button>
-
-                        <button class="btn btn-green" onclick="AddAlert('Đã chọn địa chỉ', 'success')">
-                            Chọn địa chỉ
-                        </button>
-                        
-                        <button class="btn btn-red" onclick="AddAlert('Đã xóa địa chỉ', 'error')">
-                            Xóa địa chỉ
-                        </button>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <!-- Modal chi tiết thông tin địa chỉ -->
+    <div id="orderDetailModal" class="modal hidden">
+        <div class="modal-content large">
+            <span class="close-btn" onclick="closeOrderDetail()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-right">
+                    <h2>Thông tin địa chỉ</h2>
+                    <div class="container container-right" id="content">
+                        <div class="my-center">
+                            <p><strong>Đường: </strong></p>
+                            <input type="text" value="123B Ba Đình" id="inp-name" class="text-box">
+                        </div>
+                    </div>
+
+                    <div class="container container-right" id="content">
+                        <div class="my-center">
+                            <p><strong>Huyện: </strong></p>
+                            <input list="districts" id="inp-district" class="text-box" value="Quận 8">
+                            <datalist id="districts">
+                                <option value="Quận 1"></option>
+                                <option value="Quận 2"></option>
+                                <option value="Quận 3"></option>
+                                <option value="Quận 4"></option>
+                                <option value="Quận 5"></option>
+                                <option value="Quận 6"></option>
+                                <option value="Quận 7"></option>
+                                <option value="Quận 8"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="container container-right" id="content">
+                        <div class="my-center">
+                            <label for="inp-province"><strong>Tỉnh: </strong></label>
+                            <input list="provinces" id="inp-province" class="text-box" value="Thành Phố Hồ Chí Minh">
+                            <datalist id="provinces">
+                                <option value="Thành Phố Hồ Chí Minh"></option>
+                                <option value="Thành phố Hà Nội"></option>
+                                <option value="Thành Phố Đà Nẵng"></option>
+                                <option value="Thành Phố Cần Thơ"></option>
+                                <option value="Thành Phố Hải Phòng"></option>
+                                <option value="Thành Phố Huế"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+
+                    <div class="my-center mt-20">
+                        <button class="btn btn-blue" onclick="AddAlert('Lưu địa chỉ thành công', 'success')">
+                            Lưu địa chỉ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!--------------------- FOOTER ----------------------->
     <div class="footer">
@@ -192,6 +297,7 @@
 
     </div>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/order-detail-modal.js"></script>
 </body>
 
 </html>
