@@ -17,6 +17,108 @@
     <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
     <label for="ckb-popup" class="overlay"></label>
 
+    <!-- This element to cover all page -->
+    <div class="pop-up">
+        <div class="login-form-container add-form">
+            <div class="container">
+                <div class="container-close-form">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
+                </div>
+
+                <form class="form-order-container">
+                    <h1>Thêm địa chỉ mới</h1>
+                    <div class="add-address-container">
+                        <div class="row">
+                            <label for="address-tinh-tp">Tỉnh, thành phố</label>
+                            <input list="address-tinh-tp" id="search-address-tinh-tp" name="search"
+                                placeholder="Chọn tỉnh, thành phố...">
+                            <datalist id="address-tinh-tp">
+                                <option id="tp1" value="Thành phố Hà Nội"></option>
+                                <option id="tp2" value="Thành phố Hồ Chí Minh"></option>
+                                <option id="b1" value="Tỉnh Bắc Ninh"></option>
+                                <option id="b2" value="Tỉnh Bắc Giang"></option>
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <label for="search-address-phuong-xa">Phường, xã</label>
+                            <input list="address-phuong-xa" id="search-address-phuong-xa" name="search"
+                                placeholder="Chọn phường, xã...">
+                            <datalist id="address-phuong-xa">
+                                <option id="p1" value="Phường Bến Nghé"></option>
+                                <option id="p2" value="Phường Bến Thành"></option>
+                                <option id="p3" value="Phường 6"></option>
+                                <option id="p4" value="Phường 10"></option>
+                                <option id="p5" value="Phường 14"></option>
+                                <option id="p6" value="Phường Hiệp Bình Chánh"></option>
+                                <option id="p7" value="Xã Đông Thạnh"></option>
+                                <option id="p8" value="Xã Bình Chánh"></option>
+                                <option id="p9" value="Phường Chợ Quán"></option>
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <label for="address-home">Số nhà, tên đường</label>
+                            <input type="text" placeholder="Nhập số nhà, tên đường" id="address-home">
+                        </div>
+                        <div class="row my-center">
+                            <button type="button" class="btn-address" onclick="ThemDiaChi()">Thêm</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <div class="login-form-container update-form">
+            <div class="container">
+                <div class="container-close-form">
+                    <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
+                </div>
+
+                <form class="form-order-container">
+                    <h1>Sửa thông tin địa chỉ</h1>
+                    <div class="add-address-container">
+                        <div class="row">
+                            <label for="search-address-tinh-tp">Tỉnh, thành phố</label>
+                            <input list="address-tinh-tp" id="search-address-tinh-tp" name="search"
+                                placeholder="Chọn tỉnh, thành phố..." value="Thành phố Hồ Chí Minh">
+                            <datalist id="address-tinh-tp">
+                                <option id="tp1" value="Thành phố Hà Nội"></option>
+                                <option id="tp2" value="Thành phố Hồ Chí Minh"></option>
+                                <option id="b1" value="Tỉnh Bắc Ninh"></option>
+                                <option id="b2" value="Tỉnh Bắc Giang"></option>
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <label for="search-address-phuong-xa">Phường, xã</label>
+                            <input list="address-phuong-xa" id="search-address-phuong-xa" name="search"
+                                placeholder="Chọn phường, xã..." value="Phường Chợ Quán">
+                            <datalist id="address-phuong-xa">
+                                <option id="p1" value="Phường Bến Nghé"></option>
+                                <option id="p2" value="Phường Bến Thành"></option>
+                                <option id="p3" value="Phường 6"></option>
+                                <option id="p4" value="Phường 10"></option>
+                                <option id="p5" value="Phường 14"></option>
+                                <option id="p6" value="Phường Hiệp Bình Chánh"></option>
+                                <option id="p7" value="Xã Đông Thạnh"></option>
+                                <option id="p8" value="Xã Bình Chánh"></option>
+                                <option id="p9" value="Phường Chợ Quán"></option>
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <label for="address-home">Số nhà, tên đường</label>
+                            <input type="text" placeholder="Nhập số nhà, tên đường" id="address-home" value="273 An Dương Vương">
+                        </div>
+                        <div class="row my-center">
+                            <button type="button" class="btn-address" onclick="SuaDiaChi()">Cập nhật</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!--------------------- HEADER ----------------------->
     <div class="header">
         <div class="container container-logo">
@@ -119,67 +221,79 @@
                         <div class="header">Danh sách địa chỉ</div>
                     </div>
 
-                    <div class="my-left mt-17">
+                    <div class="address-info">
                         <label class="item-text">Địa chỉ mặc định: </label>
-                        <input type="text" value="Số 7, đường Tân Phú, Phường Tân Mỹ, TP.HCM." id="default-address" class="text-box" readonly>
+                        <input type="text" value="273 An Dương Vương, Phường Chợ Quán, TP.HCM" id="default-address"
+                            class="text-box" readonly>
+
+                        <button class="add-btn isactivebtn" onclick="AddAddress()">
+                            <i class="bi bi-plus-circle icon-address"></i>
+                            <p>Thêm địa chỉ</p>
+                        </button>
                     </div>
 
                     <hr class="divider ">
 
                     <!-- Địa chỉ 1 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 1: </label>
-                        <input type="text" value="Số 7, đường Tân Phú, Phường Tân Mỹ, TP.HCM." id="inp-address1" class="text-box" readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 1: </b></label>
+                        <input type="text" value="273 An Dương Vương, phường Chợ Quán, TP.HCM" id="inp-address1"
+                            class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn isactivebtn"
+                                onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="UpdateAddress()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>
 
                     <!-- Địa chỉ 2 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 2: </label>
-                        <input type="text" value="Số 4, đường số 4, Phường Tân Mỹ, TP.HCM" id="inp-address2" class="text-box"
-                            readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 2: </b></label>
+                        <input type="text" value="105 Bà Huyện Thanh Quan, Phường Xuân Hòa, TP.HCM" id="inp-address2"
+                            class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="UpdateAddress()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>
 
                     <!-- Địa chỉ 3 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 3: </label>
-                        <input type="text" value="Số 39A, đường số 8, Phường Tân Mỹ, TP.HCM" id="inp-address3" class="text-box" readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 3: </b></label>
+                        <input type="text" value="04 Tôn Đức Thắng, Phường Sài Gòn, TP.HCM" id="inp-address3"
+                            class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="UpdateAddress()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>
@@ -297,7 +411,25 @@
 
     </div>
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/order-detail-modal.js"></script>
+    <script>
+        var loginForm = document.getElementsByClassName('login-form-container')[0]
+        var signUpForm = document.getElementsByClassName('signup-form-container')[0]
+
+        // Function mở pop-up thêm địa chỉ
+        function AddAddress() {
+            document.getElementById('ckb-popup').checked = true;
+            document.getElementsByClassName('add-form')[0].style.display = 'block';
+            document.getElementsByClassName('update-form')[0].style.display = 'none';
+        }
+
+        // Function mở pop-up sửa địa chỉ
+        function UpdateAddress() {
+            document.getElementById('ckb-popup').checked = true;
+            document.getElementsByClassName('add-form')[0].style.display = 'none';
+            document.getElementsByClassName('update-form')[0].style.display = 'block';
+        }
+
+    </script>
 </body>
 
 </html>
