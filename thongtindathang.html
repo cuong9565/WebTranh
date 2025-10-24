@@ -16,10 +16,9 @@
     <input type="checkbox" name="ckb-popup" id="ckb-popup" hidden>
     <label for="ckb-popup" class="overlay"></label>
 
-
     <!-- This element to cover all page -->
     <div class="pop-up">
-        <div class="login-form-container">
+        <div class="login-form-container add-form">
             <div class="container">
                 <div class="container-close-form">
                     <i class="bi bi-x-lg close-icon" onclick="document.getElementById('ckb-popup').checked = false"></i>
@@ -27,21 +26,33 @@
 
                 <form class="form-order-container">
                     <h1>Thêm địa chỉ mới</h1>
-
                     <div class="add-address-container">
                         <div class="row">
-                            <label for="address-tinh-tp">Tỉnh, Thành phố</label>
-                            <select id="address-tinh-tp">
-                                <option value="0" selected>Chọn Tỉnh, Thành phố</option>
-                                <option value="1">Thành phố Hồ Chí Minh</option>
-                            </select>
+                            <label for="address-tinh-tp">Tỉnh, thành phố</label>
+                            <input list="address-tinh-tp" id="search-address-tinh-tp" name="search"
+                                placeholder="Chọn tỉnh, thành phố...">
+                            <datalist id="address-tinh-tp">
+                                <option id="tp1" value="Thành phố Hà Nội"></option>
+                                <option id="tp2" value="Thành phố Hồ Chí Minh"></option>
+                                <option id="b1" value="Tỉnh Bắc Ninh"></option>
+                                <option id="b2" value="Tỉnh Bắc Giang"></option>
+                            </datalist>
                         </div>
                         <div class="row">
-                            <label for="address-quan-huyen">Quận, huyện</label>
-                            <select id="address-quan-huyen">
-                                <option value="0" selected>Chọn quận, huyện</option>
-                                <option value="1">Thành phố Hồ Chí Minh</option>
-                            </select>
+                            <label for="search-address-phuong-xa">Phường, xã</label>
+                            <input list="address-phuong-xa" id="search-address-phuong-xa" name="search"
+                                placeholder="Chọn phường, xã...">
+                            <datalist id="address-phuong-xa">
+                                <option id="p1" value="Phường Bến Nghé"></option>
+                                <option id="p2" value="Phường Bến Thành"></option>
+                                <option id="p3" value="Phường 6"></option>
+                                <option id="p4" value="Phường 10"></option>
+                                <option id="p5" value="Phường 14"></option>
+                                <option id="p6" value="Phường Hiệp Bình Chánh"></option>
+                                <option id="p7" value="Xã Đông Thạnh"></option>
+                                <option id="p8" value="Xã Bình Chánh"></option>
+                                <option id="p9" value="Phường Chợ Quán"></option>
+                            </datalist>
                         </div>
                         <div class="row">
                             <label for="address-home">Số nhà, tên đường</label>
@@ -55,8 +66,6 @@
                 </form>
             </div>
         </div>
-
-
     </div>
 
     <!--------------------- HEADER ----------------------->
@@ -231,7 +240,11 @@
     </div>
     <script src="./assets/js/index.js"></script>
     <script>
-
+        // Function mở pop-up thêm địa chỉ
+        function AddAddress() {
+            document.getElementById('ckb-popup').checked = true;
+            document.getElementsByClassName('add-form')[0].style.display = 'block';
+        }
     </script>
 </body>
 

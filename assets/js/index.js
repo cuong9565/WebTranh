@@ -155,15 +155,15 @@ function max(x, y){
     return y
 }
 
-// Function mở pop-up thêm địa chỉ
-function AddAddress(){
-    document.getElementById('ckb-popup').checked = true;
-    loginForm.style.display = 'block';
-}
-
 // Function thêm địa chỉ
 function ThemDiaChi(){
     AddAlert('Thêm địa chỉ thành công', 'success')
+    document.getElementById('ckb-popup').checked = false;
+}
+
+// Function sửa địa chỉ
+function SuaDiaChi(){
+    AddAlert('Cập nhật địa chỉ thành công', 'success')
     document.getElementById('ckb-popup').checked = false;
 }
 
