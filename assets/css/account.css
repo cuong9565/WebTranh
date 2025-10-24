@@ -165,11 +165,13 @@ tr:hover {
 }
 
 .status {
-  padding: 5px 10px;
+  display: inline-block;
   border-radius: 20px;
   font-size: 14px;
   color: #fff;
   font-weight: 500;
+  width: 90px;
+  text-align: center;
 }
 
 .status.delivering {
@@ -318,7 +320,9 @@ tr:hover {
 
 
 .modal-body {
-  padding-top: 10px;
+  overflow-y: auto;
+  min-width: 50vw;
+  max-height: 90vh;
 }
 
 .modal-right h2 {

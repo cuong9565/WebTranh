@@ -25,10 +25,3 @@ function closeOrderDetail() {
 imageClose.onclick = function() {
     imageModal.style.display = "none";
 }
-
-imageModal.onclick = function(e) {
-    if(e.target == this){
-        imageModal.style.display = "none";
-    }
-}
-
