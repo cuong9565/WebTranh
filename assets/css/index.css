@@ -1187,7 +1187,7 @@ h3 {
     background-color: #fff;
     padding: 10px 20px;
     margin: 20px;
-    width: 50vw;
+    width: 75vw;
 }
 
 .confirm-order .header{
@@ -1204,6 +1204,7 @@ h3 {
     padding: 10px 20px 10px 20px;
     margin: 20px 0;
     border: 1px solid #e50019;
+    display: flex;
 }
 
 .confirm-order legend{
@@ -1215,7 +1216,7 @@ h3 {
 }
 
 .confirm-order label{
-    width: 40%;
+    width: 50%;
     font-size: 1em;
     font-weight: 600;
     display: inline-block;
