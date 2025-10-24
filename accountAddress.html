@@ -119,67 +119,76 @@
                         <div class="header">Danh sách địa chỉ</div>
                     </div>
 
-                    <div class="my-left mt-17">
+                    <div class="address-info">
                         <label class="item-text">Địa chỉ mặc định: </label>
-                        <input type="text" value="123B Ba Đình F9 Q8" id="default-address" class="text-box" readonly>
+                        <input type="text" value="273 An Dương Vương, Phường Chợ Quán, TP.HCM" id="default-address" class="text-box" readonly>
+                    
+                        <button class="add-btn isactivebtn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                            <i class="bi bi-plus-circle icon-address"></i>
+                            <p>Thêm địa chỉ</p>
+                        </button>
                     </div>
 
                     <hr class="divider ">
 
                     <!-- Địa chỉ 1 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 1: </label>
-                        <input type="text" value="123B Ba Đình F9 Q8" id="inp-address1" class="text-box" readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 1: </b></label>
+                        <input type="text" value="273 An Dương Vương, phường Chợ Quán, TP.HCM" id="inp-address1" class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn isactivebtn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="openOrderDetail()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>
 
                     <!-- Địa chỉ 2 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 2: </label>
-                        <input type="text" value="456C Trần Hưng Đạo F10 Q5" id="inp-address2" class="text-box"
-                            readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 2: </b></label>
+                        <input type="text" value="105 Bà Huyện Thanh Quan, Phường Xuân Hòa, TP.HCM" id="inp-address2"
+                            class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="openOrderDetail()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>
 
                     <!-- Địa chỉ 3 -->
-                    <div class="my-left mt-17">
-                        <label class="item-text">Địa chỉ 3: </label>
-                        <input type="text" value="789D Lê Lai F11 Q1" id="inp-address3" class="text-box" readonly>
-                        <div class="btn-group my-center">
-                            <button class="btn edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/check2.svg" class="icon-small">
+                    <div class="address-info">
+                        <label class=""><b>Địa chỉ 3: </b></label>
+                        <input type="text" value="04 Tôn Đức Thắng, Phường Sài Gòn, TP.HCM" id="inp-address3"
+                            class="text-box" readonly>
+                        <div class="btn-group">
+                            <button class="edit-btn" onclick="AddAlert('Chọn địa chỉ thành công', 'success')">
+                                <i class="bi bi-check2 icon-address"></i>
+                                <p>Chọn</p>
                             </button>
-                            <td>
-                                <button class="btn delete-btn" onclick="openOrderDetail()">
-                                    <img src="./bootstrap-icons-1.13.1/pencil-square.svg" class="icon-small">
-                                </button>
-                            </td>
-                            <button class="btn select-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
-                                <img src="./bootstrap-icons-1.13.1/x-circle-fill.svg" class="icon-small">
+                            <button class="select-btn" onclick="openOrderDetail()">
+                                <i class="bi bi-pencil-square icon-address"></i>
+                                <p>Sửa</p>
+                            </button>
+                            <button class="delete-btn" onclick="AddAlert('Xóa địa chỉ thành công', 'success')">
+                                <i class="bi bi-x-lg icon-address"></i>
+                                <p>Xóa</p>
                             </button>
                         </div>
                     </div>

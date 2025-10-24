@@ -445,34 +445,62 @@ tr:hover {
 }
 
 /*---Nút chọn, sửa, xóa */
-
 .edit-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 30px;
-  gap: 30px;
-  margin-right: 20px;
-  margin-left: 100px;
-  background-color: #4CAF50;
-
+  color: #000;
+  background-color: #E0E0E0;
+  gap: 5px;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .edit-btn:hover {
+  color: #fff;
   background-color: #45a049;
+}
+
+.isactivebtn{
+  color: #fff;
+  background-color: #4CAF50;
+}
+
+.add-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #007BFF;
+  gap: 5px;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover{
+  background-color: #248dfd;
+}
+
+.add-btn:active{
+  background-color: #3c97f9;
 }
 
 /* Nút Xóa */
 .delete-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 30px;
-  gap: 30px;
-  margin-right: 20px;
   background-color: #f44336;
+  gap: 5px;
+  color: #fff;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
@@ -481,13 +509,16 @@ tr:hover {
 
 /* Nút Chọn */
 .select-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 30px;
-  margin-right: 20px;
   background-color: #008CBA;
+  gap: 5px;
+  color: #fff;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .select-btn:hover {
@@ -499,7 +530,29 @@ tr:hover {
   border-bottom: 1px solid #ba2d2d;
   width: 85%;
   height: 1px;
-  margin: 20px 20px;
+  margin: 20px 0;
 }
 
 
+.btn-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.address-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 10px;
+}
+
+.address-info p{
+  font-size: 0.8em;
+}
+
+.my-bold{
+  font-weight: 500;
+}
