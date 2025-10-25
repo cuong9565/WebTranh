@@ -3,6 +3,7 @@
 Một dự án website bán tranh trực tuyến được phát triển trong khuôn khổ môn học **Lập Trình Web và Ứng Dụng (Mã học phần: 841503)**.  
 Dự án được thực hiện bởi **Nhóm 9**, với mục tiêu xây dựng một trang web hoàn chỉnh cho phép người dùng xem, tìm kiếm, và mua tranh nghệ thuật, đồng thời hỗ trợ quản lý sản phẩm, đơn hàng và người dùng dành cho quản trị viên.  
 
+**Thời gian hoàn thành đồ án:** *25/10/2025* 
 
 ---
 
